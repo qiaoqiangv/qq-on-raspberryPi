@@ -16,7 +16,7 @@
 ;; lower value in your dotfile (function `dotspacemacs/user-config')
 (setq gc-cons-threshold 100000000)
 
-(defconst spacemacs-version          "0.200.9" "Spacemacs version.")
+(defconst spacemacs-version         "0.200.10" "Spacemacs version.")
 (defconst spacemacs-emacs-min-version   "24.4" "Minimal version of Emacs.")
 
 (if (not (version<= spacemacs-emacs-min-version emacs-version))
@@ -34,6 +34,6 @@
   (unless (server-running-p) (server-start)))
 
 
-;; load my personal config
-(add-to-list 'load-path (expand-file-name "my_config" user-emacs-directory))
-(require 'init-my-config)
+;; my personal setting
+;(set-default-font "Source Code Pro" 20 default)
+(set-default-font "-unknown-Liberation Mono-normal-normal-normal-*-18-*-*-*-m-0-iso10646-1")

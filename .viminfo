@@ -20,20 +20,20 @@
 $
 
 # 命令列 歷史記錄 (新到舊):
+:q
+|2,0,1510793601,,"q"
+:x
+|2,0,1510793574,,"x"
+:w
+|2,0,1510793570,,"w"
 :wq
 |2,0,1510789205,,"wq"
-:x
-|2,0,1510789061,,"x"
-:w
-|2,0,1510789030,,"w"
 :set nu
 |2,0,1510788843,,"set nu"
 :q!
 |2,0,1510738483,,"q!"
 :qall
 |2,0,1510736993,,"qall"
-:q
-|2,0,1510733656,,"q"
 :help comments
 |2,0,0,,"help comments"
 :help eval
@@ -2032,283 +2032,321 @@ $
 # Debug Line 歷史記錄 (新到舊):
 
 # 暫存器:
-"0	CHAR	0
-	    <keybind key="C-A-E">
-	      <action name="Execute">
-	         <command>emacs</command>
-	      </action>
-	    </keybind>
-	
-	
-|3,0,0,0,7,0,1510789041,"    <keybind key=\"C-A-E\">","      <action name=\"Execute\">","         <command>emacs</command>","      </action>","    </keybind>","",""
-"1	LINE	0
-	
-|3,0,1,1,1,0,1510789047,""
+"0	LINE	0
+	    lxde-pi-shutdown-helper
+|3,0,0,1,1,0,1510793566,"    lxde-pi-shutdown-helper"
+""1	LINE	0
+		gnome-session-quit --power-off --force --no-prompt 
+|3,1,1,1,1,0,1510793569,"	gnome-session-quit --power-off --force --no-prompt "
 "2	LINE	0
-	
-|3,0,2,1,1,0,1510789046,""
+		 
+|3,0,2,1,1,0,1510793562,"	 "
 "3	LINE	0
+	lxde-pi-shutdown-helper
+|3,0,3,1,1,0,1510793558,"lxde-pi-shutdown-helper"
+"4	CHAR	0
+	# add ibus
+	export GTK_IM_MODULE=ibus
+	export XMODIFIERS=@im=ibus
+	export QT_IM_MODULE=ibus
 	
-|3,0,3,1,1,0,0,""
-"4	LINE	0
-	
-|3,0,4,1,1,0,0,""
+|3,0,4,0,5,0,1510793383,"# add ibus","export GTK_IM_MODULE=ibus","export XMODIFIERS=@im=ibus","export QT_IM_MODULE=ibus",""
 "5	LINE	0
 	
-|3,0,5,1,1,0,0,""
+|3,0,5,1,1,0,1510789047,""
 "6	LINE	0
 	
-|3,0,6,1,1,0,0,""
+|3,0,6,1,1,0,1510789046,""
 "7	LINE	0
-	    
-|3,0,7,1,1,0,0,"    "
+	
+|3,0,7,1,1,0,0,""
 "8	LINE	0
 	
 |3,0,8,1,1,0,0,""
 "9	LINE	0
 	
 |3,0,9,1,1,0,0,""
-""-	CHAR	0
-	x
-|3,1,36,0,1,0,1510789058,"x"
+"-	CHAR	0
+	t
+|3,0,36,0,1,0,1510793537,"t"
 
 # 檔案標記:
-'0  1  0  ~/Note/Linux/raspberryPi/keybind.txt
-|4,48,1,0,1510789205,"~/Note/Linux/raspberryPi/keybind.txt"
-'1  299  24  ~/.config/openbox/lxde-pi-rc.xml
-|4,49,299,24,1510789061,"~/.config/openbox/lxde-pi-rc.xml"
-'2  31  0  ~/TODO
-|4,50,31,0,1510738483,"~/TODO"
-'3  3  55  ~/.vimperatorrc
-|4,51,3,55,1510736993,"~/.vimperatorrc"
-'4  7  0  ~/ShellScripts/basic_scripts/git-rm-list.sh
-|4,52,7,0,1510733656,"~/ShellScripts/basic_scripts/git-rm-list.sh"
-'5  31  5  ~/.gitignore
-|4,53,31,5,0,"~/.gitignore"
-'6  30  1  ~/ShellScripts/basic_scripts/backup.sh
-|4,54,30,1,0,"~/ShellScripts/basic_scripts/backup.sh"
-'7  19  0  ~/ShellScripts/bashrc-add-gui-poweroff-logout
-|4,55,19,0,0,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
-'8  1  0  ~/ShellScripts/bashrc-init
-|4,56,1,0,0,"~/ShellScripts/bashrc-init"
-'9  13  28  ~/ShellScripts/basic_scripts/install-my-custom-sh-script.sh
-|4,57,13,28,0,"~/ShellScripts/basic_scripts/install-my-custom-sh-script.sh"
+'0  11  0  ~/ShellScripts/bashrc-add-git-func
+|4,48,11,0,1510793601,"~/ShellScripts/bashrc-add-git-func"
+'1  20  4  ~/ShellScripts/bashrc-add-gui-poweroff-logout
+|4,49,20,4,1510793574,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
+'2  14  1  ~/ShellScripts/bashrc-add-gui-poweroff-logout
+|4,50,14,1,1510793539,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
+'3  14  1  ~/ShellScripts/bashrc-add-gui-poweroff-logout
+|4,51,14,1,1510793539,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
+'4  20  0  ~/ShellScripts/bashrc-add-gui-poweroff-logout
+|4,52,20,0,1510793459,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
+'5  20  0  ~/ShellScripts/bashrc-add-gui-poweroff-logout
+|4,53,20,0,1510793459,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
+'6  20  0  ~/ShellScripts/bashrc-add-gui-poweroff-logout
+|4,54,20,0,1510793459,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
+'7  21  0  ~/ShellScripts/bashrc-add-gui-poweroff-logout
+|4,55,21,0,1510793450,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
+'8  21  0  ~/ShellScripts/bashrc-add-gui-poweroff-logout
+|4,56,21,0,1510793450,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
+'9  21  0  ~/ShellScripts/bashrc-add-gui-poweroff-logout
+|4,57,21,0,1510793450,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
 
 # Jumplist (由新到舊):
--'  1  0  ~/Note/Linux/raspberryPi/keybind.txt
-|4,39,1,0,1510789205,"~/Note/Linux/raspberryPi/keybind.txt"
--'  299  24  ~/.config/openbox/lxde-pi-rc.xml
-|4,39,299,24,1510789061,"~/.config/openbox/lxde-pi-rc.xml"
--'  299  24  ~/.config/openbox/lxde-pi-rc.xml
-|4,39,299,24,1510789061,"~/.config/openbox/lxde-pi-rc.xml"
--'  297  0  ~/.config/openbox/lxde-pi-rc.xml
-|4,39,297,0,1510789036,"~/.config/openbox/lxde-pi-rc.xml"
--'  297  0  ~/.config/openbox/lxde-pi-rc.xml
-|4,39,297,0,1510789036,"~/.config/openbox/lxde-pi-rc.xml"
--'  302  8  ~/.config/openbox/lxde-pi-rc.xml
-|4,39,302,8,1510788938,"~/.config/openbox/lxde-pi-rc.xml"
--'  302  8  ~/.config/openbox/lxde-pi-rc.xml
-|4,39,302,8,1510788938,"~/.config/openbox/lxde-pi-rc.xml"
--'  332  9  ~/.config/openbox/lxde-pi-rc.xml
-|4,39,332,9,1510788937,"~/.config/openbox/lxde-pi-rc.xml"
--'  332  9  ~/.config/openbox/lxde-pi-rc.xml
-|4,39,332,9,1510788937,"~/.config/openbox/lxde-pi-rc.xml"
--'  172  9  ~/.config/openbox/lxde-pi-rc.xml
-|4,39,172,9,1510788936,"~/.config/openbox/lxde-pi-rc.xml"
--'  172  9  ~/.config/openbox/lxde-pi-rc.xml
-|4,39,172,9,1510788936,"~/.config/openbox/lxde-pi-rc.xml"
--'  272  9  ~/.config/openbox/lxde-pi-rc.xml
-|4,39,272,9,1510788931,"~/.config/openbox/lxde-pi-rc.xml"
--'  272  9  ~/.config/openbox/lxde-pi-rc.xml
-|4,39,272,9,1510788931,"~/.config/openbox/lxde-pi-rc.xml"
--'  259  9  ~/.config/openbox/lxde-pi-rc.xml
-|4,39,259,9,1510788927,"~/.config/openbox/lxde-pi-rc.xml"
--'  259  9  ~/.config/openbox/lxde-pi-rc.xml
-|4,39,259,9,1510788927,"~/.config/openbox/lxde-pi-rc.xml"
--'  245  9  ~/.config/openbox/lxde-pi-rc.xml
-|4,39,245,9,1510788926,"~/.config/openbox/lxde-pi-rc.xml"
--'  245  9  ~/.config/openbox/lxde-pi-rc.xml
-|4,39,245,9,1510788926,"~/.config/openbox/lxde-pi-rc.xml"
--'  770  0  ~/.config/openbox/lxde-pi-rc.xml
-|4,39,770,0,1510788864,"~/.config/openbox/lxde-pi-rc.xml"
--'  770  0  ~/.config/openbox/lxde-pi-rc.xml
-|4,39,770,0,1510788864,"~/.config/openbox/lxde-pi-rc.xml"
--'  31  0  ~/.config/openbox/lxde-pi-rc.xml
-|4,39,31,0,1510788841,"~/.config/openbox/lxde-pi-rc.xml"
--'  31  0  ~/.config/openbox/lxde-pi-rc.xml
-|4,39,31,0,1510788841,"~/.config/openbox/lxde-pi-rc.xml"
--'  1  0  ~/.config/openbox/lxde-pi-rc.xml
-|4,39,1,0,1510788839,"~/.config/openbox/lxde-pi-rc.xml"
--'  1  0  ~/.config/openbox/lxde-pi-rc.xml
-|4,39,1,0,1510788839,"~/.config/openbox/lxde-pi-rc.xml"
--'  31  0  ~/TODO
-|4,39,31,0,1510738483,"~/TODO"
--'  31  0  ~/TODO
-|4,39,31,0,1510738483,"~/TODO"
--'  31  0  ~/TODO
-|4,39,31,0,1510738483,"~/TODO"
--'  31  0  ~/TODO
-|4,39,31,0,1510738483,"~/TODO"
--'  1  0  ~/TODO
-|4,39,1,0,1510738476,"~/TODO"
--'  1  0  ~/TODO
-|4,39,1,0,1510738476,"~/TODO"
--'  1  0  ~/TODO
-|4,39,1,0,1510738476,"~/TODO"
--'  1  0  ~/TODO
-|4,39,1,0,1510738476,"~/TODO"
--'  3  55  ~/.vimperatorrc
-|4,39,3,55,1510736993,"~/.vimperatorrc"
--'  3  55  ~/.vimperatorrc
-|4,39,3,55,1510736993,"~/.vimperatorrc"
--'  3  55  ~/.vimperatorrc
-|4,39,3,55,1510736993,"~/.vimperatorrc"
--'  3  55  ~/.vimperatorrc
-|4,39,3,55,1510736993,"~/.vimperatorrc"
--'  3  55  ~/.vimperatorrc
-|4,39,3,55,1510736993,"~/.vimperatorrc"
--'  3  55  ~/.vimperatorrc
-|4,39,3,55,1510736993,"~/.vimperatorrc"
--'  3  55  ~/.vimperatorrc
-|4,39,3,55,1510736993,"~/.vimperatorrc"
--'  3  55  ~/.vimperatorrc
-|4,39,3,55,1510736993,"~/.vimperatorrc"
--'  4  0  ~/.vimperatorrc
-|4,39,4,0,1510736561,"~/.vimperatorrc"
--'  4  0  ~/.vimperatorrc
-|4,39,4,0,1510736561,"~/.vimperatorrc"
--'  4  0  ~/.vimperatorrc
-|4,39,4,0,1510736561,"~/.vimperatorrc"
--'  4  0  ~/.vimperatorrc
-|4,39,4,0,1510736561,"~/.vimperatorrc"
--'  4  0  ~/.vimperatorrc
-|4,39,4,0,1510736561,"~/.vimperatorrc"
--'  4  0  ~/.vimperatorrc
-|4,39,4,0,1510736561,"~/.vimperatorrc"
--'  4  0  ~/.vimperatorrc
-|4,39,4,0,1510736561,"~/.vimperatorrc"
--'  4  0  ~/.vimperatorrc
-|4,39,4,0,1510736561,"~/.vimperatorrc"
--'  7  0  ~/ShellScripts/basic_scripts/git-rm-list.sh
-|4,39,7,0,1510733656,"~/ShellScripts/basic_scripts/git-rm-list.sh"
--'  7  0  ~/ShellScripts/basic_scripts/git-rm-list.sh
-|4,39,7,0,1510733656,"~/ShellScripts/basic_scripts/git-rm-list.sh"
--'  7  0  ~/ShellScripts/basic_scripts/git-rm-list.sh
-|4,39,7,0,1510733656,"~/ShellScripts/basic_scripts/git-rm-list.sh"
--'  7  0  ~/ShellScripts/basic_scripts/git-rm-list.sh
-|4,39,7,0,1510733656,"~/ShellScripts/basic_scripts/git-rm-list.sh"
--'  7  0  ~/ShellScripts/basic_scripts/git-rm-list.sh
-|4,39,7,0,1510733656,"~/ShellScripts/basic_scripts/git-rm-list.sh"
--'  7  0  ~/ShellScripts/basic_scripts/git-rm-list.sh
-|4,39,7,0,1510733656,"~/ShellScripts/basic_scripts/git-rm-list.sh"
--'  7  0  ~/ShellScripts/basic_scripts/git-rm-list.sh
-|4,39,7,0,1510733656,"~/ShellScripts/basic_scripts/git-rm-list.sh"
--'  7  0  ~/ShellScripts/basic_scripts/git-rm-list.sh
-|4,39,7,0,1510733656,"~/ShellScripts/basic_scripts/git-rm-list.sh"
--'  7  0  ~/ShellScripts/basic_scripts/git-rm-list.sh
-|4,39,7,0,1510733656,"~/ShellScripts/basic_scripts/git-rm-list.sh"
--'  7  0  ~/ShellScripts/basic_scripts/git-rm-list.sh
-|4,39,7,0,1510733656,"~/ShellScripts/basic_scripts/git-rm-list.sh"
--'  7  0  ~/ShellScripts/basic_scripts/git-rm-list.sh
-|4,39,7,0,1510733656,"~/ShellScripts/basic_scripts/git-rm-list.sh"
--'  7  0  ~/ShellScripts/basic_scripts/git-rm-list.sh
-|4,39,7,0,1510733656,"~/ShellScripts/basic_scripts/git-rm-list.sh"
--'  7  0  ~/ShellScripts/basic_scripts/git-rm-list.sh
-|4,39,7,0,1510733656,"~/ShellScripts/basic_scripts/git-rm-list.sh"
--'  7  0  ~/ShellScripts/basic_scripts/git-rm-list.sh
-|4,39,7,0,1510733656,"~/ShellScripts/basic_scripts/git-rm-list.sh"
--'  7  0  ~/ShellScripts/basic_scripts/git-rm-list.sh
-|4,39,7,0,1510733656,"~/ShellScripts/basic_scripts/git-rm-list.sh"
--'  7  0  ~/ShellScripts/basic_scripts/git-rm-list.sh
-|4,39,7,0,1510733656,"~/ShellScripts/basic_scripts/git-rm-list.sh"
--'  1  0  ~/ShellScripts/basic_scripts/git-rm-list.sh
-|4,39,1,0,1510733625,"~/ShellScripts/basic_scripts/git-rm-list.sh"
--'  1  0  ~/ShellScripts/basic_scripts/git-rm-list.sh
-|4,39,1,0,1510733625,"~/ShellScripts/basic_scripts/git-rm-list.sh"
--'  1  0  ~/ShellScripts/basic_scripts/git-rm-list.sh
-|4,39,1,0,1510733625,"~/ShellScripts/basic_scripts/git-rm-list.sh"
--'  1  0  ~/ShellScripts/basic_scripts/git-rm-list.sh
-|4,39,1,0,1510733625,"~/ShellScripts/basic_scripts/git-rm-list.sh"
--'  1  0  ~/ShellScripts/basic_scripts/git-rm-list.sh
-|4,39,1,0,1510733625,"~/ShellScripts/basic_scripts/git-rm-list.sh"
--'  1  0  ~/ShellScripts/basic_scripts/git-rm-list.sh
-|4,39,1,0,1510733625,"~/ShellScripts/basic_scripts/git-rm-list.sh"
--'  1  0  ~/ShellScripts/basic_scripts/git-rm-list.sh
-|4,39,1,0,1510733625,"~/ShellScripts/basic_scripts/git-rm-list.sh"
--'  1  0  ~/ShellScripts/basic_scripts/git-rm-list.sh
-|4,39,1,0,1510733625,"~/ShellScripts/basic_scripts/git-rm-list.sh"
--'  1  0  ~/ShellScripts/basic_scripts/git-rm-list.sh
-|4,39,1,0,1510733625,"~/ShellScripts/basic_scripts/git-rm-list.sh"
--'  1  0  ~/ShellScripts/basic_scripts/git-rm-list.sh
-|4,39,1,0,1510733625,"~/ShellScripts/basic_scripts/git-rm-list.sh"
--'  1  0  ~/ShellScripts/basic_scripts/git-rm-list.sh
-|4,39,1,0,1510733625,"~/ShellScripts/basic_scripts/git-rm-list.sh"
--'  1  0  ~/ShellScripts/basic_scripts/git-rm-list.sh
-|4,39,1,0,1510733625,"~/ShellScripts/basic_scripts/git-rm-list.sh"
--'  1  0  ~/ShellScripts/basic_scripts/git-rm-list.sh
-|4,39,1,0,1510733625,"~/ShellScripts/basic_scripts/git-rm-list.sh"
--'  1  0  ~/ShellScripts/basic_scripts/git-rm-list.sh
-|4,39,1,0,1510733625,"~/ShellScripts/basic_scripts/git-rm-list.sh"
--'  1  0  ~/ShellScripts/basic_scripts/git-rm-list.sh
-|4,39,1,0,1510733625,"~/ShellScripts/basic_scripts/git-rm-list.sh"
--'  1  0  ~/ShellScripts/basic_scripts/git-rm-list.sh
-|4,39,1,0,1510733625,"~/ShellScripts/basic_scripts/git-rm-list.sh"
--'  31  5  ~/.gitignore
-|4,39,31,5,0,"~/.gitignore"
--'  11  1  ~/.gitignore
-|4,39,11,1,0,"~/.gitignore"
--'  1  0  ~/.gitignore
-|4,39,1,0,0,"~/.gitignore"
--'  41  0  ~/.gitignore
-|4,39,41,0,0,"~/.gitignore"
--'  30  1  ~/ShellScripts/basic_scripts/backup.sh
-|4,39,30,1,0,"~/ShellScripts/basic_scripts/backup.sh"
--'  10  1  ~/ShellScripts/basic_scripts/backup.sh
-|4,39,10,1,0,"~/ShellScripts/basic_scripts/backup.sh"
--'  19  0  ~/ShellScripts/bashrc-add-gui-poweroff-logout
-|4,39,19,0,0,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
--'  1  0  ~/ShellScripts/bashrc-add-gui-poweroff-logout
-|4,39,1,0,0,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
--'  1  0  ~/ShellScripts/bashrc-init
-|4,39,1,0,0,"~/ShellScripts/bashrc-init"
--'  13  28  ~/ShellScripts/basic_scripts/install-my-custom-sh-script.sh
-|4,39,13,28,0,"~/ShellScripts/basic_scripts/install-my-custom-sh-script.sh"
--'  1  0  ~/ShellScripts/basic_scripts
-|4,39,1,0,0,"~/ShellScripts/basic_scripts"
--'  256  0  ~/Note/Linux/ubuntu/window_manager/DWM/dwm-tutorial-on-linux.txt
-|4,39,256,0,0,"~/Note/Linux/ubuntu/window_manager/DWM/dwm-tutorial-on-linux.txt"
--'  46  5  ~/Note/Linux/ubuntu/window_manager/DWM/dwm-tutorial-on-linux.txt
-|4,39,46,5,0,"~/Note/Linux/ubuntu/window_manager/DWM/dwm-tutorial-on-linux.txt"
--'  1  0  ~/Note/Linux/ubuntu/window_manager/DWM/dwm-tutorial-on-linux.txt
-|4,39,1,0,0,"~/Note/Linux/ubuntu/window_manager/DWM/dwm-tutorial-on-linux.txt"
--'  105  74  ~/Github/dwm/config.def.h
-|4,39,105,74,0,"~/Github/dwm/config.def.h"
--'  65  66  ~/Github/dwm/config.def.h
-|4,39,65,66,0,"~/Github/dwm/config.def.h"
--'  60  19  ~/Github/dwm/config.def.h
-|4,39,60,19,0,"~/Github/dwm/config.def.h"
--'  106  79  ~/Github/dwm/config.def.h
-|4,39,106,79,0,"~/Github/dwm/config.def.h"
--'  115  0  ~/Github/dwm/config.def.h
-|4,39,115,0,0,"~/Github/dwm/config.def.h"
--'  47  15  ~/Github/dwm/config.def.h
-|4,39,47,15,0,"~/Github/dwm/config.def.h"
--'  49  3  ~/Github/dwm/config.def.h
-|4,39,49,3,0,"~/Github/dwm/config.def.h"
+-'  11  0  ~/ShellScripts/bashrc-add-git-func
+|4,39,11,0,1510793601,"~/ShellScripts/bashrc-add-git-func"
+-'  1  0  ~/ShellScripts/bashrc-add-git-func
+|4,39,1,0,1510793594,"~/ShellScripts/bashrc-add-git-func"
+-'  20  4  ~/ShellScripts/bashrc-add-gui-poweroff-logout
+|4,39,20,4,1510793574,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
+-'  20  4  ~/ShellScripts/bashrc-add-gui-poweroff-logout
+|4,39,20,4,1510793574,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
+-'  14  1  ~/ShellScripts/bashrc-add-gui-poweroff-logout
+|4,39,14,1,1510793555,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
+-'  14  1  ~/ShellScripts/bashrc-add-gui-poweroff-logout
+|4,39,14,1,1510793555,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
+-'  14  1  ~/ShellScripts/bashrc-add-gui-poweroff-logout
+|4,39,14,1,1510793539,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
+-'  14  1  ~/ShellScripts/bashrc-add-gui-poweroff-logout
+|4,39,14,1,1510793539,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
+-'  20  1  ~/ShellScripts/bashrc-add-gui-poweroff-logout
+|4,39,20,1,1510793508,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
+-'  20  1  ~/ShellScripts/bashrc-add-gui-poweroff-logout
+|4,39,20,1,1510793508,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
+-'  20  0  ~/ShellScripts/bashrc-add-gui-poweroff-logout
+|4,39,20,0,1510793459,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
+-'  20  0  ~/ShellScripts/bashrc-add-gui-poweroff-logout
+|4,39,20,0,1510793459,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
+-'  21  0  ~/ShellScripts/bashrc-add-gui-poweroff-logout
+|4,39,21,0,1510793457,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
+-'  21  0  ~/ShellScripts/bashrc-add-gui-poweroff-logout
+|4,39,21,0,1510793457,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
+-'  21  0  ~/ShellScripts/bashrc-add-gui-poweroff-logout
+|4,39,21,0,1510793457,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
+-'  21  0  ~/ShellScripts/bashrc-add-gui-poweroff-logout
+|4,39,21,0,1510793457,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
+-'  21  0  ~/ShellScripts/bashrc-add-gui-poweroff-logout
+|4,39,21,0,1510793457,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
+-'  21  0  ~/ShellScripts/bashrc-add-gui-poweroff-logout
+|4,39,21,0,1510793457,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
+-'  21  0  ~/ShellScripts/bashrc-add-gui-poweroff-logout
+|4,39,21,0,1510793450,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
+-'  21  0  ~/ShellScripts/bashrc-add-gui-poweroff-logout
+|4,39,21,0,1510793450,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
+-'  19  1  ~/ShellScripts/bashrc-add-gui-poweroff-logout
+|4,39,19,1,1510793440,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
+-'  19  1  ~/ShellScripts/bashrc-add-gui-poweroff-logout
+|4,39,19,1,1510793440,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
+-'  19  1  ~/ShellScripts/bashrc-add-gui-poweroff-logout
+|4,39,19,1,1510793440,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
+-'  19  1  ~/ShellScripts/bashrc-add-gui-poweroff-logout
+|4,39,19,1,1510793440,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
+-'  19  1  ~/ShellScripts/bashrc-add-gui-poweroff-logout
+|4,39,19,1,1510793440,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
+-'  19  1  ~/ShellScripts/bashrc-add-gui-poweroff-logout
+|4,39,19,1,1510793440,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
+-'  19  1  ~/ShellScripts/bashrc-add-gui-poweroff-logout
+|4,39,19,1,1510793440,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
+-'  19  1  ~/ShellScripts/bashrc-add-gui-poweroff-logout
+|4,39,19,1,1510793440,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
+-'  120  0  ~/.bashrc
+|4,39,120,0,1510793397,"~/.bashrc"
+-'  120  0  ~/.bashrc
+|4,39,120,0,1510793397,"~/.bashrc"
+-'  120  0  ~/.bashrc
+|4,39,120,0,1510793397,"~/.bashrc"
+-'  120  0  ~/.bashrc
+|4,39,120,0,1510793397,"~/.bashrc"
+-'  120  0  ~/.bashrc
+|4,39,120,0,1510793397,"~/.bashrc"
+-'  120  0  ~/.bashrc
+|4,39,120,0,1510793397,"~/.bashrc"
+-'  120  0  ~/.bashrc
+|4,39,120,0,1510793397,"~/.bashrc"
+-'  120  0  ~/.bashrc
+|4,39,120,0,1510793397,"~/.bashrc"
+-'  120  0  ~/.bashrc
+|4,39,120,0,1510793397,"~/.bashrc"
+-'  120  0  ~/.bashrc
+|4,39,120,0,1510793397,"~/.bashrc"
+-'  120  0  ~/.bashrc
+|4,39,120,0,1510793397,"~/.bashrc"
+-'  120  0  ~/.bashrc
+|4,39,120,0,1510793397,"~/.bashrc"
+-'  120  0  ~/.bashrc
+|4,39,120,0,1510793397,"~/.bashrc"
+-'  120  0  ~/.bashrc
+|4,39,120,0,1510793397,"~/.bashrc"
+-'  120  0  ~/.bashrc
+|4,39,120,0,1510793397,"~/.bashrc"
+-'  120  0  ~/.bashrc
+|4,39,120,0,1510793397,"~/.bashrc"
+-'  120  0  ~/.bashrc
+|4,39,120,0,1510793397,"~/.bashrc"
+-'  120  0  ~/.bashrc
+|4,39,120,0,1510793397,"~/.bashrc"
+-'  120  0  ~/.bashrc
+|4,39,120,0,1510793397,"~/.bashrc"
+-'  120  0  ~/.bashrc
+|4,39,120,0,1510793397,"~/.bashrc"
+-'  120  0  ~/.bashrc
+|4,39,120,0,1510793397,"~/.bashrc"
+-'  120  0  ~/.bashrc
+|4,39,120,0,1510793397,"~/.bashrc"
+-'  120  0  ~/.bashrc
+|4,39,120,0,1510793397,"~/.bashrc"
+-'  120  0  ~/.bashrc
+|4,39,120,0,1510793397,"~/.bashrc"
+-'  120  0  ~/.bashrc
+|4,39,120,0,1510793397,"~/.bashrc"
+-'  120  0  ~/.bashrc
+|4,39,120,0,1510793397,"~/.bashrc"
+-'  120  0  ~/.bashrc
+|4,39,120,0,1510793397,"~/.bashrc"
+-'  120  0  ~/.bashrc
+|4,39,120,0,1510793397,"~/.bashrc"
+-'  120  0  ~/.bashrc
+|4,39,120,0,1510793397,"~/.bashrc"
+-'  120  0  ~/.bashrc
+|4,39,120,0,1510793397,"~/.bashrc"
+-'  120  0  ~/.bashrc
+|4,39,120,0,1510793397,"~/.bashrc"
+-'  120  0  ~/.bashrc
+|4,39,120,0,1510793397,"~/.bashrc"
+-'  10  0  ~/.bashrc
+|4,39,10,0,1510793378,"~/.bashrc"
+-'  10  0  ~/.bashrc
+|4,39,10,0,1510793378,"~/.bashrc"
+-'  10  0  ~/.bashrc
+|4,39,10,0,1510793378,"~/.bashrc"
+-'  10  0  ~/.bashrc
+|4,39,10,0,1510793378,"~/.bashrc"
+-'  10  0  ~/.bashrc
+|4,39,10,0,1510793378,"~/.bashrc"
+-'  10  0  ~/.bashrc
+|4,39,10,0,1510793378,"~/.bashrc"
+-'  10  0  ~/.bashrc
+|4,39,10,0,1510793378,"~/.bashrc"
+-'  10  0  ~/.bashrc
+|4,39,10,0,1510793378,"~/.bashrc"
+-'  10  0  ~/.bashrc
+|4,39,10,0,1510793378,"~/.bashrc"
+-'  10  0  ~/.bashrc
+|4,39,10,0,1510793378,"~/.bashrc"
+-'  10  0  ~/.bashrc
+|4,39,10,0,1510793378,"~/.bashrc"
+-'  10  0  ~/.bashrc
+|4,39,10,0,1510793378,"~/.bashrc"
+-'  10  0  ~/.bashrc
+|4,39,10,0,1510793378,"~/.bashrc"
+-'  10  0  ~/.bashrc
+|4,39,10,0,1510793378,"~/.bashrc"
+-'  10  0  ~/.bashrc
+|4,39,10,0,1510793378,"~/.bashrc"
+-'  10  0  ~/.bashrc
+|4,39,10,0,1510793378,"~/.bashrc"
+-'  10  0  ~/.bashrc
+|4,39,10,0,1510793378,"~/.bashrc"
+-'  10  0  ~/.bashrc
+|4,39,10,0,1510793378,"~/.bashrc"
+-'  10  0  ~/.bashrc
+|4,39,10,0,1510793378,"~/.bashrc"
+-'  10  0  ~/.bashrc
+|4,39,10,0,1510793378,"~/.bashrc"
+-'  10  0  ~/.bashrc
+|4,39,10,0,1510793378,"~/.bashrc"
+-'  10  0  ~/.bashrc
+|4,39,10,0,1510793378,"~/.bashrc"
+-'  10  0  ~/.bashrc
+|4,39,10,0,1510793378,"~/.bashrc"
+-'  10  0  ~/.bashrc
+|4,39,10,0,1510793378,"~/.bashrc"
+-'  10  0  ~/.bashrc
+|4,39,10,0,1510793378,"~/.bashrc"
+-'  10  0  ~/.bashrc
+|4,39,10,0,1510793378,"~/.bashrc"
+-'  10  0  ~/.bashrc
+|4,39,10,0,1510793378,"~/.bashrc"
+-'  10  0  ~/.bashrc
+|4,39,10,0,1510793378,"~/.bashrc"
+-'  10  0  ~/.bashrc
+|4,39,10,0,1510793378,"~/.bashrc"
+-'  10  0  ~/.bashrc
+|4,39,10,0,1510793378,"~/.bashrc"
+-'  10  0  ~/.bashrc
+|4,39,10,0,1510793378,"~/.bashrc"
+-'  10  0  ~/.bashrc
+|4,39,10,0,1510793378,"~/.bashrc"
+-'  1  0  ~/.bashrc
+|4,39,1,0,1510793376,"~/.bashrc"
+-'  1  0  ~/.bashrc
+|4,39,1,0,1510793376,"~/.bashrc"
+-'  1  0  ~/.bashrc
+|4,39,1,0,1510793376,"~/.bashrc"
+-'  1  0  ~/.bashrc
+|4,39,1,0,1510793376,"~/.bashrc"
+-'  1  0  ~/.bashrc
+|4,39,1,0,1510793376,"~/.bashrc"
+-'  1  0  ~/.bashrc
+|4,39,1,0,1510793376,"~/.bashrc"
+-'  1  0  ~/.bashrc
+|4,39,1,0,1510793376,"~/.bashrc"
+-'  1  0  ~/.bashrc
+|4,39,1,0,1510793376,"~/.bashrc"
 
 # 檔案內 Mark 記錄 (由新到舊):
 
-> ~/Note/Linux/raspberryPi/keybind.txt
-	*	1510789203	0
-	"	1	0
-	.	1	0
-	+	1	0
+> ~/ShellScripts/bashrc-add-git-func
+	*	1510793598	0
+	"	11	0
+
+> ~/ShellScripts/bashrc-add-gui-poweroff-logout
+	*	1510793570	0
+	"	20	4
+	^	14	4
+	.	20	0
+	+	9	11
+	+	14	1
+	+	22	0
+	+	14	3
+	+	20	0
+
+> ~/.bashrc
+	*	1510793388	0
+	"	120	0
+	^	120	0
+	.	120	0
+	+	117	0
+	+	121	0
+	+	120	0
+
+> ~/.gitignore
+	*	1510793334	0
+	"	35	4
+	^	35	5
+	.	35	4
+	+	27	8
+	+	10	9
+	+	27	8
+	+	10	8
+	+	58	0
+	+	43	12
+	+	44	10
+	+	45	11
+	+	46	9
+	+	47	7
+	+	42	0
+	+	35	4
+
+> ~/.gitconfig
+	*	1510793309	0
+	"	3	1
 
 > ~/.config/openbox/lxde-pi-rc.xml
-	*	1510789060	0
-	"	299	24
-	^	299	25
-	.	299	0
+	*	1510793295	0
+	"	308	18
+	^	308	19
+	.	308	18
 	+	292	22
 	+	294	22
 	+	297	0
@@ -2317,6 +2355,15 @@ $
 	+	302	0
 	+	297	22
 	+	299	0
+	+	308	22
+	+	309	26
+	+	308	18
+
+> ~/Note/Linux/raspberryPi/keybind.txt
+	*	1510789203	0
+	"	1	0
+	.	1	0
+	+	1	0
 
 > ~/TODO
 	*	1510738481	0
@@ -2341,22 +2388,6 @@ $
 	*	1510733641	0
 	"	7	0
 
-> ~/.gitignore
-	"	31	5
-	^	41	0
-	.	41	0
-	+	27	8
-	+	10	9
-	+	27	8
-	+	10	8
-	+	57	0
-	+	42	12
-	+	43	10
-	+	44	11
-	+	45	9
-	+	46	7
-	+	41	0
-
 > ~/ShellScripts/basic_scripts/backup.sh
 	"	30	1
 	^	10	52
@@ -2371,9 +2402,6 @@ $
 	+	10	52
 	+	6	4
 	+	10	51
-
-> ~/ShellScripts/bashrc-add-gui-poweroff-logout
-	"	19	0
 
 > ~/ShellScripts/bashrc-init
 	"	1	0
@@ -2668,9 +2696,6 @@ $
 
 > ~/ShellScripts/basic_scripts/detect-shell-env.sh
 	"	1	0
-
-> ~/.gitconfig
-	"	3	0
 
 > ~/Note/Backup/tools-directory-content-list.txt
 	"	1	0
@@ -3041,9 +3066,3 @@ $
 
 > ~/Note/text_editor/emacs/use_emacs_reading_source_code.org
 	"	322	0
-
-> ~/Note/text_editor/emacs/translucent.org
-	"	124	0
-
-> ~/Note/text_editor/emacs/themes/some-emacs-theme.txt
-	"	1	0

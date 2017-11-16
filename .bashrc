@@ -113,11 +113,13 @@ if ! shopt -oq posix; then
 fi
 
 
-# add ibus
-export GTK_IM_MODULE=ibus
-export XMODIFIERS=@im=ibus
-export QT_IM_MODULE=ibus
 ###########################
 #    my personal config
 ###########################
 . ~/ShellScripts/bashrc-init
+
+# add ibus
+export GTK_IM_MODULE=ibus
+export XMODIFIERS=@im=ibus
+export QT_IM_MODULE=ibus
+

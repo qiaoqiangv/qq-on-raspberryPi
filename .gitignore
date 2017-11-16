@@ -32,6 +32,7 @@ python_games/
 .RapidSVN
 .sdcv_history
 .spacemacs
+.ssh/
 .subversion/
 .sudo_as_admin_successful
 .sunpinyin/

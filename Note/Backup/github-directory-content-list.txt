@@ -1,2 +1,3 @@
-dwm
+PyGithub
 spacemacs
+uemacs
