@@ -1,0 +1,3049 @@
+# 本 viminfo 檔案是由 Vim 8.0 所產生.
+# 如果想要自行修改請特別小心！
+
+# Viminfo version
+|1,4
+
+# 'encoding' 在此檔建立時的值
+*encoding=utf-8
+
+
+# hlsearch on (H) or off (h):
+~h
+# Last Search Pattern:
+~Msle0~/\<keybindings\>
+
+# Last Substitute Search Pattern:
+~MSle0&^
+
+# 前一組替代字串:
+$
+
+# 命令列 歷史記錄 (新到舊):
+:wq
+|2,0,1510789205,,"wq"
+:x
+|2,0,1510789061,,"x"
+:w
+|2,0,1510789030,,"w"
+:set nu
+|2,0,1510788843,,"set nu"
+:q!
+|2,0,1510738483,,"q!"
+:qall
+|2,0,1510736993,,"qall"
+:q
+|2,0,1510733656,,"q"
+:help comments
+|2,0,0,,"help comments"
+:help eval
+|2,0,0,,"help eval"
+:call ShowCurFileFullPath()
+|2,0,0,,"call ShowCurFileFullPath()"
+:call AutoComment()
+|2,0,0,,"call AutoComment()"
+:call
+|2,0,0,,"call"
+:set n
+|2,0,0,,"set n"
+:tabedit /home/qq/Github/vim/src/screen.c
+|2,0,0,,"tabedit /home/qq/Github/vim/src/screen.c"
+:tabedit /home/qq/Github/vim/src/GvimExt/
+|2,0,0,,"tabedit /home/qq/Github/vim/src/GvimExt/"
+:echo type(v:t_list)
+|2,0,0,,"echo type(v:t_list)"
+:type(v:t_list)
+|2,0,0,,"type(v:t_list)"
+:echo v:t_list
+|2,0,0,,"echo v:t_list"
+:tabedit /home/qq/Github/vim/src/testdir/test_statusline.vim
+|2,0,0,,"tabedit /home/qq/Github/vim/src/testdir/test_statusline.vim"
+:redraw_statuslines()
+|2,0,0,,"redraw_statuslines()"
+:call redraw_statuslines()
+|2,0,0,,"call redraw_statuslines()"
+:help redraw_custom_statusline()
+|2,0,0,,"help redraw_custom_statusline()"
+:help get_statusline()
+|2,0,0,,"help get_statusline()"
+:help ScreenLines()
+|2,0,0,,"help ScreenLines()"
+:ScreenLines()
+|2,0,0,,"ScreenLines()"
+:set linum
+|2,0,0,,"set linum"
+:tabedit /home/qq/Github/vim/src/testdir/test_statusline.vim +12
+|2,0,0,,"tabedit /home/qq/Github/vim/src/testdir/test_statusline.vim +12"
+:buffers
+|2,0,0,,"buffers"
+:tabnext 
+|2,0,0,,"tabnext "
+:tabedit /etc/gnome/menus.blacklist
+|2,0,0,,"tabedit /etc/gnome/menus.blacklist"
+:tabedit /etc/gnome/defaults.list
+|2,0,0,,"tabedit /etc/gnome/defaults.list"
+:tabedit /home/qq/Note/linux/ubuntu/shell/shell_command/./intercept-screenshot-of-the-webpage.txt
+|2,0,0,,"tabedit /home/qq/Note/linux/ubuntu/shell/shell_command/./intercept-screenshot-of-the-webpage.txt"
+:! sudo apt install glipper
+|2,0,0,,"! sudo apt install glipper"
+:echo &statusline
+|2,0,0,,"echo &statusline"
+:echo statusline
+|2,0,0,,"echo statusline"
+:set statusline=%l
+|2,0,0,,"set statusline=%l"
+:tabedit /home/qq/Github/vim/../../.vimrc
+|2,0,0,,"tabedit /home/qq/Github/vim/../../.vimrc"
+:let statusline = %l
+|2,0,0,,"let statusline = %l"
+:let b:var = statusline
+|2,0,0,,"let b:var = statusline"
+:set b:var=statusline 
+|2,0,0,,"set b:var=statusline "
+:let statusline
+|2,0,0,,"let statusline"
+:echo %l
+|2,0,0,,"echo %l"
+:let &statusline = statusline
+|2,0,0,,"let &statusline = statusline"
+:set &statusline
+|2,0,0,,"set &statusline"
+:let &statusline
+|2,0,0,,"let &statusline"
+:'<,'>tabedit /home/qq/Github/vim/../../.vimrc
+|2,0,0,,"'<,'>tabedit /home/qq/Github/vim/../../.vimrc"
+:help status-line
+|2,0,0,,"help status-line"
+:let statusline?
+|2,0,0,,"let statusline?"
+:get statusline?
+|2,0,0,,"get statusline?"
+:set statusline?
+|2,0,0,,"set statusline?"
+:help statusline
+|2,0,0,,"help statusline"
+:help 
+|2,0,0,,"help "
+:menu
+|2,0,0,,"menu"
+:help toolbar
+|2,0,0,,"help toolbar"
+:help wildmenu
+|2,0,0,,"help wildmenu"
+:444,471 s/^/"/g
+|2,0,0,,"444,471 s/^/\"/g"
+:call AutoComment
+|2,0,0,,"call AutoComment"
+:call AU
+|2,0,0,,"call AU"
+:echo getwinvar(1, "")
+|2,0,0,,"echo getwinvar(1, \"\")"
+:echo gettabvar(1, "")
+|2,0,0,,"echo gettabvar(1, \"\")"
+:echo winnr("$")
+|2,0,0,,"echo winnr(\"$\")"
+:echo winnr('.')
+|2,0,0,,"echo winnr('.')"
+:echo winnr(".")
+|2,0,0,,"echo winnr(\".\")"
+:help getbufvar
+|2,0,0,,"help getbufvar"
+:echo getbufvar(bufnr("%"), "")
+|2,0,0,,"echo getbufvar(bufnr(\"%\"), \"\")"
+:echo getbufvar(bufnr())
+|2,0,0,,"echo getbufvar(bufnr())"
+:echo v:lnum
+|2,0,0,,"echo v:lnum"
+:echo v:foldstart
+|2,0,0,,"echo v:foldstart"
+:echo v:fold
+|2,0,0,,"echo v:fold"
+:echo v:foldend
+|2,0,0,,"echo v:foldend"
+:help variable
+|2,0,0,,"help variable"
+:help visual-mode
+|2,0,0,,"help visual-mode"
+:help visual mode
+|2,0,0,,"help visual mode"
+:help mark
+|2,0,0,,"help mark"
+:echo line("'\"")
+|2,0,0,,"echo line(\"'\\\"\")"
+:k
+|2,0,0,,"k"
+:echo getpos(".")
+|2,0,0,,"echo getpos(\".\")"
+:echo b:linum[1]
+|2,0,0,,"echo b:linum[1]"
+:let b:linum = getpos(".")
+|2,0,0,,"let b:linum = getpos(\".\")"
+:echo getpos()
+|2,0,0,,"echo getpos()"
+:echo getline(".")
+|2,0,0,,"echo getline(\".\")"
+:call line("v")
+|2,0,0,,"call line(\"v\")"
+:line("v")
+|2,0,0,,"line(\"v\")"
+:echo line("$")
+|2,0,0,,"echo line(\"$\")"
+:echo line("v" . "$")
+|2,0,0,,"echo line(\"v\" . \"$\")"
+:echo line("v", "$")
+|2,0,0,,"echo line(\"v\", \"$\")"
+:echo line(".")
+|2,0,0,,"echo line(\".\")"
+:echo line('v')
+|2,0,0,,"echo line('v')"
+:501,525 s/^/"/g
+|2,0,0,,"501,525 s/^/\"/g"
+:echo b:string
+|2,0,0,,"echo b:string"
+:let b:string = getcmdline()
+|2,0,0,,"let b:string = getcmdline()"
+:echo getcmdline()
+|2,0,0,,"echo getcmdline()"
+:eval
+|2,0,0,,"eval"
+:help command-line mode
+|2,0,0,,"help command-line mode"
+:help mode
+|2,0,0,,"help mode"
+:help command line mode
+|2,0,0,,"help command line mode"
+:'<,'>q
+|2,0,0,,"'<,'>q"
+:map
+|2,0,0,,"map"
+:map <leader>c-m
+|2,0,0,,"map <leader>c-m"
+:help hlsearch
+|2,0,0,,"help hlsearch"
+:help <leader>^m
+|2,0,0,,"help <leader>^m"
+:help <leader>C-m
+|2,0,0,,"help <leader>C-m"
+:help <leader>
+|2,0,0,,"help <leader>"
+:execute("500" . "," . "501" . "s/^/" . "#" . "/g")
+|2,0,0,,"execute(\"500\" . \",\" . \"501\" . \"s/^/\" . \"#\" . \"/g\")"
+:execute("500" . "," . "501" . "s/^/" . "#" . "/gc")
+|2,0,0,,"execute(\"500\" . \",\" . \"501\" . \"s/^/\" . \"#\" . \"/gc\")"
+:execute("500" "," "501"  "s/^/"  "#"  "/gc")
+|2,0,0,,"execute(\"500\" \",\" \"501\"  \"s/^/\"  \"#\"  \"/gc\")"
+:execute("500" . "501" . "s/^/" . "#" . "/gc")
+|2,0,0,,"execute(\"500\" . \"501\" . \"s/^/\" . \"#\" . \"/gc\")"
+:execute("500"."501"."s/^/"."#"."/gc")
+|2,0,0,,"execute(\"500\".\"501\".\"s/^/\".\"#\".\"/gc\")"
+:call execute("500"."501"."s/^/"."#"."/gc")
+|2,0,0,,"call execute(\"500\".\"501\".\"s/^/\".\"#\".\"/gc\")"
+:call execute("500" . "501" . "s/^/" . "#" . "/gc")
+|2,0,0,,"call execute(\"500\" . \"501\" . \"s/^/\" . \"#\" . \"/gc\")"
+:call execute("500,501" . "s/^/" . "#" . "/gc")
+|2,0,0,,"call execute(\"500,501\" . \"s/^/\" . \"#\" . \"/gc\")"
+:call execute("500,501" "s/^/" "#" "/gc")
+|2,0,0,,"call execute(\"500,501\" \"s/^/\" \"#\" \"/gc\")"
+:e
+|2,0,0,,"e"
+:tabedit /home/qq/Note/linux/ubuntu/shell/shell_script_skills/./shell-script-utility-expr.txt
+|2,0,0,,"tabedit /home/qq/Note/linux/ubuntu/shell/shell_script_skills/./shell-script-utility-expr.txt"
+:echo get(b:langcomstydic, "b:curlang")
+|2,0,0,,"echo get(b:langcomstydic, \"b:curlang\")"
+:echo get(b:langcomstydic, b:curlang)
+|2,0,0,,"echo get(b:langcomstydic, b:curlang)"
+:let b:curlang = 'vim'
+|2,0,0,,"let b:curlang = 'vim'"
+:let b:langcomstydic = {'c': '//', 'vim': '"'}
+|2,0,0,,"let b:langcomstydic = {'c': '//', 'vim': '\"'}"
+:set b:langcomstydic = {'c': '//', 'vim': '"'}
+|2,0,0,,"set b:langcomstydic = {'c': '//', 'vim': '\"'}"
+:tabedit /home/qq/xsession_shell_env/detect-sh-stat.txt
+|2,0,0,,"tabedit /home/qq/xsession_shell_env/detect-sh-stat.txt"
+:tabedit /home/qq/current_shell_env/detect-sh-stat.txt
+|2,0,0,,"tabedit /home/qq/current_shell_env/detect-sh-stat.txt"
+:tabnext 2
+|2,0,0,,"tabnext 2"
+:tabedit /home/qq/detect-shell-stat.sh
+|2,0,0,,"tabedit /home/qq/detect-shell-stat.sh"
+:tabedit /home/qq/.bashrc
+|2,0,0,,"tabedit /home/qq/.bashrc"
+:tabedit /home/qq/xsession_shell_env/
+|2,0,0,,"tabedit /home/qq/xsession_shell_env/"
+:tabedit /home/qq/Note/linux/ubuntu/shell/shell_guide/./login-shell_nologin-shell-2.txt
+|2,0,0,,"tabedit /home/qq/Note/linux/ubuntu/shell/shell_guide/./login-shell_nologin-shell-2.txt"
+:e xsession_shell_env/detect-sh-stat.txt
+|2,0,0,,"e xsession_shell_env/detect-sh-stat.txt"
+:vsplit
+|2,0,0,,"vsplit"
+:tabnext 1
+|2,0,0,,"tabnext 1"
+:tabnext 3
+|2,0,0,,"tabnext 3"
+:tabedit /home/qq/.xsessionrc
+|2,0,0,,"tabedit /home/qq/.xsessionrc"
+:tabedit /home/qq/ShellScripts/bashrc-add-env-setting
+|2,0,0,,"tabedit /home/qq/ShellScripts/bashrc-add-env-setting"
+:tabedit /home/qq/ShellScripts/bashrc-add-emacs-func
+|2,0,0,,"tabedit /home/qq/ShellScripts/bashrc-add-emacs-func"
+:tabedit /home/qq/ShellScripts/bashrc-add-alias-name
+|2,0,0,,"tabedit /home/qq/ShellScripts/bashrc-add-alias-name"
+:tabedit /home/qq/ShellScripts/bashrc-init
+|2,0,0,,"tabedit /home/qq/ShellScripts/bashrc-init"
+:! ls
+|2,0,0,,"! ls"
+:e .mozilla/
+|2,0,0,,"e .mozilla/"
+:e .mozilla/firefox/7atv39a0.default/extensions/translator@zoli.bod.xpi
+|2,0,0,,"e .mozilla/firefox/7atv39a0.default/extensions/translator@zoli.bod.xpi"
+:e .mozilla/firefox/7atv39a0.default/extensions/\{73a6fe31-595d-460b-a920-fcc0f8843232}.xpi
+|2,0,0,,"e .mozilla/firefox/7atv39a0.default/extensions/\\{73a6fe31-595d-460b-a920-fcc0f8843232}.xpi"
+:e .mozilla/firefox/7atv39a0.default/extensions/\{d10d0bf8-f5b5-c8b4-a8b2-2b9879e08c5d}.xpi
+|2,0,0,,"e .mozilla/firefox/7atv39a0.default/extensions/\\{d10d0bf8-f5b5-c8b4-a8b2-2b9879e08c5d}.xpi"
+:.26:58 UEANER
+|2,0,0,,".26:58 UEANER"
+:! echo $ LINUX 终端查看图片
+|2,0,0,,"! echo $ LINUX 终端查看图片"
+:help function
+|2,0,0,,"help function"
+:if 1 != empty(expand("%:e")) | pwd | endif
+|2,0,0,,"if 1 != empty(expand(\"%:e\")) | pwd | endif"
+:if 1 == empty(expand("%:e")) | echo expand("%") | endif
+|2,0,0,,"if 1 == empty(expand(\"%:e\")) | echo expand(\"%\") | endif"
+:if 1 == empty(expand("%:e")) | echo expand("%:e") | endif
+|2,0,0,,"if 1 == empty(expand(\"%:e\")) | echo expand(\"%:e\") | endif"
+:echo expand("%:e")
+|2,0,0,,"echo expand(\"%:e\")"
+:expand(")
+|2,0,0,,"expand(\")"
+:if 1 == empty(expand("%:e")) | echo "expand("%:e")" | endif
+|2,0,0,,"if 1 == empty(expand(\"%:e\")) | echo \"expand(\"%:e\")\" | endif"
+:if 1 != empty(expand("%:e")) | echo "expand("%:e")" | endif
+|2,0,0,,"if 1 != empty(expand(\"%:e\")) | echo \"expand(\"%:e\")\" | endif"
+:if 1 != empty(expand("%:e")) | echo "expand("%:e")"
+|2,0,0,,"if 1 != empty(expand(\"%:e\")) | echo \"expand(\"%:e\")\""
+:if 1 == has_key(getbufvar(bufnr("%"), ""), 'current_syntax') | echo "true" | endif
+|2,0,0,,"if 1 == has_key(getbufvar(bufnr(\"%\"), \"\"), 'current_syntax') | echo \"true\" | endif"
+:if 1 == has_key(getbufvar(bufnr("%"), ""), 'current_syntax') | echo true | endif
+|2,0,0,,"if 1 == has_key(getbufvar(bufnr(\"%\"), \"\"), 'current_syntax') | echo true | endif"
+:if 1 = has_key(getbufvar(bufnr("%"), ""), 'current_syntax') | echo true | endif
+|2,0,0,,"if 1 = has_key(getbufvar(bufnr(\"%\"), \"\"), 'current_syntax') | echo true | endif"
+:if 1 == has_key(getbufvar(burnr("%"), ""), 'current_syntax') | echo true | endif
+|2,0,0,,"if 1 == has_key(getbufvar(burnr(\"%\"), \"\"), 'current_syntax') | echo true | endif"
+:if 1 = has_key(getbufvar(burnr("%"), ""), 'current_syntax') | echo true | endif
+|2,0,0,,"if 1 = has_key(getbufvar(burnr(\"%\"), \"\"), 'current_syntax') | echo true | endif"
+:if 1 = has_key(getbufvar(burnr("%"), ""), 'current_syntax') echo true endif
+|2,0,0,,"if 1 = has_key(getbufvar(burnr(\"%\"), \"\"), 'current_syntax') echo true endif"
+:help boolean
+|2,0,0,,"help boolean"
+:help if
+|2,0,0,,"help if"
+:help bufnr
+|2,0,0,,"help bufnr"
+:help buflisted
+|2,0,0,,"help buflisted"
+:help has_key()
+|2,0,0,,"help has_key()"
+:help empty
+|2,0,0,,"help empty"
+:tabedit /home/qq/Note/text_editor/vim/vim-get-current-dir-file.txt
+|2,0,0,,"tabedit /home/qq/Note/text_editor/vim/vim-get-current-dir-file.txt"
+:echo expand("%:r")
+|2,0,0,,"echo expand(\"%:r\")"
+:echo expand("%")
+|2,0,0,,"echo expand(\"%\")"
+:echo expand(%)
+|2,0,0,,"echo expand(%)"
+:echo b:commentStyle
+|2,0,0,,"echo b:commentStyle"
+:let b:commentStyle = get(b:langCommentStyleDict, b:curLanguage)
+|2,0,0,,"let b:commentStyle = get(b:langCommentStyleDict, b:curLanguage)"
+:let b:commentStyle = get(b:langCommentStyleDict, 'b:curLanguage')
+|2,0,0,,"let b:commentStyle = get(b:langCommentStyleDict, 'b:curLanguage')"
+:echo b:curLanguage
+|2,0,0,,"echo b:curLanguage"
+:let b:curLanguage = get(getbufvar(bufnr("%"), ""), 'current_syntax')
+|2,0,0,,"let b:curLanguage = get(getbufvar(bufnr(\"%\"), \"\"), 'current_syntax')"
+:echo b:langCommentStyleDict
+|2,0,0,,"echo b:langCommentStyleDict"
+:let b:langCommentStyleDict = {'C': '//', 'shell': '#', 'vim': '"'}
+|2,0,0,,"let b:langCommentStyleDict = {'C': '//', 'shell': '#', 'vim': '\"'}"
+:set b:langCommentStyleDict = {'C': '//', 'shell': '#', 'vim': '"'}
+|2,0,0,,"set b:langCommentStyleDict = {'C': '//', 'shell': '#', 'vim': '\"'}"
+:echo getbufvar(1, "")
+|2,0,0,,"echo getbufvar(1, \"\")"
+:echo b:langCommentStyleDict = {'C': '//', 'shell': '#', 'vim': '"'}
+|2,0,0,,"echo b:langCommentStyleDict = {'C': '//', 'shell': '#', 'vim': '\"'}"
+:let b:commentStyle = get(getbufvar(bufnr("%"), ""), b:curLanguage, 1)
+|2,0,0,,"let b:commentStyle = get(getbufvar(bufnr(\"%\"), \"\"), b:curLanguage, 1)"
+:get()
+|2,0,0,,"get()"
+:let b:commentStyle = get(getbufvar(bufnr("%"), ""), b:curLanguage)
+|2,0,0,,"let b:commentStyle = get(getbufvar(bufnr(\"%\"), \"\"), b:curLanguage)"
+:let b:commentStyle = get(getbufvar(bufnr("%"), ""), 'b:curLanguage')
+|2,0,0,,"let b:commentStyle = get(getbufvar(bufnr(\"%\"), \"\"), 'b:curLanguage')"
+:echo commentStyle
+|2,0,0,,"echo commentStyle"
+:let b:cur
+|2,0,0,,"let b:cur"
+:let l:curLanguage = get(getbufvar(bufnr("%"), ""), 'current_syntax')
+|2,0,0,,"let l:curLanguage = get(getbufvar(bufnr(\"%\"), \"\"), 'current_syntax')"
+:echo get(getbufvar(bufnr("%"), ""), 'current_syntax')
+|2,0,0,,"echo get(getbufvar(bufnr(\"%\"), \"\"), 'current_syntax')"
+:echo has_key(getbufvar(bufnr("%"), ""), 'current_syntax')
+|2,0,0,,"echo has_key(getbufvar(bufnr(\"%\"), \"\"), 'current_syntax')"
+:echo has_key(getbufvar(bufnr("%"), ""), "current_syntax")
+|2,0,0,,"echo has_key(getbufvar(bufnr(\"%\"), \"\"), \"current_syntax\")"
+:echo haskey(getbufvar(1,""), 'vim')
+|2,0,0,,"echo haskey(getbufvar(1,\"\"), 'vim')"
+:echo haskey(getbufvar(1,""), "current_syntax")
+|2,0,0,,"echo haskey(getbufvar(1,\"\"), \"current_syntax\")"
+:echo haskey(getbufvar(1,""), 'current_syntax')
+|2,0,0,,"echo haskey(getbufvar(1,\"\"), 'current_syntax')"
+:echo get(getbufvar(bufnr("%"), ""), "current_syntax")
+|2,0,0,,"echo get(getbufvar(bufnr(\"%\"), \"\"), \"current_syntax\")"
+:echo items(getbufvar(1,""))
+|2,0,0,,"echo items(getbufvar(1,\"\"))"
+:echo keys(getbufvar(1,""))
+|2,0,0,,"echo keys(getbufvar(1,\"\"))"
+:key()
+|2,0,0,,"key()"
+:help for
+|2,0,0,,"help for"
+:echo getbufvar(1,"")
+|2,0,0,,"echo getbufvar(1,\"\")"
+:let mydict = {1: 'one', 2: 'two'}
+|2,0,0,,"let mydict = {1: 'one', 2: 'two'}"
+:echo get(getbufvar(bufnr("%"), ""), "current_syntex")
+|2,0,0,,"echo get(getbufvar(bufnr(\"%\"), \"\"), \"current_syntex\")"
+:echo get(getbufvar(bufnr("%"), ""), 'current_syntex')
+|2,0,0,,"echo get(getbufvar(bufnr(\"%\"), \"\"), 'current_syntex')"
+:echo get(getbufvar(bufnr("%"), ""), current_syntex)
+|2,0,0,,"echo get(getbufvar(bufnr(\"%\"), \"\"), current_syntex)"
+:echo 】vim行首加入某字符
+|2,0,0,,"echo 】vim行首加入某字符"
+:echo
+|2,0,0,,"echo"
+:cu
+|2,0,0,,"cu"
+:echo current_syntex
+|2,0,0,,"echo current_syntex"
+:help undo_indent
+|2,0,0,,"help undo_indent"
+:help undoindent
+|2,0,0,,"help undoindent"
+:echo getbufvar(1,"current")
+|2,0,0,,"echo getbufvar(1,\"current\")"
+:echo getbufvar(1,"current_filetype")
+|2,0,0,,"echo getbufvar(1,\"current_filetype\")"
+:echo getbufvar(1,"FileType")
+|2,0,0,,"echo getbufvar(1,\"FileType\")"
+:echo getbufvar(1,"filetype")
+|2,0,0,,"echo getbufvar(1,\"filetype\")"
+:echo getbufvar(1,"*current*")
+|2,0,0,,"echo getbufvar(1,\"*current*\")"
+:echo getbufvar(1,)
+|2,0,0,,"echo getbufvar(1,)"
+:echo getbufvar(1)
+|2,0,0,,"echo getbufvar(1)"
+:echo FileType
+|2,0,0,,"echo FileType"
+:help comment
+|2,0,0,,"help comment"
+:filetype detect
+|2,0,0,,"filetype detect"
+:filetype
+|2,0,0,,"filetype"
+:help filetype
+|2,0,0,,"help filetype"
+:help switch
+|2,0,0,,"help switch"
+:switch
+|2,0,0,,"switch"
+:help case
+|2,0,0,,"help case"
+:tabedit /home/qq/Note/text_editor/vim/vim-replace-string-command.txt
+|2,0,0,,"tabedit /home/qq/Note/text_editor/vim/vim-replace-string-command.txt"
+:echo expand("%:t")
+|2,0,0,,"echo expand(\"%:t\")"
+:tabedit /home/qq/ShellScripts/bashrc-add-find-func
+|2,0,0,,"tabedit /home/qq/ShellScripts/bashrc-add-find-func"
+:w ShellScripts/bashrc-add-env-setting
+|2,0,0,,"w ShellScripts/bashrc-add-env-setting"
+:e ShellScripts/bashrc-add-alias-name
+|2,0,0,,"e ShellScripts/bashrc-add-alias-name"
+:! shell
+|2,0,0,,"! shell"
+:e ShellScripts/bashrc-add-find-func
+|2,0,0,,"e ShellScripts/bashrc-add-find-func"
+:help clipboard
+|2,0,0,,"help clipboard"
+:echo getcwd()
+|2,0,0,,"echo getcwd()"
+:echo expand("%:h")
+|2,0,0,,"echo expand(\"%:h\")"
+:help getcwd()
+|2,0,0,,"help getcwd()"
+:getcwd
+|2,0,0,,"getcwd"
+:help pwd
+|2,0,0,,"help pwd"
+:help pwd()
+|2,0,0,,"help pwd()"
+:show
+|2,0,0,,"show"
+:pwd
+|2,0,0,,"pwd"
+:echo expand("%%")
+|2,0,0,,"echo expand(\"%%\")"
+:echo expand("%:%")
+|2,0,0,,"echo expand(\"%:%\")"
+:files %
+|2,0,0,,"files %"
+:files
+|2,0,0,,"files"
+:file
+|2,0,0,,"file"
+:<
+|2,0,0,,"<"
+:*
+|2,0,0,,"*"
+:&
+|2,0,0,,"&"
+:#
+|2,0,0,,"#"
+:%:e
+|2,0,0,,"%:e"
+:%:h
+|2,0,0,,"%:h"
+:%%
+|2,0,0,,"%%"
+:%
+|2,0,0,,"%"
+:let v:fname_in
+|2,0,0,,"let v:fname_in"
+:echo v:fname_in
+|2,0,0,,"echo v:fname_in"
+:set v:fname_in
+|2,0,0,,"set v:fname_in"
+:help fname
+|2,0,0,,"help fname"
+:help fnale
+|2,0,0,,"help fnale"
+:help filaname
+|2,0,0,,"help filaname"
+:e .vimrc
+|2,0,0,,"e .vimrc"
+:'<,'>
+|2,0,0,,"'<,'>"
+:tabedit /home/qq/Github/vimperator-labs/common/content/bookmarks.js
+|2,0,0,,"tabedit /home/qq/Github/vimperator-labs/common/content/bookmarks.js"
+:b
+|2,0,0,,"b"
+:tabedit /home/qq/Github/vimperator-labs/
+|2,0,0,,"tabedit /home/qq/Github/vimperator-labs/"
+:tabedit /home/qq/Github/vimperator-labs/vimperator/content/config.js
+|2,0,0,,"tabedit /home/qq/Github/vimperator-labs/vimperator/content/config.js"
+:tabedit /home/qq/Github/vimperator-labs/vimperator/components/commandline-handler.js
+|2,0,0,,"tabedit /home/qq/Github/vimperator-labs/vimperator/components/commandline-handler.js"
+:tabedit /home/qq/Github/vimperator-labs/common/content/commandline.js
+|2,0,0,,"tabedit /home/qq/Github/vimperator-labs/common/content/commandline.js"
+:tabedit /home/qq/Github/vimperator-labs/common/content/bindings.xml
+|2,0,0,,"tabedit /home/qq/Github/vimperator-labs/common/content/bindings.xml"
+:tabedit /home/qq/Github/vimperator-labs/common/content/marks.js
+|2,0,0,,"tabedit /home/qq/Github/vimperator-labs/common/content/marks.js"
+:/
+|2,0,0,,"/"
+:shell
+|2,0,0,,"shell"
+:!man type
+|2,0,0,,"!man type"
+:! man type
+|2,0,0,,"! man type"
+:! man bash
+|2,0,0,,"! man bash"
+:b 1
+|2,0,0,,"b 1"
+:e ../test_scripts/test.sh
+|2,0,0,,"e ../test_scripts/test.sh"
+:tabedit /home/qq/Github/ShellScriptFormatter/../../Note/linux/ubuntu/shell/shell_script_skills/./shell-function.txt
+|2,0,0,,"tabedit /home/qq/Github/ShellScriptFormatter/../../Note/linux/ubuntu/shell/shell_script_skills/./shell-function.txt"
+:w test-samples
+|2,0,0,,"w test-samples"
+:tabedit /home/qq/ShellScripts/basic_scripts/../test_scripts/test.sh
+|2,0,0,,"tabedit /home/qq/ShellScripts/basic_scripts/../test_scripts/test.sh"
+:vsplit ../test_scripts/test.sh
+|2,0,0,,"vsplit ../test_scripts/test.sh"
+:e ../test_scripts/temp.sh
+|2,0,0,,"e ../test_scripts/temp.sh"
+:e ~/Note/linux/ubuntu/shell/shell_script_skills/./shell-if-condition-judgment.txt
+|2,0,0,,"e ~/Note/linux/ubuntu/shell/shell_script_skills/./shell-if-condition-judgment.txt"
+:e ~/Note/linux/ubuntu/shell/shell_script_skills/./shell-script-utility-expr.txt
+|2,0,0,,"e ~/Note/linux/ubuntu/shell/shell_script_skills/./shell-script-utility-expr.txt"
+:e ~/Note/linux/ubuntu/regular_expression/regular-expression-simple-tutorial.txt
+|2,0,0,,"e ~/Note/linux/ubuntu/regular_expression/regular-expression-simple-tutorial.txt"
+:e ~/Note/linux/ubuntu/shell/shell_script_skills/shell-if-condition-judgment.txt
+|2,0,0,,"e ~/Note/linux/ubuntu/shell/shell_script_skills/shell-if-condition-judgment.txt"
+:DelWithOutCurBuf
+|2,0,0,,"DelWithOutCurBuf"
+:tabedit /home/qq/ShellScripts/basic_scripts/../../.vimrc
+|2,0,0,,"tabedit /home/qq/ShellScripts/basic_scripts/../../.vimrc"
+:tabedit /home/qq/ShellScripts/basic_scripts/format-error
+|2,0,0,,"tabedit /home/qq/ShellScripts/basic_scripts/format-error"
+:tabedit /home/qq/ShellScripts/basic_scripts/ ~/.vimrc
+|2,0,0,,"tabedit /home/qq/ShellScripts/basic_scripts/ ~/.vimrc"
+:!gedit ~/Note/linux/ubuntu/shell/shell_script_skills/shell-script-utility-expr.txt
+|2,0,0,,"!gedit ~/Note/linux/ubuntu/shell/shell_script_skills/shell-script-utility-expr.txt"
+:! gedit ~/Note/linux/ubuntu/shell/./shell_script_skills/./shell-script-utility-expr
+|2,0,0,,"! gedit ~/Note/linux/ubuntu/shell/./shell_script_skills/./shell-script-utility-expr"
+:tabedit /home/qq/Note/linux/ubuntu/shell/shell_script_skills/../../../../text_editor/vim/vim-basic-operate.txt
+|2,0,0,,"tabedit /home/qq/Note/linux/ubuntu/shell/shell_script_skills/../../../../text_editor/vim/vim-basic-operate.txt"
+:tabedit /home/qq/ShellScripts/basic_scripts/../../Note/linux/ubuntu/shell/shell_script_skills/./get-sh-argument.txt
+|2,0,0,,"tabedit /home/qq/ShellScripts/basic_scripts/../../Note/linux/ubuntu/shell/shell_script_skills/./get-sh-argument.txt"
+:tabedit /home/qq/BookMark/./bookmarks-2017-04-10.json
+|2,0,0,,"tabedit /home/qq/BookMark/./bookmarks-2017-04-10.json"
+:tabedit /home/qq/Note/Qt/./2013-1-8-build-Qt-compiler-env.txt
+|2,0,0,,"tabedit /home/qq/Note/Qt/./2013-1-8-build-Qt-compiler-env.txt"
+:tabedit /home/qq/Note/linux/ubuntu/shell/shell_script_skills/./shell-if-condition-judgment.txt
+|2,0,0,,"tabedit /home/qq/Note/linux/ubuntu/shell/shell_script_skills/./shell-if-condition-judgment.txt"
+:tabedit /home/qq/ShellScripts/basic_scripts/../../Note/linux/ubuntu/shell/shell_script_skills/shell-script-expr.txt
+|2,0,0,,"tabedit /home/qq/ShellScripts/basic_scripts/../../Note/linux/ubuntu/shell/shell_script_skills/shell-script-expr.txt"
+:e ~/Note/linux/ubuntu/shell/shell_script_skills/./shell-script-simple-tutorial.txt
+|2,0,0,,"e ~/Note/linux/ubuntu/shell/shell_script_skills/./shell-script-simple-tutorial.txt"
+:tabedit /home/qq/ShellScripts/basic_scripts/../../Note/linux/ubuntu/shell/shell_script_skills/./shell-if-condition-judgment.txt
+|2,0,0,,"tabedit /home/qq/ShellScripts/basic_scripts/../../Note/linux/ubuntu/shell/shell_script_skills/./shell-if-condition-judgment.txt"
+:buffer 2
+|2,0,0,,"buffer 2"
+:tabedit /home/qq/ShellScripts/basic_scripts/../bashrc-add-chmod-func
+|2,0,0,,"tabedit /home/qq/ShellScripts/basic_scripts/../bashrc-add-chmod-func"
+:help match
+|2,0,0,,"help match"
+:help echo-redraw
+|2,0,0,,"help echo-redraw"
+:help error
+|2,0,0,,"help error"
+:help message
+|2,0,0,,"help message"
+:help echo
+|2,0,0,,"help echo"
+:help echo(
+|2,0,0,,"help echo("
+:help echo()
+|2,0,0,,"help echo()"
+:help clear
+|2,0,0,,"help clear"
+:help bdelete
+|2,0,0,,"help bdelete"
+:help bufdo
+|2,0,0,,"help bufdo"
+:breaklist
+|2,0,0,,"breaklist"
+:help list functions
+|2,0,0,,"help list functions"
+:help join(
+|2,0,0,,"help join("
+:help is_empty
+|2,0,0,,"help is_empty"
+:help isempty()
+|2,0,0,,"help isempty()"
+:help inputsave()
+|2,0,0,,"help inputsave()"
+:help bdelete()
+|2,0,0,,"help bdelete()"
+:help :bdelete
+|2,0,0,,"help :bdelete"
+:bdelete
+|2,0,0,,"bdelete"
+:help join()
+|2,0,0,,"help join()"
+:help evla
+|2,0,0,,"help evla"
+:help
+|2,0,0,,"help"
+:help 'nobuflisted'
+|2,0,0,,"help 'nobuflisted'"
+:.,.+887help
+|2,0,0,,".,.+887help"
+:help 'buflisted'
+|2,0,0,,"help 'buflisted'"
+:help E85
+|2,0,0,,"help E85"
+:help buflisted()
+|2,0,0,,"help buflisted()"
+:help bufhid()
+|2,0,0,,"help bufhid()"
+:help bufhidden()
+|2,0,0,,"help bufhidden()"
+:ReplaceCurStrBy
+|2,0,0,,"ReplaceCurStrBy"
+:echo hello
+|2,0,0,,"echo hello"
+:echo-redraw hello
+|2,0,0,,"echo-redraw hello"
+:echo-ReplaceCurStrBy()
+|2,0,0,,"echo-ReplaceCurStrBy()"
+:bunload
+|2,0,0,,"bunload"
+:brewind
+|2,0,0,,"brewind"
+:DelBuf
+|2,0,0,,"DelBuf"
+:del
+|2,0,0,,"del"
+:bufdo bdelete
+|2,0,0,,"bufdo bdelete"
+:bdelete 1 2 3 4
+|2,0,0,,"bdelete 1 2 3 4"
+:echo bufString
+|2,0,0,,"echo bufString"
+:bdelete bufString
+|2,0,0,,"bdelete bufString"
+:echo b:bufferstate
+|2,0,0,,"echo b:bufferstate"
+:let b:bufferstate =  getbufvar(bufnr("%"), 'nobuflisted')
+|2,0,0,,"let b:bufferstate =  getbufvar(bufnr(\"%\"), 'nobuflisted')"
+:let b:bufferstate =  getbufvar(bufnr("%"), 'buflisted')
+|2,0,0,,"let b:bufferstate =  getbufvar(bufnr(\"%\"), 'buflisted')"
+:echo buflisted
+|2,0,0,,"echo buflisted"
+:let buflisted
+|2,0,0,,"let buflisted"
+:set buflisted
+|2,0,0,,"set buflisted"
+:echo 'buflisted'
+|2,0,0,,"echo 'buflisted'"
+:ls
+|2,0,0,,"ls"
+:call setbufvar(bufnr("%"), 'buflisted', "off")
+|2,0,0,,"call setbufvar(bufnr(\"%\"), 'buflisted', \"off\")"
+:let bufferstate =  getbufvar(bufnr("%"), 'buflisted')
+|2,0,0,,"let bufferstate =  getbufvar(bufnr(\"%\"), 'buflisted')"
+:echo bufferstate
+|2,0,0,,"echo bufferstate"
+:echo % bufferstate
+|2,0,0,,"echo % bufferstate"
+:echo bufferstat
+|2,0,0,,"echo bufferstat"
+:call getbufvar(bufnr("%"), 'buflisted')
+|2,0,0,,"call getbufvar(bufnr(\"%\"), 'buflisted')"
+:call setbufvar(bufnr("%"), 'buflisted', off)
+|2,0,0,,"call setbufvar(bufnr(\"%\"), 'buflisted', off)"
+:tabnext 4
+|2,0,0,,"tabnext 4"
+:tabnext 7
+|2,0,0,,"tabnext 7"
+:tabnex
+|2,0,0,,"tabnex"
+:echo nobuflisted
+|2,0,0,,"echo nobuflisted"
+:let nobuflisted = "on"
+|2,0,0,,"let nobuflisted = \"on\""
+:set nobuflisted="on"
+|2,0,0,,"set nobuflisted=\"on\""
+:set nobuflisted=on
+|2,0,0,,"set nobuflisted=on"
+:set nobuflisted
+|2,0,0,,"set nobuflisted"
+:let nobuflisted
+|2,0,0,,"let nobuflisted"
+:buffer 1
+|2,0,0,,"buffer 1"
+:let buflisted = "off"
+|2,0,0,,"let buflisted = \"off\""
+:set buflisted="off"
+|2,0,0,,"set buflisted=\"off\""
+:set buflisted=off
+|2,0,0,,"set buflisted=off"
+:set buflisted 
+|2,0,0,,"set buflisted "
+:execute buflisted("off")
+|2,0,0,,"execute buflisted(\"off\")"
+:hide
+|2,0,0,,"hide"
+:help get()
+|2,0,0,,"help get()"
+:help idx
+|2,0,0,,"help idx"
+:help {idx}
+|2,0,0,,"help {idx}"
+:bdelete 3
+|2,0,0,,"bdelete 3"
+:help remove()
+|2,0,0,,"help remove()"
+:help tabpagebuflist()
+|2,0,0,,"help tabpagebuflist()"
+:help tabpagenr()
+|2,0,0,,"help tabpagenr()"
+:help :tabclose
+|2,0,0,,"help :tabclose"
+:help buffer
+|2,0,0,,"help buffer"
+:help unlisted
+|2,0,0,,"help unlisted"
+:help :bmodified
+|2,0,0,,"help :bmodified"
+:bufdo bmodified
+|2,0,0,,"bufdo bmodified"
+:help :bufdo
+|2,0,0,,"help :bufdo"
+:help :bufdo bdelete
+|2,0,0,,"help :bufdo bdelete"
+:help bunload
+|2,0,0,,"help bunload"
+:bufdo bdelete 20 21 22 23
+|2,0,0,,"bufdo bdelete 20 21 22 23"
+:tabnext
+|2,0,0,,"tabnext"
+:bufdo bdelete 16 19
+|2,0,0,,"bufdo bdelete 16 19"
+:bufdo bdelete 17 18
+|2,0,0,,"bufdo bdelete 17 18"
+:bufdo bdelete 5
+|2,0,0,,"bufdo bdelete 5"
+:bufdo bdelete 15
+|2,0,0,,"bufdo bdelete 15"
+:bufdo bdelete 13
+|2,0,0,,"bufdo bdelete 13"
+:bufdo bdelete 12
+|2,0,0,,"bufdo bdelete 12"
+:bufdo bdelete 8
+|2,0,0,,"bufdo bdelete 8"
+:bufdo bdelete 14
+|2,0,0,,"bufdo bdelete 14"
+:bufdo buffers
+|2,0,0,,"bufdo buffers"
+:bufdo bunload 11 9 12
+|2,0,0,,"bufdo bunload 11 9 12"
+:bufdo bunload 10
+|2,0,0,,"bufdo bunload 10"
+:bufdo bunload 6 8
+|2,0,0,,"bufdo bunload 6 8"
+:bufdo bunload 5
+|2,0,0,,"bufdo bunload 5"
+:bufdo bunload 7
+|2,0,0,,"bufdo bunload 7"
+:bufdo bunload 3
+|2,0,0,,"bufdo bunload 3"
+:bufdo bunload 4
+|2,0,0,,"bufdo bunload 4"
+:bufdo bnext
+|2,0,0,,"bufdo bnext"
+:bufdo bNext
+|2,0,0,,"bufdo bNext"
+:buffer
+|2,0,0,,"buffer"
+:bufdo bunload 2
+|2,0,0,,"bufdo bunload 2"
+:let buflist=[] for i in range(tabpagenr('$')) call extend(buflist, tabpagebuflist(i + 1)) endfor
+|2,0,0,,"let buflist=[] for i in range(tabpagenr('$')) call extend(buflist, tabpagebuflist(i + 1)) endfor"
+:tabmove 
+|2,0,0,,"tabmove "
+:let buflist
+|2,0,0,,"let buflist"
+:bdelete 2 4 6
+|2,0,0,,"bdelete 2 4 6"
+::q
+|2,0,0,,":q"
+:EL
+|2,0,0,,"EL"
+:Q
+|2,0,0,,"Q"
+::
+|2,0,0,,":"
+:w! hello-save
+|2,0,0,,"w! hello-save"
+:tabonly
+|2,0,0,,"tabonly"
+:tabprevious
+|2,0,0,,"tabprevious"
+:tabclose
+|2,0,0,,"tabclose"
+:w! test1
+|2,0,0,,"w! test1"
+:w! test
+|2,0,0,,"w! test"
+:tablast
+|2,0,0,,"tablast"
+:bnext
+|2,0,0,,"bnext"
+:bprevious
+|2,0,0,,"bprevious"
+:tabnext n
+|2,0,0,,"tabnext n"
+:bprevious 2
+|2,0,0,,"bprevious 2"
+:bnext 4
+|2,0,0,,"bnext 4"
+:e hello-save
+|2,0,0,,"e hello-save"
+:tabo
+|2,0,0,,"tabo"
+:.,.+2tabnext 3
+|2,0,0,,".,.+2tabnext 3"
+:.,$-bdelete
+|2,0,0,,".,$-bdelete"
+:new hello-save
+|2,0,0,,"new hello-save"
+:w hello-save!
+|2,0,0,,"w hello-save!"
+:p
+|2,0,0,,"p"
+:%bdelete
+|2,0,0,,"%bdelete"
+:w hello-save
+|2,0,0,,"w hello-save"
+:tabnext 5
+|2,0,0,,"tabnext 5"
+:echo bufnr("%")
+|2,0,0,,"echo bufnr(\"%\")"
+:echo bufnr()
+|2,0,0,,"echo bufnr()"
+:bfirst
+|2,0,0,,"bfirst"
+:bufdo blast
+|2,0,0,,"bufdo blast"
+:bufdo bdelete 
+|2,0,0,,"bufdo bdelete "
+:bdelete %
+|2,0,0,,"bdelete %"
+:bdelete !%
+|2,0,0,,"bdelete !%"
+:!'%'bdelete
+|2,0,0,,"!'%'bdelete"
+:! :nq"%"bdelete
+|2,0,0,,"! :nq\"%\"bdelete"
+:! "%"bdelete
+|2,0,0,,"! \"%\"bdelete"
+:! %bdelete
+|2,0,0,,"! %bdelete"
+:!/%bdelete
+|2,0,0,,"!/%bdelete"
+:\!%bdelete
+|2,0,0,,"\\!%bdelete"
+:!\%bdelete
+|2,0,0,,"!\\%bdelete"
+:!%bdelete
+|2,0,0,,"!%bdelete"
+:sp
+|2,0,0,,"sp"
+:Del
+|2,0,0,,"Del"
+:echo "buffer number is " . winbufnr(winnr())
+|2,0,0,,"echo \"buffer number is \" . winbufnr(winnr())"
+:help winbufnr()
+|2,0,0,,"help winbufnr()"
+:echo "number is " . (bufwinnr(1))
+|2,0,0,,"echo \"number is \" . (bufwinnr(1))"
+:echo "number is " . bufwinnr(1)
+|2,0,0,,"echo \"number is \" . bufwinnr(1)"
+:echo "number is " . bufwinnr(winbufnr(winnr()))
+|2,0,0,,"echo \"number is \" . bufwinnr(winbufnr(winnr()))"
+:echo "buffer number is " . bufwinnr(winbufnr(winnr()))
+|2,0,0,,"echo \"buffer number is \" . bufwinnr(winbufnr(winnr()))"
+:echo "file name is " . bufname(winbufnr(winnr()))
+|2,0,0,,"echo \"file name is \" . bufname(winbufnr(winnr()))"
+:echo "num is " . winbufnr(winnr())
+|2,0,0,,"echo \"num is \" . winbufnr(winnr())"
+:help tabpagebuflist(
+|2,0,0,,"help tabpagebuflist("
+:echo "num is : " . winnr()
+|2,0,0,,"echo \"num is : \" . winnr()"
+:0
+|2,0,0,,"0"
+:au * <buffer>
+|2,0,0,,"au * <buffer>"
+:au BufAdd
+|2,0,0,,"au BufAdd"
+:au <buffer>
+|2,0,0,,"au <buffer>"
+:autocmd-buffer-local
+|2,0,0,,"autocmd-buffer-local"
+:help buffer-local
+|2,0,0,,"help buffer-local"
+:set buffer-local
+|2,0,0,,"set buffer-local"
+:echo buffer-local
+|2,0,0,,"echo buffer-local"
+:echo "the number in the current window is " . tabpagebuflist(1)
+|2,0,0,,"echo \"the number in the current window is \" . tabpagebuflist(1)"
+:echo "the number in the current window is " . tabpagebuflist(0)
+|2,0,0,,"echo \"the number in the current window is \" . tabpagebuflist(0)"
+:echo "the number in the current window is " . winbufnr(0)
+|2,0,0,,"echo \"the number in the current window is \" . winbufnr(0)"
+:echo "the file in the current window is " . bufname(winbufnr(0))
+|2,0,0,,"echo \"the file in the current window is \" . bufname(winbufnr(0))"
+:echo "the file in the current window is " . bufname(winbufnr(1))
+|2,0,0,,"echo \"the file in the current window is \" . bufname(winbufnr(1))"
+:echo "the file in the current window is " . bufname(winbufnr(2))
+|2,0,0,,"echo \"the file in the current window is \" . bufname(winbufnr(2))"
+:tabnext ,t,
+|2,0,0,,"tabnext ,t,"
+:help while
+|2,0,0,,"help while"
+:help autocommand
+|2,0,0,,"help autocommand"
+:au BufDelete <buffer>
+|2,0,0,,"au BufDelete <buffer>"
+:au BufUnload <buffer>
+|2,0,0,,"au BufUnload <buffer>"
+:au BufUnload <!buffer>
+|2,0,0,,"au BufUnload <!buffer>"
+:au BufUnload *
+|2,0,0,,"au BufUnload *"
+:au BufUnload
+|2,0,0,,"au BufUnload"
+:au BufDelete
+|2,0,0,,"au BufDelete"
+:autocmd User
+|2,0,0,,"autocmd User"
+:au! * <buffer>
+|2,0,0,,"au! * <buffer>"
+:DoMatchPar
+|2,0,0,,"DoMatchPar"
+:bufdo bdelete !1
+|2,0,0,,"bufdo bdelete !1"
+:tabnew
+|2,0,0,,"tabnew"
+:buffer #
+|2,0,0,,"buffer #"
+:bufdo Next
+|2,0,0,,"bufdo Next"
+:bufdo next
+|2,0,0,,"bufdo next"
+:GetScripts
+|2,0,0,,"GetScripts"
+:number
+|2,0,0,,"number"
+:bufdo @
+|2,0,0,,"bufdo @"
+:echo bufnr("buffer-variable")
+|2,0,0,,"echo bufnr(\"buffer-variable\")"
+:bufdo bunload
+|2,0,0,,"bufdo bunload"
+
+# 搜尋字串 歷史記錄 (新到舊):
+? \<keybindings\>
+|2,1,1510788938,,"\\<keybindings\\>"
+? \<Keybindings\>
+|2,1,1510788937,,"\\<Keybindings\\>"
+?/emacs
+|2,1,0,47,"emacs"
+? @$
+|2,1,0,,"@$"
+?/term
+|2,1,0,47,"term"
+?/xterm
+|2,1,0,47,"xterm"
+? \<Mod1Mask\>
+|2,1,0,,"\\<Mod1Mask\\>"
+? \<MODKEY\>
+|2,1,0,,"\\<MODKEY\\>"
+? \<spawn\>
+|2,1,0,,"\\<spawn\\>"
+? \<st\>
+|2,1,0,,"\\<st\\>"
+?/terminal
+|2,1,0,47,"terminal"
+?/WenQuanYi Micro Hei Mono
+|2,1,0,47,"WenQuanYi Micro Hei Mono"
+?/font
+|2,1,0,47,"font"
+?/install
+|2,1,0,47,"install"
+?/runlevel
+|2,1,0,47,"runlevel"
+?/video
+|2,1,0,47,"video"
+?//
+|2,1,0,47,"/"
+? \<winline()\>
+|2,1,0,,"\\<winline()\\>"
+?/cursor
+|2,1,0,47,"cursor"
+? \<cursor,\>
+|2,1,0,,"\\<cursor,\\>"
+?/line()
+|2,1,0,47,"line()"
+?/getpos()
+|2,1,0,47,"getpos()"
+? \<getpos(\>
+|2,1,0,,"\\<getpos(\\>"
+? \<getcurpos\>
+|2,1,0,,"\\<getcurpos\\>"
+? \<getcurpos()\>
+|2,1,0,,"\\<getcurpos()\\>"
+? \<cursor\>
+|2,1,0,,"\\<cursor\\>"
+? \<getcmdpos()\>
+|2,1,0,,"\\<getcmdpos()\\>"
+?/Builtin Functions
+|2,1,0,47,"Builtin Functions"
+? \<screenrow()\>
+|2,1,0,,"\\<screenrow()\\>"
+? \<cursor(\>
+|2,1,0,,"\\<cursor(\\>"
+? \<wp\>
+|2,1,0,,"\\<wp\\>"
+?/statusline
+|2,1,0,47,"statusline"
+? \<get_statusline\>
+|2,1,0,,"\\<get_statusline\\>"
+?/Pri
+|2,1,0,47,"Pri"
+?/ecrypt
+|2,1,0,47,"ecrypt"
+?/sdcv
+|2,1,0,47,"sdcv"
+?/ipad
+|2,1,0,47,"ipad"
+?/nautilus
+|2,1,0,47,"nautilus"
+? \<LINK_NAME\>
+|2,1,0,,"\\<LINK_NAME\\>"
+? \<status-line\>
+|2,1,0,,"\\<status-line\\>"
+?/status
+|2,1,0,47,"status"
+? \<VIMRUNTIME\>
+|2,1,0,,"\\<VIMRUNTIME\\>"
+? \<user\>
+|2,1,0,,"\\<user\\>"
+?/toolbar
+|2,1,0,47,"toolbar"
+? \<endLinum\>
+|2,1,0,,"\\<endLinum\\>"
+? \<startLinum\>
+|2,1,0,,"\\<startLinum\\>"
+? ^
+|2,1,0,,"^"
+? \<startline\>
+|2,1,0,,"\\<startline\\>"
+? \<endline\>
+|2,1,0,,"\\<endline\\>"
+?/getwinvar
+|2,1,0,47,"getwinvar"
+?/winnr()
+|2,1,0,47,"winnr()"
+?/gettabvar
+|2,1,0,47,"gettabvar"
+?/tabnr
+|2,1,0,47,"tabnr"
+?/var(
+|2,1,0,47,"var("
+?/getbufvar(
+|2,1,0,47,"getbufvar("
+? \<getbufvar()\>
+|2,1,0,,"\\<getbufvar()\\>"
+? \<burnr\>
+|2,1,0,,"\\<burnr\\>"
+?/Internal variable
+|2,1,0,47,"Internal variable"
+?/getpos
+|2,1,0,47,"getpos"
+?/getcurpos()
+|2,1,0,47,"getcurpos()"
+?/line
+|2,1,0,47,"line"
+?/{lnum}
+|2,1,0,47,"{lnum}"
+?/lnum
+|2,1,0,47,"lnum"
+?/getline(
+|2,1,0,47,"getline("
+?/getline()
+|2,1,0,47,"getline()"
+?/getbufline()
+|2,1,0,47,"getbufline()"
+?/buf
+|2,1,0,47,"buf"
+?/line(
+|2,1,0,47,"line("
+? \<virtcol(\>
+|2,1,0,,"\\<virtcol(\\>"
+?/vircol()
+|2,1,0,47,"vircol()"
+?/vis
+|2,1,0,47,"vis"
+?/command-line
+|2,1,0,47,"command-line"
+?/cmdli
+|2,1,0,47,"cmdli"
+?/cmdline
+|2,1,0,47,"cmdline"
+?/visualmode()
+|2,1,0,47,"visualmode()"
+?/visualmode
+|2,1,0,47,"visualmode"
+?/virtual
+|2,1,0,47,"virtual"
+?/virtcol()
+|2,1,0,47,"virtcol()"
+? \<setcmdpos(\>
+|2,1,0,,"\\<setcmdpos(\\>"
+?/screenrow()
+|2,1,0,47,"screenrow()"
+?/getcurpos(
+|2,1,0,47,"getcurpos("
+?/cursor()
+|2,1,0,47,"cursor()"
+?/sursor
+|2,1,0,47,"sursor"
+?/# 
+|2,1,0,47,"# "
+? \<set\>
+|2,1,0,,"\\<set\\>"
+?/hlsearch
+|2,1,0,47,"hlsearch"
+? \<ReplaceCurStrBy\>
+|2,1,0,,"\\<ReplaceCurStrBy\\>"
+? 
+|2,1,0,,""
+? \<range\>
+|2,1,0,,"\\<range\\>"
+?/nohl
+|2,1,0,47,"nohl"
+? \<searching\>
+|2,1,0,,"\\<searching\\>"
+?/<leader>
+|2,1,0,47,"<leader>"
+?/execute
+|2,1,0,47,"execute"
+? \<commentStyle\>
+|2,1,0,,"\\<commentStyle\\>"
+? \<commetStyle\>
+|2,1,0,,"\\<commetStyle\\>"
+? \<curLanguage\>
+|2,1,0,,"\\<curLanguage\\>"
+? \<curLangList\>
+|2,1,0,,"\\<curLangList\\>"
+? \<langCommentStyleDict\>
+|2,1,0,,"\\<langCommentStyleDict\\>"
+? \<crLanguage\>
+|2,1,0,,"\\<crLanguage\\>"
+?/fur
+|2,1,0,47,"fur"
+?/futu
+|2,1,0,47,"futu"
+?/fu
+|2,1,0,47,"fu"
+?/log
+|2,1,0,47,"log"
+?/login
+|2,1,0,47,"login"
+?/xmodmap
+|2,1,0,47,"xmodmap"
+?/xmodmap	
+|2,1,0,47,"xmodmap	"
+?/1487
+|2,1,0,47,"1487"
+?/1523
+|2,1,0,47,"1523"
+?/Xsession
+|2,1,0,47,"Xsession"
+?/1966
+|2,1,0,47,"1966"
+?/1555
+|2,1,0,47,"1555"
+? \<BASHPID_TEMP\>
+|2,1,0,,"\\<BASHPID_TEMP\\>"
+? \<BASHPID\>
+|2,1,0,,"\\<BASHPID\\>"
+?/1569
+|2,1,0,47,"1569"
+?/>> $1
+|2,1,0,47,">> $1"
+? \<DETECT_SH_STAT\>
+|2,1,0,,"\\<DETECT_SH_STAT\\>"
+? \<profile_shell_env\>
+|2,1,0,,"\\<profile_shell_env\\>"
+?/aux
+|2,1,0,47,"aux"
+? \<ARGS\>
+|2,1,0,,"\\<ARGS\\>"
+?/崩溃
+|2,1,0,47,"崩溃"
+?/if 
+|2,1,0,47,"if "
+? \<boolean\>
+|2,1,0,,"\\<boolean\\>"
+?/ture
+|2,1,0,47,"ture"
+? \<has_key()\>
+|2,1,0,,"\\<has_key()\\>"
+?/if
+|2,1,0,47,"if"
+?/empty(
+|2,1,0,47,"empty("
+?/empty
+|2,1,0,47,"empty"
+?/Dictionary
+|2,1,0,47,"Dictionary"
+?/Variable types
+|2,1,0,47,"Variable types"
+?/variable
+|2,1,0,47,"variable"
+? \<dictionary\>
+|2,1,0,,"\\<dictionary\\>"
+?/dict
+|2,1,0,47,"dict"
+?/get()
+|2,1,0,47,"get()"
+? \<String\>
+|2,1,0,,"\\<String\\>"
+? \<langCommentStyle\>
+|2,1,0,,"\\<langCommentStyle\\>"
+? \<curBufVarDict\>
+|2,1,0,,"\\<curBufVarDict\\>"
+? \<current_syntax\>
+|2,1,0,,"\\<current_syntax\\>"
+? \<getbufvar\>
+|2,1,0,,"\\<getbufvar\\>"
+?/has_key(
+|2,1,0,47,"has_key("
+?/has_key()
+|2,1,0,47,"has_key()"
+?/keys()
+|2,1,0,47,"keys()"
+?/values()
+|2,1,0,47,"values()"
+?/{dict}
+|2,1,0,47,"{dict}"
+?/has_hey()
+|2,1,0,47,"has_hey()"
+?/getcharsearch()
+|2,1,0,47,"getcharsearch()"
+?/setcharsearch(
+|2,1,0,47,"setcharsearch("
+?/items(
+|2,1,0,47,"items("
+? \<Dictionary\>
+|2,1,0,,"\\<Dictionary\\>"
+?/{key}
+|2,1,0,47,"{key}"
+? \<{dict}])\>
+|2,1,0,,"\\<{dict}])\\>"
+?/bufnr
+|2,1,0,47,"bufnr"
+?/curbufnr
+|2,1,0,47,"curbufnr"
+? \<Dictionaries\>
+|2,1,0,,"\\<Dictionaries\\>"
+?/help eval
+|2,1,0,47,"help eval"
+?/ver(
+|2,1,0,47,"ver("
+?/var
+|2,1,0,47,"var"
+?/file type
+|2,1,0,47,"file type"
+?/filetype
+|2,1,0,47,"filetype"
+?/file
+|2,1,0,47,"file"
+? \<curLangCommentStyle\>
+|2,1,0,,"\\<curLangCommentStyle\\>"
+? \<CurLangCommentStyle\>
+|2,1,0,,"\\<CurLangCommentStyle\\>"
+?/let 
+|2,1,0,47,"let "
+?/repeat
+|2,1,0,47,"repeat"
+? \<Lists\>
+|2,1,0,,"\\<Lists\\>"
+? \<SPACE\>
+|2,1,0,,"\\<SPACE\\>"
+? \<4_SPACE\>
+|2,1,0,,"\\<4_SPACE\\>"
+?/\${4_SPACE}
+|2,1,0,47,"\\${4_SPACE}"
+?/行首
+|2,1,0,47,"行首"
+?/echo 
+|2,1,0,47,"echo "
+?/tab
+|2,1,0,47,"tab"
+?/path
+|2,1,0,47,"path"
+?/findfile()
+|2,1,0,47,"findfile()"
+?/alias emc=\'emacsclient -c -a
+|2,1,0,47,"alias emc=\\'emacsclient -c -a"
+?/alias emt=\'emacsclient -t -a
+|2,1,0,47,"alias emt=\\'emacsclient -t -a"
+? \<emacs\>
+|2,1,0,,"\\<emacs\\>"
+?/    emacs --daemon 2> \${HOME}\/crush_message\/emacs-daemon-startup-message\.txt &
+|2,1,0,47,"    emacs --daemon 2> \\${HOME}\\/crush_message\\/emacs-daemon-startup-message\\.txt &"
+?/        kill -9 "\${emacs_pid}"
+|2,1,0,47,"        kill -9 \"\\${emacs_pid}\""
+?/    if \[\[ -n "\${emacs_pid}" \]\];then
+|2,1,0,47,"    if \\[\\[ -n \"\\${emacs_pid}\" \\]\\];then"
+?/    emacs_pid=\$( ps -C \'emacs --daemon\' -o pid= )
+|2,1,0,47,"    emacs_pid=\\$( ps -C \\'emacs --daemon\\' -o pid= )"
+?/    emacsclient -e "(kill-emacs)"
+|2,1,0,47,"    emacsclient -e \"(kill-emacs)\""
+?/    emacsclient -e "(kill-emacs)"n    emacs_pid=\$( ps -C \'emacs --daemon\' -o pid= )n    if \[\[ -n "\${emacs_pid}" \]\];thenn        kill -9 "\${emacs_pid}"n    fin
+|2,1,0,47,"    emacsclient -e \"(kill-emacs)\"\n    emacs_pid=\\$( ps -C \\'emacs --daemon\\' -o pid= )\n    if \\[\\[ -n \"\\${emacs_pid}\" \\]\\];then\n        kill -9 \"\\${emacs_pid}\"\n    fi\n"
+?/Emacs
+|2,1,0,47,"Emacs"
+? \<modprobe\>
+|2,1,0,,"\\<modprobe\\>"
+?/mouse
+|2,1,0,47,"mouse"
+??\/home\/qq\/profile_shell_env\/
+|2,1,0,63,"\\/home\\/qq\\/profile_shell_env\\/"
+? \<HOME\>
+|2,1,0,,"\\<HOME\\>"
+? \<home\>
+|2,1,0,,"\\<home\\>"
+?/\/home\/qq\/profile_shell_env\/
+|2,1,0,47,"\\/home\\/qq\\/profile_shell_env\\/"
+?/bookmarks.js
+|2,1,0,47,"bookmarks.js"
+?/bookmark
+|2,1,0,47,"bookmark"
+?/command
+|2,1,0,47,"command"
+?/binding
+|2,1,0,47,"binding"
+?/bindings
+|2,1,0,47,"bindings"
+?/mark
+|2,1,0,47,"mark"
+?/function 
+|2,1,0,47,"function "
+?/function (
+|2,1,0,47,"function ("
+?/^const 
+|2,1,0,47,"^const "
+?/all bookmark
+|2,1,0,47,"all bookmark"
+?/bookmarks
+|2,1,0,47,"bookmarks"
+? \<DefualtOutFile\>
+|2,1,0,,"\\<DefualtOutFile\\>"
+? \<FILEFORMATED\>
+|2,1,0,,"\\<FILEFORMATED\\>"
+? \<N_SPACES\>
+|2,1,0,,"\\<N_SPACES\\>"
+? \<NSPACES\>
+|2,1,0,,"\\<NSPACES\\>"
+?/exit
+|2,1,0,47,"exit"
+? \<ACTUAL_LINE\>
+|2,1,0,,"\\<ACTUAL_LINE\\>"
+? \<LINE_NUMBER\>
+|2,1,0,,"\\<LINE_NUMBER\\>"
+? \<if_counter\>
+|2,1,0,,"\\<if_counter\\>"
+?/$1
+|2,1,0,47,"$1"
+? \<TryDefaultOutFile\>
+|2,1,0,,"\\<TryDefaultOutFile\\>"
+? \<DefaultOutFile\>
+|2,1,0,,"\\<DefaultOutFile\\>"
+? \<isExistFileName\>
+|2,1,0,,"\\<isExistFileName\\>"
+?/match
+|2,1,0,47,"match"
+? \<N_SPACE\>
+|2,1,0,,"\\<N_SPACE\\>"
+?/空格
+|2,1,0,47,"空格"
+?/空白
+|2,1,0,47,"空白"
+?/+
+|2,1,0,47,"+"
+?/空白符
+|2,1,0,47,"空白符"
+?/window
+|2,1,0,47,"window"
+?/split
+|2,1,0,47,"split"
+?/sp
+|2,1,0,47,"sp"
+?/spli
+|2,1,0,47,"spli"
+? \<KeepCurrentBuf\>
+|2,1,0,,"\\<KeepCurrentBuf\\>"
+? \<DelWithOutCurBuf\>
+|2,1,0,,"\\<DelWithOutCurBuf\\>"
+?/delwithoutcur
+|2,1,0,47,"delwithoutcur"
+? \<FILENAME\>
+|2,1,0,,"\\<FILENAME\\>"
+?/def
+|2,1,0,47,"def"
+?/defffunc
+|2,1,0,47,"defffunc"
+?/function
+|2,1,0,47,"function"
+?/matc
+|2,1,0,47,"matc"
+?/error
+|2,1,0,47,"error"
+?/errors
+|2,1,0,47,"errors"
+?/Error messages
+|2,1,0,47,"Error messages"
+?/Messages
+|2,1,0,47,"Messages"
+?/message
+|2,1,0,47,"message"
+?/bdelete
+|2,1,0,47,"bdelete"
+?/:b
+|2,1,0,47,":b"
+?/buffer
+|2,1,0,47,"buffer"
+?/Argument and buffer list commands
+|2,1,0,47,"Argument and buffer list commands"
+?/help bdelete
+|2,1,0,47,"help bdelete"
+?/setcmd
+|2,1,0,47,"setcmd"
+?/setbuf
+|2,1,0,47,"setbuf"
+?/bufline
+|2,1,0,47,"bufline"
+?/cmdline(
+|2,1,0,47,"cmdline("
+?/flush
+|2,1,0,47,"flush"
+?/flash
+|2,1,0,47,"flash"
+?/refrash
+|2,1,0,47,"refrash"
+?/system()
+|2,1,0,47,"system()"
+? \<system(\>
+|2,1,0,,"\\<system(\\>"
+? \<printf(\>
+|2,1,0,,"\\<printf(\\>"
+? \<getcmdline()\>
+|2,1,0,,"\\<getcmdline()\\>"
+? \<getbufline(\>
+|2,1,0,,"\\<getbufline(\\>"
+? \<foldtext()\>
+|2,1,0,,"\\<foldtext()\\>"
+?/CmdLine
+|2,1,0,47,"CmdLine"
+?/return
+|2,1,0,47,"return"
+?/execute(
+|2,1,0,47,"execute("
+?/exe 
+|2,1,0,47,"exe "
+?/exe
+|2,1,0,47,"exe"
+? \<execute\>
+|2,1,0,,"\\<execute\\>"
+?/strchars
+|2,1,0,47,"strchars"
+?/string()
+|2,1,0,47,"string()"
+?/strchars()
+|2,1,0,47,"strchars()"
+?/strlen()
+|2,1,0,47,"strlen()"
+?/len()
+|2,1,0,47,"len()"
+?/string function
+|2,1,0,47,"string function"
+?/list
+|2,1,0,47,"list"
+?/^string
+|2,1,0,47,"^string"
+?/^list
+|2,1,0,47,"^list"
+?/^string 
+|2,1,0,47,"^string "
+?/^*functions
+|2,1,0,47,"^*functions"
+??^* functions
+|2,1,0,63,"^* functions"
+?/^* functions
+|2,1,0,47,"^* functions"
+?/list functions
+|2,1,0,47,"list functions"
+??List functions
+|2,1,0,63,"List functions"
+? \<List\>
+|2,1,0,,"\\<List\\>"
+?/List functions
+|2,1,0,47,"List functions"
+? \<list\>
+|2,1,0,,"\\<list\\>"
+?/string 
+|2,1,0,47,"string "
+?/join(
+|2,1,0,47,"join("
+?/argv()
+|2,1,0,47,"argv()"
+?/argc()
+|2,1,0,47,"argc()"
+?/string
+|2,1,0,47,"string"
+?/input(
+|2,1,0,47,"input("
+?/string is
+|2,1,0,47,"string is"
+?/string is empty
+|2,1,0,47,"string is empty"
+?/string empty
+|2,1,0,47,"string empty"
+?/input()
+|2,1,0,47,"input()"
+?/get
+|2,1,0,47,"get"
+?/getch
+|2,1,0,47,"getch"
+?/curBuf
+|2,1,0,47,"curBuf"
+?/bufNum
+|2,1,0,47,"bufNum"
+?/help
+|2,1,0,47,"help"
+?/join()
+|2,1,0,47,"join()"
+? \<{list}\>
+|2,1,0,,"\\<{list}\\>"
+? \<bufString\>
+|2,1,0,,"\\<bufString\\>"
+?/join
+|2,1,0,47,"join"
+? \<buflist\>
+|2,1,0,,"\\<buflist\\>"
+??join(
+|2,1,0,63,"join("
+? \<join(list,\>
+|2,1,0,,"\\<join(list,\\>"
+? \<join(nrlist,\>
+|2,1,0,,"\\<join(nrlist,\\>"
+?/string from list
+|2,1,0,47,"string from list"
+?/string list
+|2,1,0,47,"string list"
+?/nobuflisted
+|2,1,0,47,"nobuflisted"
+? \<'buflisted'\>
+|2,1,0,,"\\<'buflisted'\\>"
+? \<wipe\>
+|2,1,0,,"\\<wipe\\>"
+? \<'nobuflisted'\>
+|2,1,0,,"\\<'nobuflisted'\\>"
+?/bufvar
+|2,1,0,47,"bufvar"
+?/^'buflisted
+|2,1,0,47,"^'buflisted"
+?/^'hidden
+|2,1,0,47,"^'hidden"
+?/^'buf
+|2,1,0,47,"^'buf"
+?/^buf
+|2,1,0,47,"^buf"
+?/buflisted
+|2,1,0,47,"buflisted"
+?/buffer option
+|2,1,0,47,"buffer option"
+?/setbufvar()
+|2,1,0,47,"setbufvar()"
+?/Bclose
+|2,1,0,47,"Bclose"
+? amix
+|2,1,0,,"amix"
+?/-hello-
+|2,1,0,47,"-hello-"
+?/amix
+|2,1,0,47,"amix"
+? Maintainer
+|2,1,0,,"Maintainer"
+? http
+|2,1,0,,"http"
+? emix
+|2,1,0,,"emix"
+?/index()
+|2,1,0,47,"index()"
+? \<index(\>
+|2,1,0,,"\\<index(\\>"
+? \<{list},\>
+|2,1,0,,"\\<{list},\\>"
+?/get(
+|2,1,0,47,"get("
+? \<get()\>
+|2,1,0,,"\\<get()\\>"
+?/{idx}
+|2,1,0,47,"{idx}"
+? \<{idx}\>
+|2,1,0,,"\\<{idx}\\>"
+?/set 
+|2,1,0,47,"set "
+? \<curBufNum\>
+|2,1,0,,"\\<curBufNum\\>"
+? \<item\>
+|2,1,0,,"\\<item\\>"
+?/unlisted-buffer
+|2,1,0,47,"unlisted-buffer"
+?/help buffer.txt
+|2,1,0,47,"help buffer.txt"
+? \<unlisted-buffer\>
+|2,1,0,,"\\<unlisted-buffer\\>"
+? \<:buffer-!\>
+|2,1,0,,"\\<:buffer-!\\>"
+?/remove()
+|2,1,0,47,"remove()"
+?/{list}
+|2,1,0,47,"{list}"
+? \<:buffer\>
+|2,1,0,,"\\<:buffer\\>"
+? \<echo\>
+|2,1,0,,"\\<echo\\>"
+? \<command\>
+|2,1,0,,"\\<command\\>"
+? \<Bclose\>
+|2,1,0,,"\\<Bclose\\>"
+? \<Command\>
+|2,1,0,,"\\<Command\\>"
+? \<DelAndKepCurBuf\>
+|2,1,0,,"\\<DelAndKepCurBuf\\>"
+?/bufwinnr(
+|2,1,0,47,"bufwinnr("
+?/winbufnr(
+|2,1,0,47,"winbufnr("
+?/buffer number
+|2,1,0,47,"buffer number"
+?/curtab
+|2,1,0,47,"curtab"
+?/tabs number
+|2,1,0,47,"tabs number"
+?/tab number
+|2,1,0,47,"tab number"
+?/tabpagebuflist
+|2,1,0,47,"tabpagebuflist"
+?/tabbuflist
+|2,1,0,47,"tabbuflist"
+? \<tabpagebuflist()\>
+|2,1,0,,"\\<tabpagebuflist()\\>"
+?/\*tabpagebuflist(
+|2,1,0,47,"\\*tabpagebuflist("
+?/Variables
+|2,1,0,47,"Variables"
+?/bufwinnr()
+|2,1,0,47,"bufwinnr()"
+?/winnr
+|2,1,0,47,"winnr"
+?/current tab
+|2,1,0,47,"current tab"
+? \<{tabnr},\>
+|2,1,0,,"\\<{tabnr},\\>"
+?/gettabwinvar(
+|2,1,0,47,"gettabwinvar("
+?/n
+|2,1,0,47,"n"
+?/gettabwinvar()
+|2,1,0,47,"gettabwinvar()"
+?/wintab
+|2,1,0,47,"wintab"
+?/current window
+|2,1,0,47,"current window"
+?/winbufnr()
+|2,1,0,47,"winbufnr()"
+?/buffer-local
+|2,1,0,47,"buffer-local"
+?/current
+|2,1,0,47,"current"
+?/current-tab
+|2,1,0,47,"current-tab"
+?/tabpagebuflist()
+|2,1,0,47,"tabpagebuflist()"
+? \<winbufnr(\>
+|2,1,0,,"\\<winbufnr(\\>"
+? \<tabpagebuflist(\>
+|2,1,0,,"\\<tabpagebuflist(\\>"
+?/#
+|2,1,0,47,"#"
+?/h
+|2,1,0,47,"h"
+? \<function\>
+|2,1,0,,"\\<function\\>"
+??let b:curBufNum = bufnr("buffer-variable") nexecute "echo " b:curBufNum
+|2,1,0,63,"let b:curBufNum = bufnr(\"buffer-variable\") \nexecute \"echo \" b:curBufNum"
+? \<endfunction\>
+|2,1,0,,"\\<endfunction\\>"
+??function! CmdLine(str)n    exe "menu Foo\.Bar :" \. a:strn    emenu Foo\.Barn    unmenu Foone
+|2,1,0,63,"function! CmdLine(str)\n    exe \"menu Foo\\.Bar :\" \\. a:str\n    emenu Foo\\.Bar\n    unmenu Foo\ne"
+?/7. 
+|2,1,0,47,"7. "
+? \<commands\>
+|2,1,0,,"\\<commands\\>"
+? \<Commands\>
+|2,1,0,,"\\<Commands\\>"
+?/bufnr()
+|2,1,0,47,"bufnr()"
+?/&&
+|2,1,0,47,"&&"
+? \<b\>
+|2,1,0,,"\\<b\\>"
+?/current buffer
+|2,1,0,47,"current buffer"
+? \<ch_getbufnr(\>
+|2,1,0,,"\\<ch_getbufnr(\\>"
+?/bufnr(
+|2,1,0,47,"bufnr("
+?/ch_getbufnr()
+|2,1,0,47,"ch_getbufnr()"
+?/bufnum
+|2,1,0,47,"bufnum"
+?/tabbuf
+|2,1,0,47,"tabbuf"
+?/winbufnr
+|2,1,0,47,"winbufnr"
+?/tabs
+|2,1,0,47,"tabs"
+?/bclose
+|2,1,0,47,"bclose"
+?/bk
+|2,1,0,47,"bk"
+?/tabnext
+|2,1,0,47,"tabnext"
+?/tabclose
+|2,1,0,47,"tabclose"
+?/undo
+|2,1,0,47,"undo"
+?/leader
+|2,1,0,47,"leader"
+? \<<cword>\>
+|2,1,0,,"\\<<cword>\\>"
+? \<<cWORD>\>
+|2,1,0,,"\\<<cWORD>\\>"
+? \<'iskeyword'\>
+|2,1,0,,"\\<'iskeyword'\\>"
+? \<:<cWORD>\>
+|2,1,0,,"\\<:<cWORD>\\>"
+? \<:<cword>\>
+|2,1,0,,"\\<:<cword>\\>"
+?/isk
+|2,1,0,47,"isk"
+?/0-9
+|2,1,0,47,"0-9"
+?/\w
+|2,1,0,47,"\\w"
+?/cword
+|2,1,0,47,"cword"
+?/<cr>
+|2,1,0,47,"<cr>"
+? \<<CR>\>
+|2,1,0,,"\\<<CR>\\>"
+?/\*<CR>
+|2,1,0,47,"\\*<CR>"
+? \<TargetWord\>
+|2,1,0,,"\\<TargetWord\\>"
+? targetword
+|2,1,0,,"targetword"
+? \<targetword\>
+|2,1,0,,"\\<targetword\\>"
+?/gg
+|2,1,0,47,"gg"
+?/Defining functions
+|2,1,0,47,"Defining functions"
+?/call
+|2,1,0,47,"call"
+?/builtin
+|2,1,0,47,"builtin"
+?/input
+|2,1,0,47,"input"
+?/read
+|2,1,0,47,"read"
+?/enter
+|2,1,0,47,"enter"
+?/channel
+|2,1,0,47,"channel"
+? \<Builtin\>
+|2,1,0,,"\\<Builtin\\>"
+?/()
+|2,1,0,47,"()"
+?/Normal mode
+|2,1,0,47,"Normal mode"
+? \<extra_filter\>
+|2,1,0,,"\\<extra_filter\\>"
+? \<direction\>
+|2,1,0,,"\\<direction\\>"
+?/try
+|2,1,0,47,"try"
+?  Executes 
+|2,1,0,," Executes "
+?/new
+|2,1,0,47,"new"
+?  the 
+|2,1,0,," the "
+?  execute 
+|2,1,0,," execute "
+?  l:targetword 
+|2,1,0,," l:targetword "
+? the
+|2,1,0,,"the"
+? let
+|2,1,0,,"let"
+? Enable
+|2,1,0,,"Enable"
+??re	
+|2,1,0,63,"re	"
+?/let
+|2,1,0,47,"let"
+? from
+|2,1,0,,"from"
+? that
+|2,1,0,,"that"
+? string
+|2,1,0,,"string"
+? Executes
+|2,1,0,,"Executes"
+? \<Executes\>
+|2,1,0,,"\\<Executes\\>"
+? \<the\>
+|2,1,0,,"\\<the\\>"
+? between
+|2,1,0,,"between"
+? operator
+|2,1,0,,"operator"
+? expr1
+|2,1,0,,"expr1"
+?  expr1 
+|2,1,0,," expr1 "
+? l:targetword
+|2,1,0,,"l:targetword"
+?/keyword
+|2,1,0,47,"keyword"
+?/iskeyword
+|2,1,0,47,"iskeyword"
+?/iskey
+|2,1,0,47,"iskey"
+? \<VisualSelection\>
+|2,1,0,,"\\<VisualSelection\\>"
+? \<ReplaceString\>
+|2,1,0,,"\\<ReplaceString\\>"
+?/WORD
+|2,1,0,47,"WORD"
+? \<'ignorecase'\>
+|2,1,0,,"\\<'ignorecase'\\>"
+? let keyword = expand("<cword>")
+|2,1,0,,"let keyword = expand(\"<cword>\")"
+? set keyword=expand("<cword>")
+|2,1,0,,"set keyword=expand(\"<cword>\")"
+? expand("<cword>")
+|2,1,0,,"expand(\"<cword>\")"
+?/c-r
+|2,1,0,47,"c-r"
+? \<CTRL\>
+|2,1,0,,"\\<CTRL\\>"
+? \<47\>
+|2,1,0,,"\\<47\\>"
+? \<saving\>
+|2,1,0,,"\\<saving\\>"
+?/*
+|2,1,0,47,"*"
+?/set
+|2,1,0,47,"set"
+?/hello
+|2,1,0,47,"hello"
+?/emenu
+|2,1,0,47,"emenu"
+?/40.2
+|2,1,0,47,"40.2"
+? \<TabLeave\>
+|2,1,0,,"\\<TabLeave\\>"
+? \<hello_world\>
+|2,1,0,,"\\<hello_world\\>"
+? \<__hello_world_\>
+|2,1,0,,"\\<__hello_world_\\>"
+? \<map\>
+|2,1,0,,"\\<map\\>"
+? let 
+|2,1,0,,"let "
+?/range
+|2,1,0,47,"range"
+?/direction
+|2,1,0,47,"direction"
+?/reg
+|2,1,0,47,"reg"
+?/regist
+|2,1,0,47,"regist"
+?/register
+|2,1,0,47,"register"
+?/@
+|2,1,0,47,"@"
+?/@"
+|2,1,0,47,"@\""
+?/escape
+|2,1,0,47,"escape"
+?/escspe
+|2,1,0,47,"escspe"
+?/world
+|2,1,0,47,"world"
+?/expand
+|2,1,0,47,"expand"
+?/insert
+|2,1,0,47,"insert"
+? \<text\>
+|2,1,0,,"\\<text\\>"
+? \<Text\>
+|2,1,0,,"\\<Text\\>"
+?/hight
+|2,1,0,47,"hight"
+?/27.4
+|2,1,0,47,"27.4"
+?/27
+|2,1,0,47,"27"
+? \<Matching\>
+|2,1,0,,"\\<Matching\\>"
+? \<Examples\>
+|2,1,0,,"\\<Examples\\>"
+?/cursor-po
+|2,1,0,47,"cursor-po"
+?/pattern
+|2,1,0,47,"pattern"
+?/
+|2,1,0,47,""
+? [0-9A-Za-z_]\{0,}
+|2,1,0,,"[0-9A-Za-z_]\\{0,}"
+? [0-9A-Za-z_]\{1,}
+|2,1,0,,"[0-9A-Za-z_]\\{1,}"
+? \{1,}[0-9A-Za-z_]
+|2,1,0,,"\\{1,}[0-9A-Za-z_]"
+
+# 運算式 歷史記錄 (新到舊):
+
+# 輸入行  歷史記錄 (新到舊):
+@-hello-
+|2,3,0,,"-hello-"
+@:
+|2,3,0,,":"
+@hello
+|2,3,0,,"hello"
+@:q
+|2,3,0,,":q"
+@executes
+|2,3,0,,"executes"
+@the
+|2,3,0,,"the"
+@ 
+|2,3,0,," "
+
+# Debug Line 歷史記錄 (新到舊):
+
+# 暫存器:
+"0	CHAR	0
+	    <keybind key="C-A-E">
+	      <action name="Execute">
+	         <command>emacs</command>
+	      </action>
+	    </keybind>
+	
+	
+|3,0,0,0,7,0,1510789041,"    <keybind key=\"C-A-E\">","      <action name=\"Execute\">","         <command>emacs</command>","      </action>","    </keybind>","",""
+"1	LINE	0
+	
+|3,0,1,1,1,0,1510789047,""
+"2	LINE	0
+	
+|3,0,2,1,1,0,1510789046,""
+"3	LINE	0
+	
+|3,0,3,1,1,0,0,""
+"4	LINE	0
+	
+|3,0,4,1,1,0,0,""
+"5	LINE	0
+	
+|3,0,5,1,1,0,0,""
+"6	LINE	0
+	
+|3,0,6,1,1,0,0,""
+"7	LINE	0
+	    
+|3,0,7,1,1,0,0,"    "
+"8	LINE	0
+	
+|3,0,8,1,1,0,0,""
+"9	LINE	0
+	
+|3,0,9,1,1,0,0,""
+""-	CHAR	0
+	x
+|3,1,36,0,1,0,1510789058,"x"
+
+# 檔案標記:
+'0  1  0  ~/Note/Linux/raspberryPi/keybind.txt
+|4,48,1,0,1510789205,"~/Note/Linux/raspberryPi/keybind.txt"
+'1  299  24  ~/.config/openbox/lxde-pi-rc.xml
+|4,49,299,24,1510789061,"~/.config/openbox/lxde-pi-rc.xml"
+'2  31  0  ~/TODO
+|4,50,31,0,1510738483,"~/TODO"
+'3  3  55  ~/.vimperatorrc
+|4,51,3,55,1510736993,"~/.vimperatorrc"
+'4  7  0  ~/ShellScripts/basic_scripts/git-rm-list.sh
+|4,52,7,0,1510733656,"~/ShellScripts/basic_scripts/git-rm-list.sh"
+'5  31  5  ~/.gitignore
+|4,53,31,5,0,"~/.gitignore"
+'6  30  1  ~/ShellScripts/basic_scripts/backup.sh
+|4,54,30,1,0,"~/ShellScripts/basic_scripts/backup.sh"
+'7  19  0  ~/ShellScripts/bashrc-add-gui-poweroff-logout
+|4,55,19,0,0,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
+'8  1  0  ~/ShellScripts/bashrc-init
+|4,56,1,0,0,"~/ShellScripts/bashrc-init"
+'9  13  28  ~/ShellScripts/basic_scripts/install-my-custom-sh-script.sh
+|4,57,13,28,0,"~/ShellScripts/basic_scripts/install-my-custom-sh-script.sh"
+
+# Jumplist (由新到舊):
+-'  1  0  ~/Note/Linux/raspberryPi/keybind.txt
+|4,39,1,0,1510789205,"~/Note/Linux/raspberryPi/keybind.txt"
+-'  299  24  ~/.config/openbox/lxde-pi-rc.xml
+|4,39,299,24,1510789061,"~/.config/openbox/lxde-pi-rc.xml"
+-'  299  24  ~/.config/openbox/lxde-pi-rc.xml
+|4,39,299,24,1510789061,"~/.config/openbox/lxde-pi-rc.xml"
+-'  297  0  ~/.config/openbox/lxde-pi-rc.xml
+|4,39,297,0,1510789036,"~/.config/openbox/lxde-pi-rc.xml"
+-'  297  0  ~/.config/openbox/lxde-pi-rc.xml
+|4,39,297,0,1510789036,"~/.config/openbox/lxde-pi-rc.xml"
+-'  302  8  ~/.config/openbox/lxde-pi-rc.xml
+|4,39,302,8,1510788938,"~/.config/openbox/lxde-pi-rc.xml"
+-'  302  8  ~/.config/openbox/lxde-pi-rc.xml
+|4,39,302,8,1510788938,"~/.config/openbox/lxde-pi-rc.xml"
+-'  332  9  ~/.config/openbox/lxde-pi-rc.xml
+|4,39,332,9,1510788937,"~/.config/openbox/lxde-pi-rc.xml"
+-'  332  9  ~/.config/openbox/lxde-pi-rc.xml
+|4,39,332,9,1510788937,"~/.config/openbox/lxde-pi-rc.xml"
+-'  172  9  ~/.config/openbox/lxde-pi-rc.xml
+|4,39,172,9,1510788936,"~/.config/openbox/lxde-pi-rc.xml"
+-'  172  9  ~/.config/openbox/lxde-pi-rc.xml
+|4,39,172,9,1510788936,"~/.config/openbox/lxde-pi-rc.xml"
+-'  272  9  ~/.config/openbox/lxde-pi-rc.xml
+|4,39,272,9,1510788931,"~/.config/openbox/lxde-pi-rc.xml"
+-'  272  9  ~/.config/openbox/lxde-pi-rc.xml
+|4,39,272,9,1510788931,"~/.config/openbox/lxde-pi-rc.xml"
+-'  259  9  ~/.config/openbox/lxde-pi-rc.xml
+|4,39,259,9,1510788927,"~/.config/openbox/lxde-pi-rc.xml"
+-'  259  9  ~/.config/openbox/lxde-pi-rc.xml
+|4,39,259,9,1510788927,"~/.config/openbox/lxde-pi-rc.xml"
+-'  245  9  ~/.config/openbox/lxde-pi-rc.xml
+|4,39,245,9,1510788926,"~/.config/openbox/lxde-pi-rc.xml"
+-'  245  9  ~/.config/openbox/lxde-pi-rc.xml
+|4,39,245,9,1510788926,"~/.config/openbox/lxde-pi-rc.xml"
+-'  770  0  ~/.config/openbox/lxde-pi-rc.xml
+|4,39,770,0,1510788864,"~/.config/openbox/lxde-pi-rc.xml"
+-'  770  0  ~/.config/openbox/lxde-pi-rc.xml
+|4,39,770,0,1510788864,"~/.config/openbox/lxde-pi-rc.xml"
+-'  31  0  ~/.config/openbox/lxde-pi-rc.xml
+|4,39,31,0,1510788841,"~/.config/openbox/lxde-pi-rc.xml"
+-'  31  0  ~/.config/openbox/lxde-pi-rc.xml
+|4,39,31,0,1510788841,"~/.config/openbox/lxde-pi-rc.xml"
+-'  1  0  ~/.config/openbox/lxde-pi-rc.xml
+|4,39,1,0,1510788839,"~/.config/openbox/lxde-pi-rc.xml"
+-'  1  0  ~/.config/openbox/lxde-pi-rc.xml
+|4,39,1,0,1510788839,"~/.config/openbox/lxde-pi-rc.xml"
+-'  31  0  ~/TODO
+|4,39,31,0,1510738483,"~/TODO"
+-'  31  0  ~/TODO
+|4,39,31,0,1510738483,"~/TODO"
+-'  31  0  ~/TODO
+|4,39,31,0,1510738483,"~/TODO"
+-'  31  0  ~/TODO
+|4,39,31,0,1510738483,"~/TODO"
+-'  1  0  ~/TODO
+|4,39,1,0,1510738476,"~/TODO"
+-'  1  0  ~/TODO
+|4,39,1,0,1510738476,"~/TODO"
+-'  1  0  ~/TODO
+|4,39,1,0,1510738476,"~/TODO"
+-'  1  0  ~/TODO
+|4,39,1,0,1510738476,"~/TODO"
+-'  3  55  ~/.vimperatorrc
+|4,39,3,55,1510736993,"~/.vimperatorrc"
+-'  3  55  ~/.vimperatorrc
+|4,39,3,55,1510736993,"~/.vimperatorrc"
+-'  3  55  ~/.vimperatorrc
+|4,39,3,55,1510736993,"~/.vimperatorrc"
+-'  3  55  ~/.vimperatorrc
+|4,39,3,55,1510736993,"~/.vimperatorrc"
+-'  3  55  ~/.vimperatorrc
+|4,39,3,55,1510736993,"~/.vimperatorrc"
+-'  3  55  ~/.vimperatorrc
+|4,39,3,55,1510736993,"~/.vimperatorrc"
+-'  3  55  ~/.vimperatorrc
+|4,39,3,55,1510736993,"~/.vimperatorrc"
+-'  3  55  ~/.vimperatorrc
+|4,39,3,55,1510736993,"~/.vimperatorrc"
+-'  4  0  ~/.vimperatorrc
+|4,39,4,0,1510736561,"~/.vimperatorrc"
+-'  4  0  ~/.vimperatorrc
+|4,39,4,0,1510736561,"~/.vimperatorrc"
+-'  4  0  ~/.vimperatorrc
+|4,39,4,0,1510736561,"~/.vimperatorrc"
+-'  4  0  ~/.vimperatorrc
+|4,39,4,0,1510736561,"~/.vimperatorrc"
+-'  4  0  ~/.vimperatorrc
+|4,39,4,0,1510736561,"~/.vimperatorrc"
+-'  4  0  ~/.vimperatorrc
+|4,39,4,0,1510736561,"~/.vimperatorrc"
+-'  4  0  ~/.vimperatorrc
+|4,39,4,0,1510736561,"~/.vimperatorrc"
+-'  4  0  ~/.vimperatorrc
+|4,39,4,0,1510736561,"~/.vimperatorrc"
+-'  7  0  ~/ShellScripts/basic_scripts/git-rm-list.sh
+|4,39,7,0,1510733656,"~/ShellScripts/basic_scripts/git-rm-list.sh"
+-'  7  0  ~/ShellScripts/basic_scripts/git-rm-list.sh
+|4,39,7,0,1510733656,"~/ShellScripts/basic_scripts/git-rm-list.sh"
+-'  7  0  ~/ShellScripts/basic_scripts/git-rm-list.sh
+|4,39,7,0,1510733656,"~/ShellScripts/basic_scripts/git-rm-list.sh"
+-'  7  0  ~/ShellScripts/basic_scripts/git-rm-list.sh
+|4,39,7,0,1510733656,"~/ShellScripts/basic_scripts/git-rm-list.sh"
+-'  7  0  ~/ShellScripts/basic_scripts/git-rm-list.sh
+|4,39,7,0,1510733656,"~/ShellScripts/basic_scripts/git-rm-list.sh"
+-'  7  0  ~/ShellScripts/basic_scripts/git-rm-list.sh
+|4,39,7,0,1510733656,"~/ShellScripts/basic_scripts/git-rm-list.sh"
+-'  7  0  ~/ShellScripts/basic_scripts/git-rm-list.sh
+|4,39,7,0,1510733656,"~/ShellScripts/basic_scripts/git-rm-list.sh"
+-'  7  0  ~/ShellScripts/basic_scripts/git-rm-list.sh
+|4,39,7,0,1510733656,"~/ShellScripts/basic_scripts/git-rm-list.sh"
+-'  7  0  ~/ShellScripts/basic_scripts/git-rm-list.sh
+|4,39,7,0,1510733656,"~/ShellScripts/basic_scripts/git-rm-list.sh"
+-'  7  0  ~/ShellScripts/basic_scripts/git-rm-list.sh
+|4,39,7,0,1510733656,"~/ShellScripts/basic_scripts/git-rm-list.sh"
+-'  7  0  ~/ShellScripts/basic_scripts/git-rm-list.sh
+|4,39,7,0,1510733656,"~/ShellScripts/basic_scripts/git-rm-list.sh"
+-'  7  0  ~/ShellScripts/basic_scripts/git-rm-list.sh
+|4,39,7,0,1510733656,"~/ShellScripts/basic_scripts/git-rm-list.sh"
+-'  7  0  ~/ShellScripts/basic_scripts/git-rm-list.sh
+|4,39,7,0,1510733656,"~/ShellScripts/basic_scripts/git-rm-list.sh"
+-'  7  0  ~/ShellScripts/basic_scripts/git-rm-list.sh
+|4,39,7,0,1510733656,"~/ShellScripts/basic_scripts/git-rm-list.sh"
+-'  7  0  ~/ShellScripts/basic_scripts/git-rm-list.sh
+|4,39,7,0,1510733656,"~/ShellScripts/basic_scripts/git-rm-list.sh"
+-'  7  0  ~/ShellScripts/basic_scripts/git-rm-list.sh
+|4,39,7,0,1510733656,"~/ShellScripts/basic_scripts/git-rm-list.sh"
+-'  1  0  ~/ShellScripts/basic_scripts/git-rm-list.sh
+|4,39,1,0,1510733625,"~/ShellScripts/basic_scripts/git-rm-list.sh"
+-'  1  0  ~/ShellScripts/basic_scripts/git-rm-list.sh
+|4,39,1,0,1510733625,"~/ShellScripts/basic_scripts/git-rm-list.sh"
+-'  1  0  ~/ShellScripts/basic_scripts/git-rm-list.sh
+|4,39,1,0,1510733625,"~/ShellScripts/basic_scripts/git-rm-list.sh"
+-'  1  0  ~/ShellScripts/basic_scripts/git-rm-list.sh
+|4,39,1,0,1510733625,"~/ShellScripts/basic_scripts/git-rm-list.sh"
+-'  1  0  ~/ShellScripts/basic_scripts/git-rm-list.sh
+|4,39,1,0,1510733625,"~/ShellScripts/basic_scripts/git-rm-list.sh"
+-'  1  0  ~/ShellScripts/basic_scripts/git-rm-list.sh
+|4,39,1,0,1510733625,"~/ShellScripts/basic_scripts/git-rm-list.sh"
+-'  1  0  ~/ShellScripts/basic_scripts/git-rm-list.sh
+|4,39,1,0,1510733625,"~/ShellScripts/basic_scripts/git-rm-list.sh"
+-'  1  0  ~/ShellScripts/basic_scripts/git-rm-list.sh
+|4,39,1,0,1510733625,"~/ShellScripts/basic_scripts/git-rm-list.sh"
+-'  1  0  ~/ShellScripts/basic_scripts/git-rm-list.sh
+|4,39,1,0,1510733625,"~/ShellScripts/basic_scripts/git-rm-list.sh"
+-'  1  0  ~/ShellScripts/basic_scripts/git-rm-list.sh
+|4,39,1,0,1510733625,"~/ShellScripts/basic_scripts/git-rm-list.sh"
+-'  1  0  ~/ShellScripts/basic_scripts/git-rm-list.sh
+|4,39,1,0,1510733625,"~/ShellScripts/basic_scripts/git-rm-list.sh"
+-'  1  0  ~/ShellScripts/basic_scripts/git-rm-list.sh
+|4,39,1,0,1510733625,"~/ShellScripts/basic_scripts/git-rm-list.sh"
+-'  1  0  ~/ShellScripts/basic_scripts/git-rm-list.sh
+|4,39,1,0,1510733625,"~/ShellScripts/basic_scripts/git-rm-list.sh"
+-'  1  0  ~/ShellScripts/basic_scripts/git-rm-list.sh
+|4,39,1,0,1510733625,"~/ShellScripts/basic_scripts/git-rm-list.sh"
+-'  1  0  ~/ShellScripts/basic_scripts/git-rm-list.sh
+|4,39,1,0,1510733625,"~/ShellScripts/basic_scripts/git-rm-list.sh"
+-'  1  0  ~/ShellScripts/basic_scripts/git-rm-list.sh
+|4,39,1,0,1510733625,"~/ShellScripts/basic_scripts/git-rm-list.sh"
+-'  31  5  ~/.gitignore
+|4,39,31,5,0,"~/.gitignore"
+-'  11  1  ~/.gitignore
+|4,39,11,1,0,"~/.gitignore"
+-'  1  0  ~/.gitignore
+|4,39,1,0,0,"~/.gitignore"
+-'  41  0  ~/.gitignore
+|4,39,41,0,0,"~/.gitignore"
+-'  30  1  ~/ShellScripts/basic_scripts/backup.sh
+|4,39,30,1,0,"~/ShellScripts/basic_scripts/backup.sh"
+-'  10  1  ~/ShellScripts/basic_scripts/backup.sh
+|4,39,10,1,0,"~/ShellScripts/basic_scripts/backup.sh"
+-'  19  0  ~/ShellScripts/bashrc-add-gui-poweroff-logout
+|4,39,19,0,0,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
+-'  1  0  ~/ShellScripts/bashrc-add-gui-poweroff-logout
+|4,39,1,0,0,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
+-'  1  0  ~/ShellScripts/bashrc-init
+|4,39,1,0,0,"~/ShellScripts/bashrc-init"
+-'  13  28  ~/ShellScripts/basic_scripts/install-my-custom-sh-script.sh
+|4,39,13,28,0,"~/ShellScripts/basic_scripts/install-my-custom-sh-script.sh"
+-'  1  0  ~/ShellScripts/basic_scripts
+|4,39,1,0,0,"~/ShellScripts/basic_scripts"
+-'  256  0  ~/Note/Linux/ubuntu/window_manager/DWM/dwm-tutorial-on-linux.txt
+|4,39,256,0,0,"~/Note/Linux/ubuntu/window_manager/DWM/dwm-tutorial-on-linux.txt"
+-'  46  5  ~/Note/Linux/ubuntu/window_manager/DWM/dwm-tutorial-on-linux.txt
+|4,39,46,5,0,"~/Note/Linux/ubuntu/window_manager/DWM/dwm-tutorial-on-linux.txt"
+-'  1  0  ~/Note/Linux/ubuntu/window_manager/DWM/dwm-tutorial-on-linux.txt
+|4,39,1,0,0,"~/Note/Linux/ubuntu/window_manager/DWM/dwm-tutorial-on-linux.txt"
+-'  105  74  ~/Github/dwm/config.def.h
+|4,39,105,74,0,"~/Github/dwm/config.def.h"
+-'  65  66  ~/Github/dwm/config.def.h
+|4,39,65,66,0,"~/Github/dwm/config.def.h"
+-'  60  19  ~/Github/dwm/config.def.h
+|4,39,60,19,0,"~/Github/dwm/config.def.h"
+-'  106  79  ~/Github/dwm/config.def.h
+|4,39,106,79,0,"~/Github/dwm/config.def.h"
+-'  115  0  ~/Github/dwm/config.def.h
+|4,39,115,0,0,"~/Github/dwm/config.def.h"
+-'  47  15  ~/Github/dwm/config.def.h
+|4,39,47,15,0,"~/Github/dwm/config.def.h"
+-'  49  3  ~/Github/dwm/config.def.h
+|4,39,49,3,0,"~/Github/dwm/config.def.h"
+
+# 檔案內 Mark 記錄 (由新到舊):
+
+> ~/Note/Linux/raspberryPi/keybind.txt
+	*	1510789203	0
+	"	1	0
+	.	1	0
+	+	1	0
+
+> ~/.config/openbox/lxde-pi-rc.xml
+	*	1510789060	0
+	"	299	24
+	^	299	25
+	.	299	0
+	+	292	22
+	+	294	22
+	+	297	0
+	+	302	0
+	+	297	0
+	+	302	0
+	+	297	22
+	+	299	0
+
+> ~/TODO
+	*	1510738481	0
+	"	31	0
+	^	31	0
+	.	31	0
+	+	31	0
+
+> ~/.vimperatorrc
+	*	1510736699	0
+	"	3	55
+	^	3	57
+	.	3	55
+	+	4	0
+	+	3	56
+	+	4	61
+	+	3	57
+	+	4	60
+	+	3	55
+
+> ~/ShellScripts/basic_scripts/git-rm-list.sh
+	*	1510733641	0
+	"	7	0
+
+> ~/.gitignore
+	"	31	5
+	^	41	0
+	.	41	0
+	+	27	8
+	+	10	9
+	+	27	8
+	+	10	8
+	+	57	0
+	+	42	12
+	+	43	10
+	+	44	11
+	+	45	9
+	+	46	7
+	+	41	0
+
+> ~/ShellScripts/basic_scripts/backup.sh
+	"	30	1
+	^	10	52
+	.	10	51
+	+	3	26
+	+	4	23
+	+	4	23
+	+	5	22
+	+	6	33
+	+	5	33
+	+	4	0
+	+	10	52
+	+	6	4
+	+	10	51
+
+> ~/ShellScripts/bashrc-add-gui-poweroff-logout
+	"	19	0
+
+> ~/ShellScripts/bashrc-init
+	"	1	0
+
+> ~/ShellScripts/basic_scripts/install-my-custom-sh-script.sh
+	"	13	28
+	.	17	0
+	+	13	1
+	+	17	0
+
+> ~/Note/Linux/ubuntu/window_manager/DWM/dwm-tutorial-on-linux.txt
+	"	256	0
+	^	258	5
+	.	256	0
+	+	46	0
+	+	258	4
+	+	256	0
+
+> ~/Github/dwm/config.def.h
+	"	105	74
+
+> ~/Github/dwm/config.h
+	"	75	1
+	^	22	55
+	.	9	63
+	+	8	57
+	+	9	55
+	+	8	64
+	+	9	63
+	+	22	0
+	+	9	63
+
+> ~/Note/Linux/ubuntu/fonts_setting/wenquanyi-microhei.txt
+	"	9	30
+	^	7	23
+	.	7	22
+	+	7	22
+
+> ~/Note/Linux/ubuntu/window_manager/DWM/x11_xlib_h-error.txt
+	"	2	0
+	^	1	21
+	.	6	0
+	+	6	42
+	+	6	0
+	+	6	0
+	+	2	0
+	+	1	18
+	+	6	0
+
+> ~/Note/Linux/ubuntu/window_manager/DWM/dmenu-usage.txt
+	"	1	0
+
+> ~/Note/Linux/ubuntu/window_manager/DWM/dwm-usage.txt
+	"	333	0
+
+> ~/Github/spacemacs/README.md
+	"	47	3
+
+> ~/Note/Linux/ubuntu/server/system-Upgrade.txt
+	"	72	0
+	.	95	0
+	+	8	0
+	+	12	0
+	+	16	0
+	+	20	0
+	+	26	0
+	+	30	0
+	+	33	0
+	+	36	0
+	+	33	0
+	+	30	0
+	+	45	0
+	+	49	3
+	+	49	0
+	+	74	0
+	+	78	0
+	+	82	0
+	+	86	0
+	+	90	0
+	+	94	0
+	+	95	0
+
+> ~/Note/Linux/ubuntu/server/WIFI-configure.txt
+	"	129	188
+	^	129	189
+	.	129	188
+	+	129	188
+
+> ~/Note/Linux/ubuntu/character_terminal/fbterm-setup.txt
+	"	42	0
+	^	49	0
+	.	49	0
+	+	13	0
+	+	18	0
+	+	27	0
+	+	18	0
+	+	31	0
+	+	38	0
+	+	51	0
+	+	55	185
+	+	52	192
+	+	58	0
+	+	49	0
+
+> ~/.fbtermrc
+	"	9	11
+	^	42	17
+	.	42	12
+	+	10	11
+	+	42	12
+
+> ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
+	"	120	0
+
+> ~/Note/Linux/ubuntu/character_terminal/terminal-pic-viwer.txt
+	"	54	94
+	^	55	121
+	.	55	118
+	+	55	118
+
+> ~/Note/Linux/ubuntu/window_manager/DWM/x11/xlib_h-error.txt
+	"	6	0
+	^	6	0
+	.	5	42
+	+	5	42
+
+> ~/Github/dwm/README
+	"	1	0
+
+> ~/Note/Website/linux-window-manager.website.txt
+	"	1	0
+
+> ~/Note/Linux/ubuntu/window_manager/DWM/official-website.txt
+	"	2	0
+
+> /etc/default/grub
+	"	12	0
+	^	12	32
+	.	12	1
+	+	12	0
+	+	11	0
+	+	12	31
+	+	11	0
+	+	12	1
+
+> /etc/init/gdm3.conf
+	"	10	27
+	^	10	28
+	.	10	27
+	+	10	27
+
+> /etc/passwd
+	"	34	0
+
+> ~/Note/Linux/ubuntu/character_terminal/ubuntu-startup-with-character_terminal.txt
+	"	21	0
+	^	3	0
+	.	3	0
+	+	34	17
+	+	34	0
+	+	33	0
+	+	1	6
+	+	8	0
+	+	10	0
+	+	14	0
+	+	20	0
+	+	22	0
+	+	26	0
+	+	28	9
+	+	30	3
+	+	32	0
+	+	29	0
+	+	4	0
+	+	3	0
+
+> /etc/init.d/rc.local
+	"	27	0
+
+> /etc/init.d/rc
+	"	265	0
+
+> /etc/init/console-setup.conf
+	"	13	0
+
+> /etc/init/console-font.conf
+	"	1	0
+
+> ~/ubuntu-startup-tree.txt
+	"	1	0
+
+> /etc/rc.local
+	"	9	37
+
+> ~/Note/Linux/system_management/Ubuntu-Desktop-Manager.txt
+	"	152	0
+	^	96	0
+	.	96	0
+	+	34	1
+	+	32	0
+	+	61	0
+	+	43	4
+	+	41	0
+	+	60	1
+	+	59	0
+	+	80	0
+	+	77	0
+	+	78	0
+	+	79	1
+	+	87	0
+	+	88	0
+	+	86	0
+	+	84	0
+	+	86	1
+	+	94	0
+	+	95	0
+	+	99	4
+	+	108	0
+	+	110	1
+	+	119	1
+	+	126	1
+	+	125	0
+	+	135	2
+	+	134	0
+	+	140	0
+	+	142	2
+	+	118	0
+	+	95	0
+	+	96	0
+
+> ~/Note/Linux/system_management/Linux-Power-Save.txt
+	"	12	0
+	^	3	2
+	.	3	0
+	+	2	0
+	+	3	0
+
+> ~/.vimrc
+	"	69	0
+	^	39	8
+	.	39	8
+	+	467	0
+	+	467	61
+	+	467	30
+	+	468	0
+	+	467	28
+	+	466	29
+	+	467	20
+	+	466	0
+	+	465	0
+	+	464	0
+	+	469	0
+	+	471	0
+	+	443	0
+	+	437	0
+	+	432	0
+	+	433	0
+	+	434	1
+	+	434	0
+	+	435	32
+	+	434	0
+	+	432	0
+	+	437	0
+	+	435	0
+	+	39	8
+
+> /usr/share/vim/vim74/doc/eval.txt
+	"	6475	8
+
+> /usr/share/vim/vim74/doc/options.txt
+	"	1693	1
+
+> ~/Github/vim/find-text.txt
+	"	132	1
+
+> ~/Github/vim/src/screen.c
+	"	279	5
+
+> ~/Github/vim/src/README.txt
+	"	143	0
+
+> ~/Github/vim/src/toolbar.phi
+	"	1283	0
+
+> ~/Github/vim/src/memline.c
+	"	288	0
+
+> ~/Github/vim/src/testdir/test_statusline.vim
+	"	265	39
+
+> ~/Github/vim/src/testdir/view_util.vim
+	"	7	0
+
+> ~/ShellScripts/basic_scripts/detect-shell-env.sh
+	"	1	0
+
+> ~/.gitconfig
+	"	3	0
+
+> ~/Note/Backup/tools-directory-content-list.txt
+	"	1	0
+
+> ~/Note/Backup/note-directory-content-list.txt
+	"	445	0
+
+> ~/Note/Backup/github-directory-content-list.txt
+	"	12	0
+
+> ~/Note/Backup/download-directory-content-list.txt
+	"	14	0
+
+> ~/Note/Backup/book-directory-content-list.txt
+	"	1	0
+
+> ~/Note/Backup/books-directory-content-list.txt
+	"	1	0
+
+> ~/diff-the-Home-dir-and-gitignore-file.txt
+	"	36	0
+
+> ~/.gitign
+	"	1	0
+
+> ~/.gitign1.txt
+	"	22	0
+	^	15	0
+	.	15	0
+	+	28	0
+	+	12	0
+	+	11	0
+	+	11	0
+	+	11	0
+	+	28	0
+	+	12	0
+	+	11	0
+	+	11	0
+	+	11	0
+	+	11	0
+	+	9	0
+	+	2	0
+	+	10	0
+	+	11	0
+	+	11	0
+	+	11	0
+	+	11	0
+	+	12	0
+	+	12	0
+	+	12	0
+	+	12	0
+	+	12	0
+	+	12	0
+	+	13	0
+	+	13	0
+	+	14	0
+	+	16	0
+	+	16	0
+	+	16	0
+	+	28	0
+	+	26	0
+	+	24	0
+	+	16	0
+	+	14	0
+	+	25	0
+	+	23	0
+	+	11	0
+	+	12	0
+	+	3	0
+	+	12	0
+	+	4	0
+	+	12	0
+	+	5	0
+	+	16	0
+	+	6	0
+	+	16	0
+	+	8	0
+	+	12	0
+	+	15	0
+
+> ~/git-rm-list
+	"	7	4
+	^	5	10
+	.	7	4
+	+	8	18
+	+	1	10
+	+	8	26
+	+	8	34
+	+	8	48
+	+	8	61
+	+	8	74
+	+	8	81
+	+	8	89
+	+	8	98
+	+	8	109
+	+	8	120
+	+	8	130
+	+	8	138
+	+	8	149
+	+	8	155
+	+	8	163
+	+	8	172
+	+	8	189
+	+	8	207
+	+	8	215
+	+	8	229
+	+	8	238
+	+	8	246
+	+	8	259
+	+	8	269
+	+	8	276
+	+	8	282
+	+	8	292
+	+	8	308
+	+	8	318
+	+	8	332
+	+	8	343
+	+	8	349
+	+	8	362
+	+	8	388
+	+	8	400
+	+	8	413
+	+	8	427
+	+	8	434
+	+	8	445
+	+	8	455
+	+	8	456
+	+	8	463
+	+	8	471
+	+	8	479
+	+	8	487
+	+	8	495
+	+	8	503
+	+	8	511
+	+	10	0
+	+	8	512
+	+	8	520
+	+	8	19
+	+	8	520
+	+	8	0
+	+	10	0
+	+	8	18
+	+	3	6
+	+	3	507
+	+	5	16
+	+	6	0
+	+	9	3
+	+	8	23
+	+	5	5
+	+	8	4
+	+	7	10
+	+	5	9
+	+	8	4
+	+	7	4
+
+> ~/Note/Git/git-remove-remote-repository-file.txt
+	"	1	0
+
+> ~/.gitign.txt
+	"	49	0
+	^	41	0
+	.	41	0
+	+	1	0
+	+	41	0
+	+	41	0
+	+	41	0
+	+	40	0
+	+	41	0
+	+	40	0
+	+	39	0
+	+	39	0
+	+	39	0
+	+	39	0
+	+	39	0
+	+	39	0
+	+	38	0
+	+	33	0
+	+	31	0
+	+	30	0
+	+	28	0
+	+	28	0
+	+	27	0
+	+	26	0
+	+	25	0
+	+	20	0
+	+	20	0
+	+	16	0
+	+	5	0
+	+	6	0
+	+	9	0
+	+	9	0
+	+	9	0
+	+	12	0
+	+	15	0
+	+	41	0
+	+	16	0
+	+	15	0
+	+	5	0
+	+	6	0
+	+	9	0
+	+	12	0
+	+	15	0
+	+	16	0
+	+	20	0
+	+	25	0
+	+	26	0
+	+	27	0
+	+	28	0
+	+	30	0
+	+	31	0
+	+	33	0
+	+	38	0
+	+	39	0
+	+	40	0
+	+	41	0
+
+> ~/.gconf/desktop/%gconf.xml
+	"	1	0
+
+> ~/.dmrc
+	"	1	0
+
+> ~/.gnome2/gnome-commander
+	"	1	0
+
+> ~/.gnome-commander/gnome-commander.xml
+	"	121	0
+
+> ~/.gnome-commander/devices
+	"	1	0
+
+> ~/.gnupg/gpg.conf
+	"	1	0
+
+> ~/.ICEauthority
+	"	41	0
+
+> ~/.lesshst
+	"	61	0
+
+> ~/.local/share/gnome-settings-daemon/input-sources-converted
+	"	1	0
+
+> ~/.macromedia/Flash_Player/macromedia.com/support/flashplayer/sys/settings.sol
+	"	1	0
+
+> ~/.mplayer/config
+	"	1	0
+
+> ~/.npm/colors/1.1.2/package/package.json
+	"	1	0
+
+> ~/.RapidSVN
+	"	83	0
+
+> ~/.sudo_as_admin_successful
+	"	1	0
+
+> ~/.thumbnails/fail/gimp-2.8/3890d1e4c899120c08f9bbd5d161bc0d.png
+	"	1	0
+
+> ~/.wget-hsts
+	"	1	0
+
+> ~/home-dir.txt
+	"	73	0
+	.	74	0
+	+	1	0
+	+	1	0
+	+	74	0
+
+> ~/git-dir.txt
+	"	45	0
+	.	46	0
+	+	46	0
+
+> ~/diff-the-Home-dir-and-.gitignore-file.txt
+	"	1	0
+	.	1	0
+	+	1	0
+
+> ~/Note/IC/ic.org
+	"	1	0
+
+> ~/Note/server-maintain/server-maintain.org
+	"	53	0
+
+> ~/Note/learning/2013-1-11-我该如何充分的利用这段时间提高自己.txt
+	"	1	0
+
+> ~/Note/linux/linux_skills/xmodmap-change-keymap.txt
+	"	8	0
+
+> ~/Note/linux/linux_skills/ubuntu-use-xmodmap-change-keymap.txt
+	"	134	0
+
+> ~/Note/linux/linux_skills/mplayer.txt
+	"	23	0
+
+> ~/Note/text_editor/emacs/why_use_emacs.txt
+	"	73	0
+
+> ~/Note/text_editor/emacs/emacs-keystruct.txt
+	"	468	0
+
+> ~/Note/text_editor/emacs/emacs-help-command.txt
+	"	1	0
+
+> ~/Note/text_editor/emacs/emacs-correlation-help.txt
+	"	67	0
+
+> ~/Note/text_editor/emacs/!!!!!!---windows-home-path.txt
+	"	396	0
+
+> ~/Note/text_editor/emacs/why_use_emacs.org
+	"	13	0
+	^	106	0
+	.	106	0
+	+	112	0
+	+	113	0
+	+	115	0
+	+	117	0
+	+	120	0
+	+	7	0
+	+	8	0
+	+	10	0
+	+	12	0
+	+	19	0
+	+	21	0
+	+	22	0
+	+	27	189
+	+	29	0
+	+	27	183
+	+	29	0
+	+	28	10
+	+	27	0
+	+	30	0
+	+	31	0
+	+	33	0
+	+	35	0
+	+	37	0
+	+	41	0
+	+	44	0
+	+	49	0
+	+	54	0
+	+	59	0
+	+	63	0
+	+	66	0
+	+	72	0
+	+	76	0
+	+	79	0
+	+	87	0
+	+	90	0
+	+	94	0
+	+	106	0
+
+> ~/Note/text_editor/emacs/w3m.org
+	"	1	0
+
+> ~/Note/text_editor/emacs/use_manpage_in_emacs.org
+	"	16	7
+	.	16	7
+	+	32	0
+	+	38	6
+	+	14	0
+	+	17	0
+	+	16	7
+
+> ~/Note/text_editor/emacs/use_emacs_reading_source_code.org
+	"	322	0
+
+> ~/Note/text_editor/emacs/translucent.org
+	"	124	0
+
+> ~/Note/text_editor/emacs/themes/some-emacs-theme.txt
+	"	1	0

@@ -1,0 +1,10 @@
+# usr 'ln' command to create some spicified type link file point to destination
+
+# create a soft link, from SOURCE point TARGET
+
+function ln-create-a-soft-link(){
+	LINK_NAME=$2
+	TARGET=$1
+
+	sudo ln -T -f -i -s ${TARGET} ${LINK_NAME}
+}

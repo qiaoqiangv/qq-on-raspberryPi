@@ -1,0 +1,50 @@
+<?xml version="1.0" ?>
+<!DOCTYPE Menu
+  PUBLIC '-//freedesktop//DTD Menu 1.0//EN'
+  'http://standards.freedesktop.org/menu-spec/menu-1.0.dtd'>
+<Menu>
+	<Name>Applications</Name>
+	<MergeFile type="parent">/etc/xdg/menus/lxde-pi-applications.menu</MergeFile>
+	<Menu>
+		<Name>System</Name>
+		<Include>
+			<Filename>pi-gpk-dbus-service.desktop</Filename>
+		</Include>
+		<AppDir>/home/pi/.local/share/applications</AppDir>
+		<Include>
+			<Filename>pi-gpk-log.desktop</Filename>
+		</Include>
+		<Include>
+			<Filename>pi-gpk-update-viewer.desktop</Filename>
+		</Include>
+		<Include>
+			<Filename>pi-gpk-install-local-file.desktop</Filename>
+		</Include>
+		<Include>
+			<Filename>lxde-x-terminal-emulator.desktop</Filename>
+		</Include>
+	</Menu>
+	<Menu>
+		<Name>DesktopSettings</Name>
+		<Include>
+			<Filename>lxkeymap.desktop</Filename>
+		</Include>
+		<AppDir>/home/pi/.local/share/applications</AppDir>
+		<Include>
+			<Filename>lxhotkey-gtk.desktop</Filename>
+		</Include>
+		<Include>
+			<Filename>openjdk-7-policytool.desktop</Filename>
+		</Include>
+		<Include>
+			<Filename>pi-gpk-prefs.desktop</Filename>
+		</Include>
+	</Menu>
+	<Menu>
+		<Name>Other</Name>
+		<Include>
+			<Filename>lxde-logout.desktop</Filename>
+		</Include>
+		<AppDir>/home/pi/.local/share/applications</AppDir>
+	</Menu>
+</Menu>

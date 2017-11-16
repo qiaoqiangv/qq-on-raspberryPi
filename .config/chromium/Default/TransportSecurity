@@ -1,0 +1,60 @@
+{
+   "26YaoM4gVrY0ie3hywpFBUJh47nIlvTljf0QEZuoLCM=": {
+      "dynamic_spki_hashes_expiry": 0.0,
+      "expiry": 1521608717.991911,
+      "mode": "force-https",
+      "pkp_include_subdomains": false,
+      "pkp_observed": 0.0,
+      "sts_include_subdomains": true,
+      "sts_observed": 1510722317.991927
+   },
+   "OHmhwihixZNigqgpX3aCAkWdp0CGJdQY7zkoysM085U=": {
+      "dynamic_spki_hashes": [ "sha256/r/mIkG3eEpVdm+u/ko/cwxzOMo1bk4TyHIlByibiA5E=", "sha256/WoiWRyIOVNa9ihaBciRSC7XHjliYS9VwUGOIud4PB18=" ],
+      "dynamic_spki_hashes_expiry": 1512018301.055162,
+      "expiry": 0.0,
+      "mode": "default",
+      "pkp_include_subdomains": false,
+      "pkp_observed": 1510722301.055162,
+      "report-uri": "",
+      "sts_include_subdomains": false,
+      "sts_observed": 0.0
+   },
+   "bVzOnu6xyelN8iVLDSbFjyZVgXrXDyLSokjnq2hdUFs=": {
+      "dynamic_spki_hashes_expiry": 0.0,
+      "expiry": 1542265865.191747,
+      "mode": "force-https",
+      "pkp_include_subdomains": false,
+      "pkp_observed": 0.0,
+      "sts_include_subdomains": true,
+      "sts_observed": 1510729865.191773
+   },
+   "cO+LXgmMDgbWJy2Fzodv20RLPl8QiSzx3dBWiHcbGPs=": {
+      "dynamic_spki_hashes_expiry": 0.0,
+      "expiry": 1510903656.313679,
+      "mode": "force-https",
+      "pkp_include_subdomains": false,
+      "pkp_observed": 0.0,
+      "sts_include_subdomains": false,
+      "sts_observed": 1510730856.313688
+   },
+   "dyvhgDxV0cRYYsCq+R9poyGaRyWEByUWgLYelLJFHkc=": {
+      "dynamic_spki_hashes_expiry": 0.0,
+      "expiry": 1510903751.861218,
+      "mode": "force-https",
+      "pkp_include_subdomains": false,
+      "pkp_observed": 0.0,
+      "sts_include_subdomains": false,
+      "sts_observed": 1510730951.861227
+   },
+   "xjeuzaibLH1EaKt2ofIk7NFAVICtcx5WkU+wRJgCwqI=": {
+      "dynamic_spki_hashes": [ "sha256/r/mIkG3eEpVdm+u/ko/cwxzOMo1bk4TyHIlByibiA5E=", "sha256/WoiWRyIOVNa9ihaBciRSC7XHjliYS9VwUGOIud4PB18=" ],
+      "dynamic_spki_hashes_expiry": 1512018295.105502,
+      "expiry": 1542258295.105468,
+      "mode": "force-https",
+      "pkp_include_subdomains": false,
+      "pkp_observed": 1510722295.105502,
+      "report-uri": "",
+      "sts_include_subdomains": false,
+      "sts_observed": 1510722295.105477
+   }
+}
