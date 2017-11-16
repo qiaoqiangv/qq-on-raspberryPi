@@ -93,7 +93,7 @@ python_games/
 .RapidSVN
 .sdcv_history
 .spacemacs
-.ssh/
+.ssh/id_rsa
 .subversion/
 .sudo_as_admin_successful
 .sunpinyin/
