@@ -20,14 +20,14 @@
 $
 
 # 命令列 歷史記錄 (新到舊):
+:q
+|2,0,1510794969,,"q"
+:x
+|2,0,1510794943,,"x"
 :wq
 |2,0,1510793796,,"wq"
 :w
 |2,0,1510793775,,"w"
-:q
-|2,0,1510793601,,"q"
-:x
-|2,0,1510793574,,"x"
 :set nu
 |2,0,1510788843,,"set nu"
 :q!
@@ -2035,72 +2035,114 @@ $
 "0	CHAR	0
 	~/
 |3,0,0,0,1,0,1510793767,"~/"
-"1	LINE	0
-		gnome-session-quit --power-off --force --no-prompt 
-|3,0,1,1,1,0,1510793569,"	gnome-session-quit --power-off --force --no-prompt "
+""1	LINE	0
+	
+|3,1,1,1,1,0,1510794937,""
 "2	LINE	0
-		 
-|3,0,2,1,1,0,1510793562,"	 "
+	16. 三 11月 15 17:36:35 CST 2017 - CONTENT : diff the '.gitignore.diff1' and '.gitignore.diff2'
+|3,0,2,1,1,0,1510794936,"16. 三 11月 15 17:36:35 CST 2017 - CONTENT : diff the '.gitignore.diff1' and '.gitignore.diff2'"
 "3	LINE	0
+	
+|3,0,3,1,1,0,1510794931,""
+"4	LINE	0
+	17. 三 11月 15 18:31:15 CST 2017 - CONTENT : emacs 设置字体大小
+|3,0,4,1,1,0,1510794930,"17. 三 11月 15 18:31:15 CST 2017 - CONTENT : emacs 设置字体大小"
+"5	LINE	0
+		gnome-session-quit --power-off --force --no-prompt 
+|3,0,5,1,1,0,1510793569,"	gnome-session-quit --power-off --force --no-prompt "
+"6	LINE	0
+		 
+|3,0,6,1,1,0,1510793562,"	 "
+"7	LINE	0
 	lxde-pi-shutdown-helper
-|3,0,3,1,1,0,1510793558,"lxde-pi-shutdown-helper"
-"4	CHAR	0
+|3,0,7,1,1,0,1510793558,"lxde-pi-shutdown-helper"
+"8	CHAR	0
 	# add ibus
 	export GTK_IM_MODULE=ibus
 	export XMODIFIERS=@im=ibus
 	export QT_IM_MODULE=ibus
 	
-|3,0,4,0,5,0,1510793383,"# add ibus","export GTK_IM_MODULE=ibus","export XMODIFIERS=@im=ibus","export QT_IM_MODULE=ibus",""
-"5	LINE	0
-	
-|3,0,5,1,1,0,1510789047,""
-"6	LINE	0
-	
-|3,0,6,1,1,0,1510789046,""
-"7	LINE	0
-	
-|3,0,7,1,1,0,0,""
-"8	LINE	0
-	
-|3,0,8,1,1,0,0,""
+|3,0,8,0,5,0,1510793383,"# add ibus","export GTK_IM_MODULE=ibus","export XMODIFIERS=@im=ibus","export QT_IM_MODULE=ibus",""
 "9	LINE	0
 	
-|3,0,9,1,1,0,0,""
-""-	CHAR	0
+|3,0,9,1,1,0,1510789047,""
+"-	CHAR	0
 	/
-|3,1,36,0,1,0,1510793774,"/"
+|3,0,36,0,1,0,1510793774,"/"
 
 # 檔案標記:
-'0  70  6  ~/ShellScripts/basic_scripts/backup.sh
-|4,48,70,6,1510793796,"~/ShellScripts/basic_scripts/backup.sh"
-'1  11  0  ~/ShellScripts/bashrc-add-git-func
-|4,49,11,0,1510793601,"~/ShellScripts/bashrc-add-git-func"
-'2  20  4  ~/ShellScripts/bashrc-add-gui-poweroff-logout
-|4,50,20,4,1510793574,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
-'3  14  1  ~/ShellScripts/bashrc-add-gui-poweroff-logout
-|4,51,14,1,1510793539,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
-'4  14  1  ~/ShellScripts/bashrc-add-gui-poweroff-logout
-|4,52,14,1,1510793539,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
-'5  20  0  ~/ShellScripts/bashrc-add-gui-poweroff-logout
-|4,53,20,0,1510793459,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
-'6  20  0  ~/ShellScripts/bashrc-add-gui-poweroff-logout
-|4,54,20,0,1510793459,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
+'0  70  0  ~/ShellScripts/basic_scripts/backup.sh
+|4,48,70,0,1510794970,"~/ShellScripts/basic_scripts/backup.sh"
+'1  32  0  ~/TODO
+|4,49,32,0,1510794943,"~/TODO"
+'2  70  6  ~/ShellScripts/basic_scripts/backup.sh
+|4,50,70,6,1510793796,"~/ShellScripts/basic_scripts/backup.sh"
+'3  11  0  ~/ShellScripts/bashrc-add-git-func
+|4,51,11,0,1510793601,"~/ShellScripts/bashrc-add-git-func"
+'4  20  4  ~/ShellScripts/bashrc-add-gui-poweroff-logout
+|4,52,20,4,1510793574,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
+'5  14  1  ~/ShellScripts/bashrc-add-gui-poweroff-logout
+|4,53,14,1,1510793539,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
+'6  14  1  ~/ShellScripts/bashrc-add-gui-poweroff-logout
+|4,54,14,1,1510793539,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
 '7  20  0  ~/ShellScripts/bashrc-add-gui-poweroff-logout
 |4,55,20,0,1510793459,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
-'8  21  0  ~/ShellScripts/bashrc-add-gui-poweroff-logout
-|4,56,21,0,1510793450,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
-'9  21  0  ~/ShellScripts/bashrc-add-gui-poweroff-logout
-|4,57,21,0,1510793450,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
+'8  20  0  ~/ShellScripts/bashrc-add-gui-poweroff-logout
+|4,56,20,0,1510793459,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
+'9  20  0  ~/ShellScripts/bashrc-add-gui-poweroff-logout
+|4,57,20,0,1510793459,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
 
 # Jumplist (由新到舊):
+-'  70  0  ~/ShellScripts/basic_scripts/backup.sh
+|4,39,70,0,1510794970,"~/ShellScripts/basic_scripts/backup.sh"
+-'  69  0  ~/ShellScripts/basic_scripts/backup.sh
+|4,39,69,0,1510794954,"~/ShellScripts/basic_scripts/backup.sh"
+-'  32  0  ~/TODO
+|4,39,32,0,1510794943,"~/TODO"
+-'  32  0  ~/TODO
+|4,39,32,0,1510794943,"~/TODO"
+-'  31  0  ~/TODO
+|4,39,31,0,1510794925,"~/TODO"
+-'  31  0  ~/TODO
+|4,39,31,0,1510794925,"~/TODO"
 -'  70  6  ~/ShellScripts/basic_scripts/backup.sh
 |4,39,70,6,1510793796,"~/ShellScripts/basic_scripts/backup.sh"
+-'  70  6  ~/ShellScripts/basic_scripts/backup.sh
+|4,39,70,6,1510793796,"~/ShellScripts/basic_scripts/backup.sh"
+-'  30  1  ~/ShellScripts/basic_scripts/backup.sh
+|4,39,30,1,1510793740,"~/ShellScripts/basic_scripts/backup.sh"
+-'  30  1  ~/ShellScripts/basic_scripts/backup.sh
+|4,39,30,1,1510793740,"~/ShellScripts/basic_scripts/backup.sh"
 -'  30  1  ~/ShellScripts/basic_scripts/backup.sh
 |4,39,30,1,1510793740,"~/ShellScripts/basic_scripts/backup.sh"
 -'  11  0  ~/ShellScripts/bashrc-add-git-func
 |4,39,11,0,1510793601,"~/ShellScripts/bashrc-add-git-func"
 -'  11  0  ~/ShellScripts/bashrc-add-git-func
 |4,39,11,0,1510793601,"~/ShellScripts/bashrc-add-git-func"
+-'  11  0  ~/ShellScripts/bashrc-add-git-func
+|4,39,11,0,1510793601,"~/ShellScripts/bashrc-add-git-func"
+-'  11  0  ~/ShellScripts/bashrc-add-git-func
+|4,39,11,0,1510793601,"~/ShellScripts/bashrc-add-git-func"
+-'  11  0  ~/ShellScripts/bashrc-add-git-func
+|4,39,11,0,1510793601,"~/ShellScripts/bashrc-add-git-func"
+-'  11  0  ~/ShellScripts/bashrc-add-git-func
+|4,39,11,0,1510793601,"~/ShellScripts/bashrc-add-git-func"
+-'  11  0  ~/ShellScripts/bashrc-add-git-func
+|4,39,11,0,1510793601,"~/ShellScripts/bashrc-add-git-func"
+-'  11  0  ~/ShellScripts/bashrc-add-git-func
+|4,39,11,0,1510793601,"~/ShellScripts/bashrc-add-git-func"
+-'  1  0  ~/ShellScripts/bashrc-add-git-func
+|4,39,1,0,1510793594,"~/ShellScripts/bashrc-add-git-func"
+-'  1  0  ~/ShellScripts/bashrc-add-git-func
+|4,39,1,0,1510793594,"~/ShellScripts/bashrc-add-git-func"
+-'  1  0  ~/ShellScripts/bashrc-add-git-func
+|4,39,1,0,1510793594,"~/ShellScripts/bashrc-add-git-func"
+-'  1  0  ~/ShellScripts/bashrc-add-git-func
+|4,39,1,0,1510793594,"~/ShellScripts/bashrc-add-git-func"
+-'  1  0  ~/ShellScripts/bashrc-add-git-func
+|4,39,1,0,1510793594,"~/ShellScripts/bashrc-add-git-func"
+-'  1  0  ~/ShellScripts/bashrc-add-git-func
+|4,39,1,0,1510793594,"~/ShellScripts/bashrc-add-git-func"
 -'  1  0  ~/ShellScripts/bashrc-add-git-func
 |4,39,1,0,1510793594,"~/ShellScripts/bashrc-add-git-func"
 -'  1  0  ~/ShellScripts/bashrc-add-git-func
@@ -2113,6 +2155,54 @@ $
 |4,39,20,4,1510793574,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
 -'  20  4  ~/ShellScripts/bashrc-add-gui-poweroff-logout
 |4,39,20,4,1510793574,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
+-'  20  4  ~/ShellScripts/bashrc-add-gui-poweroff-logout
+|4,39,20,4,1510793574,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
+-'  20  4  ~/ShellScripts/bashrc-add-gui-poweroff-logout
+|4,39,20,4,1510793574,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
+-'  20  4  ~/ShellScripts/bashrc-add-gui-poweroff-logout
+|4,39,20,4,1510793574,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
+-'  20  4  ~/ShellScripts/bashrc-add-gui-poweroff-logout
+|4,39,20,4,1510793574,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
+-'  20  4  ~/ShellScripts/bashrc-add-gui-poweroff-logout
+|4,39,20,4,1510793574,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
+-'  20  4  ~/ShellScripts/bashrc-add-gui-poweroff-logout
+|4,39,20,4,1510793574,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
+-'  20  4  ~/ShellScripts/bashrc-add-gui-poweroff-logout
+|4,39,20,4,1510793574,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
+-'  20  4  ~/ShellScripts/bashrc-add-gui-poweroff-logout
+|4,39,20,4,1510793574,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
+-'  20  4  ~/ShellScripts/bashrc-add-gui-poweroff-logout
+|4,39,20,4,1510793574,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
+-'  20  4  ~/ShellScripts/bashrc-add-gui-poweroff-logout
+|4,39,20,4,1510793574,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
+-'  20  4  ~/ShellScripts/bashrc-add-gui-poweroff-logout
+|4,39,20,4,1510793574,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
+-'  20  4  ~/ShellScripts/bashrc-add-gui-poweroff-logout
+|4,39,20,4,1510793574,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
+-'  14  1  ~/ShellScripts/bashrc-add-gui-poweroff-logout
+|4,39,14,1,1510793555,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
+-'  14  1  ~/ShellScripts/bashrc-add-gui-poweroff-logout
+|4,39,14,1,1510793555,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
+-'  14  1  ~/ShellScripts/bashrc-add-gui-poweroff-logout
+|4,39,14,1,1510793555,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
+-'  14  1  ~/ShellScripts/bashrc-add-gui-poweroff-logout
+|4,39,14,1,1510793555,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
+-'  14  1  ~/ShellScripts/bashrc-add-gui-poweroff-logout
+|4,39,14,1,1510793555,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
+-'  14  1  ~/ShellScripts/bashrc-add-gui-poweroff-logout
+|4,39,14,1,1510793555,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
+-'  14  1  ~/ShellScripts/bashrc-add-gui-poweroff-logout
+|4,39,14,1,1510793555,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
+-'  14  1  ~/ShellScripts/bashrc-add-gui-poweroff-logout
+|4,39,14,1,1510793555,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
+-'  14  1  ~/ShellScripts/bashrc-add-gui-poweroff-logout
+|4,39,14,1,1510793555,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
+-'  14  1  ~/ShellScripts/bashrc-add-gui-poweroff-logout
+|4,39,14,1,1510793555,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
+-'  14  1  ~/ShellScripts/bashrc-add-gui-poweroff-logout
+|4,39,14,1,1510793555,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
+-'  14  1  ~/ShellScripts/bashrc-add-gui-poweroff-logout
+|4,39,14,1,1510793555,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
 -'  14  1  ~/ShellScripts/bashrc-add-gui-poweroff-logout
 |4,39,14,1,1510793555,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
 -'  14  1  ~/ShellScripts/bashrc-add-gui-poweroff-logout
@@ -2129,6 +2219,54 @@ $
 |4,39,14,1,1510793539,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
 -'  14  1  ~/ShellScripts/bashrc-add-gui-poweroff-logout
 |4,39,14,1,1510793539,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
+-'  14  1  ~/ShellScripts/bashrc-add-gui-poweroff-logout
+|4,39,14,1,1510793539,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
+-'  14  1  ~/ShellScripts/bashrc-add-gui-poweroff-logout
+|4,39,14,1,1510793539,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
+-'  14  1  ~/ShellScripts/bashrc-add-gui-poweroff-logout
+|4,39,14,1,1510793539,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
+-'  14  1  ~/ShellScripts/bashrc-add-gui-poweroff-logout
+|4,39,14,1,1510793539,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
+-'  14  1  ~/ShellScripts/bashrc-add-gui-poweroff-logout
+|4,39,14,1,1510793539,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
+-'  14  1  ~/ShellScripts/bashrc-add-gui-poweroff-logout
+|4,39,14,1,1510793539,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
+-'  14  1  ~/ShellScripts/bashrc-add-gui-poweroff-logout
+|4,39,14,1,1510793539,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
+-'  14  1  ~/ShellScripts/bashrc-add-gui-poweroff-logout
+|4,39,14,1,1510793539,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
+-'  14  1  ~/ShellScripts/bashrc-add-gui-poweroff-logout
+|4,39,14,1,1510793539,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
+-'  14  1  ~/ShellScripts/bashrc-add-gui-poweroff-logout
+|4,39,14,1,1510793539,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
+-'  14  1  ~/ShellScripts/bashrc-add-gui-poweroff-logout
+|4,39,14,1,1510793539,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
+-'  14  1  ~/ShellScripts/bashrc-add-gui-poweroff-logout
+|4,39,14,1,1510793539,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
+-'  20  1  ~/ShellScripts/bashrc-add-gui-poweroff-logout
+|4,39,20,1,1510793508,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
+-'  20  1  ~/ShellScripts/bashrc-add-gui-poweroff-logout
+|4,39,20,1,1510793508,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
+-'  20  1  ~/ShellScripts/bashrc-add-gui-poweroff-logout
+|4,39,20,1,1510793508,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
+-'  20  1  ~/ShellScripts/bashrc-add-gui-poweroff-logout
+|4,39,20,1,1510793508,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
+-'  20  1  ~/ShellScripts/bashrc-add-gui-poweroff-logout
+|4,39,20,1,1510793508,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
+-'  20  1  ~/ShellScripts/bashrc-add-gui-poweroff-logout
+|4,39,20,1,1510793508,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
+-'  20  1  ~/ShellScripts/bashrc-add-gui-poweroff-logout
+|4,39,20,1,1510793508,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
+-'  20  1  ~/ShellScripts/bashrc-add-gui-poweroff-logout
+|4,39,20,1,1510793508,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
+-'  20  1  ~/ShellScripts/bashrc-add-gui-poweroff-logout
+|4,39,20,1,1510793508,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
+-'  20  1  ~/ShellScripts/bashrc-add-gui-poweroff-logout
+|4,39,20,1,1510793508,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
+-'  20  1  ~/ShellScripts/bashrc-add-gui-poweroff-logout
+|4,39,20,1,1510793508,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
+-'  20  1  ~/ShellScripts/bashrc-add-gui-poweroff-logout
+|4,39,20,1,1510793508,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
 -'  20  1  ~/ShellScripts/bashrc-add-gui-poweroff-logout
 |4,39,20,1,1510793508,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
 -'  20  1  ~/ShellScripts/bashrc-add-gui-poweroff-logout
@@ -2145,160 +2283,22 @@ $
 |4,39,20,0,1510793459,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
 -'  20  0  ~/ShellScripts/bashrc-add-gui-poweroff-logout
 |4,39,20,0,1510793459,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
--'  21  0  ~/ShellScripts/bashrc-add-gui-poweroff-logout
-|4,39,21,0,1510793457,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
--'  21  0  ~/ShellScripts/bashrc-add-gui-poweroff-logout
-|4,39,21,0,1510793457,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
--'  21  0  ~/ShellScripts/bashrc-add-gui-poweroff-logout
-|4,39,21,0,1510793457,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
--'  21  0  ~/ShellScripts/bashrc-add-gui-poweroff-logout
-|4,39,21,0,1510793457,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
--'  21  0  ~/ShellScripts/bashrc-add-gui-poweroff-logout
-|4,39,21,0,1510793457,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
--'  21  0  ~/ShellScripts/bashrc-add-gui-poweroff-logout
-|4,39,21,0,1510793457,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
--'  21  0  ~/ShellScripts/bashrc-add-gui-poweroff-logout
-|4,39,21,0,1510793457,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
--'  21  0  ~/ShellScripts/bashrc-add-gui-poweroff-logout
-|4,39,21,0,1510793457,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
--'  21  0  ~/ShellScripts/bashrc-add-gui-poweroff-logout
-|4,39,21,0,1510793457,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
--'  21  0  ~/ShellScripts/bashrc-add-gui-poweroff-logout
-|4,39,21,0,1510793457,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
--'  21  0  ~/ShellScripts/bashrc-add-gui-poweroff-logout
-|4,39,21,0,1510793457,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
--'  21  0  ~/ShellScripts/bashrc-add-gui-poweroff-logout
-|4,39,21,0,1510793457,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
--'  21  0  ~/ShellScripts/bashrc-add-gui-poweroff-logout
-|4,39,21,0,1510793450,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
--'  21  0  ~/ShellScripts/bashrc-add-gui-poweroff-logout
-|4,39,21,0,1510793450,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
--'  21  0  ~/ShellScripts/bashrc-add-gui-poweroff-logout
-|4,39,21,0,1510793450,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
--'  21  0  ~/ShellScripts/bashrc-add-gui-poweroff-logout
-|4,39,21,0,1510793450,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
--'  19  1  ~/ShellScripts/bashrc-add-gui-poweroff-logout
-|4,39,19,1,1510793440,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
--'  19  1  ~/ShellScripts/bashrc-add-gui-poweroff-logout
-|4,39,19,1,1510793440,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
--'  19  1  ~/ShellScripts/bashrc-add-gui-poweroff-logout
-|4,39,19,1,1510793440,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
--'  19  1  ~/ShellScripts/bashrc-add-gui-poweroff-logout
-|4,39,19,1,1510793440,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
--'  19  1  ~/ShellScripts/bashrc-add-gui-poweroff-logout
-|4,39,19,1,1510793440,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
--'  19  1  ~/ShellScripts/bashrc-add-gui-poweroff-logout
-|4,39,19,1,1510793440,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
--'  19  1  ~/ShellScripts/bashrc-add-gui-poweroff-logout
-|4,39,19,1,1510793440,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
--'  19  1  ~/ShellScripts/bashrc-add-gui-poweroff-logout
-|4,39,19,1,1510793440,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
--'  19  1  ~/ShellScripts/bashrc-add-gui-poweroff-logout
-|4,39,19,1,1510793440,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
--'  19  1  ~/ShellScripts/bashrc-add-gui-poweroff-logout
-|4,39,19,1,1510793440,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
--'  19  1  ~/ShellScripts/bashrc-add-gui-poweroff-logout
-|4,39,19,1,1510793440,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
--'  19  1  ~/ShellScripts/bashrc-add-gui-poweroff-logout
-|4,39,19,1,1510793440,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
--'  19  1  ~/ShellScripts/bashrc-add-gui-poweroff-logout
-|4,39,19,1,1510793440,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
--'  19  1  ~/ShellScripts/bashrc-add-gui-poweroff-logout
-|4,39,19,1,1510793440,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
--'  19  1  ~/ShellScripts/bashrc-add-gui-poweroff-logout
-|4,39,19,1,1510793440,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
--'  19  1  ~/ShellScripts/bashrc-add-gui-poweroff-logout
-|4,39,19,1,1510793440,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
--'  120  0  ~/.bashrc
-|4,39,120,0,1510793397,"~/.bashrc"
--'  120  0  ~/.bashrc
-|4,39,120,0,1510793397,"~/.bashrc"
--'  120  0  ~/.bashrc
-|4,39,120,0,1510793397,"~/.bashrc"
--'  120  0  ~/.bashrc
-|4,39,120,0,1510793397,"~/.bashrc"
--'  120  0  ~/.bashrc
-|4,39,120,0,1510793397,"~/.bashrc"
--'  120  0  ~/.bashrc
-|4,39,120,0,1510793397,"~/.bashrc"
--'  120  0  ~/.bashrc
-|4,39,120,0,1510793397,"~/.bashrc"
--'  120  0  ~/.bashrc
-|4,39,120,0,1510793397,"~/.bashrc"
--'  120  0  ~/.bashrc
-|4,39,120,0,1510793397,"~/.bashrc"
--'  120  0  ~/.bashrc
-|4,39,120,0,1510793397,"~/.bashrc"
--'  120  0  ~/.bashrc
-|4,39,120,0,1510793397,"~/.bashrc"
--'  120  0  ~/.bashrc
-|4,39,120,0,1510793397,"~/.bashrc"
--'  120  0  ~/.bashrc
-|4,39,120,0,1510793397,"~/.bashrc"
--'  120  0  ~/.bashrc
-|4,39,120,0,1510793397,"~/.bashrc"
--'  120  0  ~/.bashrc
-|4,39,120,0,1510793397,"~/.bashrc"
--'  120  0  ~/.bashrc
-|4,39,120,0,1510793397,"~/.bashrc"
--'  120  0  ~/.bashrc
-|4,39,120,0,1510793397,"~/.bashrc"
--'  120  0  ~/.bashrc
-|4,39,120,0,1510793397,"~/.bashrc"
--'  120  0  ~/.bashrc
-|4,39,120,0,1510793397,"~/.bashrc"
--'  120  0  ~/.bashrc
-|4,39,120,0,1510793397,"~/.bashrc"
--'  120  0  ~/.bashrc
-|4,39,120,0,1510793397,"~/.bashrc"
--'  120  0  ~/.bashrc
-|4,39,120,0,1510793397,"~/.bashrc"
--'  120  0  ~/.bashrc
-|4,39,120,0,1510793397,"~/.bashrc"
--'  120  0  ~/.bashrc
-|4,39,120,0,1510793397,"~/.bashrc"
--'  120  0  ~/.bashrc
-|4,39,120,0,1510793397,"~/.bashrc"
--'  120  0  ~/.bashrc
-|4,39,120,0,1510793397,"~/.bashrc"
--'  120  0  ~/.bashrc
-|4,39,120,0,1510793397,"~/.bashrc"
--'  120  0  ~/.bashrc
-|4,39,120,0,1510793397,"~/.bashrc"
--'  120  0  ~/.bashrc
-|4,39,120,0,1510793397,"~/.bashrc"
--'  120  0  ~/.bashrc
-|4,39,120,0,1510793397,"~/.bashrc"
--'  120  0  ~/.bashrc
-|4,39,120,0,1510793397,"~/.bashrc"
--'  120  0  ~/.bashrc
-|4,39,120,0,1510793397,"~/.bashrc"
--'  120  0  ~/.bashrc
-|4,39,120,0,1510793397,"~/.bashrc"
--'  120  0  ~/.bashrc
-|4,39,120,0,1510793397,"~/.bashrc"
--'  120  0  ~/.bashrc
-|4,39,120,0,1510793397,"~/.bashrc"
--'  120  0  ~/.bashrc
-|4,39,120,0,1510793397,"~/.bashrc"
--'  120  0  ~/.bashrc
-|4,39,120,0,1510793397,"~/.bashrc"
--'  120  0  ~/.bashrc
-|4,39,120,0,1510793397,"~/.bashrc"
--'  120  0  ~/.bashrc
-|4,39,120,0,1510793397,"~/.bashrc"
--'  120  0  ~/.bashrc
-|4,39,120,0,1510793397,"~/.bashrc"
--'  120  0  ~/.bashrc
-|4,39,120,0,1510793397,"~/.bashrc"
--'  120  0  ~/.bashrc
-|4,39,120,0,1510793397,"~/.bashrc"
+-'  20  0  ~/ShellScripts/bashrc-add-gui-poweroff-logout
+|4,39,20,0,1510793459,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
+-'  20  0  ~/ShellScripts/bashrc-add-gui-poweroff-logout
+|4,39,20,0,1510793459,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
+-'  20  0  ~/ShellScripts/bashrc-add-gui-poweroff-logout
+|4,39,20,0,1510793459,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
+-'  20  0  ~/ShellScripts/bashrc-add-gui-poweroff-logout
+|4,39,20,0,1510793459,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
+-'  20  0  ~/ShellScripts/bashrc-add-gui-poweroff-logout
+|4,39,20,0,1510793459,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
 
 # 檔案內 Mark 記錄 (由新到舊):
 
 > ~/ShellScripts/basic_scripts/backup.sh
-	*	1510793795	0
-	"	70	6
+	*	1510794969	0
+	"	70	0
 	^	10	52
 	.	34	5
 	+	3	26
@@ -2311,6 +2311,14 @@ $
 	+	6	4
 	+	10	51
 	+	34	5
+
+> ~/TODO
+	*	1510794937	0
+	"	32	0
+	^	31	0
+	.	32	0
+	+	31	0
+	+	32	0
 
 > ~/ShellScripts/bashrc-add-git-func
 	*	1510793598	0
@@ -2380,13 +2388,6 @@ $
 	"	1	0
 	.	1	0
 	+	1	0
-
-> ~/TODO
-	*	1510738481	0
-	"	31	0
-	^	31	0
-	.	31	0
-	+	31	0
 
 > ~/.vimperatorrc
 	*	1510736699	0
