@@ -2,6 +2,7 @@
 
 .
 ..
+2017-11-16-101253_1280x720_scrot.png
 .bash_history
 .bash_logout
 .bashrc
@@ -40,6 +41,7 @@ ShellScripts
 .stardict
 .sunpinyin
 Templates
+testGithub.py
 .themes
 .thumbnails
 TODO

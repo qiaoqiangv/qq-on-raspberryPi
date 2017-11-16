@@ -11,7 +11,7 @@
 # hlsearch on (H) or off (h):
 ~h
 # Last Search Pattern:
-~Msle0~/\<keybindings\>
+~MSle0~/\<keybindings\>
 
 # Last Substitute Search Pattern:
 ~MSle0&^
@@ -20,14 +20,14 @@
 $
 
 # 命令列 歷史記錄 (新到舊):
-:x
-|2,0,1510795167,,"x"
 :q
-|2,0,1510795158,,"q"
+|2,0,1510798480,,"q"
+:x
+|2,0,1510797009,,"x"
+:w
+|2,0,1510797008,,"w"
 :wq
 |2,0,1510793796,,"wq"
-:w
-|2,0,1510793775,,"w"
 :set nu
 |2,0,1510788843,,"set nu"
 :q!
@@ -1022,14 +1022,16 @@ $
 |2,0,0,,"bufdo bunload"
 
 # 搜尋字串 歷史記錄 (新到舊):
+? \s\+$
+|2,1,1510797008,,"\\s\\+$"
+? @$
+|2,1,1510796843,,"@$"
 ? \<keybindings\>
 |2,1,1510788938,,"\\<keybindings\\>"
 ? \<Keybindings\>
 |2,1,1510788937,,"\\<Keybindings\\>"
 ?/emacs
 |2,1,0,47,"emacs"
-? @$
-|2,1,0,,"@$"
 ?/term
 |2,1,0,47,"term"
 ?/xterm
@@ -2032,269 +2034,299 @@ $
 # Debug Line 歷史記錄 (新到舊):
 
 # 暫存器:
-"0	CHAR	0
-	~/
-|3,0,0,0,1,0,1510793767,"~/"
-""1	LINE	0
+"0	LINE	0
 	
-|3,1,1,1,1,0,1510794937,""
+|3,0,0,1,1,0,1510796843,""
+"1	LINE	0
+	Then play with your Github objects:
+|3,0,1,1,1,0,1510796965,"Then play with your Github objects:"
 "2	LINE	0
-	16. 三 11月 15 17:36:35 CST 2017 - CONTENT : diff the '.gitignore.diff1' and '.gitignore.diff2'
-|3,0,2,1,1,0,1510794936,"16. 三 11月 15 17:36:35 CST 2017 - CONTENT : diff the '.gitignore.diff1' and '.gitignore.diff2'"
+	
+|3,0,2,1,1,0,1510796955,""
 "3	LINE	0
 	
-|3,0,3,1,1,0,1510794931,""
+|3,0,3,1,1,0,1510794937,""
 "4	LINE	0
-	17. 三 11月 15 18:31:15 CST 2017 - CONTENT : emacs 设置字体大小
-|3,0,4,1,1,0,1510794930,"17. 三 11月 15 18:31:15 CST 2017 - CONTENT : emacs 设置字体大小"
+	16. 三 11月 15 17:36:35 CST 2017 - CONTENT : diff the '.gitignore.diff1' and '.gitignore.diff2'
+|3,0,4,1,1,0,1510794936,"16. 三 11月 15 17:36:35 CST 2017 - CONTENT : diff the '.gitignore.diff1' and '.gitignore.diff2'"
 "5	LINE	0
-		gnome-session-quit --power-off --force --no-prompt 
-|3,0,5,1,1,0,1510793569,"	gnome-session-quit --power-off --force --no-prompt "
+	
+|3,0,5,1,1,0,1510794931,""
 "6	LINE	0
-		 
-|3,0,6,1,1,0,1510793562,"	 "
+	17. 三 11月 15 18:31:15 CST 2017 - CONTENT : emacs 设置字体大小
+|3,0,6,1,1,0,1510794930,"17. 三 11月 15 18:31:15 CST 2017 - CONTENT : emacs 设置字体大小"
 "7	LINE	0
-	lxde-pi-shutdown-helper
-|3,0,7,1,1,0,1510793558,"lxde-pi-shutdown-helper"
-"8	CHAR	0
-	# add ibus
-	export GTK_IM_MODULE=ibus
-	export XMODIFIERS=@im=ibus
-	export QT_IM_MODULE=ibus
-	
-|3,0,8,0,5,0,1510793383,"# add ibus","export GTK_IM_MODULE=ibus","export XMODIFIERS=@im=ibus","export QT_IM_MODULE=ibus",""
+		gnome-session-quit --power-off --force --no-prompt 
+|3,0,7,1,1,0,1510793569,"	gnome-session-quit --power-off --force --no-prompt "
+"8	LINE	0
+		 
+|3,0,8,1,1,0,1510793562,"	 "
 "9	LINE	0
-	
-|3,0,9,1,1,0,1510789047,""
-"-	CHAR	0
-	/
-|3,0,36,0,1,0,1510793774,"/"
+	lxde-pi-shutdown-helper
+|3,0,9,1,1,0,1510793558,"lxde-pi-shutdown-helper"
+""-	CHAR	0
+	d
+|3,1,36,0,1,0,1510797004,"d"
 
 # 檔案標記:
-'0  35  10  ~/.gitignore
-|4,48,35,10,1510795167,"~/.gitignore"
-'1  35  0  ~/.gitignore
-|4,49,35,0,1510795158,"~/.gitignore"
-'2  70  0  ~/ShellScripts/basic_scripts/backup.sh
-|4,50,70,0,1510794970,"~/ShellScripts/basic_scripts/backup.sh"
-'3  32  0  ~/TODO
-|4,51,32,0,1510794943,"~/TODO"
-'4  70  6  ~/ShellScripts/basic_scripts/backup.sh
-|4,52,70,6,1510793796,"~/ShellScripts/basic_scripts/backup.sh"
-'5  11  0  ~/ShellScripts/bashrc-add-git-func
-|4,53,11,0,1510793601,"~/ShellScripts/bashrc-add-git-func"
-'6  20  4  ~/ShellScripts/bashrc-add-gui-poweroff-logout
-|4,54,20,4,1510793574,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
-'7  14  1  ~/ShellScripts/bashrc-add-gui-poweroff-logout
-|4,55,14,1,1510793539,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
-'8  14  1  ~/ShellScripts/bashrc-add-gui-poweroff-logout
-|4,56,14,1,1510793539,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
-'9  20  0  ~/ShellScripts/bashrc-add-gui-poweroff-logout
-|4,57,20,0,1510793459,"~/ShellScripts/bashrc-add-gui-poweroff-logout"
+'0  14  0  ~/diff-the-Home-and-repo.txt
+|4,48,14,0,1510798480,"~/diff-the-Home-and-repo.txt"
+'1  14  4  ~/diff-the-Home-and-repo.txt
+|4,49,14,4,1510798305,"~/diff-the-Home-and-repo.txt"
+'2  1  0  ~/Github/PyGithub/github/Repository.py
+|4,50,1,0,1510797291,"~/Github/PyGithub/github/Repository.py"
+'3  87  0  ~/Github/PyGithub/manage.sh
+|4,51,87,0,1510797115,"~/Github/PyGithub/manage.sh"
+'4  2  32  ~/testGithub.py
+|4,52,2,32,1510797009,"~/testGithub.py"
+'5  6  3  ~/testGithub.py
+|4,53,6,3,1510796983,"~/testGithub.py"
+'6  6  3  ~/testGithub.py
+|4,54,6,3,1510796983,"~/testGithub.py"
+'7  35  0  ~/Github/PyGithub/github.py
+|4,55,35,0,1510796852,"~/Github/PyGithub/github.py"
+'8  54  4  ~/Github/PyGithub/setup.py
+|4,56,54,4,1510796822,"~/Github/PyGithub/setup.py"
+'9  2358  12  ~/Github/PyGithub/github/Repository.py
+|4,57,2358,12,1510796559,"~/Github/PyGithub/github/Repository.py"
 
 # Jumplist (由新到舊):
--'  35  10  ~/.gitignore
-|4,39,35,10,1510795167,"~/.gitignore"
--'  35  0  ~/.gitignore
-|4,39,35,0,1510795158,"~/.gitignore"
--'  70  0  ~/ShellScripts/basic_scripts/backup.sh
-|4,39,70,0,1510794970,"~/ShellScripts/basic_scripts/backup.sh"
--'  70  0  ~/ShellScripts/basic_scripts/backup.sh
-|4,39,70,0,1510794970,"~/ShellScripts/basic_scripts/backup.sh"
--'  70  0  ~/ShellScripts/basic_scripts/backup.sh
-|4,39,70,0,1510794970,"~/ShellScripts/basic_scripts/backup.sh"
--'  70  0  ~/ShellScripts/basic_scripts/backup.sh
-|4,39,70,0,1510794970,"~/ShellScripts/basic_scripts/backup.sh"
--'  69  0  ~/ShellScripts/basic_scripts/backup.sh
-|4,39,69,0,1510794954,"~/ShellScripts/basic_scripts/backup.sh"
--'  69  0  ~/ShellScripts/basic_scripts/backup.sh
-|4,39,69,0,1510794954,"~/ShellScripts/basic_scripts/backup.sh"
--'  69  0  ~/ShellScripts/basic_scripts/backup.sh
-|4,39,69,0,1510794954,"~/ShellScripts/basic_scripts/backup.sh"
--'  69  0  ~/ShellScripts/basic_scripts/backup.sh
-|4,39,69,0,1510794954,"~/ShellScripts/basic_scripts/backup.sh"
--'  32  0  ~/TODO
-|4,39,32,0,1510794943,"~/TODO"
--'  32  0  ~/TODO
-|4,39,32,0,1510794943,"~/TODO"
--'  32  0  ~/TODO
-|4,39,32,0,1510794943,"~/TODO"
--'  32  0  ~/TODO
-|4,39,32,0,1510794943,"~/TODO"
--'  32  0  ~/TODO
-|4,39,32,0,1510794943,"~/TODO"
--'  32  0  ~/TODO
-|4,39,32,0,1510794943,"~/TODO"
--'  32  0  ~/TODO
-|4,39,32,0,1510794943,"~/TODO"
--'  32  0  ~/TODO
-|4,39,32,0,1510794943,"~/TODO"
--'  31  0  ~/TODO
-|4,39,31,0,1510794925,"~/TODO"
--'  31  0  ~/TODO
-|4,39,31,0,1510794925,"~/TODO"
--'  31  0  ~/TODO
-|4,39,31,0,1510794925,"~/TODO"
--'  31  0  ~/TODO
-|4,39,31,0,1510794925,"~/TODO"
--'  31  0  ~/TODO
-|4,39,31,0,1510794925,"~/TODO"
--'  31  0  ~/TODO
-|4,39,31,0,1510794925,"~/TODO"
--'  31  0  ~/TODO
-|4,39,31,0,1510794925,"~/TODO"
--'  31  0  ~/TODO
-|4,39,31,0,1510794925,"~/TODO"
--'  70  6  ~/ShellScripts/basic_scripts/backup.sh
-|4,39,70,6,1510793796,"~/ShellScripts/basic_scripts/backup.sh"
--'  70  6  ~/ShellScripts/basic_scripts/backup.sh
-|4,39,70,6,1510793796,"~/ShellScripts/basic_scripts/backup.sh"
--'  70  6  ~/ShellScripts/basic_scripts/backup.sh
-|4,39,70,6,1510793796,"~/ShellScripts/basic_scripts/backup.sh"
--'  70  6  ~/ShellScripts/basic_scripts/backup.sh
-|4,39,70,6,1510793796,"~/ShellScripts/basic_scripts/backup.sh"
--'  70  6  ~/ShellScripts/basic_scripts/backup.sh
-|4,39,70,6,1510793796,"~/ShellScripts/basic_scripts/backup.sh"
--'  70  6  ~/ShellScripts/basic_scripts/backup.sh
-|4,39,70,6,1510793796,"~/ShellScripts/basic_scripts/backup.sh"
--'  70  6  ~/ShellScripts/basic_scripts/backup.sh
-|4,39,70,6,1510793796,"~/ShellScripts/basic_scripts/backup.sh"
--'  70  6  ~/ShellScripts/basic_scripts/backup.sh
-|4,39,70,6,1510793796,"~/ShellScripts/basic_scripts/backup.sh"
--'  30  1  ~/ShellScripts/basic_scripts/backup.sh
-|4,39,30,1,1510793740,"~/ShellScripts/basic_scripts/backup.sh"
--'  30  1  ~/ShellScripts/basic_scripts/backup.sh
-|4,39,30,1,1510793740,"~/ShellScripts/basic_scripts/backup.sh"
--'  30  1  ~/ShellScripts/basic_scripts/backup.sh
-|4,39,30,1,1510793740,"~/ShellScripts/basic_scripts/backup.sh"
--'  30  1  ~/ShellScripts/basic_scripts/backup.sh
-|4,39,30,1,1510793740,"~/ShellScripts/basic_scripts/backup.sh"
--'  30  1  ~/ShellScripts/basic_scripts/backup.sh
-|4,39,30,1,1510793740,"~/ShellScripts/basic_scripts/backup.sh"
--'  30  1  ~/ShellScripts/basic_scripts/backup.sh
-|4,39,30,1,1510793740,"~/ShellScripts/basic_scripts/backup.sh"
--'  30  1  ~/ShellScripts/basic_scripts/backup.sh
-|4,39,30,1,1510793740,"~/ShellScripts/basic_scripts/backup.sh"
--'  30  1  ~/ShellScripts/basic_scripts/backup.sh
-|4,39,30,1,1510793740,"~/ShellScripts/basic_scripts/backup.sh"
--'  30  1  ~/ShellScripts/basic_scripts/backup.sh
-|4,39,30,1,1510793740,"~/ShellScripts/basic_scripts/backup.sh"
--'  30  1  ~/ShellScripts/basic_scripts/backup.sh
-|4,39,30,1,1510793740,"~/ShellScripts/basic_scripts/backup.sh"
--'  30  1  ~/ShellScripts/basic_scripts/backup.sh
-|4,39,30,1,1510793740,"~/ShellScripts/basic_scripts/backup.sh"
--'  30  1  ~/ShellScripts/basic_scripts/backup.sh
-|4,39,30,1,1510793740,"~/ShellScripts/basic_scripts/backup.sh"
--'  11  0  ~/ShellScripts/bashrc-add-git-func
-|4,39,11,0,1510793601,"~/ShellScripts/bashrc-add-git-func"
--'  11  0  ~/ShellScripts/bashrc-add-git-func
-|4,39,11,0,1510793601,"~/ShellScripts/bashrc-add-git-func"
--'  11  0  ~/ShellScripts/bashrc-add-git-func
-|4,39,11,0,1510793601,"~/ShellScripts/bashrc-add-git-func"
--'  11  0  ~/ShellScripts/bashrc-add-git-func
-|4,39,11,0,1510793601,"~/ShellScripts/bashrc-add-git-func"
--'  11  0  ~/ShellScripts/bashrc-add-git-func
-|4,39,11,0,1510793601,"~/ShellScripts/bashrc-add-git-func"
--'  11  0  ~/ShellScripts/bashrc-add-git-func
-|4,39,11,0,1510793601,"~/ShellScripts/bashrc-add-git-func"
--'  11  0  ~/ShellScripts/bashrc-add-git-func
-|4,39,11,0,1510793601,"~/ShellScripts/bashrc-add-git-func"
--'  11  0  ~/ShellScripts/bashrc-add-git-func
-|4,39,11,0,1510793601,"~/ShellScripts/bashrc-add-git-func"
--'  11  0  ~/ShellScripts/bashrc-add-git-func
-|4,39,11,0,1510793601,"~/ShellScripts/bashrc-add-git-func"
--'  11  0  ~/ShellScripts/bashrc-add-git-func
-|4,39,11,0,1510793601,"~/ShellScripts/bashrc-add-git-func"
--'  11  0  ~/ShellScripts/bashrc-add-git-func
-|4,39,11,0,1510793601,"~/ShellScripts/bashrc-add-git-func"
--'  11  0  ~/ShellScripts/bashrc-add-git-func
-|4,39,11,0,1510793601,"~/ShellScripts/bashrc-add-git-func"
--'  11  0  ~/ShellScripts/bashrc-add-git-func
-|4,39,11,0,1510793601,"~/ShellScripts/bashrc-add-git-func"
--'  11  0  ~/ShellScripts/bashrc-add-git-func
-|4,39,11,0,1510793601,"~/ShellScripts/bashrc-add-git-func"
--'  11  0  ~/ShellScripts/bashrc-add-git-func
-|4,39,11,0,1510793601,"~/ShellScripts/bashrc-add-git-func"
--'  11  0  ~/ShellScripts/bashrc-add-git-func
-|4,39,11,0,1510793601,"~/ShellScripts/bashrc-add-git-func"
--'  11  0  ~/ShellScripts/bashrc-add-git-func
-|4,39,11,0,1510793601,"~/ShellScripts/bashrc-add-git-func"
--'  11  0  ~/ShellScripts/bashrc-add-git-func
-|4,39,11,0,1510793601,"~/ShellScripts/bashrc-add-git-func"
--'  11  0  ~/ShellScripts/bashrc-add-git-func
-|4,39,11,0,1510793601,"~/ShellScripts/bashrc-add-git-func"
--'  11  0  ~/ShellScripts/bashrc-add-git-func
-|4,39,11,0,1510793601,"~/ShellScripts/bashrc-add-git-func"
--'  11  0  ~/ShellScripts/bashrc-add-git-func
-|4,39,11,0,1510793601,"~/ShellScripts/bashrc-add-git-func"
--'  11  0  ~/ShellScripts/bashrc-add-git-func
-|4,39,11,0,1510793601,"~/ShellScripts/bashrc-add-git-func"
--'  11  0  ~/ShellScripts/bashrc-add-git-func
-|4,39,11,0,1510793601,"~/ShellScripts/bashrc-add-git-func"
--'  11  0  ~/ShellScripts/bashrc-add-git-func
-|4,39,11,0,1510793601,"~/ShellScripts/bashrc-add-git-func"
--'  11  0  ~/ShellScripts/bashrc-add-git-func
-|4,39,11,0,1510793601,"~/ShellScripts/bashrc-add-git-func"
--'  11  0  ~/ShellScripts/bashrc-add-git-func
-|4,39,11,0,1510793601,"~/ShellScripts/bashrc-add-git-func"
--'  11  0  ~/ShellScripts/bashrc-add-git-func
-|4,39,11,0,1510793601,"~/ShellScripts/bashrc-add-git-func"
--'  11  0  ~/ShellScripts/bashrc-add-git-func
-|4,39,11,0,1510793601,"~/ShellScripts/bashrc-add-git-func"
--'  11  0  ~/ShellScripts/bashrc-add-git-func
-|4,39,11,0,1510793601,"~/ShellScripts/bashrc-add-git-func"
--'  11  0  ~/ShellScripts/bashrc-add-git-func
-|4,39,11,0,1510793601,"~/ShellScripts/bashrc-add-git-func"
--'  11  0  ~/ShellScripts/bashrc-add-git-func
-|4,39,11,0,1510793601,"~/ShellScripts/bashrc-add-git-func"
--'  11  0  ~/ShellScripts/bashrc-add-git-func
-|4,39,11,0,1510793601,"~/ShellScripts/bashrc-add-git-func"
--'  1  0  ~/ShellScripts/bashrc-add-git-func
-|4,39,1,0,1510793594,"~/ShellScripts/bashrc-add-git-func"
--'  1  0  ~/ShellScripts/bashrc-add-git-func
-|4,39,1,0,1510793594,"~/ShellScripts/bashrc-add-git-func"
--'  1  0  ~/ShellScripts/bashrc-add-git-func
-|4,39,1,0,1510793594,"~/ShellScripts/bashrc-add-git-func"
--'  1  0  ~/ShellScripts/bashrc-add-git-func
-|4,39,1,0,1510793594,"~/ShellScripts/bashrc-add-git-func"
--'  1  0  ~/ShellScripts/bashrc-add-git-func
-|4,39,1,0,1510793594,"~/ShellScripts/bashrc-add-git-func"
--'  1  0  ~/ShellScripts/bashrc-add-git-func
-|4,39,1,0,1510793594,"~/ShellScripts/bashrc-add-git-func"
--'  1  0  ~/ShellScripts/bashrc-add-git-func
-|4,39,1,0,1510793594,"~/ShellScripts/bashrc-add-git-func"
--'  1  0  ~/ShellScripts/bashrc-add-git-func
-|4,39,1,0,1510793594,"~/ShellScripts/bashrc-add-git-func"
--'  1  0  ~/ShellScripts/bashrc-add-git-func
-|4,39,1,0,1510793594,"~/ShellScripts/bashrc-add-git-func"
--'  1  0  ~/ShellScripts/bashrc-add-git-func
-|4,39,1,0,1510793594,"~/ShellScripts/bashrc-add-git-func"
--'  1  0  ~/ShellScripts/bashrc-add-git-func
-|4,39,1,0,1510793594,"~/ShellScripts/bashrc-add-git-func"
--'  1  0  ~/ShellScripts/bashrc-add-git-func
-|4,39,1,0,1510793594,"~/ShellScripts/bashrc-add-git-func"
--'  1  0  ~/ShellScripts/bashrc-add-git-func
-|4,39,1,0,1510793594,"~/ShellScripts/bashrc-add-git-func"
--'  1  0  ~/ShellScripts/bashrc-add-git-func
-|4,39,1,0,1510793594,"~/ShellScripts/bashrc-add-git-func"
--'  1  0  ~/ShellScripts/bashrc-add-git-func
-|4,39,1,0,1510793594,"~/ShellScripts/bashrc-add-git-func"
--'  1  0  ~/ShellScripts/bashrc-add-git-func
-|4,39,1,0,1510793594,"~/ShellScripts/bashrc-add-git-func"
--'  1  0  ~/ShellScripts/bashrc-add-git-func
-|4,39,1,0,1510793594,"~/ShellScripts/bashrc-add-git-func"
--'  1  0  ~/ShellScripts/bashrc-add-git-func
-|4,39,1,0,1510793594,"~/ShellScripts/bashrc-add-git-func"
--'  1  0  ~/ShellScripts/bashrc-add-git-func
-|4,39,1,0,1510793594,"~/ShellScripts/bashrc-add-git-func"
--'  1  0  ~/ShellScripts/bashrc-add-git-func
-|4,39,1,0,1510793594,"~/ShellScripts/bashrc-add-git-func"
--'  1  0  ~/ShellScripts/bashrc-add-git-func
-|4,39,1,0,1510793594,"~/ShellScripts/bashrc-add-git-func"
--'  1  0  ~/ShellScripts/bashrc-add-git-func
-|4,39,1,0,1510793594,"~/ShellScripts/bashrc-add-git-func"
+-'  14  0  ~/diff-the-Home-and-repo.txt
+|4,39,14,0,1510798480,"~/diff-the-Home-and-repo.txt"
+-'  14  4  ~/diff-the-Home-and-repo.txt
+|4,39,14,4,1510798305,"~/diff-the-Home-and-repo.txt"
+-'  1  0  ~/diff-the-Home-and-repo.txt
+|4,39,1,0,1510798263,"~/diff-the-Home-and-repo.txt"
+-'  1  0  ~/diff-the-Home-and-repo.txt
+|4,39,1,0,1510798263,"~/diff-the-Home-and-repo.txt"
+-'  1  0  ~/Github/PyGithub/github/Repository.py
+|4,39,1,0,1510797291,"~/Github/PyGithub/github/Repository.py"
+-'  1  0  ~/Github/PyGithub/github/Repository.py
+|4,39,1,0,1510797291,"~/Github/PyGithub/github/Repository.py"
+-'  1  0  ~/Github/PyGithub/github/Repository.py
+|4,39,1,0,1510797291,"~/Github/PyGithub/github/Repository.py"
+-'  1  0  ~/Github/PyGithub/github/Repository.py
+|4,39,1,0,1510797291,"~/Github/PyGithub/github/Repository.py"
+-'  1820  8  ~/Github/PyGithub/github/Repository.py
+|4,39,1820,8,1510797239,"~/Github/PyGithub/github/Repository.py"
+-'  1820  8  ~/Github/PyGithub/github/Repository.py
+|4,39,1820,8,1510797239,"~/Github/PyGithub/github/Repository.py"
+-'  1820  8  ~/Github/PyGithub/github/Repository.py
+|4,39,1820,8,1510797239,"~/Github/PyGithub/github/Repository.py"
+-'  1820  8  ~/Github/PyGithub/github/Repository.py
+|4,39,1820,8,1510797239,"~/Github/PyGithub/github/Repository.py"
+-'  2358  8  ~/Github/PyGithub/github/Repository.py
+|4,39,2358,8,1510797193,"~/Github/PyGithub/github/Repository.py"
+-'  2358  8  ~/Github/PyGithub/github/Repository.py
+|4,39,2358,8,1510797193,"~/Github/PyGithub/github/Repository.py"
+-'  2358  8  ~/Github/PyGithub/github/Repository.py
+|4,39,2358,8,1510797193,"~/Github/PyGithub/github/Repository.py"
+-'  2358  8  ~/Github/PyGithub/github/Repository.py
+|4,39,2358,8,1510797193,"~/Github/PyGithub/github/Repository.py"
+-'  87  0  ~/Github/PyGithub/manage.sh
+|4,39,87,0,1510797115,"~/Github/PyGithub/manage.sh"
+-'  87  0  ~/Github/PyGithub/manage.sh
+|4,39,87,0,1510797115,"~/Github/PyGithub/manage.sh"
+-'  87  0  ~/Github/PyGithub/manage.sh
+|4,39,87,0,1510797115,"~/Github/PyGithub/manage.sh"
+-'  87  0  ~/Github/PyGithub/manage.sh
+|4,39,87,0,1510797115,"~/Github/PyGithub/manage.sh"
+-'  87  0  ~/Github/PyGithub/manage.sh
+|4,39,87,0,1510797115,"~/Github/PyGithub/manage.sh"
+-'  87  0  ~/Github/PyGithub/manage.sh
+|4,39,87,0,1510797115,"~/Github/PyGithub/manage.sh"
+-'  87  0  ~/Github/PyGithub/manage.sh
+|4,39,87,0,1510797115,"~/Github/PyGithub/manage.sh"
+-'  87  0  ~/Github/PyGithub/manage.sh
+|4,39,87,0,1510797115,"~/Github/PyGithub/manage.sh"
+-'  1  0  ~/Github/PyGithub/manage.sh
+|4,39,1,0,1510797071,"~/Github/PyGithub/manage.sh"
+-'  1  0  ~/Github/PyGithub/manage.sh
+|4,39,1,0,1510797071,"~/Github/PyGithub/manage.sh"
+-'  1  0  ~/Github/PyGithub/manage.sh
+|4,39,1,0,1510797071,"~/Github/PyGithub/manage.sh"
+-'  1  0  ~/Github/PyGithub/manage.sh
+|4,39,1,0,1510797071,"~/Github/PyGithub/manage.sh"
+-'  1  0  ~/Github/PyGithub/manage.sh
+|4,39,1,0,1510797071,"~/Github/PyGithub/manage.sh"
+-'  1  0  ~/Github/PyGithub/manage.sh
+|4,39,1,0,1510797071,"~/Github/PyGithub/manage.sh"
+-'  1  0  ~/Github/PyGithub/manage.sh
+|4,39,1,0,1510797071,"~/Github/PyGithub/manage.sh"
+-'  1  0  ~/Github/PyGithub/manage.sh
+|4,39,1,0,1510797071,"~/Github/PyGithub/manage.sh"
+-'  2  32  ~/testGithub.py
+|4,39,2,32,1510797009,"~/testGithub.py"
+-'  2  32  ~/testGithub.py
+|4,39,2,32,1510797009,"~/testGithub.py"
+-'  2  32  ~/testGithub.py
+|4,39,2,32,1510797009,"~/testGithub.py"
+-'  2  32  ~/testGithub.py
+|4,39,2,32,1510797009,"~/testGithub.py"
+-'  2  32  ~/testGithub.py
+|4,39,2,32,1510797009,"~/testGithub.py"
+-'  2  32  ~/testGithub.py
+|4,39,2,32,1510797009,"~/testGithub.py"
+-'  2  32  ~/testGithub.py
+|4,39,2,32,1510797009,"~/testGithub.py"
+-'  2  32  ~/testGithub.py
+|4,39,2,32,1510797009,"~/testGithub.py"
+-'  2  32  ~/testGithub.py
+|4,39,2,32,1510797009,"~/testGithub.py"
+-'  2  32  ~/testGithub.py
+|4,39,2,32,1510797009,"~/testGithub.py"
+-'  2  32  ~/testGithub.py
+|4,39,2,32,1510797009,"~/testGithub.py"
+-'  2  32  ~/testGithub.py
+|4,39,2,32,1510797009,"~/testGithub.py"
+-'  2  32  ~/testGithub.py
+|4,39,2,32,1510797009,"~/testGithub.py"
+-'  2  32  ~/testGithub.py
+|4,39,2,32,1510797009,"~/testGithub.py"
+-'  2  32  ~/testGithub.py
+|4,39,2,32,1510797009,"~/testGithub.py"
+-'  2  32  ~/testGithub.py
+|4,39,2,32,1510797009,"~/testGithub.py"
+-'  6  4  ~/testGithub.py
+|4,39,6,4,1510796995,"~/testGithub.py"
+-'  6  4  ~/testGithub.py
+|4,39,6,4,1510796995,"~/testGithub.py"
+-'  6  4  ~/testGithub.py
+|4,39,6,4,1510796995,"~/testGithub.py"
+-'  6  4  ~/testGithub.py
+|4,39,6,4,1510796995,"~/testGithub.py"
+-'  6  4  ~/testGithub.py
+|4,39,6,4,1510796995,"~/testGithub.py"
+-'  6  4  ~/testGithub.py
+|4,39,6,4,1510796995,"~/testGithub.py"
+-'  6  4  ~/testGithub.py
+|4,39,6,4,1510796995,"~/testGithub.py"
+-'  6  4  ~/testGithub.py
+|4,39,6,4,1510796995,"~/testGithub.py"
+-'  6  4  ~/testGithub.py
+|4,39,6,4,1510796995,"~/testGithub.py"
+-'  6  4  ~/testGithub.py
+|4,39,6,4,1510796995,"~/testGithub.py"
+-'  6  4  ~/testGithub.py
+|4,39,6,4,1510796995,"~/testGithub.py"
+-'  6  4  ~/testGithub.py
+|4,39,6,4,1510796995,"~/testGithub.py"
+-'  6  4  ~/testGithub.py
+|4,39,6,4,1510796995,"~/testGithub.py"
+-'  6  4  ~/testGithub.py
+|4,39,6,4,1510796995,"~/testGithub.py"
+-'  6  4  ~/testGithub.py
+|4,39,6,4,1510796995,"~/testGithub.py"
+-'  6  4  ~/testGithub.py
+|4,39,6,4,1510796995,"~/testGithub.py"
+-'  6  3  ~/testGithub.py
+|4,39,6,3,1510796983,"~/testGithub.py"
+-'  6  3  ~/testGithub.py
+|4,39,6,3,1510796983,"~/testGithub.py"
+-'  6  3  ~/testGithub.py
+|4,39,6,3,1510796983,"~/testGithub.py"
+-'  6  3  ~/testGithub.py
+|4,39,6,3,1510796983,"~/testGithub.py"
+-'  6  3  ~/testGithub.py
+|4,39,6,3,1510796983,"~/testGithub.py"
+-'  6  3  ~/testGithub.py
+|4,39,6,3,1510796983,"~/testGithub.py"
+-'  6  3  ~/testGithub.py
+|4,39,6,3,1510796983,"~/testGithub.py"
+-'  6  3  ~/testGithub.py
+|4,39,6,3,1510796983,"~/testGithub.py"
+-'  6  3  ~/testGithub.py
+|4,39,6,3,1510796983,"~/testGithub.py"
+-'  6  3  ~/testGithub.py
+|4,39,6,3,1510796983,"~/testGithub.py"
+-'  6  3  ~/testGithub.py
+|4,39,6,3,1510796983,"~/testGithub.py"
+-'  6  3  ~/testGithub.py
+|4,39,6,3,1510796983,"~/testGithub.py"
+-'  6  3  ~/testGithub.py
+|4,39,6,3,1510796983,"~/testGithub.py"
+-'  6  3  ~/testGithub.py
+|4,39,6,3,1510796983,"~/testGithub.py"
+-'  6  3  ~/testGithub.py
+|4,39,6,3,1510796983,"~/testGithub.py"
+-'  6  3  ~/testGithub.py
+|4,39,6,3,1510796983,"~/testGithub.py"
+-'  2  0  ~/testGithub.py
+|4,39,2,0,1510796963,"~/testGithub.py"
+-'  2  0  ~/testGithub.py
+|4,39,2,0,1510796963,"~/testGithub.py"
+-'  2  0  ~/testGithub.py
+|4,39,2,0,1510796963,"~/testGithub.py"
+-'  2  0  ~/testGithub.py
+|4,39,2,0,1510796963,"~/testGithub.py"
+-'  2  0  ~/testGithub.py
+|4,39,2,0,1510796963,"~/testGithub.py"
+-'  2  0  ~/testGithub.py
+|4,39,2,0,1510796963,"~/testGithub.py"
+-'  2  0  ~/testGithub.py
+|4,39,2,0,1510796963,"~/testGithub.py"
+-'  2  0  ~/testGithub.py
+|4,39,2,0,1510796963,"~/testGithub.py"
+-'  2  0  ~/testGithub.py
+|4,39,2,0,1510796963,"~/testGithub.py"
+-'  2  0  ~/testGithub.py
+|4,39,2,0,1510796963,"~/testGithub.py"
+-'  2  0  ~/testGithub.py
+|4,39,2,0,1510796963,"~/testGithub.py"
+-'  2  0  ~/testGithub.py
+|4,39,2,0,1510796963,"~/testGithub.py"
+-'  2  0  ~/testGithub.py
+|4,39,2,0,1510796963,"~/testGithub.py"
+-'  2  0  ~/testGithub.py
+|4,39,2,0,1510796963,"~/testGithub.py"
+-'  2  0  ~/testGithub.py
+|4,39,2,0,1510796963,"~/testGithub.py"
+-'  2  0  ~/testGithub.py
+|4,39,2,0,1510796963,"~/testGithub.py"
+-'  1  0  ~/testGithub.py
+|4,39,1,0,1510796947,"~/testGithub.py"
+-'  1  0  ~/testGithub.py
+|4,39,1,0,1510796947,"~/testGithub.py"
+-'  1  0  ~/testGithub.py
+|4,39,1,0,1510796947,"~/testGithub.py"
+-'  1  0  ~/testGithub.py
+|4,39,1,0,1510796947,"~/testGithub.py"
 
 # 檔案內 Mark 記錄 (由新到舊):
+
+> ~/diff-the-Home-and-repo.txt
+	*	1510798478	0
+	"	14	0
+
+> ~/Github/PyGithub/github/Repository.py
+	*	1510797283	0
+	"	1	0
+
+> ~/Github/PyGithub/manage.sh
+	*	1510797109	0
+	"	87	0
+
+> ~/testGithub.py
+	*	1510797008	0
+	"	2	32
+	^	2	33
+	.	2	32
+	+	8	0
+	+	2	0
+	+	5	0
+	+	6	0
+	+	7	3
+	+	6	3
+	+	2	32
+	z	2	32
+
+> ~/Github/PyGithub/github.py
+	*	1510796850	0
+	"	35	0
+
+> ~/Github/PyGithub/setup.py
+	*	1510796821	0
+	"	54	4
 
 > ~/.gitignore
 	*	1510795167	0
@@ -3005,66 +3037,3 @@ $
 
 > ~/Note/text_editor/emacs/emacs-help-command.txt
 	"	1	0
-
-> ~/Note/text_editor/emacs/emacs-correlation-help.txt
-	"	67	0
-
-> ~/Note/text_editor/emacs/!!!!!!---windows-home-path.txt
-	"	396	0
-
-> ~/Note/text_editor/emacs/why_use_emacs.org
-	"	13	0
-	^	106	0
-	.	106	0
-	+	112	0
-	+	113	0
-	+	115	0
-	+	117	0
-	+	120	0
-	+	7	0
-	+	8	0
-	+	10	0
-	+	12	0
-	+	19	0
-	+	21	0
-	+	22	0
-	+	27	189
-	+	29	0
-	+	27	183
-	+	29	0
-	+	28	10
-	+	27	0
-	+	30	0
-	+	31	0
-	+	33	0
-	+	35	0
-	+	37	0
-	+	41	0
-	+	44	0
-	+	49	0
-	+	54	0
-	+	59	0
-	+	63	0
-	+	66	0
-	+	72	0
-	+	76	0
-	+	79	0
-	+	87	0
-	+	90	0
-	+	94	0
-	+	106	0
-
-> ~/Note/text_editor/emacs/w3m.org
-	"	1	0
-
-> ~/Note/text_editor/emacs/use_manpage_in_emacs.org
-	"	16	7
-	.	16	7
-	+	32	0
-	+	38	6
-	+	14	0
-	+	17	0
-	+	16	7
-
-> ~/Note/text_editor/emacs/use_emacs_reading_source_code.org
-	"	322	0
