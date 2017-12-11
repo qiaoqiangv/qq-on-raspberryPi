@@ -11,7 +11,7 @@
 # hlsearch on (H) or off (h):
 ~h
 # Last Search Pattern:
-~MSle0~/\<keybindings\>
+~MSle0~/pdf view
 
 # Last Substitute Search Pattern:
 ~MSle0&^
@@ -20,18 +20,48 @@
 $
 
 # 命令列 歷史記錄 (新到舊):
-:x
-|2,0,1510800925,,"x"
 :q
-|2,0,1510798480,,"q"
+|2,0,1512995254,,"q"
+:x
+|2,0,1512994724,,"x"
+:
+|2,0,1512994719,,""
 :w
-|2,0,1510797008,,"w"
+|2,0,1512976281,,"w"
+:tabedit /home/pi/.emacs.d/my_config/init-my-config.el
+|2,0,1512976258,,"tabedit /home/pi/.emacs.d/my_config/init-my-config.el"
+:tabedit /home/pi/.emacs.d/my_config/ibus-el-0.3.2/ibus.el
+|2,0,1512976217,,"tabedit /home/pi/.emacs.d/my_config/ibus-el-0.3.2/ibus.el"
+:tabedit /home/pi/.emacs.d/my_config/ibus-el-agent
+|2,0,1512976209,,"tabedit /home/pi/.emacs.d/my_config/ibus-el-agent"
+:tabedit /home/pi/.emacs.d/
+|2,0,1512976146,,"tabedit /home/pi/.emacs.d/"
+:q!
+|2,0,1511081954,,"q!"
+:'<,'>q
+|2,0,1511081949,,"'<,'>q"
 :wq
-|2,0,1510793796,,"wq"
+|2,0,1510966566,,"wq"
+:kk
+|2,0,1510966086,,"kk"
+:! ls ~/ShellScripts/login-auto-start/install
+|2,0,1510965986,,"! ls ~/ShellScripts/login-auto-start/install"
+:! ls
+|2,0,1510965966,,"! ls"
+:.!
+|2,0,1510965951,,".!"
+:tabedit /home/pi/ShellScripts/profile-add-ibus-setting
+|2,0,1510963407,,"tabedit /home/pi/ShellScripts/profile-add-ibus-setting"
+:tabnext 2
+|2,0,1510963380,,"tabnext 2"
+:tabnext 1
+|2,0,1510963366,,"tabnext 1"
+:tabedit /home/pi/.vimrc
+|2,0,1510963267,,"tabedit /home/pi/.vimrc"
+:tabedit /home/pi/.profile
+|2,0,1510963231,,"tabedit /home/pi/.profile"
 :set nu
 |2,0,1510788843,,"set nu"
-:q!
-|2,0,1510738483,,"q!"
 :qall
 |2,0,1510736993,,"qall"
 :help comments
@@ -212,8 +242,6 @@ $
 |2,0,0,,"help mode"
 :help command line mode
 |2,0,0,,"help command line mode"
-:'<,'>q
-|2,0,0,,"'<,'>q"
 :map
 |2,0,0,,"map"
 :map <leader>c-m
@@ -262,8 +290,6 @@ $
 |2,0,0,,"tabedit /home/qq/xsession_shell_env/detect-sh-stat.txt"
 :tabedit /home/qq/current_shell_env/detect-sh-stat.txt
 |2,0,0,,"tabedit /home/qq/current_shell_env/detect-sh-stat.txt"
-:tabnext 2
-|2,0,0,,"tabnext 2"
 :tabedit /home/qq/detect-shell-stat.sh
 |2,0,0,,"tabedit /home/qq/detect-shell-stat.sh"
 :tabedit /home/qq/.bashrc
@@ -276,8 +302,6 @@ $
 |2,0,0,,"e xsession_shell_env/detect-sh-stat.txt"
 :vsplit
 |2,0,0,,"vsplit"
-:tabnext 1
-|2,0,0,,"tabnext 1"
 :tabnext 3
 |2,0,0,,"tabnext 3"
 :tabedit /home/qq/.xsessionrc
@@ -290,8 +314,6 @@ $
 |2,0,0,,"tabedit /home/qq/ShellScripts/bashrc-add-alias-name"
 :tabedit /home/qq/ShellScripts/bashrc-init
 |2,0,0,,"tabedit /home/qq/ShellScripts/bashrc-init"
-:! ls
-|2,0,0,,"! ls"
 :e .mozilla/
 |2,0,0,,"e .mozilla/"
 :e .mozilla/firefox/7atv39a0.default/extensions/translator@zoli.bod.xpi
@@ -998,34 +1020,22 @@ $
 |2,0,0,,"autocmd User"
 :au! * <buffer>
 |2,0,0,,"au! * <buffer>"
-:DoMatchPar
-|2,0,0,,"DoMatchPar"
-:bufdo bdelete !1
-|2,0,0,,"bufdo bdelete !1"
-:tabnew
-|2,0,0,,"tabnew"
-:buffer #
-|2,0,0,,"buffer #"
-:bufdo Next
-|2,0,0,,"bufdo Next"
-:bufdo next
-|2,0,0,,"bufdo next"
-:GetScripts
-|2,0,0,,"GetScripts"
-:number
-|2,0,0,,"number"
-:bufdo @
-|2,0,0,,"bufdo @"
-:echo bufnr("buffer-variable")
-|2,0,0,,"echo bufnr(\"buffer-variable\")"
-:bufdo bunload
-|2,0,0,,"bufdo bunload"
 
 # 搜尋字串 歷史記錄 (新到舊):
+? @$
+|2,1,1512995145,,"@$"
+?/pdf view
+|2,1,1511081901,47,"pdf view"
+?/pdf
+|2,1,1511081711,47,"pdf"
+?/chm
+|2,1,1511081358,47,"chm"
+?/tab
+|2,1,1510963311,47,"tab"
+?/tabs
+|2,1,1510963276,47,"tabs"
 ? \s\+$
 |2,1,1510797008,,"\\s\\+$"
-? @$
-|2,1,1510796843,,"@$"
 ? \<keybindings\>
 |2,1,1510788938,,"\\<keybindings\\>"
 ? \<Keybindings\>
@@ -1362,8 +1372,6 @@ $
 |2,1,0,47,"行首"
 ?/echo 
 |2,1,0,47,"echo "
-?/tab
-|2,1,0,47,"tab"
 ?/path
 |2,1,0,47,"path"
 ?/findfile()
@@ -1800,8 +1808,6 @@ $
 |2,1,0,47,"tabbuf"
 ?/winbufnr
 |2,1,0,47,"winbufnr"
-?/tabs
-|2,1,0,47,"tabs"
 ?/bclose
 |2,1,0,47,"bclose"
 ?/bk
@@ -2034,265 +2040,549 @@ $
 # Debug Line 歷史記錄 (新到舊):
 
 # 暫存器:
-"0	LINE	0
-	
-|3,0,0,1,1,0,1510796843,""
-""1	LINE	0
-	
-|3,1,1,1,1,0,1510800922,""
+""0	LINE	0
+	emacs-start-daemon
+|3,1,0,1,1,0,1512995149,"emacs-start-daemon"
+"1	LINE	0
+	emacs-start-daemon
+|3,0,1,1,1,0,1512994722,"emacs-start-daemon"
 "2	LINE	0
-	18. 四 11月 16 09:00:41 CST 2017 - CONTENT : fix ShellScripts/basic_script/backup.sh
-|3,0,2,1,1,0,1510800921,"18. 四 11月 16 09:00:41 CST 2017 - CONTENT : fix ShellScripts/basic_script/backup.sh"
-"3	LINE	0
 	
-|3,0,3,1,1,0,1510800920,""
+|3,0,2,1,1,0,1512993302,""
+"3	LINE	0
+	ibus restart
+|3,0,3,1,1,0,1512993301,"ibus restart"
 "4	LINE	0
-	19. 四 11月 16 09:01:10 CST 2017 - CONTENT : fix the HHKB keyboard not fill raspbian system
-|3,0,4,1,1,0,1510800919,"19. 四 11月 16 09:01:10 CST 2017 - CONTENT : fix the HHKB keyboard not fill raspbian system"
+	# restart ibus daemon
+|3,0,4,1,1,0,1512993301,"# restart ibus daemon"
 "5	LINE	0
-	Then play with your Github objects:
-|3,0,5,1,1,0,1510796965,"Then play with your Github objects:"
+	
+|3,0,5,1,1,0,1512991896,""
 "6	LINE	0
 	
-|3,0,6,1,1,0,1510796955,""
+|3,0,6,1,1,0,1512991895,""
 "7	LINE	0
-	
-|3,0,7,1,1,0,1510794937,""
+	;; add load path
+|3,0,7,1,1,0,1512976279,";; add load path"
 "8	LINE	0
-	16. 三 11月 15 17:36:35 CST 2017 - CONTENT : diff the '.gitignore.diff1' and '.gitignore.diff2'
-|3,0,8,1,1,0,1510794936,"16. 三 11月 15 17:36:35 CST 2017 - CONTENT : diff the '.gitignore.diff1' and '.gitignore.diff2'"
-"9	LINE	0
 	
-|3,0,9,1,1,0,1510794931,""
+|3,0,8,1,1,0,1512976278,""
+"9	LINE	0
+	;(add-to-list 'load-path' "~/.emacs.d/my_config")
+|3,0,9,1,1,0,1512976268,";(add-to-list 'load-path' \"~/.emacs.d/my_config\")"
 "-	CHAR	0
-	d
-|3,0,36,0,1,0,1510797004,"d"
+	ource 
+|3,0,36,0,1,0,1512977369,"ource "
 
 # 檔案標記:
-'0  30  0  ~/TODO
-|4,48,30,0,1510800925,"~/TODO"
-'1  14  0  ~/diff-the-Home-and-repo.txt
-|4,49,14,0,1510798480,"~/diff-the-Home-and-repo.txt"
-'2  14  4  ~/diff-the-Home-and-repo.txt
-|4,50,14,4,1510798305,"~/diff-the-Home-and-repo.txt"
-'3  1  0  ~/Github/PyGithub/github/Repository.py
-|4,51,1,0,1510797291,"~/Github/PyGithub/github/Repository.py"
-'4  87  0  ~/Github/PyGithub/manage.sh
-|4,52,87,0,1510797115,"~/Github/PyGithub/manage.sh"
-'5  2  32  ~/testGithub.py
-|4,53,2,32,1510797009,"~/testGithub.py"
-'6  6  3  ~/testGithub.py
-|4,54,6,3,1510796983,"~/testGithub.py"
-'7  6  3  ~/testGithub.py
-|4,55,6,3,1510796983,"~/testGithub.py"
-'8  35  0  ~/Github/PyGithub/github.py
-|4,56,35,0,1510796852,"~/Github/PyGithub/github.py"
-'9  54  4  ~/Github/PyGithub/setup.py
-|4,57,54,4,1510796822,"~/Github/PyGithub/setup.py"
+'0  16  1  ~/ShellScripts/basic_scripts/install-my-custom-sh-script.sh
+|4,48,16,1,1512995254,"~/ShellScripts/basic_scripts/install-my-custom-sh-script.sh"
+'1  48  0  ~/ShellScripts/basic_scripts/backup.sh
+|4,49,48,0,1512995208,"~/ShellScripts/basic_scripts/backup.sh"
+'2  25  0  ~/ShellScripts/bashrc-add-emacs-func
+|4,50,25,0,1512994724,"~/ShellScripts/bashrc-add-emacs-func"
+'3  26  17  ~/ShellScripts/bashrc-add-emacs-func
+|4,51,26,17,1512994404,"~/ShellScripts/bashrc-add-emacs-func"
+'4  26  17  ~/ShellScripts/bashrc-add-emacs-func
+|4,52,26,17,1512994404,"~/ShellScripts/bashrc-add-emacs-func"
+'5  5  0  ~/ShellScripts/login-auto-start/ibus-settings.sh
+|4,53,5,0,1512993303,"~/ShellScripts/login-auto-start/ibus-settings.sh"
+'6  1  0  ~/ShellScripts/profile-add-emacs-setting
+|4,54,1,0,1512991933,"~/ShellScripts/profile-add-emacs-setting"
+'7  2  0  ~/ShellScripts/profile-add-ibus-setting
+|4,55,2,0,1512991926,"~/ShellScripts/profile-add-ibus-setting"
+'8  10  0  ~/ShellScripts/profile-init
+|4,56,10,0,1512991912,"~/ShellScripts/profile-init"
+'9  26  0  ~/.profile
+|4,57,26,0,1512991901,"~/.profile"
 
 # Jumplist (由新到舊):
--'  30  0  ~/TODO
-|4,39,30,0,1510800925,"~/TODO"
--'  31  0  ~/TODO
-|4,39,31,0,1510800914,"~/TODO"
--'  14  0  ~/diff-the-Home-and-repo.txt
-|4,39,14,0,1510798480,"~/diff-the-Home-and-repo.txt"
--'  14  0  ~/diff-the-Home-and-repo.txt
-|4,39,14,0,1510798480,"~/diff-the-Home-and-repo.txt"
--'  14  4  ~/diff-the-Home-and-repo.txt
-|4,39,14,4,1510798305,"~/diff-the-Home-and-repo.txt"
--'  14  4  ~/diff-the-Home-and-repo.txt
-|4,39,14,4,1510798305,"~/diff-the-Home-and-repo.txt"
--'  1  0  ~/diff-the-Home-and-repo.txt
-|4,39,1,0,1510798263,"~/diff-the-Home-and-repo.txt"
--'  1  0  ~/diff-the-Home-and-repo.txt
-|4,39,1,0,1510798263,"~/diff-the-Home-and-repo.txt"
--'  1  0  ~/diff-the-Home-and-repo.txt
-|4,39,1,0,1510798263,"~/diff-the-Home-and-repo.txt"
--'  1  0  ~/diff-the-Home-and-repo.txt
-|4,39,1,0,1510798263,"~/diff-the-Home-and-repo.txt"
--'  1  0  ~/Github/PyGithub/github/Repository.py
-|4,39,1,0,1510797291,"~/Github/PyGithub/github/Repository.py"
--'  1  0  ~/Github/PyGithub/github/Repository.py
-|4,39,1,0,1510797291,"~/Github/PyGithub/github/Repository.py"
--'  1  0  ~/Github/PyGithub/github/Repository.py
-|4,39,1,0,1510797291,"~/Github/PyGithub/github/Repository.py"
--'  1  0  ~/Github/PyGithub/github/Repository.py
-|4,39,1,0,1510797291,"~/Github/PyGithub/github/Repository.py"
--'  1  0  ~/Github/PyGithub/github/Repository.py
-|4,39,1,0,1510797291,"~/Github/PyGithub/github/Repository.py"
--'  1  0  ~/Github/PyGithub/github/Repository.py
-|4,39,1,0,1510797291,"~/Github/PyGithub/github/Repository.py"
--'  1  0  ~/Github/PyGithub/github/Repository.py
-|4,39,1,0,1510797291,"~/Github/PyGithub/github/Repository.py"
--'  1  0  ~/Github/PyGithub/github/Repository.py
-|4,39,1,0,1510797291,"~/Github/PyGithub/github/Repository.py"
--'  1820  8  ~/Github/PyGithub/github/Repository.py
-|4,39,1820,8,1510797239,"~/Github/PyGithub/github/Repository.py"
--'  1820  8  ~/Github/PyGithub/github/Repository.py
-|4,39,1820,8,1510797239,"~/Github/PyGithub/github/Repository.py"
--'  1820  8  ~/Github/PyGithub/github/Repository.py
-|4,39,1820,8,1510797239,"~/Github/PyGithub/github/Repository.py"
--'  1820  8  ~/Github/PyGithub/github/Repository.py
-|4,39,1820,8,1510797239,"~/Github/PyGithub/github/Repository.py"
--'  1820  8  ~/Github/PyGithub/github/Repository.py
-|4,39,1820,8,1510797239,"~/Github/PyGithub/github/Repository.py"
--'  1820  8  ~/Github/PyGithub/github/Repository.py
-|4,39,1820,8,1510797239,"~/Github/PyGithub/github/Repository.py"
--'  1820  8  ~/Github/PyGithub/github/Repository.py
-|4,39,1820,8,1510797239,"~/Github/PyGithub/github/Repository.py"
--'  1820  8  ~/Github/PyGithub/github/Repository.py
-|4,39,1820,8,1510797239,"~/Github/PyGithub/github/Repository.py"
--'  2358  8  ~/Github/PyGithub/github/Repository.py
-|4,39,2358,8,1510797193,"~/Github/PyGithub/github/Repository.py"
--'  2358  8  ~/Github/PyGithub/github/Repository.py
-|4,39,2358,8,1510797193,"~/Github/PyGithub/github/Repository.py"
--'  2358  8  ~/Github/PyGithub/github/Repository.py
-|4,39,2358,8,1510797193,"~/Github/PyGithub/github/Repository.py"
--'  2358  8  ~/Github/PyGithub/github/Repository.py
-|4,39,2358,8,1510797193,"~/Github/PyGithub/github/Repository.py"
--'  2358  8  ~/Github/PyGithub/github/Repository.py
-|4,39,2358,8,1510797193,"~/Github/PyGithub/github/Repository.py"
--'  2358  8  ~/Github/PyGithub/github/Repository.py
-|4,39,2358,8,1510797193,"~/Github/PyGithub/github/Repository.py"
--'  2358  8  ~/Github/PyGithub/github/Repository.py
-|4,39,2358,8,1510797193,"~/Github/PyGithub/github/Repository.py"
--'  2358  8  ~/Github/PyGithub/github/Repository.py
-|4,39,2358,8,1510797193,"~/Github/PyGithub/github/Repository.py"
--'  87  0  ~/Github/PyGithub/manage.sh
-|4,39,87,0,1510797115,"~/Github/PyGithub/manage.sh"
--'  87  0  ~/Github/PyGithub/manage.sh
-|4,39,87,0,1510797115,"~/Github/PyGithub/manage.sh"
--'  87  0  ~/Github/PyGithub/manage.sh
-|4,39,87,0,1510797115,"~/Github/PyGithub/manage.sh"
--'  87  0  ~/Github/PyGithub/manage.sh
-|4,39,87,0,1510797115,"~/Github/PyGithub/manage.sh"
--'  87  0  ~/Github/PyGithub/manage.sh
-|4,39,87,0,1510797115,"~/Github/PyGithub/manage.sh"
--'  87  0  ~/Github/PyGithub/manage.sh
-|4,39,87,0,1510797115,"~/Github/PyGithub/manage.sh"
--'  87  0  ~/Github/PyGithub/manage.sh
-|4,39,87,0,1510797115,"~/Github/PyGithub/manage.sh"
--'  87  0  ~/Github/PyGithub/manage.sh
-|4,39,87,0,1510797115,"~/Github/PyGithub/manage.sh"
--'  87  0  ~/Github/PyGithub/manage.sh
-|4,39,87,0,1510797115,"~/Github/PyGithub/manage.sh"
--'  87  0  ~/Github/PyGithub/manage.sh
-|4,39,87,0,1510797115,"~/Github/PyGithub/manage.sh"
--'  87  0  ~/Github/PyGithub/manage.sh
-|4,39,87,0,1510797115,"~/Github/PyGithub/manage.sh"
--'  87  0  ~/Github/PyGithub/manage.sh
-|4,39,87,0,1510797115,"~/Github/PyGithub/manage.sh"
--'  87  0  ~/Github/PyGithub/manage.sh
-|4,39,87,0,1510797115,"~/Github/PyGithub/manage.sh"
--'  87  0  ~/Github/PyGithub/manage.sh
-|4,39,87,0,1510797115,"~/Github/PyGithub/manage.sh"
--'  87  0  ~/Github/PyGithub/manage.sh
-|4,39,87,0,1510797115,"~/Github/PyGithub/manage.sh"
--'  87  0  ~/Github/PyGithub/manage.sh
-|4,39,87,0,1510797115,"~/Github/PyGithub/manage.sh"
--'  1  0  ~/Github/PyGithub/manage.sh
-|4,39,1,0,1510797071,"~/Github/PyGithub/manage.sh"
--'  1  0  ~/Github/PyGithub/manage.sh
-|4,39,1,0,1510797071,"~/Github/PyGithub/manage.sh"
--'  1  0  ~/Github/PyGithub/manage.sh
-|4,39,1,0,1510797071,"~/Github/PyGithub/manage.sh"
--'  1  0  ~/Github/PyGithub/manage.sh
-|4,39,1,0,1510797071,"~/Github/PyGithub/manage.sh"
--'  1  0  ~/Github/PyGithub/manage.sh
-|4,39,1,0,1510797071,"~/Github/PyGithub/manage.sh"
--'  1  0  ~/Github/PyGithub/manage.sh
-|4,39,1,0,1510797071,"~/Github/PyGithub/manage.sh"
--'  1  0  ~/Github/PyGithub/manage.sh
-|4,39,1,0,1510797071,"~/Github/PyGithub/manage.sh"
--'  1  0  ~/Github/PyGithub/manage.sh
-|4,39,1,0,1510797071,"~/Github/PyGithub/manage.sh"
--'  1  0  ~/Github/PyGithub/manage.sh
-|4,39,1,0,1510797071,"~/Github/PyGithub/manage.sh"
--'  1  0  ~/Github/PyGithub/manage.sh
-|4,39,1,0,1510797071,"~/Github/PyGithub/manage.sh"
--'  1  0  ~/Github/PyGithub/manage.sh
-|4,39,1,0,1510797071,"~/Github/PyGithub/manage.sh"
--'  1  0  ~/Github/PyGithub/manage.sh
-|4,39,1,0,1510797071,"~/Github/PyGithub/manage.sh"
--'  1  0  ~/Github/PyGithub/manage.sh
-|4,39,1,0,1510797071,"~/Github/PyGithub/manage.sh"
--'  1  0  ~/Github/PyGithub/manage.sh
-|4,39,1,0,1510797071,"~/Github/PyGithub/manage.sh"
--'  1  0  ~/Github/PyGithub/manage.sh
-|4,39,1,0,1510797071,"~/Github/PyGithub/manage.sh"
--'  1  0  ~/Github/PyGithub/manage.sh
-|4,39,1,0,1510797071,"~/Github/PyGithub/manage.sh"
--'  2  32  ~/testGithub.py
-|4,39,2,32,1510797009,"~/testGithub.py"
--'  2  32  ~/testGithub.py
-|4,39,2,32,1510797009,"~/testGithub.py"
--'  2  32  ~/testGithub.py
-|4,39,2,32,1510797009,"~/testGithub.py"
--'  2  32  ~/testGithub.py
-|4,39,2,32,1510797009,"~/testGithub.py"
--'  2  32  ~/testGithub.py
-|4,39,2,32,1510797009,"~/testGithub.py"
--'  2  32  ~/testGithub.py
-|4,39,2,32,1510797009,"~/testGithub.py"
--'  2  32  ~/testGithub.py
-|4,39,2,32,1510797009,"~/testGithub.py"
--'  2  32  ~/testGithub.py
-|4,39,2,32,1510797009,"~/testGithub.py"
--'  2  32  ~/testGithub.py
-|4,39,2,32,1510797009,"~/testGithub.py"
--'  2  32  ~/testGithub.py
-|4,39,2,32,1510797009,"~/testGithub.py"
--'  2  32  ~/testGithub.py
-|4,39,2,32,1510797009,"~/testGithub.py"
--'  2  32  ~/testGithub.py
-|4,39,2,32,1510797009,"~/testGithub.py"
--'  2  32  ~/testGithub.py
-|4,39,2,32,1510797009,"~/testGithub.py"
--'  2  32  ~/testGithub.py
-|4,39,2,32,1510797009,"~/testGithub.py"
--'  2  32  ~/testGithub.py
-|4,39,2,32,1510797009,"~/testGithub.py"
--'  2  32  ~/testGithub.py
-|4,39,2,32,1510797009,"~/testGithub.py"
--'  2  32  ~/testGithub.py
-|4,39,2,32,1510797009,"~/testGithub.py"
--'  2  32  ~/testGithub.py
-|4,39,2,32,1510797009,"~/testGithub.py"
--'  2  32  ~/testGithub.py
-|4,39,2,32,1510797009,"~/testGithub.py"
--'  2  32  ~/testGithub.py
-|4,39,2,32,1510797009,"~/testGithub.py"
--'  2  32  ~/testGithub.py
-|4,39,2,32,1510797009,"~/testGithub.py"
--'  2  32  ~/testGithub.py
-|4,39,2,32,1510797009,"~/testGithub.py"
--'  2  32  ~/testGithub.py
-|4,39,2,32,1510797009,"~/testGithub.py"
--'  2  32  ~/testGithub.py
-|4,39,2,32,1510797009,"~/testGithub.py"
--'  2  32  ~/testGithub.py
-|4,39,2,32,1510797009,"~/testGithub.py"
--'  2  32  ~/testGithub.py
-|4,39,2,32,1510797009,"~/testGithub.py"
--'  2  32  ~/testGithub.py
-|4,39,2,32,1510797009,"~/testGithub.py"
--'  2  32  ~/testGithub.py
-|4,39,2,32,1510797009,"~/testGithub.py"
--'  2  32  ~/testGithub.py
-|4,39,2,32,1510797009,"~/testGithub.py"
--'  2  32  ~/testGithub.py
-|4,39,2,32,1510797009,"~/testGithub.py"
--'  2  32  ~/testGithub.py
-|4,39,2,32,1510797009,"~/testGithub.py"
--'  2  32  ~/testGithub.py
-|4,39,2,32,1510797009,"~/testGithub.py"
--'  6  4  ~/testGithub.py
-|4,39,6,4,1510796995,"~/testGithub.py"
--'  6  4  ~/testGithub.py
-|4,39,6,4,1510796995,"~/testGithub.py"
+-'  16  1  ~/ShellScripts/basic_scripts/install-my-custom-sh-script.sh
+|4,39,16,1,1512995254,"~/ShellScripts/basic_scripts/install-my-custom-sh-script.sh"
+-'  13  1  ~/ShellScripts/basic_scripts/install-my-custom-sh-script.sh
+|4,39,13,1,1512995250,"~/ShellScripts/basic_scripts/install-my-custom-sh-script.sh"
+-'  48  0  ~/ShellScripts/basic_scripts/backup.sh
+|4,39,48,0,1512995208,"~/ShellScripts/basic_scripts/backup.sh"
+-'  48  0  ~/ShellScripts/basic_scripts/backup.sh
+|4,39,48,0,1512995208,"~/ShellScripts/basic_scripts/backup.sh"
+-'  47  0  ~/ShellScripts/basic_scripts/backup.sh
+|4,39,47,0,1512995151,"~/ShellScripts/basic_scripts/backup.sh"
+-'  47  0  ~/ShellScripts/basic_scripts/backup.sh
+|4,39,47,0,1512995151,"~/ShellScripts/basic_scripts/backup.sh"
+-'  1  0  ~/ShellScripts/basic_scripts
+|4,39,1,0,1512995145,"~/ShellScripts/basic_scripts"
+-'  1  0  ~/ShellScripts/basic_scripts
+|4,39,1,0,1512995145,"~/ShellScripts/basic_scripts"
+-'  25  0  ~/ShellScripts/bashrc-add-emacs-func
+|4,39,25,0,1512994724,"~/ShellScripts/bashrc-add-emacs-func"
+-'  25  0  ~/ShellScripts/bashrc-add-emacs-func
+|4,39,25,0,1512994724,"~/ShellScripts/bashrc-add-emacs-func"
+-'  25  0  ~/ShellScripts/bashrc-add-emacs-func
+|4,39,25,0,1512994724,"~/ShellScripts/bashrc-add-emacs-func"
+-'  25  0  ~/ShellScripts/bashrc-add-emacs-func
+|4,39,25,0,1512994724,"~/ShellScripts/bashrc-add-emacs-func"
+-'  26  0  ~/ShellScripts/bashrc-add-emacs-func
+|4,39,26,0,1512994707,"~/ShellScripts/bashrc-add-emacs-func"
+-'  26  0  ~/ShellScripts/bashrc-add-emacs-func
+|4,39,26,0,1512994707,"~/ShellScripts/bashrc-add-emacs-func"
+-'  26  0  ~/ShellScripts/bashrc-add-emacs-func
+|4,39,26,0,1512994707,"~/ShellScripts/bashrc-add-emacs-func"
+-'  26  0  ~/ShellScripts/bashrc-add-emacs-func
+|4,39,26,0,1512994707,"~/ShellScripts/bashrc-add-emacs-func"
+-'  26  17  ~/ShellScripts/bashrc-add-emacs-func
+|4,39,26,17,1512994404,"~/ShellScripts/bashrc-add-emacs-func"
+-'  26  17  ~/ShellScripts/bashrc-add-emacs-func
+|4,39,26,17,1512994404,"~/ShellScripts/bashrc-add-emacs-func"
+-'  26  17  ~/ShellScripts/bashrc-add-emacs-func
+|4,39,26,17,1512994404,"~/ShellScripts/bashrc-add-emacs-func"
+-'  26  17  ~/ShellScripts/bashrc-add-emacs-func
+|4,39,26,17,1512994404,"~/ShellScripts/bashrc-add-emacs-func"
+-'  1  0  ~/ShellScripts/bashrc-add-emacs-func
+|4,39,1,0,1512994290,"~/ShellScripts/bashrc-add-emacs-func"
+-'  1  0  ~/ShellScripts/bashrc-add-emacs-func
+|4,39,1,0,1512994290,"~/ShellScripts/bashrc-add-emacs-func"
+-'  1  0  ~/ShellScripts/bashrc-add-emacs-func
+|4,39,1,0,1512994290,"~/ShellScripts/bashrc-add-emacs-func"
+-'  1  0  ~/ShellScripts/bashrc-add-emacs-func
+|4,39,1,0,1512994290,"~/ShellScripts/bashrc-add-emacs-func"
+-'  1  0  ~/ShellScripts/bashrc-add-emacs-func
+|4,39,1,0,1512994290,"~/ShellScripts/bashrc-add-emacs-func"
+-'  1  0  ~/ShellScripts/bashrc-add-emacs-func
+|4,39,1,0,1512994290,"~/ShellScripts/bashrc-add-emacs-func"
+-'  1  0  ~/ShellScripts/bashrc-add-emacs-func
+|4,39,1,0,1512994290,"~/ShellScripts/bashrc-add-emacs-func"
+-'  1  0  ~/ShellScripts/bashrc-add-emacs-func
+|4,39,1,0,1512994290,"~/ShellScripts/bashrc-add-emacs-func"
+-'  5  0  ~/ShellScripts/login-auto-start/ibus-settings.sh
+|4,39,5,0,1512993303,"~/ShellScripts/login-auto-start/ibus-settings.sh"
+-'  5  0  ~/ShellScripts/login-auto-start/ibus-settings.sh
+|4,39,5,0,1512993303,"~/ShellScripts/login-auto-start/ibus-settings.sh"
+-'  5  0  ~/ShellScripts/login-auto-start/ibus-settings.sh
+|4,39,5,0,1512993303,"~/ShellScripts/login-auto-start/ibus-settings.sh"
+-'  5  0  ~/ShellScripts/login-auto-start/ibus-settings.sh
+|4,39,5,0,1512993303,"~/ShellScripts/login-auto-start/ibus-settings.sh"
+-'  5  0  ~/ShellScripts/login-auto-start/ibus-settings.sh
+|4,39,5,0,1512993303,"~/ShellScripts/login-auto-start/ibus-settings.sh"
+-'  5  0  ~/ShellScripts/login-auto-start/ibus-settings.sh
+|4,39,5,0,1512993303,"~/ShellScripts/login-auto-start/ibus-settings.sh"
+-'  5  0  ~/ShellScripts/login-auto-start/ibus-settings.sh
+|4,39,5,0,1512993303,"~/ShellScripts/login-auto-start/ibus-settings.sh"
+-'  5  0  ~/ShellScripts/login-auto-start/ibus-settings.sh
+|4,39,5,0,1512993303,"~/ShellScripts/login-auto-start/ibus-settings.sh"
+-'  5  0  ~/ShellScripts/login-auto-start/ibus-settings.sh
+|4,39,5,0,1512993303,"~/ShellScripts/login-auto-start/ibus-settings.sh"
+-'  5  0  ~/ShellScripts/login-auto-start/ibus-settings.sh
+|4,39,5,0,1512993303,"~/ShellScripts/login-auto-start/ibus-settings.sh"
+-'  5  0  ~/ShellScripts/login-auto-start/ibus-settings.sh
+|4,39,5,0,1512993303,"~/ShellScripts/login-auto-start/ibus-settings.sh"
+-'  5  0  ~/ShellScripts/login-auto-start/ibus-settings.sh
+|4,39,5,0,1512993303,"~/ShellScripts/login-auto-start/ibus-settings.sh"
+-'  5  0  ~/ShellScripts/login-auto-start/ibus-settings.sh
+|4,39,5,0,1512993303,"~/ShellScripts/login-auto-start/ibus-settings.sh"
+-'  5  0  ~/ShellScripts/login-auto-start/ibus-settings.sh
+|4,39,5,0,1512993303,"~/ShellScripts/login-auto-start/ibus-settings.sh"
+-'  5  0  ~/ShellScripts/login-auto-start/ibus-settings.sh
+|4,39,5,0,1512993303,"~/ShellScripts/login-auto-start/ibus-settings.sh"
+-'  5  0  ~/ShellScripts/login-auto-start/ibus-settings.sh
+|4,39,5,0,1512993303,"~/ShellScripts/login-auto-start/ibus-settings.sh"
+-'  1  0  ~/ShellScripts/login-auto-start/ibus-settings.sh
+|4,39,1,0,1512993285,"~/ShellScripts/login-auto-start/ibus-settings.sh"
+-'  1  0  ~/ShellScripts/login-auto-start/ibus-settings.sh
+|4,39,1,0,1512993285,"~/ShellScripts/login-auto-start/ibus-settings.sh"
+-'  1  0  ~/ShellScripts/login-auto-start/ibus-settings.sh
+|4,39,1,0,1512993285,"~/ShellScripts/login-auto-start/ibus-settings.sh"
+-'  1  0  ~/ShellScripts/login-auto-start/ibus-settings.sh
+|4,39,1,0,1512993285,"~/ShellScripts/login-auto-start/ibus-settings.sh"
+-'  1  0  ~/ShellScripts/login-auto-start/ibus-settings.sh
+|4,39,1,0,1512993285,"~/ShellScripts/login-auto-start/ibus-settings.sh"
+-'  1  0  ~/ShellScripts/login-auto-start/ibus-settings.sh
+|4,39,1,0,1512993285,"~/ShellScripts/login-auto-start/ibus-settings.sh"
+-'  1  0  ~/ShellScripts/login-auto-start/ibus-settings.sh
+|4,39,1,0,1512993285,"~/ShellScripts/login-auto-start/ibus-settings.sh"
+-'  1  0  ~/ShellScripts/login-auto-start/ibus-settings.sh
+|4,39,1,0,1512993285,"~/ShellScripts/login-auto-start/ibus-settings.sh"
+-'  1  0  ~/ShellScripts/login-auto-start/ibus-settings.sh
+|4,39,1,0,1512993285,"~/ShellScripts/login-auto-start/ibus-settings.sh"
+-'  1  0  ~/ShellScripts/login-auto-start/ibus-settings.sh
+|4,39,1,0,1512993285,"~/ShellScripts/login-auto-start/ibus-settings.sh"
+-'  1  0  ~/ShellScripts/login-auto-start/ibus-settings.sh
+|4,39,1,0,1512993285,"~/ShellScripts/login-auto-start/ibus-settings.sh"
+-'  1  0  ~/ShellScripts/login-auto-start/ibus-settings.sh
+|4,39,1,0,1512993285,"~/ShellScripts/login-auto-start/ibus-settings.sh"
+-'  1  0  ~/ShellScripts/login-auto-start/ibus-settings.sh
+|4,39,1,0,1512993285,"~/ShellScripts/login-auto-start/ibus-settings.sh"
+-'  1  0  ~/ShellScripts/login-auto-start/ibus-settings.sh
+|4,39,1,0,1512993285,"~/ShellScripts/login-auto-start/ibus-settings.sh"
+-'  1  0  ~/ShellScripts/login-auto-start/ibus-settings.sh
+|4,39,1,0,1512993285,"~/ShellScripts/login-auto-start/ibus-settings.sh"
+-'  1  0  ~/ShellScripts/login-auto-start/ibus-settings.sh
+|4,39,1,0,1512993285,"~/ShellScripts/login-auto-start/ibus-settings.sh"
+-'  1  0  ~/ShellScripts/profile-add-emacs-setting
+|4,39,1,0,1512991933,"~/ShellScripts/profile-add-emacs-setting"
+-'  1  0  ~/ShellScripts/profile-add-emacs-setting
+|4,39,1,0,1512991933,"~/ShellScripts/profile-add-emacs-setting"
+-'  1  0  ~/ShellScripts/profile-add-emacs-setting
+|4,39,1,0,1512991933,"~/ShellScripts/profile-add-emacs-setting"
+-'  1  0  ~/ShellScripts/profile-add-emacs-setting
+|4,39,1,0,1512991933,"~/ShellScripts/profile-add-emacs-setting"
+-'  1  0  ~/ShellScripts/profile-add-emacs-setting
+|4,39,1,0,1512991933,"~/ShellScripts/profile-add-emacs-setting"
+-'  1  0  ~/ShellScripts/profile-add-emacs-setting
+|4,39,1,0,1512991933,"~/ShellScripts/profile-add-emacs-setting"
+-'  1  0  ~/ShellScripts/profile-add-emacs-setting
+|4,39,1,0,1512991933,"~/ShellScripts/profile-add-emacs-setting"
+-'  1  0  ~/ShellScripts/profile-add-emacs-setting
+|4,39,1,0,1512991933,"~/ShellScripts/profile-add-emacs-setting"
+-'  1  0  ~/ShellScripts/profile-add-emacs-setting
+|4,39,1,0,1512991933,"~/ShellScripts/profile-add-emacs-setting"
+-'  1  0  ~/ShellScripts/profile-add-emacs-setting
+|4,39,1,0,1512991933,"~/ShellScripts/profile-add-emacs-setting"
+-'  1  0  ~/ShellScripts/profile-add-emacs-setting
+|4,39,1,0,1512991933,"~/ShellScripts/profile-add-emacs-setting"
+-'  1  0  ~/ShellScripts/profile-add-emacs-setting
+|4,39,1,0,1512991933,"~/ShellScripts/profile-add-emacs-setting"
+-'  1  0  ~/ShellScripts/profile-add-emacs-setting
+|4,39,1,0,1512991933,"~/ShellScripts/profile-add-emacs-setting"
+-'  1  0  ~/ShellScripts/profile-add-emacs-setting
+|4,39,1,0,1512991933,"~/ShellScripts/profile-add-emacs-setting"
+-'  1  0  ~/ShellScripts/profile-add-emacs-setting
+|4,39,1,0,1512991933,"~/ShellScripts/profile-add-emacs-setting"
+-'  1  0  ~/ShellScripts/profile-add-emacs-setting
+|4,39,1,0,1512991933,"~/ShellScripts/profile-add-emacs-setting"
+-'  1  0  ~/ShellScripts/profile-add-emacs-setting
+|4,39,1,0,1512991933,"~/ShellScripts/profile-add-emacs-setting"
+-'  1  0  ~/ShellScripts/profile-add-emacs-setting
+|4,39,1,0,1512991933,"~/ShellScripts/profile-add-emacs-setting"
+-'  1  0  ~/ShellScripts/profile-add-emacs-setting
+|4,39,1,0,1512991933,"~/ShellScripts/profile-add-emacs-setting"
+-'  1  0  ~/ShellScripts/profile-add-emacs-setting
+|4,39,1,0,1512991933,"~/ShellScripts/profile-add-emacs-setting"
+-'  1  0  ~/ShellScripts/profile-add-emacs-setting
+|4,39,1,0,1512991933,"~/ShellScripts/profile-add-emacs-setting"
+-'  1  0  ~/ShellScripts/profile-add-emacs-setting
+|4,39,1,0,1512991933,"~/ShellScripts/profile-add-emacs-setting"
+-'  1  0  ~/ShellScripts/profile-add-emacs-setting
+|4,39,1,0,1512991933,"~/ShellScripts/profile-add-emacs-setting"
+-'  1  0  ~/ShellScripts/profile-add-emacs-setting
+|4,39,1,0,1512991933,"~/ShellScripts/profile-add-emacs-setting"
+-'  1  0  ~/ShellScripts/profile-add-emacs-setting
+|4,39,1,0,1512991933,"~/ShellScripts/profile-add-emacs-setting"
+-'  1  0  ~/ShellScripts/profile-add-emacs-setting
+|4,39,1,0,1512991933,"~/ShellScripts/profile-add-emacs-setting"
+-'  1  0  ~/ShellScripts/profile-add-emacs-setting
+|4,39,1,0,1512991933,"~/ShellScripts/profile-add-emacs-setting"
+-'  1  0  ~/ShellScripts/profile-add-emacs-setting
+|4,39,1,0,1512991933,"~/ShellScripts/profile-add-emacs-setting"
+-'  1  0  ~/ShellScripts/profile-add-emacs-setting
+|4,39,1,0,1512991933,"~/ShellScripts/profile-add-emacs-setting"
+-'  1  0  ~/ShellScripts/profile-add-emacs-setting
+|4,39,1,0,1512991933,"~/ShellScripts/profile-add-emacs-setting"
+-'  1  0  ~/ShellScripts/profile-add-emacs-setting
+|4,39,1,0,1512991933,"~/ShellScripts/profile-add-emacs-setting"
+-'  1  0  ~/ShellScripts/profile-add-emacs-setting
+|4,39,1,0,1512991933,"~/ShellScripts/profile-add-emacs-setting"
+-'  2  0  ~/ShellScripts/profile-add-ibus-setting
+|4,39,2,0,1512991926,"~/ShellScripts/profile-add-ibus-setting"
+-'  2  0  ~/ShellScripts/profile-add-ibus-setting
+|4,39,2,0,1512991926,"~/ShellScripts/profile-add-ibus-setting"
+-'  2  0  ~/ShellScripts/profile-add-ibus-setting
+|4,39,2,0,1512991926,"~/ShellScripts/profile-add-ibus-setting"
+-'  2  0  ~/ShellScripts/profile-add-ibus-setting
+|4,39,2,0,1512991926,"~/ShellScripts/profile-add-ibus-setting"
+-'  2  0  ~/ShellScripts/profile-add-ibus-setting
+|4,39,2,0,1512991926,"~/ShellScripts/profile-add-ibus-setting"
+-'  2  0  ~/ShellScripts/profile-add-ibus-setting
+|4,39,2,0,1512991926,"~/ShellScripts/profile-add-ibus-setting"
+-'  2  0  ~/ShellScripts/profile-add-ibus-setting
+|4,39,2,0,1512991926,"~/ShellScripts/profile-add-ibus-setting"
+-'  2  0  ~/ShellScripts/profile-add-ibus-setting
+|4,39,2,0,1512991926,"~/ShellScripts/profile-add-ibus-setting"
 
 # 檔案內 Mark 記錄 (由新到舊):
+
+> ~/ShellScripts/basic_scripts/install-my-custom-sh-script.sh
+	*	1512995252	0
+	"	16	1
+	.	17	0
+	+	13	1
+	+	17	0
+
+> ~/ShellScripts/basic_scripts/backup.sh
+	*	1512995205	0
+	"	48	0
+	^	10	52
+	.	34	5
+	+	3	26
+	+	4	23
+	+	5	22
+	+	6	33
+	+	5	33
+	+	4	0
+	+	10	52
+	+	6	4
+	+	10	51
+	+	34	5
+
+> ~/ShellScripts/bashrc-add-emacs-func
+	*	1512994722	0
+	"	25	0
+	.	26	0
+	+	26	0
+
+> ~/ShellScripts/login-auto-start/ibus-settings.sh
+	*	1512993302	0
+	"	5	0
+	.	6	0
+	+	6	0
+
+> ~/ShellScripts/profile-add-emacs-setting
+	*	1512991932	0
+	"	1	0
+
+> ~/ShellScripts/profile-add-ibus-setting
+	*	1512991922	0
+	"	2	0
+	^	8	12
+	.	8	11
+	+	2	0
+	+	1	0
+	+	7	20
+	+	8	11
+
+> ~/ShellScripts/profile-init
+	*	1512991911	0
+	"	10	0
+
+> ~/.profile
+	*	1512991901	0
+	"	26	0
+	^	26	2
+	.	26	1
+	+	29	1
+	+	30	0
+	+	26	1
+
+> ~/.bashrc
+	*	1512991896	0
+	"	120	0
+	^	120	0
+	.	121	0
+	+	117	0
+	+	121	0
+	+	120	0
+	+	121	0
+
+> ~/.emacs.d/my_config/init-my-config.el
+	*	1512977805	0
+	"	23	0
+	.	8	0
+	+	8	0
+
+> ~/.emacs.d/init.el
+	*	1512977779	0
+	"	42	0
+	^	42	17
+	.	42	16
+	+	36	0
+	+	37	0
+	+	41	0
+	+	44	0
+	+	41	45
+	+	40	14
+	+	38	19
+	+	37	19
+	+	39	0
+	+	44	0
+	+	42	16
+
+> ~/.emacs.d/my_config/ibus-el-0.3.2/ibus.el
+	*	1512976224	0
+	"	68	0
+
+> ~/Workspace/C++/testApp.cpp
+	*	1511334316	0
+	"	3	12
+	^	3	13
+	.	3	12
+	+	1	17
+	+	5	30
+	+	6	1
+	+	8	13
+	+	9	0
+	+	7	3
+	+	4	0
+	+	3	12
+
+> ~/Workspace/C++/02-C++-programming.txt
+	*	1511333886	0
+	"	1	0
+
+> ~/Workspace/C++/01-C++-intro.txt
+	*	1511333861	0
+	"	8	0
+	^	8	0
+	.	9	0
+	+	1	14
+	+	4	28
+	+	2	0
+	+	5	0
+	+	6	0
+	+	4	46
+	+	6	16
+	+	7	55
+	+	9	0
+
+> ~/Workspace/C++/01-mianxiangduixiang.txt
+	*	1511332809	0
+	"	1	0
+	.	2	0
+	+	1	26
+	+	2	0
+
+> ~/Books/APUE/pdf.txt
+	*	1511081951	0
+	"	489	0
+	.	237	0
+	+	1	0
+	+	2	0
+	+	3	0
+	+	157	0
+	+	237	0
+
+> ~/Books/APUE/apt-cache-for-chm.txt
+	*	1511081440	0
+	"	307	3
+
+> ~/Books/APUE/ap
+	*	1511081349	0
+	"	1	0
+
+> /etc/rc5.d/S01raspi-config
+	*	1510967038	0
+	"	42	0
+
+> ~/.xmodmaprc
+	*	1510966560	0
+	"	6	0
+	.	6	0
+	+	6	0
+
+> ~/ShellScripts/login-auto-start/xmodmap.sh
+	*	1510966142	0
+	"	2	22
+	^	2	23
+	.	2	22
+	+	3	0
+	+	2	22
+
+> ~/ShellScripts/README.txt
+	*	1510965991	0
+	"	6	8
+	^	6	56
+	.	6	55
+	+	1	20
+	+	3	63
+	+	1	2
+	+	3	2
+	+	4	2
+	+	2	0
+	+	3	67
+	+	6	55
+
+> ~/ShellScripts/login-auto-start/install
+	*	1510965768	0
+	"	4	43
+	^	4	44
+	.	4	43
+	+	4	43
+
+> ~/ShellScripts/login-auto-start/install.sh
+	*	1510965679	0
+	"	3	22
+	^	3	2
+	.	3	22
+	+	4	30
+	+	3	36
+	+	2	0
+	+	3	23
+	+	2	41
+	+	3	21
+	+	4	0
+	+	3	22
+
+> ~/.vimrc
+	*	1510963418	0
+	"	250	0
+	^	39	8
+	.	39	8
+	+	467	0
+	+	467	61
+	+	467	30
+	+	468	0
+	+	467	28
+	+	466	29
+	+	467	20
+	+	466	0
+	+	465	0
+	+	464	0
+	+	469	0
+	+	471	0
+	+	443	0
+	+	437	0
+	+	432	0
+	+	433	0
+	+	434	1
+	+	434	0
+	+	435	32
+	+	434	0
+	+	432	0
+	+	437	0
+	+	435	0
+	+	39	8
+
+> ~/ShellScripts/profile-add-xset-setting
+	*	1510907523	0
+	"	9	5
+	^	9	6
+	.	9	5
+	+	10	0
+	+	9	5
+
+> ~/Workspace/programming/apue.2e/Make.defines.linux
+	*	1510888898	0
+	"	17	0
+
+> ~/Workspace/programming/apue.2e/open/linux.mk
+	*	1510888834	0
+	"	2	0
+
+> ~/.emacs.d/my_config/xcscope.el
+	*	1510820574	0
+	"	1	0
+
+> ~/.config/openbox/lxde-pi-rc.xml
+	*	1510817836	0
+	"	294	23
+	^	294	40
+	.	294	23
+	+	292	22
+	+	294	22
+	+	297	0
+	+	302	0
+	+	297	0
+	+	302	0
+	+	297	22
+	+	299	0
+	+	308	22
+	+	309	26
+	+	308	18
+	+	294	23
+
+> ~/.spacemacs
+	*	1510817544	0
+	"	312	0
+	.	312	0
+	+	312	0
 
 > ~/TODO
 	*	1510800922	0
@@ -2352,22 +2642,6 @@ $
 	+	42	0
 	+	35	10
 
-> ~/ShellScripts/basic_scripts/backup.sh
-	*	1510794969	0
-	"	70	0
-	^	10	52
-	.	34	5
-	+	3	26
-	+	4	23
-	+	5	22
-	+	6	33
-	+	5	33
-	+	4	0
-	+	10	52
-	+	6	4
-	+	10	51
-	+	34	5
-
 > ~/ShellScripts/bashrc-add-git-func
 	*	1510793598	0
 	"	11	0
@@ -2383,35 +2657,9 @@ $
 	+	14	3
 	+	20	0
 
-> ~/.bashrc
-	*	1510793388	0
-	"	120	0
-	^	120	0
-	.	120	0
-	+	117	0
-	+	121	0
-	+	120	0
-
 > ~/.gitconfig
 	*	1510793309	0
 	"	3	1
-
-> ~/.config/openbox/lxde-pi-rc.xml
-	*	1510793295	0
-	"	308	18
-	^	308	19
-	.	308	18
-	+	292	22
-	+	294	22
-	+	297	0
-	+	302	0
-	+	297	0
-	+	302	0
-	+	297	22
-	+	299	0
-	+	308	22
-	+	309	26
-	+	308	18
 
 > ~/Note/Linux/raspberryPi/keybind.txt
 	*	1510789203	0
@@ -2437,12 +2685,6 @@ $
 
 > ~/ShellScripts/bashrc-init
 	"	1	0
-
-> ~/ShellScripts/basic_scripts/install-my-custom-sh-script.sh
-	"	13	28
-	.	17	0
-	+	13	1
-	+	17	0
 
 > ~/Note/Linux/ubuntu/window_manager/DWM/dwm-tutorial-on-linux.txt
 	"	256	0
@@ -2669,35 +2911,6 @@ $
 	.	3	0
 	+	2	0
 	+	3	0
-
-> ~/.vimrc
-	"	69	0
-	^	39	8
-	.	39	8
-	+	467	0
-	+	467	61
-	+	467	30
-	+	468	0
-	+	467	28
-	+	466	29
-	+	467	20
-	+	466	0
-	+	465	0
-	+	464	0
-	+	469	0
-	+	471	0
-	+	443	0
-	+	437	0
-	+	432	0
-	+	433	0
-	+	434	1
-	+	434	0
-	+	435	32
-	+	434	0
-	+	432	0
-	+	437	0
-	+	435	0
-	+	39	8
 
 > /usr/share/vim/vim74/doc/eval.txt
 	"	6475	8
@@ -2945,93 +3158,4 @@ $
 	+	41	0
 
 > ~/.gconf/desktop/%gconf.xml
-	"	1	0
-
-> ~/.dmrc
-	"	1	0
-
-> ~/.gnome2/gnome-commander
-	"	1	0
-
-> ~/.gnome-commander/gnome-commander.xml
-	"	121	0
-
-> ~/.gnome-commander/devices
-	"	1	0
-
-> ~/.gnupg/gpg.conf
-	"	1	0
-
-> ~/.ICEauthority
-	"	41	0
-
-> ~/.lesshst
-	"	61	0
-
-> ~/.local/share/gnome-settings-daemon/input-sources-converted
-	"	1	0
-
-> ~/.macromedia/Flash_Player/macromedia.com/support/flashplayer/sys/settings.sol
-	"	1	0
-
-> ~/.mplayer/config
-	"	1	0
-
-> ~/.npm/colors/1.1.2/package/package.json
-	"	1	0
-
-> ~/.RapidSVN
-	"	83	0
-
-> ~/.sudo_as_admin_successful
-	"	1	0
-
-> ~/.thumbnails/fail/gimp-2.8/3890d1e4c899120c08f9bbd5d161bc0d.png
-	"	1	0
-
-> ~/.wget-hsts
-	"	1	0
-
-> ~/home-dir.txt
-	"	73	0
-	.	74	0
-	+	1	0
-	+	1	0
-	+	74	0
-
-> ~/git-dir.txt
-	"	45	0
-	.	46	0
-	+	46	0
-
-> ~/diff-the-Home-dir-and-.gitignore-file.txt
-	"	1	0
-	.	1	0
-	+	1	0
-
-> ~/Note/IC/ic.org
-	"	1	0
-
-> ~/Note/server-maintain/server-maintain.org
-	"	53	0
-
-> ~/Note/learning/2013-1-11-我该如何充分的利用这段时间提高自己.txt
-	"	1	0
-
-> ~/Note/linux/linux_skills/xmodmap-change-keymap.txt
-	"	8	0
-
-> ~/Note/linux/linux_skills/ubuntu-use-xmodmap-change-keymap.txt
-	"	134	0
-
-> ~/Note/linux/linux_skills/mplayer.txt
-	"	23	0
-
-> ~/Note/text_editor/emacs/why_use_emacs.txt
-	"	73	0
-
-> ~/Note/text_editor/emacs/emacs-keystruct.txt
-	"	468	0
-
-> ~/Note/text_editor/emacs/emacs-help-command.txt
 	"	1	0

@@ -34,6 +34,9 @@
   (unless (server-running-p) (server-start)))
 
 
-;; my personal setting
-;(set-default-font "Source Code Pro" 20 default)
-(set-default-font "-unknown-Liberation Mono-normal-normal-normal-*-18-*-*-*-m-0-iso10646-1")
+;;;;;;;;;;;;;;;;;;;;;;;
+;; my personal setup ;;
+;;;;;;;;;;;;;;;;;;;;;;;
+; add load path for my custom setup
+(add-to-list 'load-path' "~/.emacs.d/my_config")
+(require 'init-my-config)

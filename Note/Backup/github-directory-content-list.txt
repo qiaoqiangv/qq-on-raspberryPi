@@ -1,3 +1,4 @@
 PyGithub
+qq-on-ubuntu
 spacemacs
 uemacs

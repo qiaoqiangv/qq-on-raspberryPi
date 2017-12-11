@@ -21,11 +21,6 @@ if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
 
-############################
-#    my personal config    
-############################
 
-# alias some emacsclient short name
-alias emt='emacsclient -t -a ""'  # open emacsclient with term
-alias emc='emacsclient -c -a ""'  # open emacsclient with GUI
-
+## load personal setting
+. ~/ShellScripts/profile-init
