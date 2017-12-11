@@ -1,0 +1,4 @@
+
+# copy this script to '/etc/profile.d/', 
+# then they can start with user login
+sudo cp ~/ShellScripts/login-auto-start/*.sh /etc/profile.d/
