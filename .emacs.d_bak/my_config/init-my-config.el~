@@ -6,33 +6,31 @@
 ;;
 ;;; 
 
-; run xmodmap command to remap Super_R key to Menu key
-(shell-command-to-string "xmodmap ~/.xmodmaprc")
-
-; when open text file then start fill mode
-
-
-; allow emacs to use system clipboard
-(setq x-select-enable-clipboard t) 
-
-; set some user custom setup
-(defun dotspacemacs/user-config ()
-  "This is were you can ultimately override default Spacemacs configuration.
-This function is called at the very end of Spacemacs initialization."
-  (setq powerline-default-separator 'nil)
-  "Set Spacemacs default font to '文泉驿' font"
-  dotspacemacs-default-font '("文泉驿等宽微米黑:style=Regular"
-                              :size 17
-                              :weight normal
-                              :width normal
-                              :powerline-scale 1.1)
-
-  )
-
-
+;; load custom package
+; add cscope plugin
+(require 'xcscope)
 ; use sdcv to query word
 (require 'init-sdcv-mode)
-(global-set-key (kbd "C-c d") 'sdcv-search)
+  (global-set-key (kbd "C-c d") 'sdcv-search)
+
+;; some setting for edit files
+; run xmodmap command to remap Super_R key to Menu key
+(shell-command-to-string "xmodmap ~/.xmodmaprc")
+; 字体设置
+(set-default-font "-unknown-Liberation Mono-normal-normal-normal-*-18-*-*-*-m-0-iso10646-1")
+; 默认显示 80列就换行 
+(setq default-fill-column 80) 
+; 支持emacs和外部程序的粘贴
+(setq x-select-enable-clipboard t) 
+; 以 y/n代表 yes/no
+(fset 'yes-or-no-p 'y-or-n-p) 
+
+;; ibus input method
+;(require 'ibus)
+;(add-hook 'after-init-hook 'ibus-mode-on)
+
+;; set emacs origin input method
+(setq default-input-method 'chinese-py-punct)
 
 
 (provide 'init-my-config)

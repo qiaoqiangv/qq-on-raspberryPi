@@ -12,6 +12,8 @@
 ; use sdcv to query word
 (require 'init-sdcv-mode)
   (global-set-key (kbd "C-c d") 'sdcv-search)
+; set power line
+(setq powerline-default-separator 'nil)
 
 ;; some setting for edit files
 ; run xmodmap command to remap Super_R key to Menu key

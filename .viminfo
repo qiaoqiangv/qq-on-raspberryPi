@@ -20,14 +20,46 @@
 $
 
 # 命令列 歷史記錄 (新到舊):
-:q
-|2,0,1512995254,,"q"
 :x
-|2,0,1512994724,,"x"
+|2,0,1513754715,,"x"
+:w
+|2,0,1513754575,,"w"
+:q
+|2,0,1513753236,,"q"
+:q!
+|2,0,1513686957,,"q!"
+:x!
+|2,0,1513686949,,"x!"
+:x1
+|2,0,1513686939,,"x1"
+:tabedit /home/pi/Note/Linux/ubuntu/character_terminal/~/download
+|2,0,1513686922,,"tabedit /home/pi/Note/Linux/ubuntu/character_terminal/~/download"
+:! 
+|2,0,1513686900,,"! "
+:tabedit /home/pi/Note/Linux/ubuntu/character_terminal/
+|2,0,1513686884,,"tabedit /home/pi/Note/Linux/ubuntu/character_terminal/"
+:X
+|2,0,1513686538,,"X"
+:.,.+1tabedit /home/pi/fbterm_input/../ShellScripts/bashrc-add-fbterm-input-method
+|2,0,1513686281,,".,.+1tabedit /home/pi/fbterm_input/../ShellScripts/bashrc-add-fbterm-input-method"
+:tabnext 
+|2,0,1513686241,,"tabnext "
+:tabedit /home/pi/fbterm_input/../ShellScripts/bashrc-add-fbterm-input-method
+|2,0,1513686218,,"tabedit /home/pi/fbterm_input/../ShellScripts/bashrc-add-fbterm-input-method"
+:tabedit /home/pi/fbterm_input/../ShellScripts/bashrc-add-fbterm.txt
+|2,0,1513686187,,"tabedit /home/pi/fbterm_input/../ShellScripts/bashrc-add-fbterm.txt"
+:tabedit /home/pi/fbterm_input/4.txt
+|2,0,1513685991,,"tabedit /home/pi/fbterm_input/4.txt"
+:tabedit /home/pi/fbterm_input/../.fbtermrc
+|2,0,1513684950,,"tabedit /home/pi/fbterm_input/../.fbtermrc"
+:tabedit /home/pi/fbterm_input/../../.fbtermrc
+|2,0,1513684931,,"tabedit /home/pi/fbterm_input/../../.fbtermrc"
+:tabedit /home/pi/fbterm_input/2.txt
+|2,0,1513684765,,"tabedit /home/pi/fbterm_input/2.txt"
+:tabedit ~/.fbtermrc
+|2,0,1513674460,,"tabedit ~/.fbtermrc"
 :
 |2,0,1512994719,,""
-:w
-|2,0,1512976281,,"w"
 :tabedit /home/pi/.emacs.d/my_config/init-my-config.el
 |2,0,1512976258,,"tabedit /home/pi/.emacs.d/my_config/init-my-config.el"
 :tabedit /home/pi/.emacs.d/my_config/ibus-el-0.3.2/ibus.el
@@ -36,8 +68,6 @@ $
 |2,0,1512976209,,"tabedit /home/pi/.emacs.d/my_config/ibus-el-agent"
 :tabedit /home/pi/.emacs.d/
 |2,0,1512976146,,"tabedit /home/pi/.emacs.d/"
-:q!
-|2,0,1511081954,,"q!"
 :'<,'>q
 |2,0,1511081949,,"'<,'>q"
 :wq
@@ -106,8 +136,6 @@ $
 |2,0,0,,"tabedit /home/qq/Github/vim/src/testdir/test_statusline.vim +12"
 :buffers
 |2,0,0,,"buffers"
-:tabnext 
-|2,0,0,,"tabnext "
 :tabedit /etc/gnome/menus.blacklist
 |2,0,0,,"tabedit /etc/gnome/menus.blacklist"
 :tabedit /etc/gnome/defaults.list
@@ -992,38 +1020,10 @@ $
 |2,0,0,,"echo \"the number in the current window is \" . tabpagebuflist(0)"
 :echo "the number in the current window is " . winbufnr(0)
 |2,0,0,,"echo \"the number in the current window is \" . winbufnr(0)"
-:echo "the file in the current window is " . bufname(winbufnr(0))
-|2,0,0,,"echo \"the file in the current window is \" . bufname(winbufnr(0))"
-:echo "the file in the current window is " . bufname(winbufnr(1))
-|2,0,0,,"echo \"the file in the current window is \" . bufname(winbufnr(1))"
-:echo "the file in the current window is " . bufname(winbufnr(2))
-|2,0,0,,"echo \"the file in the current window is \" . bufname(winbufnr(2))"
-:tabnext ,t,
-|2,0,0,,"tabnext ,t,"
-:help while
-|2,0,0,,"help while"
-:help autocommand
-|2,0,0,,"help autocommand"
-:au BufDelete <buffer>
-|2,0,0,,"au BufDelete <buffer>"
-:au BufUnload <buffer>
-|2,0,0,,"au BufUnload <buffer>"
-:au BufUnload <!buffer>
-|2,0,0,,"au BufUnload <!buffer>"
-:au BufUnload *
-|2,0,0,,"au BufUnload *"
-:au BufUnload
-|2,0,0,,"au BufUnload"
-:au BufDelete
-|2,0,0,,"au BufDelete"
-:autocmd User
-|2,0,0,,"autocmd User"
-:au! * <buffer>
-|2,0,0,,"au! * <buffer>"
 
 # 搜尋字串 歷史記錄 (新到舊):
 ? @$
-|2,1,1512995145,,"@$"
+|2,1,1513686693,,"@$"
 ?/pdf view
 |2,1,1511081901,47,"pdf view"
 ?/pdf
@@ -2040,265 +2040,468 @@ $
 # Debug Line 歷史記錄 (新到舊):
 
 # 暫存器:
-""0	LINE	0
-	emacs-start-daemon
-|3,1,0,1,1,0,1512995149,"emacs-start-daemon"
-"1	LINE	0
-	emacs-start-daemon
-|3,0,1,1,1,0,1512994722,"emacs-start-daemon"
+"0	LINE	0
+	下载地址:http://sourceforge.net/projects/p7zip/files/p7zip/9.20.1/p7zip_9.20.1_src_all.tar.bz2/download
+|3,0,0,1,1,0,1513686877,"下载地址:http://sourceforge.net/projects/p7zip/files/p7zip/9.20.1/p7zip_9.20.1_src_all.tar.bz2/download"
+""1	LINE	0
+	# add fbterm setting
+|3,1,1,1,1,0,1513754714,"# add fbterm setting"
 "2	LINE	0
-	
-|3,0,2,1,1,0,1512993302,""
+	fi
+|3,0,2,1,1,0,1513754713,"fi"
 "3	LINE	0
-	ibus restart
-|3,0,3,1,1,0,1512993301,"ibus restart"
+	if [ "$TERM" == "linux" ]; then
+|3,0,3,1,1,0,1513754713,"if [ \"$TERM\" == \"linux\" ]; then"
 "4	LINE	0
-	# restart ibus daemon
-|3,0,4,1,1,0,1512993301,"# restart ibus daemon"
+	    fbterm
+|3,0,4,1,1,0,1513754712,"    fbterm"
 "5	LINE	0
-	
-|3,0,5,1,1,0,1512991896,""
+	sudo setcap 'cap_sys_tty_config+ep' /usr/bin/fbterm
+|3,0,5,1,1,0,1513686536,"sudo setcap 'cap_sys_tty_config+ep' /usr/bin/fbterm"
 "6	LINE	0
 	
-|3,0,6,1,1,0,1512991895,""
+|3,0,6,1,1,0,1513686535,""
 "7	LINE	0
-	;; add load path
-|3,0,7,1,1,0,1512976279,";; add load path"
+	fbterm fcitx-fbterm
+|3,0,7,1,1,0,1513686535,"fbterm fcitx-fbterm"
 "8	LINE	0
-	
-|3,0,8,1,1,0,1512976278,""
+	eval `dbus-launch --auto-syntax` fcitx > /dev/null 2>&1 # 不显示标准输出
+|3,0,8,1,1,0,1513686443,"eval `dbus-launch --auto-syntax` fcitx > /dev/null 2>&1 # 不显示标准输出"
 "9	LINE	0
-	;(add-to-list 'load-path' "~/.emacs.d/my_config")
-|3,0,9,1,1,0,1512976268,";(add-to-list 'load-path' \"~/.emacs.d/my_config\")"
+	
+|3,0,9,1,1,0,1513686288,""
 "-	CHAR	0
-	ource 
-|3,0,36,0,1,0,1512977369,"ource "
+	:
+|3,0,36,0,1,0,1513686926,":"
 
 # 檔案標記:
-'0  16  1  ~/ShellScripts/basic_scripts/install-my-custom-sh-script.sh
-|4,48,16,1,1512995254,"~/ShellScripts/basic_scripts/install-my-custom-sh-script.sh"
-'1  48  0  ~/ShellScripts/basic_scripts/backup.sh
-|4,49,48,0,1512995208,"~/ShellScripts/basic_scripts/backup.sh"
-'2  25  0  ~/ShellScripts/bashrc-add-emacs-func
-|4,50,25,0,1512994724,"~/ShellScripts/bashrc-add-emacs-func"
-'3  26  17  ~/ShellScripts/bashrc-add-emacs-func
-|4,51,26,17,1512994404,"~/ShellScripts/bashrc-add-emacs-func"
-'4  26  17  ~/ShellScripts/bashrc-add-emacs-func
-|4,52,26,17,1512994404,"~/ShellScripts/bashrc-add-emacs-func"
-'5  5  0  ~/ShellScripts/login-auto-start/ibus-settings.sh
-|4,53,5,0,1512993303,"~/ShellScripts/login-auto-start/ibus-settings.sh"
-'6  1  0  ~/ShellScripts/profile-add-emacs-setting
-|4,54,1,0,1512991933,"~/ShellScripts/profile-add-emacs-setting"
-'7  2  0  ~/ShellScripts/profile-add-ibus-setting
-|4,55,2,0,1512991926,"~/ShellScripts/profile-add-ibus-setting"
-'8  10  0  ~/ShellScripts/profile-init
-|4,56,10,0,1512991912,"~/ShellScripts/profile-init"
-'9  26  0  ~/.profile
-|4,57,26,0,1512991901,"~/.profile"
+'0  121  0  ~/.bashrc
+|4,48,121,0,1513754715,"~/.bashrc"
+'1  122  1  ~/.bashrc
+|4,49,122,1,1513754593,"~/.bashrc"
+'2  125  1  ~/.bashrc
+|4,50,125,1,1513754593,"~/.bashrc"
+'3  58  0  ~/Note/Linux/ubuntu/character_terminal/fbterm-setup.txt
+|4,51,58,0,1513753237,"~/Note/Linux/ubuntu/character_terminal/fbterm-setup.txt"
+'4  9  4  ~/Note/Linux/ubuntu/character_terminal/fbterm-input-method.txt
+|4,52,9,4,1513753206,"~/Note/Linux/ubuntu/character_terminal/fbterm-input-method.txt"
+'5  74  3  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
+|4,53,74,3,1513753191,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
+'6  47  0  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
+|4,54,47,0,1513733528,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
+'7  47  0  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
+|4,55,47,0,1513733528,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
+'8  40  0  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
+|4,56,40,0,1513687331,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
+'9  40  0  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
+|4,57,40,0,1513687331,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
 
 # Jumplist (由新到舊):
--'  16  1  ~/ShellScripts/basic_scripts/install-my-custom-sh-script.sh
-|4,39,16,1,1512995254,"~/ShellScripts/basic_scripts/install-my-custom-sh-script.sh"
--'  13  1  ~/ShellScripts/basic_scripts/install-my-custom-sh-script.sh
-|4,39,13,1,1512995250,"~/ShellScripts/basic_scripts/install-my-custom-sh-script.sh"
--'  48  0  ~/ShellScripts/basic_scripts/backup.sh
-|4,39,48,0,1512995208,"~/ShellScripts/basic_scripts/backup.sh"
--'  48  0  ~/ShellScripts/basic_scripts/backup.sh
-|4,39,48,0,1512995208,"~/ShellScripts/basic_scripts/backup.sh"
--'  47  0  ~/ShellScripts/basic_scripts/backup.sh
-|4,39,47,0,1512995151,"~/ShellScripts/basic_scripts/backup.sh"
--'  47  0  ~/ShellScripts/basic_scripts/backup.sh
-|4,39,47,0,1512995151,"~/ShellScripts/basic_scripts/backup.sh"
--'  1  0  ~/ShellScripts/basic_scripts
-|4,39,1,0,1512995145,"~/ShellScripts/basic_scripts"
--'  1  0  ~/ShellScripts/basic_scripts
-|4,39,1,0,1512995145,"~/ShellScripts/basic_scripts"
--'  25  0  ~/ShellScripts/bashrc-add-emacs-func
-|4,39,25,0,1512994724,"~/ShellScripts/bashrc-add-emacs-func"
--'  25  0  ~/ShellScripts/bashrc-add-emacs-func
-|4,39,25,0,1512994724,"~/ShellScripts/bashrc-add-emacs-func"
--'  25  0  ~/ShellScripts/bashrc-add-emacs-func
-|4,39,25,0,1512994724,"~/ShellScripts/bashrc-add-emacs-func"
--'  25  0  ~/ShellScripts/bashrc-add-emacs-func
-|4,39,25,0,1512994724,"~/ShellScripts/bashrc-add-emacs-func"
--'  26  0  ~/ShellScripts/bashrc-add-emacs-func
-|4,39,26,0,1512994707,"~/ShellScripts/bashrc-add-emacs-func"
--'  26  0  ~/ShellScripts/bashrc-add-emacs-func
-|4,39,26,0,1512994707,"~/ShellScripts/bashrc-add-emacs-func"
--'  26  0  ~/ShellScripts/bashrc-add-emacs-func
-|4,39,26,0,1512994707,"~/ShellScripts/bashrc-add-emacs-func"
--'  26  0  ~/ShellScripts/bashrc-add-emacs-func
-|4,39,26,0,1512994707,"~/ShellScripts/bashrc-add-emacs-func"
--'  26  17  ~/ShellScripts/bashrc-add-emacs-func
-|4,39,26,17,1512994404,"~/ShellScripts/bashrc-add-emacs-func"
--'  26  17  ~/ShellScripts/bashrc-add-emacs-func
-|4,39,26,17,1512994404,"~/ShellScripts/bashrc-add-emacs-func"
--'  26  17  ~/ShellScripts/bashrc-add-emacs-func
-|4,39,26,17,1512994404,"~/ShellScripts/bashrc-add-emacs-func"
--'  26  17  ~/ShellScripts/bashrc-add-emacs-func
-|4,39,26,17,1512994404,"~/ShellScripts/bashrc-add-emacs-func"
--'  1  0  ~/ShellScripts/bashrc-add-emacs-func
-|4,39,1,0,1512994290,"~/ShellScripts/bashrc-add-emacs-func"
--'  1  0  ~/ShellScripts/bashrc-add-emacs-func
-|4,39,1,0,1512994290,"~/ShellScripts/bashrc-add-emacs-func"
--'  1  0  ~/ShellScripts/bashrc-add-emacs-func
-|4,39,1,0,1512994290,"~/ShellScripts/bashrc-add-emacs-func"
--'  1  0  ~/ShellScripts/bashrc-add-emacs-func
-|4,39,1,0,1512994290,"~/ShellScripts/bashrc-add-emacs-func"
--'  1  0  ~/ShellScripts/bashrc-add-emacs-func
-|4,39,1,0,1512994290,"~/ShellScripts/bashrc-add-emacs-func"
--'  1  0  ~/ShellScripts/bashrc-add-emacs-func
-|4,39,1,0,1512994290,"~/ShellScripts/bashrc-add-emacs-func"
--'  1  0  ~/ShellScripts/bashrc-add-emacs-func
-|4,39,1,0,1512994290,"~/ShellScripts/bashrc-add-emacs-func"
--'  1  0  ~/ShellScripts/bashrc-add-emacs-func
-|4,39,1,0,1512994290,"~/ShellScripts/bashrc-add-emacs-func"
--'  5  0  ~/ShellScripts/login-auto-start/ibus-settings.sh
-|4,39,5,0,1512993303,"~/ShellScripts/login-auto-start/ibus-settings.sh"
--'  5  0  ~/ShellScripts/login-auto-start/ibus-settings.sh
-|4,39,5,0,1512993303,"~/ShellScripts/login-auto-start/ibus-settings.sh"
--'  5  0  ~/ShellScripts/login-auto-start/ibus-settings.sh
-|4,39,5,0,1512993303,"~/ShellScripts/login-auto-start/ibus-settings.sh"
--'  5  0  ~/ShellScripts/login-auto-start/ibus-settings.sh
-|4,39,5,0,1512993303,"~/ShellScripts/login-auto-start/ibus-settings.sh"
--'  5  0  ~/ShellScripts/login-auto-start/ibus-settings.sh
-|4,39,5,0,1512993303,"~/ShellScripts/login-auto-start/ibus-settings.sh"
--'  5  0  ~/ShellScripts/login-auto-start/ibus-settings.sh
-|4,39,5,0,1512993303,"~/ShellScripts/login-auto-start/ibus-settings.sh"
--'  5  0  ~/ShellScripts/login-auto-start/ibus-settings.sh
-|4,39,5,0,1512993303,"~/ShellScripts/login-auto-start/ibus-settings.sh"
--'  5  0  ~/ShellScripts/login-auto-start/ibus-settings.sh
-|4,39,5,0,1512993303,"~/ShellScripts/login-auto-start/ibus-settings.sh"
--'  5  0  ~/ShellScripts/login-auto-start/ibus-settings.sh
-|4,39,5,0,1512993303,"~/ShellScripts/login-auto-start/ibus-settings.sh"
--'  5  0  ~/ShellScripts/login-auto-start/ibus-settings.sh
-|4,39,5,0,1512993303,"~/ShellScripts/login-auto-start/ibus-settings.sh"
--'  5  0  ~/ShellScripts/login-auto-start/ibus-settings.sh
-|4,39,5,0,1512993303,"~/ShellScripts/login-auto-start/ibus-settings.sh"
--'  5  0  ~/ShellScripts/login-auto-start/ibus-settings.sh
-|4,39,5,0,1512993303,"~/ShellScripts/login-auto-start/ibus-settings.sh"
--'  5  0  ~/ShellScripts/login-auto-start/ibus-settings.sh
-|4,39,5,0,1512993303,"~/ShellScripts/login-auto-start/ibus-settings.sh"
--'  5  0  ~/ShellScripts/login-auto-start/ibus-settings.sh
-|4,39,5,0,1512993303,"~/ShellScripts/login-auto-start/ibus-settings.sh"
--'  5  0  ~/ShellScripts/login-auto-start/ibus-settings.sh
-|4,39,5,0,1512993303,"~/ShellScripts/login-auto-start/ibus-settings.sh"
--'  5  0  ~/ShellScripts/login-auto-start/ibus-settings.sh
-|4,39,5,0,1512993303,"~/ShellScripts/login-auto-start/ibus-settings.sh"
--'  1  0  ~/ShellScripts/login-auto-start/ibus-settings.sh
-|4,39,1,0,1512993285,"~/ShellScripts/login-auto-start/ibus-settings.sh"
--'  1  0  ~/ShellScripts/login-auto-start/ibus-settings.sh
-|4,39,1,0,1512993285,"~/ShellScripts/login-auto-start/ibus-settings.sh"
--'  1  0  ~/ShellScripts/login-auto-start/ibus-settings.sh
-|4,39,1,0,1512993285,"~/ShellScripts/login-auto-start/ibus-settings.sh"
--'  1  0  ~/ShellScripts/login-auto-start/ibus-settings.sh
-|4,39,1,0,1512993285,"~/ShellScripts/login-auto-start/ibus-settings.sh"
--'  1  0  ~/ShellScripts/login-auto-start/ibus-settings.sh
-|4,39,1,0,1512993285,"~/ShellScripts/login-auto-start/ibus-settings.sh"
--'  1  0  ~/ShellScripts/login-auto-start/ibus-settings.sh
-|4,39,1,0,1512993285,"~/ShellScripts/login-auto-start/ibus-settings.sh"
--'  1  0  ~/ShellScripts/login-auto-start/ibus-settings.sh
-|4,39,1,0,1512993285,"~/ShellScripts/login-auto-start/ibus-settings.sh"
--'  1  0  ~/ShellScripts/login-auto-start/ibus-settings.sh
-|4,39,1,0,1512993285,"~/ShellScripts/login-auto-start/ibus-settings.sh"
--'  1  0  ~/ShellScripts/login-auto-start/ibus-settings.sh
-|4,39,1,0,1512993285,"~/ShellScripts/login-auto-start/ibus-settings.sh"
--'  1  0  ~/ShellScripts/login-auto-start/ibus-settings.sh
-|4,39,1,0,1512993285,"~/ShellScripts/login-auto-start/ibus-settings.sh"
--'  1  0  ~/ShellScripts/login-auto-start/ibus-settings.sh
-|4,39,1,0,1512993285,"~/ShellScripts/login-auto-start/ibus-settings.sh"
--'  1  0  ~/ShellScripts/login-auto-start/ibus-settings.sh
-|4,39,1,0,1512993285,"~/ShellScripts/login-auto-start/ibus-settings.sh"
--'  1  0  ~/ShellScripts/login-auto-start/ibus-settings.sh
-|4,39,1,0,1512993285,"~/ShellScripts/login-auto-start/ibus-settings.sh"
--'  1  0  ~/ShellScripts/login-auto-start/ibus-settings.sh
-|4,39,1,0,1512993285,"~/ShellScripts/login-auto-start/ibus-settings.sh"
--'  1  0  ~/ShellScripts/login-auto-start/ibus-settings.sh
-|4,39,1,0,1512993285,"~/ShellScripts/login-auto-start/ibus-settings.sh"
--'  1  0  ~/ShellScripts/login-auto-start/ibus-settings.sh
-|4,39,1,0,1512993285,"~/ShellScripts/login-auto-start/ibus-settings.sh"
--'  1  0  ~/ShellScripts/profile-add-emacs-setting
-|4,39,1,0,1512991933,"~/ShellScripts/profile-add-emacs-setting"
--'  1  0  ~/ShellScripts/profile-add-emacs-setting
-|4,39,1,0,1512991933,"~/ShellScripts/profile-add-emacs-setting"
--'  1  0  ~/ShellScripts/profile-add-emacs-setting
-|4,39,1,0,1512991933,"~/ShellScripts/profile-add-emacs-setting"
--'  1  0  ~/ShellScripts/profile-add-emacs-setting
-|4,39,1,0,1512991933,"~/ShellScripts/profile-add-emacs-setting"
--'  1  0  ~/ShellScripts/profile-add-emacs-setting
-|4,39,1,0,1512991933,"~/ShellScripts/profile-add-emacs-setting"
--'  1  0  ~/ShellScripts/profile-add-emacs-setting
-|4,39,1,0,1512991933,"~/ShellScripts/profile-add-emacs-setting"
--'  1  0  ~/ShellScripts/profile-add-emacs-setting
-|4,39,1,0,1512991933,"~/ShellScripts/profile-add-emacs-setting"
--'  1  0  ~/ShellScripts/profile-add-emacs-setting
-|4,39,1,0,1512991933,"~/ShellScripts/profile-add-emacs-setting"
--'  1  0  ~/ShellScripts/profile-add-emacs-setting
-|4,39,1,0,1512991933,"~/ShellScripts/profile-add-emacs-setting"
--'  1  0  ~/ShellScripts/profile-add-emacs-setting
-|4,39,1,0,1512991933,"~/ShellScripts/profile-add-emacs-setting"
--'  1  0  ~/ShellScripts/profile-add-emacs-setting
-|4,39,1,0,1512991933,"~/ShellScripts/profile-add-emacs-setting"
--'  1  0  ~/ShellScripts/profile-add-emacs-setting
-|4,39,1,0,1512991933,"~/ShellScripts/profile-add-emacs-setting"
--'  1  0  ~/ShellScripts/profile-add-emacs-setting
-|4,39,1,0,1512991933,"~/ShellScripts/profile-add-emacs-setting"
--'  1  0  ~/ShellScripts/profile-add-emacs-setting
-|4,39,1,0,1512991933,"~/ShellScripts/profile-add-emacs-setting"
--'  1  0  ~/ShellScripts/profile-add-emacs-setting
-|4,39,1,0,1512991933,"~/ShellScripts/profile-add-emacs-setting"
--'  1  0  ~/ShellScripts/profile-add-emacs-setting
-|4,39,1,0,1512991933,"~/ShellScripts/profile-add-emacs-setting"
--'  1  0  ~/ShellScripts/profile-add-emacs-setting
-|4,39,1,0,1512991933,"~/ShellScripts/profile-add-emacs-setting"
--'  1  0  ~/ShellScripts/profile-add-emacs-setting
-|4,39,1,0,1512991933,"~/ShellScripts/profile-add-emacs-setting"
--'  1  0  ~/ShellScripts/profile-add-emacs-setting
-|4,39,1,0,1512991933,"~/ShellScripts/profile-add-emacs-setting"
--'  1  0  ~/ShellScripts/profile-add-emacs-setting
-|4,39,1,0,1512991933,"~/ShellScripts/profile-add-emacs-setting"
--'  1  0  ~/ShellScripts/profile-add-emacs-setting
-|4,39,1,0,1512991933,"~/ShellScripts/profile-add-emacs-setting"
--'  1  0  ~/ShellScripts/profile-add-emacs-setting
-|4,39,1,0,1512991933,"~/ShellScripts/profile-add-emacs-setting"
--'  1  0  ~/ShellScripts/profile-add-emacs-setting
-|4,39,1,0,1512991933,"~/ShellScripts/profile-add-emacs-setting"
--'  1  0  ~/ShellScripts/profile-add-emacs-setting
-|4,39,1,0,1512991933,"~/ShellScripts/profile-add-emacs-setting"
--'  1  0  ~/ShellScripts/profile-add-emacs-setting
-|4,39,1,0,1512991933,"~/ShellScripts/profile-add-emacs-setting"
--'  1  0  ~/ShellScripts/profile-add-emacs-setting
-|4,39,1,0,1512991933,"~/ShellScripts/profile-add-emacs-setting"
--'  1  0  ~/ShellScripts/profile-add-emacs-setting
-|4,39,1,0,1512991933,"~/ShellScripts/profile-add-emacs-setting"
--'  1  0  ~/ShellScripts/profile-add-emacs-setting
-|4,39,1,0,1512991933,"~/ShellScripts/profile-add-emacs-setting"
--'  1  0  ~/ShellScripts/profile-add-emacs-setting
-|4,39,1,0,1512991933,"~/ShellScripts/profile-add-emacs-setting"
--'  1  0  ~/ShellScripts/profile-add-emacs-setting
-|4,39,1,0,1512991933,"~/ShellScripts/profile-add-emacs-setting"
--'  1  0  ~/ShellScripts/profile-add-emacs-setting
-|4,39,1,0,1512991933,"~/ShellScripts/profile-add-emacs-setting"
--'  1  0  ~/ShellScripts/profile-add-emacs-setting
-|4,39,1,0,1512991933,"~/ShellScripts/profile-add-emacs-setting"
--'  2  0  ~/ShellScripts/profile-add-ibus-setting
-|4,39,2,0,1512991926,"~/ShellScripts/profile-add-ibus-setting"
--'  2  0  ~/ShellScripts/profile-add-ibus-setting
-|4,39,2,0,1512991926,"~/ShellScripts/profile-add-ibus-setting"
--'  2  0  ~/ShellScripts/profile-add-ibus-setting
-|4,39,2,0,1512991926,"~/ShellScripts/profile-add-ibus-setting"
--'  2  0  ~/ShellScripts/profile-add-ibus-setting
-|4,39,2,0,1512991926,"~/ShellScripts/profile-add-ibus-setting"
--'  2  0  ~/ShellScripts/profile-add-ibus-setting
-|4,39,2,0,1512991926,"~/ShellScripts/profile-add-ibus-setting"
--'  2  0  ~/ShellScripts/profile-add-ibus-setting
-|4,39,2,0,1512991926,"~/ShellScripts/profile-add-ibus-setting"
--'  2  0  ~/ShellScripts/profile-add-ibus-setting
-|4,39,2,0,1512991926,"~/ShellScripts/profile-add-ibus-setting"
--'  2  0  ~/ShellScripts/profile-add-ibus-setting
-|4,39,2,0,1512991926,"~/ShellScripts/profile-add-ibus-setting"
+-'  121  0  ~/.bashrc
+|4,39,121,0,1513754715,"~/.bashrc"
+-'  122  0  ~/.bashrc
+|4,39,122,0,1513754709,"~/.bashrc"
+-'  125  1  ~/.bashrc
+|4,39,125,1,1513754593,"~/.bashrc"
+-'  120  0  ~/.bashrc
+|4,39,120,0,1513754441,"~/.bashrc"
+-'  120  0  ~/.bashrc
+|4,39,120,0,1513754441,"~/.bashrc"
+-'  58  0  ~/Note/Linux/ubuntu/character_terminal/fbterm-setup.txt
+|4,39,58,0,1513753237,"~/Note/Linux/ubuntu/character_terminal/fbterm-setup.txt"
+-'  58  0  ~/Note/Linux/ubuntu/character_terminal/fbterm-setup.txt
+|4,39,58,0,1513753237,"~/Note/Linux/ubuntu/character_terminal/fbterm-setup.txt"
+-'  58  0  ~/Note/Linux/ubuntu/character_terminal/fbterm-setup.txt
+|4,39,58,0,1513753237,"~/Note/Linux/ubuntu/character_terminal/fbterm-setup.txt"
+-'  58  0  ~/Note/Linux/ubuntu/character_terminal/fbterm-setup.txt
+|4,39,58,0,1513753237,"~/Note/Linux/ubuntu/character_terminal/fbterm-setup.txt"
+-'  34  0  ~/Note/Linux/ubuntu/character_terminal/fbterm-setup.txt
+|4,39,34,0,1513753212,"~/Note/Linux/ubuntu/character_terminal/fbterm-setup.txt"
+-'  34  0  ~/Note/Linux/ubuntu/character_terminal/fbterm-setup.txt
+|4,39,34,0,1513753212,"~/Note/Linux/ubuntu/character_terminal/fbterm-setup.txt"
+-'  34  0  ~/Note/Linux/ubuntu/character_terminal/fbterm-setup.txt
+|4,39,34,0,1513753212,"~/Note/Linux/ubuntu/character_terminal/fbterm-setup.txt"
+-'  34  0  ~/Note/Linux/ubuntu/character_terminal/fbterm-setup.txt
+|4,39,34,0,1513753212,"~/Note/Linux/ubuntu/character_terminal/fbterm-setup.txt"
+-'  9  4  ~/Note/Linux/ubuntu/character_terminal/fbterm-input-method.txt
+|4,39,9,4,1513753206,"~/Note/Linux/ubuntu/character_terminal/fbterm-input-method.txt"
+-'  9  4  ~/Note/Linux/ubuntu/character_terminal/fbterm-input-method.txt
+|4,39,9,4,1513753206,"~/Note/Linux/ubuntu/character_terminal/fbterm-input-method.txt"
+-'  9  4  ~/Note/Linux/ubuntu/character_terminal/fbterm-input-method.txt
+|4,39,9,4,1513753206,"~/Note/Linux/ubuntu/character_terminal/fbterm-input-method.txt"
+-'  9  4  ~/Note/Linux/ubuntu/character_terminal/fbterm-input-method.txt
+|4,39,9,4,1513753206,"~/Note/Linux/ubuntu/character_terminal/fbterm-input-method.txt"
+-'  9  4  ~/Note/Linux/ubuntu/character_terminal/fbterm-input-method.txt
+|4,39,9,4,1513753206,"~/Note/Linux/ubuntu/character_terminal/fbterm-input-method.txt"
+-'  9  4  ~/Note/Linux/ubuntu/character_terminal/fbterm-input-method.txt
+|4,39,9,4,1513753206,"~/Note/Linux/ubuntu/character_terminal/fbterm-input-method.txt"
+-'  9  4  ~/Note/Linux/ubuntu/character_terminal/fbterm-input-method.txt
+|4,39,9,4,1513753206,"~/Note/Linux/ubuntu/character_terminal/fbterm-input-method.txt"
+-'  9  4  ~/Note/Linux/ubuntu/character_terminal/fbterm-input-method.txt
+|4,39,9,4,1513753206,"~/Note/Linux/ubuntu/character_terminal/fbterm-input-method.txt"
+-'  74  3  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
+|4,39,74,3,1513753191,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
+-'  74  3  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
+|4,39,74,3,1513753191,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
+-'  74  3  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
+|4,39,74,3,1513753191,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
+-'  74  3  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
+|4,39,74,3,1513753191,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
+-'  74  3  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
+|4,39,74,3,1513753191,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
+-'  74  3  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
+|4,39,74,3,1513753191,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
+-'  74  3  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
+|4,39,74,3,1513753191,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
+-'  74  3  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
+|4,39,74,3,1513753191,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
+-'  74  3  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
+|4,39,74,3,1513753191,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
+-'  74  3  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
+|4,39,74,3,1513753191,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
+-'  74  3  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
+|4,39,74,3,1513753191,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
+-'  74  3  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
+|4,39,74,3,1513753191,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
+-'  74  3  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
+|4,39,74,3,1513753191,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
+-'  74  3  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
+|4,39,74,3,1513753191,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
+-'  74  3  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
+|4,39,74,3,1513753191,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
+-'  74  3  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
+|4,39,74,3,1513753191,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
+-'  47  4  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
+|4,39,47,4,1513753188,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
+-'  47  4  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
+|4,39,47,4,1513753188,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
+-'  47  4  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
+|4,39,47,4,1513753188,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
+-'  47  4  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
+|4,39,47,4,1513753188,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
+-'  47  4  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
+|4,39,47,4,1513753188,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
+-'  47  4  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
+|4,39,47,4,1513753188,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
+-'  47  4  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
+|4,39,47,4,1513753188,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
+-'  47  4  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
+|4,39,47,4,1513753188,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
+-'  47  4  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
+|4,39,47,4,1513753188,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
+-'  47  4  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
+|4,39,47,4,1513753188,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
+-'  47  4  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
+|4,39,47,4,1513753188,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
+-'  47  4  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
+|4,39,47,4,1513753188,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
+-'  47  4  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
+|4,39,47,4,1513753188,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
+-'  47  4  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
+|4,39,47,4,1513753188,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
+-'  47  4  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
+|4,39,47,4,1513753188,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
+-'  47  4  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
+|4,39,47,4,1513753188,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
+-'  47  0  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
+|4,39,47,0,1513733528,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
+-'  47  0  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
+|4,39,47,0,1513733528,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
+-'  47  0  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
+|4,39,47,0,1513733528,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
+-'  47  0  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
+|4,39,47,0,1513733528,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
+-'  47  0  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
+|4,39,47,0,1513733528,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
+-'  47  0  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
+|4,39,47,0,1513733528,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
+-'  47  0  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
+|4,39,47,0,1513733528,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
+-'  47  0  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
+|4,39,47,0,1513733528,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
+-'  47  0  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
+|4,39,47,0,1513733528,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
+-'  47  0  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
+|4,39,47,0,1513733528,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
+-'  47  0  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
+|4,39,47,0,1513733528,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
+-'  47  0  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
+|4,39,47,0,1513733528,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
+-'  47  0  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
+|4,39,47,0,1513733528,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
+-'  47  0  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
+|4,39,47,0,1513733528,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
+-'  47  0  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
+|4,39,47,0,1513733528,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
+-'  47  0  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
+|4,39,47,0,1513733528,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
+-'  40  0  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
+|4,39,40,0,1513733513,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
+-'  40  0  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
+|4,39,40,0,1513733513,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
+-'  40  0  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
+|4,39,40,0,1513733513,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
+-'  40  0  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
+|4,39,40,0,1513733513,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
+-'  40  0  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
+|4,39,40,0,1513733513,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
+-'  40  0  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
+|4,39,40,0,1513733513,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
+-'  40  0  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
+|4,39,40,0,1513733513,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
+-'  40  0  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
+|4,39,40,0,1513733513,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
+-'  40  0  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
+|4,39,40,0,1513733513,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
+-'  40  0  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
+|4,39,40,0,1513733513,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
+-'  40  0  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
+|4,39,40,0,1513733513,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
+-'  40  0  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
+|4,39,40,0,1513733513,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
+-'  40  0  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
+|4,39,40,0,1513733513,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
+-'  40  0  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
+|4,39,40,0,1513733513,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
+-'  40  0  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
+|4,39,40,0,1513733513,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
+-'  40  0  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
+|4,39,40,0,1513733513,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
+-'  40  0  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
+|4,39,40,0,1513733513,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
+-'  40  0  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
+|4,39,40,0,1513733513,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
+-'  40  0  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
+|4,39,40,0,1513733513,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
+-'  40  0  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
+|4,39,40,0,1513733513,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
+-'  40  0  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
+|4,39,40,0,1513733513,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
+-'  40  0  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
+|4,39,40,0,1513733513,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
+-'  40  0  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
+|4,39,40,0,1513733513,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
+-'  40  0  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
+|4,39,40,0,1513733513,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
+-'  40  0  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
+|4,39,40,0,1513733513,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
+-'  40  0  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
+|4,39,40,0,1513733513,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
+-'  40  0  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
+|4,39,40,0,1513733513,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
+-'  40  0  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
+|4,39,40,0,1513733513,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
+-'  40  0  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
+|4,39,40,0,1513733513,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
+-'  40  0  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
+|4,39,40,0,1513733513,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
+-'  40  0  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
+|4,39,40,0,1513733513,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
 
 # 檔案內 Mark 記錄 (由新到舊):
+
+> ~/.bashrc
+	*	1513754714	0
+	"	121	0
+	.	122	0
+	+	117	0
+	+	121	0
+	+	120	0
+	+	121	0
+	+	122	31
+	+	122	0
+
+> ~/Note/Linux/ubuntu/character_terminal/fbterm-setup.txt
+	*	1513753236	0
+	"	58	0
+	^	49	0
+	.	49	0
+	+	13	0
+	+	18	0
+	+	27	0
+	+	18	0
+	+	31	0
+	+	38	0
+	+	51	0
+	+	55	185
+	+	52	192
+	+	58	0
+	+	49	0
+
+> ~/Note/Linux/ubuntu/character_terminal/fbterm-input-method.txt
+	*	1513753203	0
+	"	9	4
+	.	9	0
+	+	9	0
+
+> ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
+	*	1513753190	0
+	"	74	3
+
+> ~/.fbtermrc
+	*	1513687163	0
+	"	42	6
+	.	42	0
+	+	10	11
+	+	42	12
+	+	10	11
+	+	42	13
+	+	43	0
+	+	42	25
+	+	42	0
+
+> ~/1
+	*	1513686964	0
+	"	1	0
+
+> ~/Note/Linux/ubuntu/character_terminal/~/download
+	*	1513686941	0
+	"	2	0
+	^	2	8
+	.	2	7
+	+	2	7
+
+> ~/ShellScripts/bashrc-add-fbterm-input-method
+	*	1513686565	0
+	"	1	0
+	.	1	0
+	+	1	0
+
+> ~/fbterm_input/3.txt
+	*	1513686294	0
+	"	45	0
+	.	52	0
+	+	53	0
+	+	52	0
+
+> ~/fbterm_input/4.txt
+	*	1513686002	0
+	"	18	0
+
+> ~/fbterm_input/2.txt
+	*	1513685747	0
+	"	40	0
+	.	38	0
+	+	67	0
+	+	23	0
+	+	11	0
+	+	10	0
+	+	11	0
+	+	8	0
+	+	22	0
+	+	28	0
+	+	34	0
+	+	38	0
+
+> ~/fbterm_input/1.txt
+	*	1513685474	0
+	"	44	4
+	.	44	0
+	+	10	0
+	+	5	0
+	+	14	0
+	+	18	0
+	+	27	0
+	+	31	0
+	+	38	0
+	+	10	0
+	+	14	0
+	+	18	0
+	+	27	0
+	+	30	0
+	+	31	0
+	+	38	0
+	+	44	0
+
+> /home/.fbtermrc
+	*	1513684934	0
+	"	1	0
+
+> ~/fbterm-input-metch.txt
+	*	1513677327	0
+	"	9	24
+	^	9	25
+	.	9	24
+	+	3	0
+	+	1	22
+	+	5	0
+	+	4	0
+	+	3	0
+	+	2	0
+	+	1	3
+	+	2	0
+	+	1	3
+	+	9	24
+
+> ~/ShellScripts/login_auto_start/xmodmap.sh
+	*	1513674904	0
+	"	3	0
+	^	3	1
+	.	3	0
+	+	3	0
+
+> ~/ShellScripts/login_auto_start/install
+	*	1513674850	0
+	"	4	47
+	^	4	34
+	.	4	33
+	+	4	33
+
+> ~/ShellScripts/login_auto_start/ibus-settings.sh
+	*	1513674785	0
+	"	1	0
+
+> ~/ShellScripts/login-auto-start/install
+	*	1513674731	0
+	"	4	55
+	^	4	44
+	.	4	43
+	+	4	43
+
+> ~/ShellScripts/bashrc-add-chmod-func
+	*	1513674705	0
+	"	1	0
+
+> ~/ShellScripts/login-auto-start/screen.sh
+	*	1513674687	0
+	"	8	0
+	^	8	1
+	.	8	0
+	+	9	0
+	+	7	0
+	+	8	0
+
+> ~/ShellScripts/bashrc-init
+	*	1513674640	0
+	"	2	0
+
+> ~/ShellScripts/profile-init
+	*	1513674631	0
+	"	18	0
+
+> ~/ShellScripts/profile-
+	*	1513674620	0
+	"	1	0
+
+> ~/.bash_login
+	*	1513674214	0
+	"	2	0
+	^	2	0
+	.	2	0
+	+	1	1
+	+	2	0
+
+> ~/Note/Linux/ubuntu/character_terminal/temp
+	*	1513673674	0
+	"	1	0
+
+> ~/Note/Linux/ubuntu/character_terminal/ls
+	*	1513673657	0
+	"	1	0
+
+> ~/Github/PyGithub/README.md
+	*	1513673435	0
+	"	9	5
 
 > ~/ShellScripts/basic_scripts/install-my-custom-sh-script.sh
 	*	1512995252	0
@@ -2349,10 +2552,6 @@ $
 	+	7	20
 	+	8	11
 
-> ~/ShellScripts/profile-init
-	*	1512991911	0
-	"	10	0
-
 > ~/.profile
 	*	1512991901	0
 	"	26	0
@@ -2361,16 +2560,6 @@ $
 	+	29	1
 	+	30	0
 	+	26	1
-
-> ~/.bashrc
-	*	1512991896	0
-	"	120	0
-	^	120	0
-	.	121	0
-	+	117	0
-	+	121	0
-	+	120	0
-	+	121	0
 
 > ~/.emacs.d/my_config/init-my-config.el
 	*	1512977805	0
@@ -2488,13 +2677,6 @@ $
 	+	2	0
 	+	3	67
 	+	6	55
-
-> ~/ShellScripts/login-auto-start/install
-	*	1510965768	0
-	"	4	43
-	^	4	44
-	.	4	43
-	+	4	43
 
 > ~/ShellScripts/login-auto-start/install.sh
 	*	1510965679	0
@@ -2683,9 +2865,6 @@ $
 	*	1510733641	0
 	"	7	0
 
-> ~/ShellScripts/bashrc-init
-	"	1	0
-
 > ~/Note/Linux/ubuntu/window_manager/DWM/dwm-tutorial-on-linux.txt
 	"	256	0
 	^	258	5
@@ -2763,32 +2942,6 @@ $
 	^	129	189
 	.	129	188
 	+	129	188
-
-> ~/Note/Linux/ubuntu/character_terminal/fbterm-setup.txt
-	"	42	0
-	^	49	0
-	.	49	0
-	+	13	0
-	+	18	0
-	+	27	0
-	+	18	0
-	+	31	0
-	+	38	0
-	+	51	0
-	+	55	185
-	+	52	192
-	+	58	0
-	+	49	0
-
-> ~/.fbtermrc
-	"	9	11
-	^	42	17
-	.	42	12
-	+	10	11
-	+	42	12
-
-> ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
-	"	120	0
 
 > ~/Note/Linux/ubuntu/character_terminal/terminal-pic-viwer.txt
 	"	54	94
@@ -2920,242 +3073,3 @@ $
 
 > ~/Github/vim/find-text.txt
 	"	132	1
-
-> ~/Github/vim/src/screen.c
-	"	279	5
-
-> ~/Github/vim/src/README.txt
-	"	143	0
-
-> ~/Github/vim/src/toolbar.phi
-	"	1283	0
-
-> ~/Github/vim/src/memline.c
-	"	288	0
-
-> ~/Github/vim/src/testdir/test_statusline.vim
-	"	265	39
-
-> ~/Github/vim/src/testdir/view_util.vim
-	"	7	0
-
-> ~/ShellScripts/basic_scripts/detect-shell-env.sh
-	"	1	0
-
-> ~/Note/Backup/tools-directory-content-list.txt
-	"	1	0
-
-> ~/Note/Backup/note-directory-content-list.txt
-	"	445	0
-
-> ~/Note/Backup/github-directory-content-list.txt
-	"	12	0
-
-> ~/Note/Backup/download-directory-content-list.txt
-	"	14	0
-
-> ~/Note/Backup/book-directory-content-list.txt
-	"	1	0
-
-> ~/Note/Backup/books-directory-content-list.txt
-	"	1	0
-
-> ~/diff-the-Home-dir-and-gitignore-file.txt
-	"	36	0
-
-> ~/.gitign
-	"	1	0
-
-> ~/.gitign1.txt
-	"	22	0
-	^	15	0
-	.	15	0
-	+	28	0
-	+	12	0
-	+	11	0
-	+	11	0
-	+	11	0
-	+	28	0
-	+	12	0
-	+	11	0
-	+	11	0
-	+	11	0
-	+	11	0
-	+	9	0
-	+	2	0
-	+	10	0
-	+	11	0
-	+	11	0
-	+	11	0
-	+	11	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	13	0
-	+	13	0
-	+	14	0
-	+	16	0
-	+	16	0
-	+	16	0
-	+	28	0
-	+	26	0
-	+	24	0
-	+	16	0
-	+	14	0
-	+	25	0
-	+	23	0
-	+	11	0
-	+	12	0
-	+	3	0
-	+	12	0
-	+	4	0
-	+	12	0
-	+	5	0
-	+	16	0
-	+	6	0
-	+	16	0
-	+	8	0
-	+	12	0
-	+	15	0
-
-> ~/git-rm-list
-	"	7	4
-	^	5	10
-	.	7	4
-	+	8	18
-	+	1	10
-	+	8	26
-	+	8	34
-	+	8	48
-	+	8	61
-	+	8	74
-	+	8	81
-	+	8	89
-	+	8	98
-	+	8	109
-	+	8	120
-	+	8	130
-	+	8	138
-	+	8	149
-	+	8	155
-	+	8	163
-	+	8	172
-	+	8	189
-	+	8	207
-	+	8	215
-	+	8	229
-	+	8	238
-	+	8	246
-	+	8	259
-	+	8	269
-	+	8	276
-	+	8	282
-	+	8	292
-	+	8	308
-	+	8	318
-	+	8	332
-	+	8	343
-	+	8	349
-	+	8	362
-	+	8	388
-	+	8	400
-	+	8	413
-	+	8	427
-	+	8	434
-	+	8	445
-	+	8	455
-	+	8	456
-	+	8	463
-	+	8	471
-	+	8	479
-	+	8	487
-	+	8	495
-	+	8	503
-	+	8	511
-	+	10	0
-	+	8	512
-	+	8	520
-	+	8	19
-	+	8	520
-	+	8	0
-	+	10	0
-	+	8	18
-	+	3	6
-	+	3	507
-	+	5	16
-	+	6	0
-	+	9	3
-	+	8	23
-	+	5	5
-	+	8	4
-	+	7	10
-	+	5	9
-	+	8	4
-	+	7	4
-
-> ~/Note/Git/git-remove-remote-repository-file.txt
-	"	1	0
-
-> ~/.gitign.txt
-	"	49	0
-	^	41	0
-	.	41	0
-	+	1	0
-	+	41	0
-	+	41	0
-	+	41	0
-	+	40	0
-	+	41	0
-	+	40	0
-	+	39	0
-	+	39	0
-	+	39	0
-	+	39	0
-	+	39	0
-	+	39	0
-	+	38	0
-	+	33	0
-	+	31	0
-	+	30	0
-	+	28	0
-	+	28	0
-	+	27	0
-	+	26	0
-	+	25	0
-	+	20	0
-	+	20	0
-	+	16	0
-	+	5	0
-	+	6	0
-	+	9	0
-	+	9	0
-	+	9	0
-	+	12	0
-	+	15	0
-	+	41	0
-	+	16	0
-	+	15	0
-	+	5	0
-	+	6	0
-	+	9	0
-	+	12	0
-	+	15	0
-	+	16	0
-	+	20	0
-	+	25	0
-	+	26	0
-	+	27	0
-	+	28	0
-	+	30	0
-	+	31	0
-	+	33	0
-	+	38	0
-	+	39	0
-	+	40	0
-	+	41	0
-
-> ~/.gconf/desktop/%gconf.xml
-	"	1	0

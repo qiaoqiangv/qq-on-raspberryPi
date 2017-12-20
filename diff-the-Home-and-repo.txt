@@ -3,6 +3,7 @@
 .
 ..
 .bash_history
+.bash_login
 .bash_logout
 .bashrc
 .bluej
@@ -19,6 +20,7 @@ Documents
 Downloads
 .emacs.d
 .emacs.d_bak
+.fbtermrc
 .gconf
 .git
 .gitconfig
@@ -54,10 +56,12 @@ Videos
 .vimperator
 .vimperatorrc
 .vimrc
+.w3m
 Wallpapers
 Workspace
 .Xauthority
 .xchm
+.xinput.d
 .xinputrc
 .xsession-errors
 .xsession-errors.old

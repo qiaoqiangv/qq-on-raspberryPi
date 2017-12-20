@@ -1,8 +1,8 @@
 [Position]
-xOrig=0
-yOrig=36
+xOrig=-2
+yOrig=-34
 width=1280
-height=684
+height=720
 [Paths]
 lastOpenedDir=
 [Fonts]
@@ -12,12 +12,12 @@ size=12
 [Sash]
 leftMargin=170
 [Recent]
-file1=/home/pi/Books/APUE/apue2e.chm
-file2=/home/pi/Books/APUE/Addison.Wesley,.Advanced.Programming.in.the.UNIX.Environment.(2005),.2Ed.BBL.LotB.chm
-file3=/home/pi/Books/APUE/apue2.chm
-file4=
-file5=
-file6=
+file1=/home/pi/Books/Python/OReilly.Programming.Python.3rd.Edition.Aug.2006.chm
+file2=/home/pi/Books/Python/O'Reilly - Python Pocket Reference 2nd Edition.chm
+file3=/home/pi/Books/Python/O'Reilly - Python Cookbook (2nd edition).chm
+file4=/home/pi/Books/APUE/apue2e.chm
+file5=/home/pi/Books/APUE/Addison.Wesley,.Advanced.Programming.in.the.UNIX.Environment.(2005),.2Ed.BBL.LotB.chm
+file6=/home/pi/Books/APUE/apue2.chm
 file7=
 file8=
 file9=
