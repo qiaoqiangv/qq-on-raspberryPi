@@ -1,0 +1,9 @@
+1. use follow command:
+    sudo apt install fcitx
+    sudo apt install fcitx-sunpinyin
+    sudo apt install im-switch
+    sudo apt install fcitx-frontend-fbterm
+
+2. add follow configure to '.fbtermrc'
+
+    input-method=fcitx-fbterm
