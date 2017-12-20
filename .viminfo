@@ -20,12 +20,14 @@
 $
 
 # 命令列 歷史記錄 (新到舊):
-:x
-|2,0,1513754715,,"x"
-:w
-|2,0,1513754575,,"w"
 :q
-|2,0,1513753236,,"q"
+|2,0,1513766945,,"q"
+:Q
+|2,0,1513766944,,"Q"
+:w
+|2,0,1513766724,,"w"
+:x
+|2,0,1513764192,,"x"
 :q!
 |2,0,1513686957,,"q!"
 :x!
@@ -896,8 +898,6 @@ $
 |2,0,0,,":q"
 :EL
 |2,0,0,,"EL"
-:Q
-|2,0,0,,"Q"
 ::
 |2,0,0,,":"
 :w! hello-save
@@ -1023,7 +1023,7 @@ $
 
 # 搜尋字串 歷史記錄 (新到舊):
 ? @$
-|2,1,1513686693,,"@$"
+|2,1,1513766918,,"@$"
 ?/pdf view
 |2,1,1511081901,47,"pdf view"
 ?/pdf
@@ -2040,12 +2040,12 @@ $
 # Debug Line 歷史記錄 (新到舊):
 
 # 暫存器:
-"0	LINE	0
-	下载地址:http://sourceforge.net/projects/p7zip/files/p7zip/9.20.1/p7zip_9.20.1_src_all.tar.bz2/download
-|3,0,0,1,1,0,1513686877,"下载地址:http://sourceforge.net/projects/p7zip/files/p7zip/9.20.1/p7zip_9.20.1_src_all.tar.bz2/download"
-""1	LINE	0
+""0	CHAR	0
+	 
+|3,1,0,0,1,0,1513766922," "
+"1	LINE	0
 	# add fbterm setting
-|3,1,1,1,1,0,1513754714,"# add fbterm setting"
+|3,0,1,1,1,0,1513754714,"# add fbterm setting"
 "2	LINE	0
 	fi
 |3,0,2,1,1,0,1513754713,"fi"
@@ -2071,249 +2071,297 @@ $
 	
 |3,0,9,1,1,0,1513686288,""
 "-	CHAR	0
-	:
-|3,0,36,0,1,0,1513686926,":"
+	 
+|3,0,36,0,1,0,1513766714," "
 
 # 檔案標記:
-'0  121  0  ~/.bashrc
-|4,48,121,0,1513754715,"~/.bashrc"
-'1  122  1  ~/.bashrc
-|4,49,122,1,1513754593,"~/.bashrc"
-'2  125  1  ~/.bashrc
-|4,50,125,1,1513754593,"~/.bashrc"
-'3  58  0  ~/Note/Linux/ubuntu/character_terminal/fbterm-setup.txt
-|4,51,58,0,1513753237,"~/Note/Linux/ubuntu/character_terminal/fbterm-setup.txt"
-'4  9  4  ~/Note/Linux/ubuntu/character_terminal/fbterm-input-method.txt
-|4,52,9,4,1513753206,"~/Note/Linux/ubuntu/character_terminal/fbterm-input-method.txt"
-'5  74  3  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
-|4,53,74,3,1513753191,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
-'6  47  0  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
-|4,54,47,0,1513733528,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
-'7  47  0  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
-|4,55,47,0,1513733528,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
-'8  40  0  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
-|4,56,40,0,1513687331,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
-'9  40  0  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
-|4,57,40,0,1513687331,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
+'0  86  0  ~/Note/Text_Editor/emacs/emacser.com/draw-struct-in-emacs.txt
+|4,48,86,0,1513766945,"~/Note/Text_Editor/emacs/emacser.com/draw-struct-in-emacs.txt"
+'1  497  0  ~/Note/Text_Editor/emacs/emacser.com/draw-function-calls-tree-in-emacs.txt
+|4,49,497,0,1513766917,"~/Note/Text_Editor/emacs/emacser.com/draw-function-calls-tree-in-emacs.txt"
+'2  289  0  ~/Note/Text_Editor/emacs/emacser.com/draw-in-emacs-2.txt
+|4,50,289,0,1513766821,"~/Note/Text_Editor/emacs/emacser.com/draw-in-emacs-2.txt"
+'3  353  23  ~/Note/Text_Editor/emacs/emacser.com/draw-in-emacs.txt
+|4,51,353,23,1513766760,"~/Note/Text_Editor/emacs/emacser.com/draw-in-emacs.txt"
+'4  1  0  ~/.emacs.d/my_config/graphviz-dot-mode.el
+|4,52,1,0,1513765140,"~/.emacs.d/my_config/graphviz-dot-mode.el"
+'5  39  4  ~/Note/Linux/debian/web_browser/w3m-keybinding.txt
+|4,53,39,4,1513765064,"~/Note/Linux/debian/web_browser/w3m-keybinding.txt"
+'6  2  5  ~/.bash_login
+|4,54,2,5,1513764193,"~/.bash_login"
+'7  9  4  ~/Note/Linux/ubuntu/character_terminal/fbterm-input-method.txt
+|4,55,9,4,1513754950,"~/Note/Linux/ubuntu/character_terminal/fbterm-input-method.txt"
+'8  9  0  ~/Note/Linux/ubuntu/character_terminal/fbterm-setup.txt
+|4,56,9,0,1513754940,"~/Note/Linux/ubuntu/character_terminal/fbterm-setup.txt"
+'9  121  0  ~/.bashrc
+|4,57,121,0,1513754715,"~/.bashrc"
 
 # Jumplist (由新到舊):
--'  121  0  ~/.bashrc
-|4,39,121,0,1513754715,"~/.bashrc"
--'  122  0  ~/.bashrc
-|4,39,122,0,1513754709,"~/.bashrc"
--'  125  1  ~/.bashrc
-|4,39,125,1,1513754593,"~/.bashrc"
--'  120  0  ~/.bashrc
-|4,39,120,0,1513754441,"~/.bashrc"
--'  120  0  ~/.bashrc
-|4,39,120,0,1513754441,"~/.bashrc"
--'  58  0  ~/Note/Linux/ubuntu/character_terminal/fbterm-setup.txt
-|4,39,58,0,1513753237,"~/Note/Linux/ubuntu/character_terminal/fbterm-setup.txt"
--'  58  0  ~/Note/Linux/ubuntu/character_terminal/fbterm-setup.txt
-|4,39,58,0,1513753237,"~/Note/Linux/ubuntu/character_terminal/fbterm-setup.txt"
--'  58  0  ~/Note/Linux/ubuntu/character_terminal/fbterm-setup.txt
-|4,39,58,0,1513753237,"~/Note/Linux/ubuntu/character_terminal/fbterm-setup.txt"
--'  58  0  ~/Note/Linux/ubuntu/character_terminal/fbterm-setup.txt
-|4,39,58,0,1513753237,"~/Note/Linux/ubuntu/character_terminal/fbterm-setup.txt"
--'  34  0  ~/Note/Linux/ubuntu/character_terminal/fbterm-setup.txt
-|4,39,34,0,1513753212,"~/Note/Linux/ubuntu/character_terminal/fbterm-setup.txt"
--'  34  0  ~/Note/Linux/ubuntu/character_terminal/fbterm-setup.txt
-|4,39,34,0,1513753212,"~/Note/Linux/ubuntu/character_terminal/fbterm-setup.txt"
--'  34  0  ~/Note/Linux/ubuntu/character_terminal/fbterm-setup.txt
-|4,39,34,0,1513753212,"~/Note/Linux/ubuntu/character_terminal/fbterm-setup.txt"
--'  34  0  ~/Note/Linux/ubuntu/character_terminal/fbterm-setup.txt
-|4,39,34,0,1513753212,"~/Note/Linux/ubuntu/character_terminal/fbterm-setup.txt"
--'  9  4  ~/Note/Linux/ubuntu/character_terminal/fbterm-input-method.txt
-|4,39,9,4,1513753206,"~/Note/Linux/ubuntu/character_terminal/fbterm-input-method.txt"
--'  9  4  ~/Note/Linux/ubuntu/character_terminal/fbterm-input-method.txt
-|4,39,9,4,1513753206,"~/Note/Linux/ubuntu/character_terminal/fbterm-input-method.txt"
--'  9  4  ~/Note/Linux/ubuntu/character_terminal/fbterm-input-method.txt
-|4,39,9,4,1513753206,"~/Note/Linux/ubuntu/character_terminal/fbterm-input-method.txt"
--'  9  4  ~/Note/Linux/ubuntu/character_terminal/fbterm-input-method.txt
-|4,39,9,4,1513753206,"~/Note/Linux/ubuntu/character_terminal/fbterm-input-method.txt"
--'  9  4  ~/Note/Linux/ubuntu/character_terminal/fbterm-input-method.txt
-|4,39,9,4,1513753206,"~/Note/Linux/ubuntu/character_terminal/fbterm-input-method.txt"
--'  9  4  ~/Note/Linux/ubuntu/character_terminal/fbterm-input-method.txt
-|4,39,9,4,1513753206,"~/Note/Linux/ubuntu/character_terminal/fbterm-input-method.txt"
--'  9  4  ~/Note/Linux/ubuntu/character_terminal/fbterm-input-method.txt
-|4,39,9,4,1513753206,"~/Note/Linux/ubuntu/character_terminal/fbterm-input-method.txt"
--'  9  4  ~/Note/Linux/ubuntu/character_terminal/fbterm-input-method.txt
-|4,39,9,4,1513753206,"~/Note/Linux/ubuntu/character_terminal/fbterm-input-method.txt"
--'  74  3  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
-|4,39,74,3,1513753191,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
--'  74  3  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
-|4,39,74,3,1513753191,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
--'  74  3  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
-|4,39,74,3,1513753191,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
--'  74  3  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
-|4,39,74,3,1513753191,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
--'  74  3  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
-|4,39,74,3,1513753191,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
--'  74  3  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
-|4,39,74,3,1513753191,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
--'  74  3  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
-|4,39,74,3,1513753191,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
--'  74  3  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
-|4,39,74,3,1513753191,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
--'  74  3  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
-|4,39,74,3,1513753191,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
--'  74  3  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
-|4,39,74,3,1513753191,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
--'  74  3  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
-|4,39,74,3,1513753191,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
--'  74  3  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
-|4,39,74,3,1513753191,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
--'  74  3  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
-|4,39,74,3,1513753191,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
--'  74  3  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
-|4,39,74,3,1513753191,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
--'  74  3  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
-|4,39,74,3,1513753191,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
--'  74  3  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
-|4,39,74,3,1513753191,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
--'  47  4  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
-|4,39,47,4,1513753188,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
--'  47  4  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
-|4,39,47,4,1513753188,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
--'  47  4  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
-|4,39,47,4,1513753188,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
--'  47  4  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
-|4,39,47,4,1513753188,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
--'  47  4  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
-|4,39,47,4,1513753188,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
--'  47  4  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
-|4,39,47,4,1513753188,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
--'  47  4  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
-|4,39,47,4,1513753188,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
--'  47  4  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
-|4,39,47,4,1513753188,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
--'  47  4  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
-|4,39,47,4,1513753188,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
--'  47  4  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
-|4,39,47,4,1513753188,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
--'  47  4  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
-|4,39,47,4,1513753188,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
--'  47  4  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
-|4,39,47,4,1513753188,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
--'  47  4  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
-|4,39,47,4,1513753188,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
--'  47  4  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
-|4,39,47,4,1513753188,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
--'  47  4  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
-|4,39,47,4,1513753188,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
--'  47  4  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
-|4,39,47,4,1513753188,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
--'  47  0  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
-|4,39,47,0,1513733528,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
--'  47  0  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
-|4,39,47,0,1513733528,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
--'  47  0  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
-|4,39,47,0,1513733528,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
--'  47  0  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
-|4,39,47,0,1513733528,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
--'  47  0  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
-|4,39,47,0,1513733528,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
--'  47  0  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
-|4,39,47,0,1513733528,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
--'  47  0  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
-|4,39,47,0,1513733528,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
--'  47  0  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
-|4,39,47,0,1513733528,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
--'  47  0  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
-|4,39,47,0,1513733528,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
--'  47  0  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
-|4,39,47,0,1513733528,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
--'  47  0  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
-|4,39,47,0,1513733528,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
--'  47  0  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
-|4,39,47,0,1513733528,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
--'  47  0  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
-|4,39,47,0,1513733528,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
--'  47  0  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
-|4,39,47,0,1513733528,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
--'  47  0  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
-|4,39,47,0,1513733528,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
--'  47  0  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
-|4,39,47,0,1513733528,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
--'  40  0  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
-|4,39,40,0,1513733513,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
--'  40  0  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
-|4,39,40,0,1513733513,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
--'  40  0  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
-|4,39,40,0,1513733513,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
--'  40  0  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
-|4,39,40,0,1513733513,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
--'  40  0  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
-|4,39,40,0,1513733513,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
--'  40  0  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
-|4,39,40,0,1513733513,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
--'  40  0  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
-|4,39,40,0,1513733513,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
--'  40  0  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
-|4,39,40,0,1513733513,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
--'  40  0  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
-|4,39,40,0,1513733513,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
--'  40  0  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
-|4,39,40,0,1513733513,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
--'  40  0  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
-|4,39,40,0,1513733513,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
--'  40  0  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
-|4,39,40,0,1513733513,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
--'  40  0  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
-|4,39,40,0,1513733513,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
--'  40  0  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
-|4,39,40,0,1513733513,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
--'  40  0  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
-|4,39,40,0,1513733513,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
--'  40  0  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
-|4,39,40,0,1513733513,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
--'  40  0  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
-|4,39,40,0,1513733513,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
--'  40  0  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
-|4,39,40,0,1513733513,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
--'  40  0  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
-|4,39,40,0,1513733513,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
--'  40  0  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
-|4,39,40,0,1513733513,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
--'  40  0  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
-|4,39,40,0,1513733513,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
--'  40  0  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
-|4,39,40,0,1513733513,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
--'  40  0  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
-|4,39,40,0,1513733513,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
--'  40  0  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
-|4,39,40,0,1513733513,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
--'  40  0  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
-|4,39,40,0,1513733513,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
--'  40  0  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
-|4,39,40,0,1513733513,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
--'  40  0  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
-|4,39,40,0,1513733513,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
--'  40  0  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
-|4,39,40,0,1513733513,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
--'  40  0  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
-|4,39,40,0,1513733513,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
--'  40  0  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
-|4,39,40,0,1513733513,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
--'  40  0  ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
-|4,39,40,0,1513733513,"~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt"
+-'  86  0  ~/Note/Text_Editor/emacs/emacser.com/draw-struct-in-emacs.txt
+|4,39,86,0,1513766945,"~/Note/Text_Editor/emacs/emacser.com/draw-struct-in-emacs.txt"
+-'  1  0  ~/Note/Text_Editor/emacs/emacser.com
+|4,39,1,0,1513766918,"~/Note/Text_Editor/emacs/emacser.com"
+-'  497  0  ~/Note/Text_Editor/emacs/emacser.com/draw-function-calls-tree-in-emacs.txt
+|4,39,497,0,1513766917,"~/Note/Text_Editor/emacs/emacser.com/draw-function-calls-tree-in-emacs.txt"
+-'  497  0  ~/Note/Text_Editor/emacs/emacser.com/draw-function-calls-tree-in-emacs.txt
+|4,39,497,0,1513766917,"~/Note/Text_Editor/emacs/emacser.com/draw-function-calls-tree-in-emacs.txt"
+-'  1  0  ~/Note/Text_Editor/emacs/emacser.com
+|4,39,1,0,1513766829,"~/Note/Text_Editor/emacs/emacser.com"
+-'  289  0  ~/Note/Text_Editor/emacs/emacser.com/draw-in-emacs-2.txt
+|4,39,289,0,1513766821,"~/Note/Text_Editor/emacs/emacser.com/draw-in-emacs-2.txt"
+-'  289  0  ~/Note/Text_Editor/emacs/emacser.com/draw-in-emacs-2.txt
+|4,39,289,0,1513766821,"~/Note/Text_Editor/emacs/emacser.com/draw-in-emacs-2.txt"
+-'  289  0  ~/Note/Text_Editor/emacs/emacser.com/draw-in-emacs-2.txt
+|4,39,289,0,1513766821,"~/Note/Text_Editor/emacs/emacser.com/draw-in-emacs-2.txt"
+-'  289  0  ~/Note/Text_Editor/emacs/emacser.com/draw-in-emacs-2.txt
+|4,39,289,0,1513766821,"~/Note/Text_Editor/emacs/emacser.com/draw-in-emacs-2.txt"
+-'  1  0  ~/Note/Text_Editor/emacs/emacser.com
+|4,39,1,0,1513766763,"~/Note/Text_Editor/emacs/emacser.com"
+-'  353  23  ~/Note/Text_Editor/emacs/emacser.com/draw-in-emacs.txt
+|4,39,353,23,1513766760,"~/Note/Text_Editor/emacs/emacser.com/draw-in-emacs.txt"
+-'  353  23  ~/Note/Text_Editor/emacs/emacser.com/draw-in-emacs.txt
+|4,39,353,23,1513766760,"~/Note/Text_Editor/emacs/emacser.com/draw-in-emacs.txt"
+-'  353  23  ~/Note/Text_Editor/emacs/emacser.com/draw-in-emacs.txt
+|4,39,353,23,1513766760,"~/Note/Text_Editor/emacs/emacser.com/draw-in-emacs.txt"
+-'  353  23  ~/Note/Text_Editor/emacs/emacser.com/draw-in-emacs.txt
+|4,39,353,23,1513766760,"~/Note/Text_Editor/emacs/emacser.com/draw-in-emacs.txt"
+-'  353  23  ~/Note/Text_Editor/emacs/emacser.com/draw-in-emacs.txt
+|4,39,353,23,1513766760,"~/Note/Text_Editor/emacs/emacser.com/draw-in-emacs.txt"
+-'  353  23  ~/Note/Text_Editor/emacs/emacser.com/draw-in-emacs.txt
+|4,39,353,23,1513766760,"~/Note/Text_Editor/emacs/emacser.com/draw-in-emacs.txt"
+-'  353  23  ~/Note/Text_Editor/emacs/emacser.com/draw-in-emacs.txt
+|4,39,353,23,1513766760,"~/Note/Text_Editor/emacs/emacser.com/draw-in-emacs.txt"
+-'  353  23  ~/Note/Text_Editor/emacs/emacser.com/draw-in-emacs.txt
+|4,39,353,23,1513766760,"~/Note/Text_Editor/emacs/emacser.com/draw-in-emacs.txt"
+-'  1  0  ~/Note/Text_Editor/emacs/emacser.com
+|4,39,1,0,1513766624,"~/Note/Text_Editor/emacs/emacser.com"
+-'  1  0  ~/.emacs.d/my_config/graphviz-dot-mode.el
+|4,39,1,0,1513765140,"~/.emacs.d/my_config/graphviz-dot-mode.el"
+-'  1  0  ~/.emacs.d/my_config/graphviz-dot-mode.el
+|4,39,1,0,1513765140,"~/.emacs.d/my_config/graphviz-dot-mode.el"
+-'  1  0  ~/.emacs.d/my_config/graphviz-dot-mode.el
+|4,39,1,0,1513765140,"~/.emacs.d/my_config/graphviz-dot-mode.el"
+-'  1  0  ~/.emacs.d/my_config/graphviz-dot-mode.el
+|4,39,1,0,1513765140,"~/.emacs.d/my_config/graphviz-dot-mode.el"
+-'  1  0  ~/.emacs.d/my_config/graphviz-dot-mode.el
+|4,39,1,0,1513765140,"~/.emacs.d/my_config/graphviz-dot-mode.el"
+-'  1  0  ~/.emacs.d/my_config/graphviz-dot-mode.el
+|4,39,1,0,1513765140,"~/.emacs.d/my_config/graphviz-dot-mode.el"
+-'  1  0  ~/.emacs.d/my_config/graphviz-dot-mode.el
+|4,39,1,0,1513765140,"~/.emacs.d/my_config/graphviz-dot-mode.el"
+-'  1  0  ~/.emacs.d/my_config/graphviz-dot-mode.el
+|4,39,1,0,1513765140,"~/.emacs.d/my_config/graphviz-dot-mode.el"
+-'  1  0  ~/.emacs.d/my_config/graphviz-dot-mode.el
+|4,39,1,0,1513765140,"~/.emacs.d/my_config/graphviz-dot-mode.el"
+-'  1  0  ~/.emacs.d/my_config/graphviz-dot-mode.el
+|4,39,1,0,1513765140,"~/.emacs.d/my_config/graphviz-dot-mode.el"
+-'  1  0  ~/.emacs.d/my_config/graphviz-dot-mode.el
+|4,39,1,0,1513765140,"~/.emacs.d/my_config/graphviz-dot-mode.el"
+-'  1  0  ~/.emacs.d/my_config/graphviz-dot-mode.el
+|4,39,1,0,1513765140,"~/.emacs.d/my_config/graphviz-dot-mode.el"
+-'  1  0  ~/.emacs.d/my_config/graphviz-dot-mode.el
+|4,39,1,0,1513765140,"~/.emacs.d/my_config/graphviz-dot-mode.el"
+-'  1  0  ~/.emacs.d/my_config/graphviz-dot-mode.el
+|4,39,1,0,1513765140,"~/.emacs.d/my_config/graphviz-dot-mode.el"
+-'  1  0  ~/.emacs.d/my_config/graphviz-dot-mode.el
+|4,39,1,0,1513765140,"~/.emacs.d/my_config/graphviz-dot-mode.el"
+-'  1  0  ~/.emacs.d/my_config/graphviz-dot-mode.el
+|4,39,1,0,1513765140,"~/.emacs.d/my_config/graphviz-dot-mode.el"
+-'  946  0  ~/.emacs.d/my_config/graphviz-dot-mode.el
+|4,39,946,0,1513765137,"~/.emacs.d/my_config/graphviz-dot-mode.el"
+-'  946  0  ~/.emacs.d/my_config/graphviz-dot-mode.el
+|4,39,946,0,1513765137,"~/.emacs.d/my_config/graphviz-dot-mode.el"
+-'  946  0  ~/.emacs.d/my_config/graphviz-dot-mode.el
+|4,39,946,0,1513765137,"~/.emacs.d/my_config/graphviz-dot-mode.el"
+-'  946  0  ~/.emacs.d/my_config/graphviz-dot-mode.el
+|4,39,946,0,1513765137,"~/.emacs.d/my_config/graphviz-dot-mode.el"
+-'  946  0  ~/.emacs.d/my_config/graphviz-dot-mode.el
+|4,39,946,0,1513765137,"~/.emacs.d/my_config/graphviz-dot-mode.el"
+-'  946  0  ~/.emacs.d/my_config/graphviz-dot-mode.el
+|4,39,946,0,1513765137,"~/.emacs.d/my_config/graphviz-dot-mode.el"
+-'  946  0  ~/.emacs.d/my_config/graphviz-dot-mode.el
+|4,39,946,0,1513765137,"~/.emacs.d/my_config/graphviz-dot-mode.el"
+-'  946  0  ~/.emacs.d/my_config/graphviz-dot-mode.el
+|4,39,946,0,1513765137,"~/.emacs.d/my_config/graphviz-dot-mode.el"
+-'  946  0  ~/.emacs.d/my_config/graphviz-dot-mode.el
+|4,39,946,0,1513765137,"~/.emacs.d/my_config/graphviz-dot-mode.el"
+-'  946  0  ~/.emacs.d/my_config/graphviz-dot-mode.el
+|4,39,946,0,1513765137,"~/.emacs.d/my_config/graphviz-dot-mode.el"
+-'  946  0  ~/.emacs.d/my_config/graphviz-dot-mode.el
+|4,39,946,0,1513765137,"~/.emacs.d/my_config/graphviz-dot-mode.el"
+-'  946  0  ~/.emacs.d/my_config/graphviz-dot-mode.el
+|4,39,946,0,1513765137,"~/.emacs.d/my_config/graphviz-dot-mode.el"
+-'  946  0  ~/.emacs.d/my_config/graphviz-dot-mode.el
+|4,39,946,0,1513765137,"~/.emacs.d/my_config/graphviz-dot-mode.el"
+-'  946  0  ~/.emacs.d/my_config/graphviz-dot-mode.el
+|4,39,946,0,1513765137,"~/.emacs.d/my_config/graphviz-dot-mode.el"
+-'  946  0  ~/.emacs.d/my_config/graphviz-dot-mode.el
+|4,39,946,0,1513765137,"~/.emacs.d/my_config/graphviz-dot-mode.el"
+-'  946  0  ~/.emacs.d/my_config/graphviz-dot-mode.el
+|4,39,946,0,1513765137,"~/.emacs.d/my_config/graphviz-dot-mode.el"
+-'  39  4  ~/Note/Linux/debian/web_browser/w3m-keybinding.txt
+|4,39,39,4,1513765064,"~/Note/Linux/debian/web_browser/w3m-keybinding.txt"
+-'  39  4  ~/Note/Linux/debian/web_browser/w3m-keybinding.txt
+|4,39,39,4,1513765064,"~/Note/Linux/debian/web_browser/w3m-keybinding.txt"
+-'  39  4  ~/Note/Linux/debian/web_browser/w3m-keybinding.txt
+|4,39,39,4,1513765064,"~/Note/Linux/debian/web_browser/w3m-keybinding.txt"
+-'  39  4  ~/Note/Linux/debian/web_browser/w3m-keybinding.txt
+|4,39,39,4,1513765064,"~/Note/Linux/debian/web_browser/w3m-keybinding.txt"
+-'  39  4  ~/Note/Linux/debian/web_browser/w3m-keybinding.txt
+|4,39,39,4,1513765064,"~/Note/Linux/debian/web_browser/w3m-keybinding.txt"
+-'  39  4  ~/Note/Linux/debian/web_browser/w3m-keybinding.txt
+|4,39,39,4,1513765064,"~/Note/Linux/debian/web_browser/w3m-keybinding.txt"
+-'  39  4  ~/Note/Linux/debian/web_browser/w3m-keybinding.txt
+|4,39,39,4,1513765064,"~/Note/Linux/debian/web_browser/w3m-keybinding.txt"
+-'  39  4  ~/Note/Linux/debian/web_browser/w3m-keybinding.txt
+|4,39,39,4,1513765064,"~/Note/Linux/debian/web_browser/w3m-keybinding.txt"
+-'  39  4  ~/Note/Linux/debian/web_browser/w3m-keybinding.txt
+|4,39,39,4,1513765064,"~/Note/Linux/debian/web_browser/w3m-keybinding.txt"
+-'  39  4  ~/Note/Linux/debian/web_browser/w3m-keybinding.txt
+|4,39,39,4,1513765064,"~/Note/Linux/debian/web_browser/w3m-keybinding.txt"
+-'  39  4  ~/Note/Linux/debian/web_browser/w3m-keybinding.txt
+|4,39,39,4,1513765064,"~/Note/Linux/debian/web_browser/w3m-keybinding.txt"
+-'  39  4  ~/Note/Linux/debian/web_browser/w3m-keybinding.txt
+|4,39,39,4,1513765064,"~/Note/Linux/debian/web_browser/w3m-keybinding.txt"
+-'  39  4  ~/Note/Linux/debian/web_browser/w3m-keybinding.txt
+|4,39,39,4,1513765064,"~/Note/Linux/debian/web_browser/w3m-keybinding.txt"
+-'  39  4  ~/Note/Linux/debian/web_browser/w3m-keybinding.txt
+|4,39,39,4,1513765064,"~/Note/Linux/debian/web_browser/w3m-keybinding.txt"
+-'  39  4  ~/Note/Linux/debian/web_browser/w3m-keybinding.txt
+|4,39,39,4,1513765064,"~/Note/Linux/debian/web_browser/w3m-keybinding.txt"
+-'  39  4  ~/Note/Linux/debian/web_browser/w3m-keybinding.txt
+|4,39,39,4,1513765064,"~/Note/Linux/debian/web_browser/w3m-keybinding.txt"
+-'  39  4  ~/Note/Linux/debian/web_browser/w3m-keybinding.txt
+|4,39,39,4,1513765064,"~/Note/Linux/debian/web_browser/w3m-keybinding.txt"
+-'  39  4  ~/Note/Linux/debian/web_browser/w3m-keybinding.txt
+|4,39,39,4,1513765064,"~/Note/Linux/debian/web_browser/w3m-keybinding.txt"
+-'  39  4  ~/Note/Linux/debian/web_browser/w3m-keybinding.txt
+|4,39,39,4,1513765064,"~/Note/Linux/debian/web_browser/w3m-keybinding.txt"
+-'  39  4  ~/Note/Linux/debian/web_browser/w3m-keybinding.txt
+|4,39,39,4,1513765064,"~/Note/Linux/debian/web_browser/w3m-keybinding.txt"
+-'  39  4  ~/Note/Linux/debian/web_browser/w3m-keybinding.txt
+|4,39,39,4,1513765064,"~/Note/Linux/debian/web_browser/w3m-keybinding.txt"
+-'  39  4  ~/Note/Linux/debian/web_browser/w3m-keybinding.txt
+|4,39,39,4,1513765064,"~/Note/Linux/debian/web_browser/w3m-keybinding.txt"
+-'  39  4  ~/Note/Linux/debian/web_browser/w3m-keybinding.txt
+|4,39,39,4,1513765064,"~/Note/Linux/debian/web_browser/w3m-keybinding.txt"
+-'  39  4  ~/Note/Linux/debian/web_browser/w3m-keybinding.txt
+|4,39,39,4,1513765064,"~/Note/Linux/debian/web_browser/w3m-keybinding.txt"
+-'  39  4  ~/Note/Linux/debian/web_browser/w3m-keybinding.txt
+|4,39,39,4,1513765064,"~/Note/Linux/debian/web_browser/w3m-keybinding.txt"
+-'  39  4  ~/Note/Linux/debian/web_browser/w3m-keybinding.txt
+|4,39,39,4,1513765064,"~/Note/Linux/debian/web_browser/w3m-keybinding.txt"
+-'  39  4  ~/Note/Linux/debian/web_browser/w3m-keybinding.txt
+|4,39,39,4,1513765064,"~/Note/Linux/debian/web_browser/w3m-keybinding.txt"
+-'  39  4  ~/Note/Linux/debian/web_browser/w3m-keybinding.txt
+|4,39,39,4,1513765064,"~/Note/Linux/debian/web_browser/w3m-keybinding.txt"
+-'  39  4  ~/Note/Linux/debian/web_browser/w3m-keybinding.txt
+|4,39,39,4,1513765064,"~/Note/Linux/debian/web_browser/w3m-keybinding.txt"
+-'  39  4  ~/Note/Linux/debian/web_browser/w3m-keybinding.txt
+|4,39,39,4,1513765064,"~/Note/Linux/debian/web_browser/w3m-keybinding.txt"
+-'  39  4  ~/Note/Linux/debian/web_browser/w3m-keybinding.txt
+|4,39,39,4,1513765064,"~/Note/Linux/debian/web_browser/w3m-keybinding.txt"
+-'  39  4  ~/Note/Linux/debian/web_browser/w3m-keybinding.txt
+|4,39,39,4,1513765064,"~/Note/Linux/debian/web_browser/w3m-keybinding.txt"
+-'  94  19  ~/Note/Linux/debian/web_browser/w3m-keybinding.txt
+|4,39,94,19,1513764926,"~/Note/Linux/debian/web_browser/w3m-keybinding.txt"
+-'  94  19  ~/Note/Linux/debian/web_browser/w3m-keybinding.txt
+|4,39,94,19,1513764926,"~/Note/Linux/debian/web_browser/w3m-keybinding.txt"
+-'  94  19  ~/Note/Linux/debian/web_browser/w3m-keybinding.txt
+|4,39,94,19,1513764926,"~/Note/Linux/debian/web_browser/w3m-keybinding.txt"
+-'  94  19  ~/Note/Linux/debian/web_browser/w3m-keybinding.txt
+|4,39,94,19,1513764926,"~/Note/Linux/debian/web_browser/w3m-keybinding.txt"
+-'  94  19  ~/Note/Linux/debian/web_browser/w3m-keybinding.txt
+|4,39,94,19,1513764926,"~/Note/Linux/debian/web_browser/w3m-keybinding.txt"
+-'  94  19  ~/Note/Linux/debian/web_browser/w3m-keybinding.txt
+|4,39,94,19,1513764926,"~/Note/Linux/debian/web_browser/w3m-keybinding.txt"
+-'  94  19  ~/Note/Linux/debian/web_browser/w3m-keybinding.txt
+|4,39,94,19,1513764926,"~/Note/Linux/debian/web_browser/w3m-keybinding.txt"
+-'  94  19  ~/Note/Linux/debian/web_browser/w3m-keybinding.txt
+|4,39,94,19,1513764926,"~/Note/Linux/debian/web_browser/w3m-keybinding.txt"
+-'  94  19  ~/Note/Linux/debian/web_browser/w3m-keybinding.txt
+|4,39,94,19,1513764926,"~/Note/Linux/debian/web_browser/w3m-keybinding.txt"
+-'  94  19  ~/Note/Linux/debian/web_browser/w3m-keybinding.txt
+|4,39,94,19,1513764926,"~/Note/Linux/debian/web_browser/w3m-keybinding.txt"
+-'  94  19  ~/Note/Linux/debian/web_browser/w3m-keybinding.txt
+|4,39,94,19,1513764926,"~/Note/Linux/debian/web_browser/w3m-keybinding.txt"
+-'  94  19  ~/Note/Linux/debian/web_browser/w3m-keybinding.txt
+|4,39,94,19,1513764926,"~/Note/Linux/debian/web_browser/w3m-keybinding.txt"
+-'  94  19  ~/Note/Linux/debian/web_browser/w3m-keybinding.txt
+|4,39,94,19,1513764926,"~/Note/Linux/debian/web_browser/w3m-keybinding.txt"
+-'  94  19  ~/Note/Linux/debian/web_browser/w3m-keybinding.txt
+|4,39,94,19,1513764926,"~/Note/Linux/debian/web_browser/w3m-keybinding.txt"
+-'  94  19  ~/Note/Linux/debian/web_browser/w3m-keybinding.txt
+|4,39,94,19,1513764926,"~/Note/Linux/debian/web_browser/w3m-keybinding.txt"
+-'  94  19  ~/Note/Linux/debian/web_browser/w3m-keybinding.txt
+|4,39,94,19,1513764926,"~/Note/Linux/debian/web_browser/w3m-keybinding.txt"
+-'  94  19  ~/Note/Linux/debian/web_browser/w3m-keybinding.txt
+|4,39,94,19,1513764926,"~/Note/Linux/debian/web_browser/w3m-keybinding.txt"
 
 # 檔案內 Mark 記錄 (由新到舊):
 
-> ~/.bashrc
-	*	1513754714	0
-	"	121	0
-	.	122	0
-	+	117	0
+> ~/Note/Text_Editor/emacs/emacser.com/draw-struct-in-emacs.txt
+	*	1513766944	0
+	"	86	0
+
+> ~/Note/Text_Editor/emacs/emacser.com/draw-function-calls-tree-in-emacs.txt
+	*	1513766916	0
+	"	497	0
+
+> ~/Note/Text_Editor/emacs/emacser.com/draw-in-emacs-2.txt
+	*	1513766810	0
+	"	289	0
+
+> ~/Note/Text_Editor/emacs/emacser.com/draw-in-emacs.txt
+	*	1513766759	0
+	"	353	23
+	.	155	21
+	+	154	38
+	+	156	8
+	+	155	21
+
+> ~/.emacs.d/my_config/graphviz-dot-mode.el
+	*	1513765137	0
+	"	1	0
+
+> ~/Note/Linux/debian/web_browser/w3m-keybinding.txt
+	*	1513765040	0
+	"	39	4
+	^	74	4
+	.	121	0
+	+	25	0
+	+	27	0
+	+	54	0
+	+	71	0
+	+	74	0
+	+	71	0
+	+	74	3
+	+	77	0
+	+	88	0
+	+	89	0
+	+	94	0
+	+	98	0
+	+	105	0
+	+	111	0
 	+	121	0
-	+	120	0
-	+	121	0
-	+	122	31
-	+	122	0
+
+> ~/.bash_login
+	*	1513764191	0
+	"	2	5
+	^	2	6
+	.	2	5
+	+	1	1
+	+	2	5
+
+> ~/Note/Linux/ubuntu/character_terminal/fbterm-input-method.txt
+	*	1513754945	0
+	"	9	4
+	.	9	0
+	+	9	0
 
 > ~/Note/Linux/ubuntu/character_terminal/fbterm-setup.txt
-	*	1513753236	0
-	"	58	0
+	*	1513754939	0
+	"	9	0
 	^	49	0
 	.	49	0
 	+	13	0
@@ -2328,11 +2376,16 @@ $
 	+	58	0
 	+	49	0
 
-> ~/Note/Linux/ubuntu/character_terminal/fbterm-input-method.txt
-	*	1513753203	0
-	"	9	4
-	.	9	0
-	+	9	0
+> ~/.bashrc
+	*	1513754714	0
+	"	121	0
+	.	122	0
+	+	117	0
+	+	121	0
+	+	120	0
+	+	121	0
+	+	122	31
+	+	122	0
 
 > ~/Note/Linux/ubuntu/character_terminal/character-terminal-zh-encoding-support.txt
 	*	1513753190	0
@@ -2482,14 +2535,6 @@ $
 > ~/ShellScripts/profile-
 	*	1513674620	0
 	"	1	0
-
-> ~/.bash_login
-	*	1513674214	0
-	"	2	0
-	^	2	0
-	.	2	0
-	+	1	1
-	+	2	0
 
 > ~/Note/Linux/ubuntu/character_terminal/temp
 	*	1513673674	0
@@ -3018,58 +3063,3 @@ $
 
 > ~/ubuntu-startup-tree.txt
 	"	1	0
-
-> /etc/rc.local
-	"	9	37
-
-> ~/Note/Linux/system_management/Ubuntu-Desktop-Manager.txt
-	"	152	0
-	^	96	0
-	.	96	0
-	+	34	1
-	+	32	0
-	+	61	0
-	+	43	4
-	+	41	0
-	+	60	1
-	+	59	0
-	+	80	0
-	+	77	0
-	+	78	0
-	+	79	1
-	+	87	0
-	+	88	0
-	+	86	0
-	+	84	0
-	+	86	1
-	+	94	0
-	+	95	0
-	+	99	4
-	+	108	0
-	+	110	1
-	+	119	1
-	+	126	1
-	+	125	0
-	+	135	2
-	+	134	0
-	+	140	0
-	+	142	2
-	+	118	0
-	+	95	0
-	+	96	0
-
-> ~/Note/Linux/system_management/Linux-Power-Save.txt
-	"	12	0
-	^	3	2
-	.	3	0
-	+	2	0
-	+	3	0
-
-> /usr/share/vim/vim74/doc/eval.txt
-	"	6475	8
-
-> /usr/share/vim/vim74/doc/options.txt
-	"	1693	1
-
-> ~/Github/vim/find-text.txt
-	"	132	1

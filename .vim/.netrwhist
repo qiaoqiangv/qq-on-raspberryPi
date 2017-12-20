@@ -1,6 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_cnt =5
 let g:netrw_dirhist_1='/home/pi/ShellScripts'
 let g:netrw_dirhist_2='/home/pi/ShellScripts/login_auto_start'
 let g:netrw_dirhist_3='/home/pi/fbterm_input'
 let g:netrw_dirhist_4='/home/pi/Note/Linux/ubuntu/character_terminal'
+let g:netrw_dirhist_5='/home/pi/Note/Text_Editor/emacs/emacser.com'

@@ -1,4 +1,4 @@
-Xsession: X session started for pi at 三 12月 20 09:33:56 CST 2017
+Xsession: X session started for pi at 三 12月 20 09:41:55 CST 2017
 dbus-update-activation-environment: setting DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
 dbus-update-activation-environment: setting DISPLAY=:0
 dbus-update-activation-environment: setting XAUTHORITY=/home/pi/.Xauthority
@@ -7,35 +7,35 @@ localuser:pi being added to access control list
 test to detect : /home/pi/ShellScripts/profile-add-emacs-setting
 test to detect : /home/pi/ShellScripts/profile-add-ibus-setting
 Setting IM through im-switch for locale=zh_TW.
-Start IM through /etc/X11/xinit/xinput.d/zh_TW linked to /etc/X11/xinit/xinput.d/fcitx.
+Start IM through /home/pi/.xinput.d/zh_TW linked to /etc/X11/xinit/xinput.d/fcitx.
 gpgconf: warning: can not open config file /home/pi/.gnupg/gpg-agent.conf: 沒有此一檔案或目錄
-(INFO-633 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-clipboard.conf
-(INFO-633 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-lua.conf
-(INFO-633 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-sunpinyin.conf
-(INFO-633 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-fullwidth-char.conf
-(INFO-633 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-autoeng.conf
-(INFO-633 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-xim.conf
-(INFO-633 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-table.conf
-(INFO-633 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-remote-module.conf
-(INFO-633 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-pinyin-enhance.conf
-(INFO-633 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-pinyin.conf
-(INFO-633 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-x11.conf
-(INFO-633 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-keyboard.conf
-(INFO-633 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-classic-ui.conf
-(INFO-633 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-xkbdbus.conf
-(INFO-633 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-ipc.conf
-(INFO-633 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-notificationitem.conf
-(INFO-633 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-punc.conf
-(INFO-633 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-dbus.conf
-(INFO-633 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-vk.conf
-(INFO-633 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-spell.conf
-(INFO-633 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-xkb.conf
-(INFO-633 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-imselector.conf
-(INFO-633 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-chttrans.conf
-(INFO-633 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-kimpanel-ui.conf
-(INFO-633 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-freedesktop-notify.conf
-(INFO-633 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-unicode.conf
-(INFO-633 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-quickphrase.conf
+(INFO-590 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-clipboard.conf
+(INFO-590 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-lua.conf
+(INFO-590 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-sunpinyin.conf
+(INFO-590 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-fullwidth-char.conf
+(INFO-590 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-autoeng.conf
+(INFO-590 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-xim.conf
+(INFO-590 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-table.conf
+(INFO-590 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-remote-module.conf
+(INFO-590 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-pinyin-enhance.conf
+(INFO-590 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-pinyin.conf
+(INFO-590 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-x11.conf
+(INFO-590 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-keyboard.conf
+(INFO-590 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-classic-ui.conf
+(INFO-590 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-xkbdbus.conf
+(INFO-590 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-ipc.conf
+(INFO-590 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-notificationitem.conf
+(INFO-590 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-punc.conf
+(INFO-590 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-dbus.conf
+(INFO-590 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-vk.conf
+(INFO-590 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-spell.conf
+(INFO-590 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-xkb.conf
+(INFO-590 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-imselector.conf
+(INFO-590 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-chttrans.conf
+(INFO-590 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-kimpanel-ui.conf
+(INFO-590 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-freedesktop-notify.conf
+(INFO-590 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-unicode.conf
+(INFO-590 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-quickphrase.conf
 OpenGL version: 3.
 dbus-update-activation-environment: setting INFINALITY_FT_AUTOHINT_HORIZONTAL_STEM_DARKEN_STRENGTH=10
 dbus-update-activation-environment: setting USER=pi
@@ -85,8 +85,296 @@ dbus-update-activation-environment: setting INFINALITY_FT_BOLD_EMBOLDEN_Y_VALUE=
 ** Message: main.vala:103: DE is LXDE
 ** Message: main.vala:134: log directory: /home/pi/.cache/lxsession/LXDE-pi
 ** Message: main.vala:135: log path: /home/pi/.cache/lxsession/LXDE-pi/run.log
-(ERROR-633 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/ime.c:432) fcitx-keyboard-cm-mmuock already exists
+(ERROR-590 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/ime.c:432) fcitx-keyboard-cm-mmuock already exists
 =========================
 FCITX 4.2.9.1 -- Get Signal No.: 15
-Date: try "date -d @1513734016" if you are using GNU date ***
-ProcessID: 633
+Date: try "date -d @1513734278" if you are using GNU date ***
+ProcessID: 590
+Xsession: X session started for pi at 三 12月 20 15:00:55 CST 2017
+dbus-update-activation-environment: setting DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
+dbus-update-activation-environment: setting DISPLAY=:0
+dbus-update-activation-environment: setting XAUTHORITY=/home/pi/.Xauthority
+localuser:pi being added to access control list
+/home/pi/ShellScripts/profile-add-emacs-setting /home/pi/ShellScripts/profile-add-ibus-setting
+test to detect : /home/pi/ShellScripts/profile-add-emacs-setting
+test to detect : /home/pi/ShellScripts/profile-add-ibus-setting
+Setting IM through im-switch for locale=zh_TW.
+Start IM through /home/pi/.xinput.d/zh_TW linked to /etc/X11/xinit/xinput.d/fcitx.
+(INFO-828 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-clipboard.conf
+(INFO-828 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-lua.conf
+(INFO-828 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-sunpinyin.conf
+(INFO-828 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-fullwidth-char.conf
+(INFO-828 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-autoeng.conf
+(INFO-828 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-xim.conf
+(INFO-828 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-table.conf
+(INFO-828 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-remote-module.conf
+(INFO-828 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-pinyin-enhance.conf
+(INFO-828 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-pinyin.conf
+(INFO-828 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-x11.conf
+(INFO-828 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-keyboard.conf
+(INFO-828 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-classic-ui.conf
+(INFO-828 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-xkbdbus.conf
+(INFO-828 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-ipc.conf
+(INFO-828 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-notificationitem.conf
+(INFO-828 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-punc.conf
+(INFO-828 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-dbus.conf
+(INFO-828 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-vk.conf
+(INFO-828 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-spell.conf
+(INFO-828 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-xkb.conf
+(INFO-828 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-imselector.conf
+(INFO-828 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-chttrans.conf
+(INFO-828 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-kimpanel-ui.conf
+(INFO-828 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-freedesktop-notify.conf
+(INFO-828 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-unicode.conf
+(INFO-828 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-quickphrase.conf
+(WARN-828 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/module/dbus/dbusstuff.c:246) DBus Service Already Exists
+(ERROR-828 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/instance.c:442) Exiting.
+gpgconf: warning: can not open config file /home/pi/.gnupg/gpg-agent.conf: 沒有此一檔案或目錄
+OpenGL version: 3.
+dbus-update-activation-environment: setting INFINALITY_FT_AUTOHINT_HORIZONTAL_STEM_DARKEN_STRENGTH=10
+dbus-update-activation-environment: setting MAIL=/var/mail/pi
+dbus-update-activation-environment: setting USER=pi
+dbus-update-activation-environment: setting TEXTDOMAIN=Linux-PAM
+dbus-update-activation-environment: setting INFINALITY_FT_FRINGE_FILTER_STRENGTH=0
+dbus-update-activation-environment: setting SHLVL=1
+dbus-update-activation-environment: setting HOME=/home/pi
+dbus-update-activation-environment: setting INFINALITY_FT_CONTRAST=0
+dbus-update-activation-environment: setting HUSHLOGIN=FALSE
+dbus-update-activation-environment: setting INFINALITY_FT_USE_VARIOUS_TWEAKS=true
+dbus-update-activation-environment: setting INFINALITY_FT_GAMMA_CORRECTION=0 100
+dbus-update-activation-environment: setting INFINALITY_FT_WINDOWS_STYLE_SHARPENING_STRENGTH=10
+dbus-update-activation-environment: setting DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
+dbus-update-activation-environment: setting INFINALITY_FT_STEM_ALIGNMENT_STRENGTH=25
+dbus-update-activation-environment: setting LOGNAME=pi
+dbus-update-activation-environment: setting GTK_IM_MODULE=ibus
+dbus-update-activation-environment: setting _=/usr/bin/startx
+dbus-update-activation-environment: setting TERM=linux
+dbus-update-activation-environment: setting INFINALITY_FT_AUTOHINT_VERTICAL_STEM_DARKEN_STRENGTH=25
+dbus-update-activation-environment: setting WINDOWPATH=1
+dbus-update-activation-environment: setting PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/games:/usr/games
+dbus-update-activation-environment: setting XDG_RUNTIME_DIR=/run/user/1000
+dbus-update-activation-environment: setting INFINALITY_FT_GLOBAL_EMBOLDEN_X_VALUE=0
+dbus-update-activation-environment: setting DISPLAY=:0
+dbus-update-activation-environment: setting LANG=zh_TW.UTF-8
+dbus-update-activation-environment: setting INFINALITY_FT_AUTOHINT_SNAP_STEM_HEIGHT=100
+dbus-update-activation-environment: setting INFINALITY_FT_GLOBAL_EMBOLDEN_Y_VALUE=0
+dbus-update-activation-environment: setting INFINALITY_FT_CHROMEOS_STYLE_SHARPENING_STRENGTH=0
+dbus-update-activation-environment: setting XMODIFIERS=@im=ibus
+dbus-update-activation-environment: setting XAUTHORITY=/home/pi/.Xauthority
+dbus-update-activation-environment: setting SHELL=/bin/bash
+dbus-update-activation-environment: setting INFINALITY_FT_BRIGHTNESS=0
+dbus-update-activation-environment: setting INFINALITY_FT_STEM_FITTING_STRENGTH=25
+dbus-update-activation-environment: setting INFINALITY_FT_STEM_SNAPPING_SLIDING_SCALE=40
+dbus-update-activation-environment: setting GPG_AGENT_INFO=/run/user/1000/gnupg/S.gpg-agent:0:1
+dbus-update-activation-environment: setting INFINALITY_FT_GRAYSCALE_FILTER_STRENGTH=0
+dbus-update-activation-environment: setting QT_IM_MODULE=ibus
+dbus-update-activation-environment: setting INFINALITY_FT_USE_KNOWN_SETTINGS_ON_SELECTED_FONTS=true
+dbus-update-activation-environment: setting INFINALITY_FT_AUTOHINT_INCREASE_GLYPH_HEIGHTS=true
+dbus-update-activation-environment: setting PWD=/home/pi
+dbus-update-activation-environment: setting INFINALITY_FT_FILTER_PARAMS=11 22 38 22 11
+dbus-update-activation-environment: setting INFINALITY_FT_BOLD_EMBOLDEN_X_VALUE=0
+dbus-update-activation-environment: setting INFINALITY_FT_BOLD_EMBOLDEN_Y_VALUE=0
+** Message: main.vala:102: Session is LXDE-pi
+** Message: main.vala:103: DE is LXDE
+** Message: main.vala:134: log directory: /home/pi/.cache/lxsession/LXDE-pi
+** Message: main.vala:135: log path: /home/pi/.cache/lxsession/LXDE-pi/run.log
+Xsession: X session started for pi at 三 12月 20 15:03:37 CST 2017
+dbus-update-activation-environment: error: unable to connect to D-Bus: Failed to connect to socket /run/user/1000/bus: Connection refused
+localuser:pi being added to access control list
+/home/pi/ShellScripts/profile-add-emacs-setting /home/pi/ShellScripts/profile-add-ibus-setting
+test to detect : /home/pi/ShellScripts/profile-add-emacs-setting
+test to detect : /home/pi/ShellScripts/profile-add-ibus-setting
+Setting IM through im-switch for locale=zh_TW.
+Start IM through /home/pi/.xinput.d/zh_TW linked to /etc/X11/xinit/xinput.d/fcitx.
+(INFO-1263 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-clipboard.conf
+(INFO-1263 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-lua.conf
+(INFO-1263 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-sunpinyin.conf
+(INFO-1263 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-fullwidth-char.conf
+(INFO-1263 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-autoeng.conf
+(INFO-1263 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-xim.conf
+(INFO-1263 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-table.conf
+(INFO-1263 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-remote-module.conf
+(INFO-1263 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-pinyin-enhance.conf
+(INFO-1263 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-pinyin.conf
+(INFO-1263 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-x11.conf
+(INFO-1263 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-keyboard.conf
+(INFO-1263 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-classic-ui.conf
+(INFO-1263 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-xkbdbus.conf
+(INFO-1263 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-ipc.conf
+(INFO-1263 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-notificationitem.conf
+(INFO-1263 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-punc.conf
+(INFO-1263 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-dbus.conf
+(INFO-1263 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-vk.conf
+(INFO-1263 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-spell.conf
+(INFO-1263 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-xkb.conf
+(INFO-1263 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-imselector.conf
+(INFO-1263 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-chttrans.conf
+(INFO-1263 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-kimpanel-ui.conf
+(INFO-1263 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-freedesktop-notify.conf
+(INFO-1263 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-unicode.conf
+(INFO-1263 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-quickphrase.conf
+(WARN-1263 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/module/dbus/dbusstuff.c:195) Connection Error (Failed to connect to socket /run/user/1000/bus: 連線被拒絕)
+gpgconf: warning: can not open config file /home/pi/.gnupg/gpg-agent.conf: 沒有此一檔案或目錄
+OpenGL version: 3.
+dbus-update-activation-environment: error: unable to connect to D-Bus: Failed to connect to socket /run/user/1000/bus: Connection refused
+** Message: main.vala:102: Session is LXDE-pi
+** Message: main.vala:103: DE is LXDE
+** Message: main.vala:134: log directory: /home/pi/.cache/lxsession/LXDE-pi
+** Message: main.vala:135: log path: /home/pi/.cache/lxsession/LXDE-pi/run.log
+(WARN-1263 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/module/dbus/dbusstuff.c:195) Connection Error (Failed to connect to socket /run/user/1000/bus: 連線被拒絕)
+(WARN-1263 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/module/dbus/dbusstuff.c:195) Connection Error (Failed to connect to socket /run/user/1000/bus: 連線被拒絕)
+(WARN-1263 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/module/dbus/dbusstuff.c:195) Connection Error (Failed to connect to socket /run/user/1000/bus: 連線被拒絕)
+(WARN-1263 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/module/dbus/dbusstuff.c:195) Connection Error (Failed to connect to socket /run/user/1000/bus: 連線被拒絕)
+(WARN-1263 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/module/dbus/dbusstuff.c:195) Connection Error (Failed to connect to socket /run/user/1000/bus: 連線被拒絕)
+(WARN-1263 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/module/dbus/dbusstuff.c:195) Connection Error (Failed to connect to socket /run/user/1000/bus: 連線被拒絕)
+(WARN-1263 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/module/dbus/dbusstuff.c:195) Connection Error (Failed to connect to socket /run/user/1000/bus: 連線被拒絕)
+(WARN-1263 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/module/dbus/dbusstuff.c:195) Connection Error (Failed to connect to socket /run/user/1000/bus: 連線被拒絕)
+=========================
+FCITX 4.2.9.1 -- Get Signal No.: 15
+Date: try "date -d @1513753503" if you are using GNU date ***
+ProcessID: 1263
+Xsession: X session started for pi at 三 12月 20 15:05:47 CST 2017
+dbus-update-activation-environment: setting DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
+dbus-update-activation-environment: setting DISPLAY=:0
+dbus-update-activation-environment: setting XAUTHORITY=/home/pi/.Xauthority
+localuser:pi being added to access control list
+/home/pi/ShellScripts/profile-add-emacs-setting /home/pi/ShellScripts/profile-add-ibus-setting
+test to detect : /home/pi/ShellScripts/profile-add-emacs-setting
+test to detect : /home/pi/ShellScripts/profile-add-ibus-setting
+Setting IM through im-switch for locale=zh_TW.
+Start IM through /home/pi/.xinput.d/zh_TW linked to /etc/X11/xinit/xinput.d/fcitx.
+gpgconf: warning: can not open config file /home/pi/.gnupg/gpg-agent.conf: 沒有此一檔案或目錄
+(INFO-634 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-clipboard.conf
+(INFO-634 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-lua.conf
+(INFO-634 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-sunpinyin.conf
+(INFO-634 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-fullwidth-char.conf
+(INFO-634 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-autoeng.conf
+(INFO-634 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-xim.conf
+(INFO-634 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-table.conf
+(INFO-634 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-remote-module.conf
+(INFO-634 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-pinyin-enhance.conf
+(INFO-634 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-pinyin.conf
+(INFO-634 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-x11.conf
+(INFO-634 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-keyboard.conf
+(INFO-634 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-classic-ui.conf
+(INFO-634 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-xkbdbus.conf
+(INFO-634 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-ipc.conf
+(INFO-634 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-notificationitem.conf
+(INFO-634 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-punc.conf
+(INFO-634 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-dbus.conf
+(INFO-634 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-vk.conf
+(INFO-634 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-spell.conf
+(INFO-634 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-xkb.conf
+(INFO-634 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-imselector.conf
+(INFO-634 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-chttrans.conf
+(INFO-634 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-kimpanel-ui.conf
+(INFO-634 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-freedesktop-notify.conf
+(INFO-634 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-unicode.conf
+(INFO-634 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-quickphrase.conf
+OpenGL version: 3.
+dbus-update-activation-environment: setting INFINALITY_FT_AUTOHINT_HORIZONTAL_STEM_DARKEN_STRENGTH=10
+dbus-update-activation-environment: setting MAIL=/var/mail/pi
+dbus-update-activation-environment: setting USER=pi
+dbus-update-activation-environment: setting TEXTDOMAIN=Linux-PAM
+dbus-update-activation-environment: setting INFINALITY_FT_FRINGE_FILTER_STRENGTH=0
+dbus-update-activation-environment: setting SHLVL=1
+dbus-update-activation-environment: setting HOME=/home/pi
+dbus-update-activation-environment: setting INFINALITY_FT_CONTRAST=0
+dbus-update-activation-environment: setting HUSHLOGIN=FALSE
+dbus-update-activation-environment: setting INFINALITY_FT_USE_VARIOUS_TWEAKS=true
+dbus-update-activation-environment: setting INFINALITY_FT_GAMMA_CORRECTION=0 100
+dbus-update-activation-environment: setting INFINALITY_FT_WINDOWS_STYLE_SHARPENING_STRENGTH=10
+dbus-update-activation-environment: setting DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
+dbus-update-activation-environment: setting INFINALITY_FT_STEM_ALIGNMENT_STRENGTH=25
+dbus-update-activation-environment: setting LOGNAME=pi
+dbus-update-activation-environment: setting GTK_IM_MODULE=ibus
+dbus-update-activation-environment: setting _=/usr/bin/startx
+dbus-update-activation-environment: setting TERM=linux
+dbus-update-activation-environment: setting INFINALITY_FT_AUTOHINT_VERTICAL_STEM_DARKEN_STRENGTH=25
+dbus-update-activation-environment: setting WINDOWPATH=1
+dbus-update-activation-environment: setting PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/games:/usr/games
+dbus-update-activation-environment: setting XDG_RUNTIME_DIR=/run/user/1000
+dbus-update-activation-environment: setting INFINALITY_FT_GLOBAL_EMBOLDEN_X_VALUE=0
+dbus-update-activation-environment: setting DISPLAY=:0
+dbus-update-activation-environment: setting LANG=zh_TW.UTF-8
+dbus-update-activation-environment: setting INFINALITY_FT_AUTOHINT_SNAP_STEM_HEIGHT=100
+dbus-update-activation-environment: setting INFINALITY_FT_GLOBAL_EMBOLDEN_Y_VALUE=0
+dbus-update-activation-environment: setting INFINALITY_FT_CHROMEOS_STYLE_SHARPENING_STRENGTH=0
+dbus-update-activation-environment: setting XMODIFIERS=@im=ibus
+dbus-update-activation-environment: setting XAUTHORITY=/home/pi/.Xauthority
+dbus-update-activation-environment: setting SHELL=/bin/bash
+dbus-update-activation-environment: setting INFINALITY_FT_BRIGHTNESS=0
+dbus-update-activation-environment: setting INFINALITY_FT_STEM_FITTING_STRENGTH=25
+dbus-update-activation-environment: setting INFINALITY_FT_STEM_SNAPPING_SLIDING_SCALE=40
+dbus-update-activation-environment: setting GPG_AGENT_INFO=/run/user/1000/gnupg/S.gpg-agent:0:1
+dbus-update-activation-environment: setting INFINALITY_FT_GRAYSCALE_FILTER_STRENGTH=0
+dbus-update-activation-environment: setting QT_IM_MODULE=ibus
+dbus-update-activation-environment: setting INFINALITY_FT_USE_KNOWN_SETTINGS_ON_SELECTED_FONTS=true
+dbus-update-activation-environment: setting INFINALITY_FT_AUTOHINT_INCREASE_GLYPH_HEIGHTS=true
+dbus-update-activation-environment: setting PWD=/home/pi
+dbus-update-activation-environment: setting INFINALITY_FT_FILTER_PARAMS=11 22 38 22 11
+dbus-update-activation-environment: setting INFINALITY_FT_BOLD_EMBOLDEN_X_VALUE=0
+dbus-update-activation-environment: setting INFINALITY_FT_BOLD_EMBOLDEN_Y_VALUE=0
+** Message: main.vala:102: Session is LXDE-pi
+** Message: main.vala:103: DE is LXDE
+** Message: main.vala:134: log directory: /home/pi/.cache/lxsession/LXDE-pi
+** Message: main.vala:135: log path: /home/pi/.cache/lxsession/LXDE-pi/run.log
+(ERROR-634 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/ime.c:432) fcitx-keyboard-cm-mmuock already exists
+Xsession: X session started for pi at 三 12月 20 15:10:48 CST 2017
+dbus-update-activation-environment: error: unable to connect to D-Bus: Failed to connect to socket /run/user/1000/bus: Connection refused
+localuser:pi being added to access control list
+/home/pi/ShellScripts/profile-add-emacs-setting /home/pi/ShellScripts/profile-add-ibus-setting
+test to detect : /home/pi/ShellScripts/profile-add-emacs-setting
+test to detect : /home/pi/ShellScripts/profile-add-ibus-setting
+Setting IM through im-switch for locale=zh_TW.
+Start IM through /home/pi/.xinput.d/zh_TW linked to /etc/X11/xinit/xinput.d/fcitx.
+(INFO-1077 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-clipboard.conf
+(INFO-1077 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-lua.conf
+(INFO-1077 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-sunpinyin.conf
+(INFO-1077 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-fullwidth-char.conf
+(INFO-1077 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-autoeng.conf
+(INFO-1077 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-xim.conf
+(INFO-1077 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-table.conf
+(INFO-1077 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-remote-module.conf
+(INFO-1077 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-pinyin-enhance.conf
+(INFO-1077 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-pinyin.conf
+(INFO-1077 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-x11.conf
+(INFO-1077 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-keyboard.conf
+(INFO-1077 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-classic-ui.conf
+(INFO-1077 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-xkbdbus.conf
+(INFO-1077 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-ipc.conf
+(INFO-1077 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-notificationitem.conf
+(INFO-1077 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-punc.conf
+(INFO-1077 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-dbus.conf
+(INFO-1077 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-vk.conf
+(INFO-1077 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-spell.conf
+(INFO-1077 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-xkb.conf
+(INFO-1077 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-imselector.conf
+(INFO-1077 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-chttrans.conf
+(INFO-1077 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-kimpanel-ui.conf
+(INFO-1077 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-freedesktop-notify.conf
+(INFO-1077 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-unicode.conf
+(INFO-1077 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/lib/fcitx/addon.c:151) 載入附加元件設定檔：fcitx-quickphrase.conf
+gpgconf: warning: can not open config file /home/pi/.gnupg/gpg-agent.conf: 沒有此一檔案或目錄
+(WARN-1077 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/module/dbus/dbusstuff.c:195) Connection Error (Failed to connect to socket /run/user/1000/bus: 連線被拒絕)
+OpenGL version: 3.
+dbus-update-activation-environment: error: unable to connect to D-Bus: Failed to connect to socket /run/user/1000/bus: Connection refused
+** Message: main.vala:102: Session is LXDE-pi
+** Message: main.vala:103: DE is LXDE
+** Message: main.vala:134: log directory: /home/pi/.cache/lxsession/LXDE-pi
+** Message: main.vala:135: log path: /home/pi/.cache/lxsession/LXDE-pi/run.log
+(WARN-1077 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/module/dbus/dbusstuff.c:195) Connection Error (Failed to connect to socket /run/user/1000/bus: 連線被拒絕)
+(WARN-1077 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/module/dbus/dbusstuff.c:195) Connection Error (Failed to connect to socket /run/user/1000/bus: 連線被拒絕)
+(WARN-1077 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/module/dbus/dbusstuff.c:195) Connection Error (Failed to connect to socket /run/user/1000/bus: 連線被拒絕)
+(WARN-1077 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/module/dbus/dbusstuff.c:195) Connection Error (Failed to connect to socket /run/user/1000/bus: 連線被拒絕)
+(WARN-1077 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/module/dbus/dbusstuff.c:195) Connection Error (Failed to connect to socket /run/user/1000/bus: 連線被拒絕)
+(WARN-1077 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/module/dbus/dbusstuff.c:195) Connection Error (Failed to connect to socket /run/user/1000/bus: 連線被拒絕)
+(WARN-1077 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/module/dbus/dbusstuff.c:195) Connection Error (Failed to connect to socket /run/user/1000/bus: 連線被拒絕)
+(WARN-1077 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/module/dbus/dbusstuff.c:195) Connection Error (Failed to connect to socket /run/user/1000/bus: 連線被拒絕)
+(WARN-1077 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/module/dbus/dbusstuff.c:195) Connection Error (Failed to connect to socket /run/user/1000/bus: 連線被拒絕)
+(WARN-1077 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/module/dbus/dbusstuff.c:195) Connection Error (Failed to connect to socket /run/user/1000/bus: 連線被拒絕)
+(WARN-1077 /build/fcitx-RTfKvO/fcitx-4.2.9.1/src/module/dbus/dbusstuff.c:195) Connection Error (Failed to connect to socket /run/user/1000/bus: 連線被拒絕)
+=========================
+FCITX 4.2.9.1 -- Get Signal No.: 15
+Date: try "date -d @1513753985" if you are using GNU date ***
+ProcessID: 1077
