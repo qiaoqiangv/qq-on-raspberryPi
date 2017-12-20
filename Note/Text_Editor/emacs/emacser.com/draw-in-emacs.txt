@@ -1,0 +1,936 @@
+Emacs中文网
+
+没有我做不到的，只有你想不到的
+
+  • 首页
+  • 关于
+  • DEA
+  • 征集logo
+  • 版权声明
+  • 加盟/投稿
+  • Emacs截图
+  • Emacs资源
+  • 站点地图
+  •  
+
+[                        ] []
+首页 > Org Mode, 其他, 初级, 好玩的 > Emacs中绘图－ ditaa篇
+
+Emacs中绘图－ ditaa篇
+
+2010年8月4日 fangzhzh 发表评论阅读评论
+
+Fast,Cheap,Good: Choose any two.
+                                  --anonymous.
+
+ditaa
+
+  • 1 emacs中的图
+  • 2 应用场景
+  • 3 ASCII图
+  • 4 简单框图
+  • 5 着色
+  • 6 完整而优雅的图案
+  • 7 中文
+  • 8 ditaa
+  • 9 不算小结的小结
+
+1 emacs中的图
+
+emacs用途多多，编辑代码、文档、演示文稿，记日志等等。在这些应用中有一个共同点，也是广大emacser很可能需要的一点功能
+，画图，对于大多数使用emacs的都是死宅死宅技术男，主要的用途还就是流程图，框图之流。
+
+一图胜千言 ^1 ，图能够用简单的方式表达出可能需要很复杂的语言才能描述清的想法。一个广泛的认识就是人更容易理解图片。
+人们喜欢玩界面华丽的游戏，而同样的游戏如果是文本的，就会让人失去兴趣。一篇博客如果内容较多，有那么几张图片，怎么也
+会比全部长篇的文字要容易阅读。
+
+那么emacs如何来插入一个给力的图片呢？
+
+使用Latex的graphicx包。Latex的排版与图片功能相当的强大，但是它的门槛更高，使用比较复杂，应用场合主要在科学论文。一
+般的应用，博客，日志啥的话，投入产出比太低了。
+
+wiki-mode,Muse-mode和org-mode这样的写作工具^2，使用[image]标签，插入本地图片，然后生成html、pdf；或者插入图片的url
+地址，也是一种使用较多的方式。
+
+这种方式比较普遍，方便，但不快捷。画一张合适的、给力的图片需要什么？？
+
+一个软件，熟练的操作。
+
+软件候选者：Photoshop，收费，咱学习之用，使用绿色版。一个Photoshop的使用那就是N本书，想真正的学会使用Photoshop来绘
+制流程图，也并不满足方便，快捷两个条件。Microsoft Visio，同样，收费，咱学习之用，使用绿色版，学习Microsoft Visio同
+样是需要一定的周期滴，也同样不满足方便，快捷两个条件。而且这两个软件有大缺点，跨平台不好，使用过程繁琐。
+
+所以，我最衷爱的，ASCII图^3就闪亮登场了，当当当当~~~，大家鼓掌。
+
+ASCII图可以在任何文本适用的地方存在，如Internet Relay Chat（ IRC）, E-mail, 论坛，BBS，非图形界面，同时可以在源代
+码中表示公司或产品的logo，或流程图。甚至有geeker将整个程序直接写成一坨ASCII图，看起来是相当的给力^4。
+
+介绍了什么是ASCII图，它的好处。那么下一步，就讨论下如何绘制ASCII图。我们肯定不会是一个字符一个字符的去敲，然后拼起
+来，将简单的事情复杂化，是我的专长，但是我却从不做愚蠢的事情。画ASCII图，我们有专门、专业的软件^5。
+
+但是既然我们是emaser，我们当然要看一下，emacs能不能做这件事情呢？答案肯定是YES。
+
+emacs中有两个mode处理ASCII图，picture-mode和artist-mode。picture-mode请参考emacswiki，而前边我们介绍过artist-mode
+，没看过的童鞋请进时光穿梭机。
+
+介绍完了背景知识，我们来一个真实的例子。
+
+2 应用场景
+
+我们有大批的cpp，h这样的源文件，每天和他们打交道。有一天我们想要给人演示对于源文件，我们都能做些什么。我们可以使用
+编辑器编辑它们，以使他们完成我们需要的功能；编译器编译他们，生成可执行文件；doxygen处理他们，生成源代码的文档…，其
+它用途还用很多，比如把程序写成下面的样子，成功的完成zhuangbility这样艰巨的任务：
+
+#include                                     <math.h>
+#include                                   <sys/time.h>
+#include                                   <X11/Xlib.h>
+#include                                  <X11/keysym.h>
+                                          double L ,o ,P
+                                         ,_=dt,T,Z,D=1,d,
+                                         s[999],E,h= 8,I,
+                                         J,K,w[999],M,m,O
+                                        ,n[999],j=33e-3,i=
+                                        1E3,r,t, u,v ,W,S=
+                                        74.5,l=221,X=7.26,
+                                        a,B,A=32.2,c, F,H;
+                                        int N,q, C, y,p,U;
+                                       Window z; char f[52]
+                                    ; GC k; main(){ Display*e=
+ XOpenDisplay( 0); z=RootWindow(e,0); for (XSetForeground(e,k=XCreateGC (e,z,0,0),BlackPixel(e,0))
+; scanf("%lf%lf%lf",y +n,w+y, y+s)+1; y ++); XSelectInput(e,z= XCreateSimpleWindow(e,z,0,0,400,400,
+0,0,WhitePixel(e,0) ),KeyPressMask); for(XMapWindow(e,z); ; T=sin(O)){ struct timeval G={ 0,dt*1e6}
+; K= cos(j); N=1e4; M+= H*_; Z=D*K; F+=_*P; r=E*K; W=cos( O); m=K*W; H=K*T; O+=D*_*F/ K+d/K*E*_; B=
+sin(j); a=B*T*D-E*W; XClearWindow(e,z); t=T*E+ D*B*W; j+=d*_*D-_*F*E; P=W*E*B-T*D; for (o+=(I=D*W+E
+*T*B,E*d/K *B+v+B/K*F*D)*_; p<y; ){ T=p[s]+i; E=c-p[w]; D=n[p]-L; K=D*m-B*T-H*E; if(p [n]+w[ p]+p[s
+]== 0|K <fabs(W=T*r-I*E +D*P) |fabs(D=t *D+Z *T-a *E)> K)N=1e4; else{ q=W/K *4E2+2e2; C= 2E2+4e2/ K
+ *D; N-1E4&& XDrawLine(e ,z,k,N ,U,q,C); N=q; U=C; } ++p; } L+=_* (X*t +P*M+m*l); T=X*X+ l*l+M *M;
+  XDrawString(e,z,k ,20,380,f,17); D=v/l*15; i+=(B *l-M*r -X*Z)*_; for(; XPending(e); u *=CS!=N){
+                                   XEvent z; XNextEvent(e ,&z);
+                                       ++*((N=XLookupKeysym
+                                         (&z.xkey,0))-IT?
+                                         N-LT? UP-N?& E:&
+                                         J:& u: &h); --*(
+                                         DN -N? N-DT ?N==
+                                         RT?&u: & W:&h:&J
+                                          ); } m=15*F/l;
+                                          c+=(I=M/ l,l*H
+                                          +I*M+a*X)*_; H
+                                          =A*r+v*X-F*l+(
+                                          E=.1+X*4.9/l,t
+                                          =T*m/32-I*T/24
+                                           )/S; K=F*M+(
+                                           h* 1e4/l-(T+
+                                           E*5*T*E)/3e2
+                                           )/S-X*d-B*A;
+                                           a=2.63 /l*d;
+                                           X+=( d*l-T/S
+                                            *(.19*E +a
+                                            *.64+J/1e3
+                                            )-M* v +A*
+                                            Z)*_; l +=
+                                            K *_; W=d;
+                                            sprintf(f,
+                                            "%5d  %3d"
+                                            "%7d",p =l
+                                           /1.7,(C=9E3+
+                              O*57.3)%0550,(int)i); d+=T*(.45-14/l*
+                             X-a*130-J* .14)*_/125e2+F*_*v; P=(T*(47
+                             *I-m* 52+E*94 *D-t*.38+u*.21*E) /1e2+W*
+                             179*v)/2312; select(p=0,0,0,0,&G); v-=(
+                              W*F-T*(.63*m-I*.086+m*E*19-D*25-.11*u
+                               )/107e2)*_; D=cos(o); E=sin(o); } }
+
+//程序在linux下使用以下命令编译：
+//cc banks.c -o banks -DIT=XK_Page_Up -DDT=XK_Page_Down \
+//  -DUP=XK_Up -DDN=XK_Down -DLT=XK_Left -DRT=XK_Right \
+//  -DCS=XK_Return -Ddt=0.02 -lm -lX11 -L/usr/X11R6/lib
+
+但是本文中，我们只关注对cpp源文件的前三点应用：编辑，编译，生成文档。
+
+3 ASCII图
+
+好吧，我们的第一个演示版本。
+
++----------+ edit +----------+  input  +----------+ compile +----------+
+| refined  |<-----+   h,cpp  +-------->+ compiler,+-------->+Executable|
+|  h,cpp   |      |          |         | linker   |         |   File   |
++----------+      +----+-----+         +----------+         +----------+
+                       | input
+                       v
+                  +----------+
+                  | doxygen  |
+                  |          |
+                  +----+-----+
+                       | process
+                       v
+                  +----------+
+                  | Doxgen   |
+                  | Document |
+                  +----------+
+
+第一个版本，作为一种可嵌入文本的ASCII图，绘制简单，简单，大方，实用（情人眼里出西施？）……
+
+但是，有童鞋说过（主要是我自己感觉）实用性不强，很多人是不接受ASCII图的，文章里夹了这么一个ASCII图，别人抵触情绪马
+上起来，这无关技术，只是习惯。
+
+4 简单框图
+
+那么，如果这是一幅图，看起来或许更爽….。这样可以吗？好吧，我们试一下，把上面的ASCII图变为图片。
+
+http://emacser.com/uploads/asciiExample.png
+
+OMG，这个如何做到的？:)，我们使用的是如下代码，将ASCII图转化为png(org-mode中)。
+
+#+BEGIN_DITAA  asciiExample.png -o -r -S
+
+       +----------+ edit +----------+   input +----------+ compile +----------+
+       | refined  |<-----+ h,cpp    +-------->+ compiler,+-------->+Executable|
+       |   h,cpp  |      |          |         | linker   |         |   File   |
+       +----------+      +----+-----+         +----------+         +----------+
+                              | input
+                              v
+                         +----------+
+                         | doxygen  |
+                         |          |
+                         +----+-----+
+                              | process
+                              v
+                         +----------+
+                         | Doxgen   |
+                         | Document |
+                         +----------+
+
+#+END_DITAA
+
+这里使用的是ditaa，第一次听说ditaa这个玩意是在从punchagan的博客，即这里 ^6，当时我问了一个org-mode中怎样嵌入ASCII
+图的问题^7，他就给了我这么大一个鱼杆！！
+
+5 着色
+
+好，言归正传。看起来，还不错。但是精益求精是我们的特点，嘿嘿。我们希望区分一下，源用红色表示，处理过程用绿色表示，
+结果呢，我们用黑色表示，这样看起来或许更美观一些，美观也就是用Photoshop或者Microsoft Visio画图追求的效果嘛。GO.
+
+http://emacser.com/uploads/asciiExampleWithColor.png
+
+着色的代码如下：
+
+#+BEGIN_DITAA  asciiExampleWithColor.png -o -r -S
+
+       +----------+ edit +----------+   input +----------+ compile +----------+
+       |  cPNK    |      |  cRED    |         |   cGRE   |         |  cPNK    |
+       | refined  |<-----+ h,cpp    +-------->+ compiler,+-------->+Executable|
+       |   h,cpp  |      |          |         | linker   |         |   File   |
+       |          |      |          |         |          |         |          |
+       +----------+      +----+-----+         +----------+         +----------+
+                              | input
+                              v
+                         +----------+
+                         |  cGRE    |
+                         | doxygen  |
+                         |          |
+                         +----+-----+
+                              | process
+                              v
+                         +----------+
+                         |  cPNK    |
+                         | Doxgen   |
+                         | Document |
+                         |          |
+                         +----------+
+
+#+END_DITAA
+
+6 完整而优雅的图案
+
+看起来，到现在，我们做的还不错。但是，作为一个喜欢把简单事情复杂化的geek，显然我们还不能不满足。这个图没有区分度，
+h,cpp是输入，Excutable file是磁盘文件，Doxygen Document是文档，但是图中，它们看起来没有区分开，我们需要在休息前，
+再来点小的修葺。
+
+http://emacser.com/uploads/asciiExampleWithColorAndType.png
+代码如下：
+
+#+BEGIN_DITAA  asciiExampleWithColorAndType.png -o -r -S
+
+       +----------+ edit +----------+   input +----------+ compile +----------+
+       |  cPNK    |      |  cRED    |         |   cGRE   |         |  cPNK    |
+       | refined  |<-----+ h,cpp    +-------->+ compiler,+-------->+Executable|
+       |   h,cpp  |      |          |         | linker   |         |   File   |
+       | {s}      |      |  {io}    |         |          |         |    {s}   |
+       +----------+      +----+-----+         +----------+         +----------+
+                              | input
+                              v
+                         +----------+
+                         |  cGRE    |
+                         | doxygen  |
+                         |          |
+                         +----+-----+
+                              | process
+                              v
+                         +----------+
+                         |  cPNK    |
+                         | Doxgen   |
+                         | Document |
+                         |    {d}   |
+                         +----------+
+
+#+END_DITAA
+
+Done！该喝杯咖啡了。哦，不，对我来说，该去睡会觉了，Zzzzzz
+
+7 中文
+
+能使用中文也算是基本需求了，那么最后来一个试验用图。
+
+http://emacser.com/uploads/asciiExampleWithColorAndTypeUtf8.png
+
+#+BEGIN_DITAA  asciiExampleWithColorAndTypeUtf8.png -e gb2312
+
+              +------------+     +------------+
+              | 中文        |---->|    中文    |
+              |            |     |            |
+              +------------+     +------------+
+
+#+END_DITAA
+
+正确显示中文需要文章使用的编码和ditaa指定的编码一致。
+
+但是在加入中文的时候，边框的对齐很难做到，不得不说是个让人很不爽的地方。
+
+8 ditaa
+
+尽管我们是emacser，但是我们不能忽略了这次的主角，也就是ditaa ~~~~。我们能玩这么多的花样，还有赖于ditaa。好吧，我们
+介绍主角出场吧。
+
+ditaa的作者是Stathis Sideris，是一个java程序(做为一个c++程序员，我表示鸭梨很大)，想要使用diataa的话，你的电脑必须
+安装java，并且使java的bin目录在emacs的path内。
+
+可以去这里下载，具体的语法请参考ditaa的主页，本文使用的例子用到了大部分、而不是全部特性。
+
+9 不算小结的小结
+
+org-mode+artist-mode+ditaa是一个emacs中使用图片的很好的办法，但不是万能的。实际上，主要画流程图，框图比较好用。下
+面我列举了两个可以在emacs中胜任绘图需求的方法：
+
+  • graphviz
+  • python + matlab lib
+
+graphviz已然非常强大，而matlab绘制科学图形是更胜一筹，鉴于篇幅，本文不再展开。
+
+更多……..敬请期待。
+
+Footnotes:
+
+^1 可爱的wiki利用一则漫画解释一图胜千言：A:为什么一图胜千言 B:你打字多快 A:25/分钟 B:这就对了，当我画40分钟画好了
+我的图，………,你正好敲了1000个字。要看出处的漫画，猛击我。
+
+^2 Wiki-mode, Muse-mode, org-mode就是博客，日志，随笔这样的居家过日子必备之工具。
+
+^3 ASCII图是一种图行设计技术，使用ascii 标准中128个可见字符组成的picture，可用在电脑上的演示。
+
+^4 http://en.wikipedia.org/wiki/International\_Obfuscated\_C\_Code\_Contest。
+
+^5 ascii 编辑软件 http://en.wikipedia.org/wiki/List\_of\_text\_editors#ASCII\_and\_ANSI\_art。
+
+^6 punchagan是org2blog的作者，同时推荐一个牛人sacha。
+
+^7 http://punchagan.wordpress.com/2010/07/20/org2blog-readme/#comment-710 .
+
+分享家:Addthis中国
+GD Star Rating
+loading...
+Emacs中绘图－ ditaa篇, 8.1 out of 10 based on 31 ratings 标签：artist-mode, C/C++, ditaa, Emacs, emacser,
+emacser.com, erc, graphviz, IDE, irc, matlab, muse-mode, org, Org Mode, python, screenshot, wiki-mode, 配色, 配色
+
+相关日志
+
+  • 我是如何从vim转向Emacs的 (75)
+  • ERC使用简介 (51)
+  • Emacs中的Evernote: evernote-mode (81)
+  • 我的Emacs配置文件－ DEA (398)
+  • Emacs org mode学习笔记 (75)
+
+分类: Org Mode, 其他, 初级, 好玩的
+评论 (30) Trackbacks (6) 发表评论 Trackback
+
+ 1. [749]
+    akyndllsa
+    2016年4月7日09:02 | #1
+    回复 | 引用
+   
+    What other places in Michigan do you think should have made the short list? Take a look at our MLive reader
+    poll and cast an unofficial vote or place a suggestion in the comments section below. cheap jordan shoes The
+    plea deal for Michelle Staton does not require that she cooperate with the prosecution in the other
+    defendants’ cases. x coach factory outlet
+    Sunday: 40 percent chance of showers; mostly cloudy. http://www.coachoutlet.cc SoftballRINCON/UNIVERSITY 4,
+    EMPIRE 0?Empire 000 000 0 0 2 2Rincon 400 000 x 4 9 2W Vega (3-1).
+    Listen:Radio on KPOJ 620 AM in Portland area or http://www.coachhandbags.me Mark Trumbo, OF (. t cheap jordan
+    shoes
+    We ll revisit this when Apple either bites or misses this bullet. michael kors outlet online I’m calling on
+    Baltimore City School Police to fire the officer who assaulted a student yesterday.
+    o NASHVILLE, Tenn. — The Oakland Raiders found a way to pull out a win on a wet, sloppy day. A quarterback
+    with a little bit of experience certainly helped. http://www.coachhandbags.net.co Rubio did pick up a victory
+    Sunday in Puerto Rico’s primary, his second win of the 2016 cycle. michael kors outlet online
+    The Browns have cleaned house in their front office. ray ban sunglasses State Representative Doug Coleman?
+    Legislative District 18 (Dobson Ranch, Tempe, Chandler, Ahwatukee)SENATE: ??????????. http://
+    www.coachoutletssonline.us.org
+    Tawa has passed for 3,862 yards, putting him behind only Beaverton s Taylor Barton (4,047 yards, 1997) and
+    Sheldon s Alex Brink (3,928 yards, 2002). Tawa needs 186 yards to vault Barton. michael kors outlet store Show
+    of hands How many really expect Mary to be left as Downton’s resident termagant shrew without a shot at
+    redemption? Will she reform or revert to form? m http://www.raybansunglassesbuy.co.uk
+    While some progress has been made finding debris, rescuers remain focused on finding any survivors http://
+    www.michaelkors.us.org Another day, another Super Bowl champion quarterback has left the Denver Broncos.
+    Some other Great Mussel Bakeoff features planned with those highlights could include mollusk-themed T-shirt
+    vendors, the Mussel Olympics involving tiny challenges for the mostly motionless and slimy creatures, a Mussel
+    Hot Wheels Pull, the Mussel Rodeo, Clam Races on remote-controlled motorboats, the traditionally saucy Shell
+    Off where Hollister police detectives could covertly scope out the town’s really weird creeps, the Fish Feast
+    in a small side pond where organizers release perch and watch them devour zebra mussels while onlookers feast
+    on fried fish and oysters, and family-friendly musical entertainment from the Bottom Feeders Quartet featuring
+    longtime lead man Steve the Piano Teacher, who is quite muscular. cheap michael kors bags Some survived being
+    Disney child stars.
+    This count is not all of them, some file other forms and are listed elsewhere, here are only the 102 that meet
+    the above criteria. michael kors outlet online And Querrard said his own experience convinces him that Coppock
+    and his colleagues are onto something in believing that where a sign plays a role in its political
+    effectiveness.
+    “Often we don’t have enough volunteer homes to house the number of dogs that we take into rescue. coach outlet
+    online More than an hour before the start of the Arkansas Sports Hall of Fame induction ceremony, the eight
+    living inductees and representatives of the other three exchanged handshakes and hugs.
+    d With votes in Michigan still being counted, Clinton glossed over race with Sanders and jabbed at the
+    Republicans and their chaotic nomination fight coach outlet While the Xavier girls may have been a little
+    shaken up, the girls kept fighting and forced the Hamilton girls to maintain a strong defense.
+    I realize this comment will go no where but I have been around a long time and have seen this occur for many
+    years in many places. coach outlet online None of the people from hollister were kicking him in fact the one
+    guy Juan can be seen trying to break it up. l cheap louis vuitton bags
+    A hectic lifestyle coupled with rising health issues such as obesity has created a demand for fitness-related
+    sports equipment. coach outlet online Whether it’s slapstick or high gravitas, the South African journeyman
+    (who has found relative fame in the ‘Hitman’ series of computer games) never turns in a bad performance, which
+    is just as well as she’s entrusted him with three: investigator, orchestrator and perpetrator of Marlowe’s
+    death .
+    q In Portland, high temperatures will rise into the low 60s on Friday and Saturday before dropping back to 50
+    degrees by Sunday. coach outlet Davis hosts private din l
+    But the state said it would only do so if it got a formal proposal. louis vuitton bags Tony Coulson, who
+    retired as the agent in charge of the Drug Enforcement Administration’s Tucson office in 2010, said he had
+    never seen anything like it. coach outlet store
+    Dylan Larkin scored his team-leading ninth goal with 35.8 seconds to play in the period to give Detroit a 3-2
+    lead. Larkin skated down the left side, took a pass from Henrik Zetterberg and went forehand-backhand to beat
+    Cam, Talbot. michael kors handbags Yet, if you’re not happy, what does it matter what other definable and
+    quantifiable achievements you have? s coach outlet
+    Copyright 2016 KSNT via CNN. michael kors outlet online (AP Photo/NBC,Dana Edelson)
+    Jennifer A. Harpin to Benjamin R. Darosa, 39 Rita St., $104,000. coach outlet online Global eCommerce CEO Neil
+    Ashe told reporters after the company’s recent fourthquarter earnings report that WalMart is looking beyond
+    its online performance and not comparing the growth with that of purely online competitors. o coach outlet
+    online
+    Her garden is meant to attract wildlife “to replicate a wilder natural habitat for them as well as myself,”
+    she says. coach handbags Mine opponents say the closures have huge impacts on recreational users.
+
+    [回复]
+
+ 2. [11b]
+    gjjjftwe
+    2016年4月7日11:20 | #2
+    回复 | 引用
+   
+    “I think this is an incredibly game-changing project,” said Klohs on Monday, Nov. 16. louis vuitton handbags
+    pray for those who mistreat you” Luke 6:2728. c michael kors bags
+    He said he couldn’t understand her screams over the phone, “she kept screaming, ‘I’m on the internet. http://
+    www.coachstoresonline.com Let the Buffaloes celebrate, but please keep us safe.
+    We had clinched a playoff spot, something that has not been accomplished in 15 years. coach outlet store
+    online MELBOURNE (Reuters) – The Queensland Reds’ caretaker coaches have wasted little time making their mark
+    after the sacking of Richard Graham, dumping Japan’s World Cup fullback Ayumu Goromaru to the bench for the
+    beleaguered team’s Super Rugby match against Melbourne Rebels. z michael kors outlet store
+    It is not an all-inclusive list, nor is it static. wholesale nfl jerseys Each evening, I will crawl into my
+    warm downy cocoon, and before sleep arrives, I will count shooting stars under a spectacular star-studded sky.
+    r The latest outbreak was in October, with 27 sickened in Washington state and 15 in Oregon. A total of 14
+    were hospitalized. michael kors bags Sandy Jackson scored 13 points for UCA and Brianna Mullins added 11.
+    michael kors outlet
+    Cleveland Clinic is a proven leader in online expert second opinion services, with more than 15 years of
+    experience. http://www.coachstoresonline.com He was 37 and the two female victims were 14 years old. http://
+    www.michaelkorshandbags.us.org
+    More information is available at coach outlet Last year, Glaxo’s sales fell 17 percent in China, the lowest
+    among its multinational peers. i michael kors outlet
+    The margin of error is +- 4. http://www.michaelkors.us.org Tempe Prep: Isaiah Brittain, Jr.
+    You understand and agree that the Yahoo Services is provided AS-IS and that Yahoo assumes no responsibility
+    for the timeliness, deletion, mis-delivery or failure to store any user communications or personalization
+    settings. http://www.michaelkorshandbagstrade.us.com Efforts to expand access to potable water and sewage
+    systems will boost plastic pipe demand in Africa, Asia, and South America.
+    It’s reliable and fast enough to not be annoying, but it’s not as lightning-quick as the scanners on the
+    iPhone 6S or Nexus 5X and 6P. ray ban sunglasses L Estrella.
+    But it was only outlawed in South Africa in 2008. coach handbags The global market value of
+    fermentationderived industrial enzymes is estimated at $6.
+    p In December, they submitted that report to the White House coach outlet The goal was a strong response by
+    the Rangers, who lost their 1-0 lead at 8:08 of the second when Buillon fired a shot in over Lundqvist’s left
+    shoulder during a 2-on-1 break with Desharnais.
+    I do miss the solo, almost electronic style that I was doing, but I would have technical difficulties, and
+    it’s not as exciting to play by yourself on stage. coach factory outlet store In Part Three?she finally
+    reaches a resolution. u michael kors outlet
+    About Food Wine TrailsHMS Travel and Food Wine Trails is a Santa Rosa, California-based company specializing
+    in exceptional food and wine tours. coach online store When AZ RESCUE took in Cricket, a 1-year-old terrier
+    mix, he weighed a mere 3.
+    c KennY Rogers: Dec. 12, 8 p.m. Mohegan Sun Arena, Uncasville, Conn. coach handbags “I’d be thrilled if either
+    of Rubio] was the nominee. e
+    After lunch, the WWP Alumni and their families went to the food bank where they received a tour and were shown
+    their work area for the day. ray ban outlet The university said it was withholding emails “to protect either
+    the confidentiality of information privacy of persons, or a concern about disclosure detrimental to the best
+    interests of the state. coach outlet store online
+    One new tech is first for all Ford’s vehicles: Sync Connect, a feature that allows users to remotely control a
+    variety of the SUV’s basic functions with their smart phones, such as unlocking the car doors, checking its
+    fuel level or even just locating where the car was left. coach outlet online And use that light to see through
+    all of The Donald’s bluster. t michael kors handbags
+    “What most people do is very archaic. cheap oakleys FW: Suarez 7.
+    All the evidence says evidence-based parole reform will reduce the prisoner population by 3,200 beds in five
+    years and save $75 million annually without posing any increased risk to public safety. It is rooted in data
+    developed by the Michigan Department of Corrections own research division and was recommended by the Council
+    of State Governments. Unfortunately, opponents of the bill seem uninterested in evidence or experience. Like
+    Chicken Little, they are telling anyone who will listen that if evidence-based parole reform passes, the sky
+    is going to fall. And like Chicken Little, they are wrong. And it’s not for the first time. In 1998, the same
+    stakeholders opposed reforming Michigan’s mandatory life without parole sentences for delivering 650 grams of
+    drugs. They said that without draconian penalties, drug trafficking and associated crime would explode.
+    Despite this fear-mongering, these drug law changes kicked off a series of drug sentencing reforms, in 2003.
+    After two years, the Michigan Department of Corrections found that parole rates for the hundreds of people who
+    were paroled immediately were low, and far below those of the rest of their parolee cohort. In fact, crime
+    rates have been declining steadily for years and more proportional sentences for drug offenders have helped
+    reduce the prisoner population overall. Many of the people who would have served decades longer without the
+    reforms are now grandparents and taxpayers. In 2009, Gov. Jennifer Granholm expanded the parole board from 10
+    to 15 members so that it could review a large backlog of prisoners who had served their minimum sentences but
+    had been denied release, in some cases for years. Again, prosecutors and members of law enforcement warned the
+    sky would fall. Dangerous criminals, they said, would be released and wreak havoc in their communities.
+    However, although 2,000 more people were paroled in 2009, re-offense rates actually went down. The reason:
+    just because someone committed a serious crime some years ago does not mean he or she is likely to re-offend
+    today. And now, the same alarmists say the sky will fall if evidence-based parole reform is adopted, even
+    though the bill simply implements standards that have been in effect since 1992, it only applies to prisoners
+    who score low risk on validated assessment tools, it still leaves the parole board total authority to deny
+    release when there is objective evidence of risk, and it will be phased in to minimize any impact on local
+    communities. Evidence-based parole reform is a modest step toward making our overgrown, extraordinarily
+    expensive corrections system fairer and more cost-effective. If passed, all the evidence shows that the same
+    fear mongering will again be proven wrong. louis vuitton outlet You accept people’s interest in you as a
+    compliment, and you try not to let their attention or opinion of you change how you think of yourself. x cheap
+    jordan shoes
+    Wine pairings and competitions: Sample special magnums and take a tour around the city at all three Tria Café
+    locations by having a wine passport stamped or enjoy a friendly “Cage Match” at Alla Spina as the virtues of
+    wine vs. louis vuitton outlet “It’s a universal reaction when you see an eclipse.
+
+    [回复]
+
+ 3. [1a7]
+    gjckzzya
+    2016年4月7日13:02 | #3
+    回复 | 引用
+   
+    Through her “pop-up wedding” service, Alt arranges ceremonies for couples who want to tie the knot without
+    getting tied up in knots over all those little details involved in a big wedding. ray ban glasses “It looks
+    like a bomb went off,” Wright said after the meeting of the park’s east side. d michael kors outlet
+    Ed Rendell’s next-to-last state budget went past the hundred-day mark louis vuitton outlet online UA issued no
+    statement about Pitts before the game so I asked Miller afterward if Pitts’ no-show meant anything was up.
+    Delson F. Nunez to Jose L. Ortiz, 99 Fisher St., $200,000. michael kors outlet To say it’s something different
+    wouldn’t do it justice. k coach outlet store
+    Groups like Compassion and Choices say opposing organizations believe aid in dying is “assisted suicide,” but
+    say people who already are dying are not “suicidal” for wanting their life to end peacefully, not agony and
+    despair. http://www.michaelkors.us.org My review appears to show (and I admit I do not have all the data) that
+    Gavilan was raking off a significant portion of the tuition and state reimbursement for overhead and support
+    charges and only leaving a little money for actually operating the instruction function.
+    u In Michigan, over 14,000 ticket holders won at least $4 each. michael kors bags Further U. coach outlet
+    Drew Eubanks added 13 points, nine rebounds and four blocks and Tres Tinkle scored 13 points for the Beavers
+    (17-10, 8-8 Pac-12) coach outlet online I guess you made up for it with all the cooking lessons. http://
+    www.michaelkorshandbagsbuy.us.com
+    Before we delve into the holiday wonder that is a poinsettia, a very important — nay, a vital — question must
+    first be answered.Is it poin-set-tee-ah or poin-set-ah?We went straight to the experts, the people who grow
+    them and who invited us to a wonderful, informative, behind-the-scenes tour, for the answers. coach outlet In
+    that case, Crocs sued Dawgs in 2006 for infringement of both patents. i coach handbags
+    Bush —his peers in the Pennsylvania GOP Establishment were aghast coach outlet But Lanier’s bump along the net
+    scored a point and then Teilborg blocked K.
+    Although the entire process was meant to ensure adequate rights for protected minority groups such as Latinos,
+    Kinsella and other Gavilan leaders once again dismissed the primary Latino interest—LULAC—which had been
+    offering a collective voice on the matter. http://www.coachhandbags.me She made us foul a lot.
+    Yahoo does not control the Content posted via the Yahoo Services and, as such, does not guarantee the
+    accuracy, integrity or quality of such Content. coach outlet “We came out and had a little bit of fun but a
+    little bit of a glitch gave us second place.
+    The Congress is an honors-only program for high school students who are passionate about science, technology,
+    engineering or mathematics (STEM). coach outlet Call 501 3532362 or visit arkansaspenclub.
+    i But the state said it would only do so if it got a formal proposal. coach outlet “Can we reach that magic 50
+    points that West Brom have never had before?” West Brom midfielder Darren Fletcher said.
+    Through powerful beats, gorgeously articulated gestures and mudras, viewers will be transported beyond their
+    seats into a realm of beauty and transcendence. coach outlet online Lula, who founded the ruling Workers’
+    Party and was president between 2003 and 2010 before helping in his successor President Dilma Rousseff, has
+    repeatedly denied ownership of the apartment or any impropriety. d louis vuitton outlet
+    PLEASANT AVE. coach outlet store online We waited in line for what was probably two hours, though it seemed
+    like several hours in the tortuously hot Phoenix sun; but as the previous show’s crowd left the theater they
+    all assured us that it was going to be well worth the long wait.
+    l The newspaper’s editor, Andrea Cangini, said it stood by its story. Subsequent versions of the report said
+    Fukushima had traveled to the Vatican by helicopter and was seen returning to the Pisa clinic in the Vatican’s
+    chopper. cheap ray bans A Rogers man was arrested Monday after a police investigation into allegations he
+    sexually assaulted a coworker at a Bentonville nursing home. k
+    Most of the stars occulted are faint, and they are often blotted out from view by the relative brightness of
+    the moon. http://www.coachoutlet.cc 5 in 2011. ray ban outlet
+    How to make Thanksgiving stuffing in a slow cooker, freeing up space in your oven on the year’s biggest
+    cooking day. () michael kors outlet store Van Buren St. v michael kors outlet
+    Those four are: Garrett Adelstein (223,300 in chips) Richard Allen Jr. http://www.michaelkors.us.org The Sun
+    Devils: 84-50.
+    The teams combined for 29 drives with only one of them leading to the offense scoring – a 37-yard field goal
+    by Andrew DiRocco in the second quarter. Also, Tulane and UConn combined for 22 punts, 18 first downs, 14
+    three-and-outs, and they converted just eight of a possible 37 third-down conversions. coach outlet By His
+    death on the cross Jesus took upon Himself the judgment we deserve, and by His resurrection He has opened the
+    door to eternal life. n wholesale nfl jerseys
+    They instill a passion for their work and for serving their clients. http://www.michaelkorshandbagsrack.us.com
+    Meanwhile, we make a delicious batch of guacamole and as soon as the potato boats have cooled a bit spoon
+    heaping mounds of it into them.
+
+    [回复]
+
+ 4. [24f]
+    zycjnsywc
+    2016年4月7日13:41 | #4
+    回复 | 引用
+   
+    After the Sandy Hook tragedy, Brandon Marshall, the New York Jets receiver who then was with the Chicago Bears
+    and has battled mental illness, wrote, “It hurts to hear about today’s shootings. With what’s been going on,
+    is it now ok to talk about Mental Health?” louis vuitton bags III92 Table 75: Latin American Recent Past,
+    Current and Future Analysis for Sports Utility Vehicles SUVs by Geographic Region Brazil, Mexico and Rest of
+    Latin America Markets Independently Analyzed with Annual Sales Figures in Thousand Units for Years 2014
+    through 2020 includes corresponding Graph/Chart. b michael kors outlet
+    The Bay Minette City Councilapplauded the Red Cross heroes in Bay Minette who give of themselves to assist
+    their neighbors when they need a helping hand. ray ban sunglasses outlet “Tomorrow is going to be an important
+    day,” Garcia said.
+    The notice of tort claim, filed Tuesday, said Lynch began exhibiting signs of ’severe anxiety.’ http://
+    www.raybansunglasses.name NFL Hall-of-Fame QB Fran Tarkenton said every team has a player(s) using PEDs. r
+    cheap nfl jerseys
+    “We also know that weather is extremely important to Central Pennsylvania and our viewers,” added Lewin. louis
+    vuitton outlet online Completion and occupancy of the proposed San Benito Education Center has been pushed out
+    to fiscal year 2020-21, according to the last Gavilan Community College Five-Year Capital Outlay Plan.
+    i Oregon City made the final 24 seconds of the half count, though. As time expired in the half, 6-foot-3
+    senior receiver Sam Maughan outjumped defenders in the end zone for a 35-yard touchdown pass from Dennis-Lee,
+    cutting the lead to 13-7. coach outlet store About Morison KSi: With 164 member firms in 88 countries, members
+    of Morison KSi are better able to meet the specific needs of their multinational clients in the countries
+    where they operate. http://o.storeonlinecc.com
+    US Licensed has been growing at a moderate rate over the last five years with growth being majorly driven by
+    increasing popularity of leagues , increasing TV deal partnerships of major professional leagues , surging
+    demand for licensed sports apparel as well as licensed multimedia products ( Videogames Software ) who are
+    targeting the underserved market ( Children s segment ) in sports licensing and have been propelling the
+    growth in the US Licensed Sports Merchandise Market michael kors outlet Marvin has done about 60 feature
+    films. http://o.storeonlinecc.com
+    The Big Sky honor comes two days after Barnum was named a . ray ban outlet “I was hoping to break three,” he
+    said. k michael kors handbags
+    While it’s unclear what kind of draft compensation Philadelphia will receive in the trade, it’s obvious that
+    the Eagles are much better off with Murray’s egregious contract off the books coach factory And they delete
+    them right away.
+    Ingen over IngeDespite the weak earthquake activity in Denmark, seismological research carried out here led to
+    the discovery that the Earth has a solid inner core. michael kors handbags State Department declared a
+    terrorist organization in 2008 and has proved to be resilient.
+    made 33 saves for his fourth straight win . coach factory outlet She adores playing with her kitty roommates
+    and enjoys their companionship.
+    If you are filing your own tax return, visit the Affordable Care Act (ACA) Tax Provisions web page on the
+    Internal Revenue Site that offers several tips for individuals, families and employers. wholesale nfl jerseys
+    What s to love: Sing in the shower, listen to favorite tunes or the morning news through a Bluetoothenabled
+    device that doesn t take up counter space.
+    b John Kasich was in a fight for second place in Michigan and hoping a good showing would give him a boost
+    heading into next week’s crucial contest in his home state. michael kors outlet online It is a moral objection
+    to the return of nativism, religious prejudice and misogyny to the center stage of American politics.
+    Catherine’s Parish, 17400 Peak Avenue, Morgan Hill. wholesale nfl jerseys They respect and enjoy the Original
+    Trilogy, and they’re excited for The Force Awakens and what comes after that, but they aren’t their Star Wars
+    movies; the prequels are. b coach factory outlet
+    WILLOW, Alaska (AP) – The nearly thousand-mile Iditarod Trail Sled Dog Race is underway in Alaska coach outlet
+    The law change, though, takes crimes committed in youth out of the equation in relation to parole eligibility.
+    m Evergreen Cemetery Association to Walter J. Selkirk, Hadley Street, $4,000. http://
+    www.michaelkorshandbagsup.us.com I put them in a plastic bag after use and store them in the freezer. p
+    He will continue to serve as the Company s Chief Operating Officer. http://www.michaelkorsoutletbuy.us.com The
+    town intends to turn the clubhouse into a community center and contract out the golf operations. michael kors
+    outlet
+    Anyway, Dallas came all the way back. Dirk Nowitzki (23 points) shouldn’t be able to score as well as he does,
+    at his age. Helping the German were Zaza Pachulia, who has been irritating Celtics big men for many years, and
+    Wesley Matthews (18 points), who hit a couple of big fourth-quarter threes after offensive rebounds. michael
+    kors handbags economist at High Frequency Economics in Valhalla, N. w michael kors handbags
+    Rose Alley Magazine launched 1st October 2015 http://www.michaelkorshandbagsrack.us.com Long jump Thomson,
+    SAH, 19ft, 4 in.
+    Injuries:For Portland, forward MeyersLeonard (left shoulder) is out. For the Clippers, J.J. Redick (back
+    spasms) is doubtful. louis vuitton handbags “We really did experience a severe decline during the recession
+    and even into what was essentially the economic recovery period,” Pakko said. h coach outlet
+    ESH FOODS at OUTDOOR SHOW TFS TYPE 3 cheap air jordans The Amazon Studios release stars Michael Shannon as
+    Elvis Presley and Kevin Spacey as Richard Nixon.
+
+    [回复]
+
+ 5. [276]
+    boys football tops
+    2016年11月22日16:19 | #5
+    回复 | 引用
+   
+    self-evident
+    boys football tops http://www.lazada.com.my/
+    kelme-k15z705-men-quick-drying-unitard-long-sleeve-football-sportt-shirt-straitjacket-yellow-13914362.html
+
+    [回复]
+
+ 6. [8d0]
+    chaussure led semelle
+    2016年11月23日12:48 | #6
+    回复 | 引用
+   
+    Extreme Adventure ToursKatherine’s Landing is the city’s version of a marina, beach complex and campground all
+    in once. Anaheim Event ProductionA number of different companies throughout the United States hold conventions
+    and trade shows in Southern California. It is commonly used in everyday life; however, SMS messaging is far
+    more than just a tool for teenage communication. If you are unsure whether the waste your business produces is
+    hazardous, it is advisable to contact a specialist hazardous waste disposal . The only indication that it’s
+    not is the somewhat small and hard to notice “absolutely not for children” in the lower left corner. CEP is
+    primarily an event processing concept that deals with the task of processing multiple events from an event
+    cloud with the goal of identifying the meaningfulBristol Technology, Inc. Here is a video on how to make easy,
+    fresh almond milk.
+
+    [回复]
+
+ 7. [905]
+    CharlieBut
+    2017年6月14日10:02 | #7
+    回复 | 引用
+   
+    tsahrzp
+
+    http://www.free-nokia-ringtones-now.co.uk/adidas-sl-loop-runner-red-842.html
+    http://www.posicionamientotiendas.com.es/446-air-jordan-shoes.html
+    http://www.paparico.es/venta-botas-palladium-946.html
+    http://www.finaperf.es/lacoste-bolsos-precios-842.html
+    http://www.vianed.nl/288-alexander-mcqueen-sale-nederland.html
+
+    Adidas Flux
+    Neo Adidas For Women
+    Jordans Schoenen
+    Adidas Shoes Nz
+    Adidas Superstar Womens White
+
+    [回复]
+
+ 8. [dd0]
+    Richardwet
+    2017年6月16日05:01 | #8
+    回复 | 引用
+   
+    oxmkdis
+
+    http://www.rwpieters.nl/271-fila-schoenen-dames.html
+    http://www.geadopteerden.nl/nike-magista-red-975.php
+    http://www.poker-pai-gow.es/923-skechers-tenis-mujer-2016.htm
+    http://www.wellnessanco.nl/100-adidas-originals-heren.php
+    http://www.sarbot-team.es/687-camisetas-hollister-precio-espaĂ±a.php
+
+    Adidas Superstar Slip On Limited
+    Clarks Zwart Leer
+    Nike Free Run 2.0 Zwart Grijs
+    Adidas Krokodil
+    Nike Sneakers Dames Run
+
+    [回复]
+
+ 9. [96b]
+    Richardwet
+    2017年6月20日13:02 | #9
+    回复 | 引用
+   
+    tjdeddb
+
+    http://www.veilinghuiscoins-art.nl/adidas-eqt-racing-93-277.html
+    http://www.geadopteerden.nl/adidas-football-shoes-gold-302.php
+    http://www.ehev.es/250-zapatos-hugo-boss-ultima-coleccion.htm
+    http://www.softwaretutor.co.uk/792-adidas-tubular-nova-pk.htm
+    http://www.active-health.nl/timberland-enkellaarzen-dames-530.htm
+
+    Dames Gucci Sneakers
+    Air Jordan 4 Retro Green Glow
+    Salomon Schoenen Waar Te Koop
+    Asics Indoorschoenen Dames
+    Adidas
+
+    [回复]
+
+10. [617]
+    JamesNum
+    2017年8月31日12:57 | #10
+    回复 | 引用
+   
+    xcxjkfa
+
+    http://www.iloveshoes.fr/nike-janoski-femme-709.html
+    http://www.autoankaufbodensee.ch/adidas-superstar-pink-weiÃŸ-39-416.php
+    http://www.lyoncentre.fr/189-flyknit-nike-grise.html
+    http://www.aroundthecorner.fr/311-nike-lebron-12-lifestyle.php
+    http://www.schwoerer-regio.fr/lacoste-basket-missouri-571.html
+
+    Converse Femme Vernis Noir
+    Nike Schuhe Damen Dunkelblau
+    Burberry Bottes Prix
+    Chaussures Adidas Femme Blanche
+    Asics Gel Kayano 22 Homme
+
+    [回复]
+
+评论分页
+« 上一页 1 2 3 41470
+
+ 1. 2010年8月4日18:44 | #1
+    Emacser
+ 2. 2010年8月20日15:20 | #2
+    用artist-mode画文本图 | Emacs中文网
+ 3. 2010年12月19日12:12 | #3
+    高效操作Bash | 极限手指
+ 4. 2010年12月22日07:52 | #4
+    found an interesting tool for drawing in emacs | $x_{k} = F_{k}x_{k-1} + B_{k}u_{k} + w_{k}$
+ 5. 2011年5月11日16:54 | #5
+    高效操作Bash | Leon的Web技术资料
+ 6. 2014年6月29日17:30 | #6
+    用artist-mode画文本图 – IT牛人博客聚合
+
+[                        ] 昵称
+[                        ] 电子邮箱 (我们会为您保密)
+[                        ] 网址
+[                                                  ]
+[                                                  ]
+[                                                  ]
+[                                                  ]
+[                                                  ]
+[                                                  ]
+[                                                  ]
+[                                                  ]
+订阅评论
+[提交评论]
+[预览评论]
+:wink: :-| :-x :twisted: :) 8-O :( :roll: :-P :oops: :-o :mrgreen: :lol: :idea: :-D :evil: :cry: 8) :arrow: :-?
+:?: :!:
+
+点击取消回复
+
+[*]有人回复时邮件通知我
+
+折腾Emacs google-maps-el – Emacs中的谷歌地图
+订阅
+
+  • Google
+  • 有道
+  • 鲜果
+  • 抓虾
+  • My Yahoo!
+  • newsgator
+  • Bloglines
+  • 哪吒
+
+Twitter
+
+Emacs资源
+
+  • EmacsWiki
+  • Emacsist
+  • 水木Emacs
+  • DEA
+  • pluskid的Emacs
+  • 王垠的Emacs
+  • 王纯业的Emacs
+  • Emacs官网
+  • dotemacs
+  • Emacsen's planet
+
+友情链接
+
+  • LinuxTOY
+  • 善用佳软
+  • 小众软件
+  • 开源视窗
+
+最新评论
+
+  • [7a2]
+    nba jersey uniform design 2016 发表于用weblogger写WordPress博客
+    What i do not realize is actually how you're not a... »
+  • []
+    匿名发表于钗黛双收：若你也同Vim难割舍，却又看Emacs情切切
+    :roll: »
+  • [14b]
+    06kv.com低价网游私服一条龙t2i8 发表于站点地图
+    天龙私服架设|奇迹Mu私服架设|魔兽私服架设|魔域私服架设|墨香私服架设天堂2私服架设|传奇3私服架... »
+  • []
+    BrettBlice 发表于 Emacs中的Evernote: evernote-mode
+    wh0cd501379 accutane accutane 40 mg http://accutan... »
+  • [f48]
+    adidas stan smith 发表于站点地图
+    I simply desired to appreciate you once again. I a... »
+  • 下一页 »
+
+最多评论
+
+  • 我的Emacs配置文件－ DEA (398)
+  • 用CEDET浏览和编辑C++代码 (278)
+  • 致Emacs初学者 (150)
+  • Emacs才是世界上最强大的IDE －用auto-complete实现自动补全 (143)
+  • 折腾Emacs (138)
+  • 钗黛双收：若你也同Vim难割舍，却又看Emacs情切切 (127)
+  • 用CEDET浏览和编辑C++代码(续) – 使用Emacs 23.2内置的CEDET (121)
+  • Emacs才是世界上最强的IDE – 用w3m浏览网页 (116)
+  • 用weblogger写WordPress博客 (110)
+  • Emacs －普通人的编辑利器 (109)
+
+最高评分
+
+  • 用CEDET浏览和编辑C++代码 (9.7 62次投票)
+  • 用pulse实现Emacs的淡入淡出效果 (9.7 9次投票)
+  • 致Emacs初学者 (9.6 112次投票)
+  • Emacs中鼠标的运用 (9.5 15次投票)
+  • Emacs才是世界上最强大的IDE －用Emaci阅读文件 (9.5 13次投票)
+  • Emacs下的多媒体系统 - EMMS (9.5 10次投票)
+  • 折腾Emacs (9.3 55次投票)
+  • 我的Emacs配置文件－ DEA (9.3 24次投票)
+  • ERC使用简介 (9.3 9次投票)
+  • 在Emacs中使用vi的*和#命令 (9.3 6次投票)
+
+分类目录
+
+  • 初级 (37)
+  • 中级 (42)
+  • 高级 (1)
+  • C/C++ (4)
+  • Elisp (10)
+  • Email (1)
+  • IDE (18)
+      □ CEDET (3)
+      □ 自动补全 (6)
+  • Org Mode (4)
+  • mode-line (2)
+  • w3m (3)
+  • windows (1)
+  • 其他 (22)
+  • 好玩的 (12)
+  • 学习Emacs (5)
+  • 宏 (1)
+  • 小技巧 (3)
+  • 快速启动 (2)
+  • 资讯 (2)
+  • 配置 (10)
+      □ DEA (2)
+  • 配色 (2)
+
+最热文章
+
+  • 我的Emacs配置文件－ DEA(75,534)
+  • 致Emacs初学者(72,098)
+  • 用CEDET浏览和编辑C++代码(65,618)
+  • 钗黛双收：若你也同Vim难割舍，却又看Emacs情切切(56,353)
+  • Emacs长啥样(55,358)
+  • Emacs才是世界上最强大的IDE －用auto-complete实现自动补全(54,829)
+  • Emacs org mode学习笔记(48,414)
+  • Emacs初学者必知必会(47,368)
+  • 折腾Emacs(46,283)
+  • 在Emacs下用C/C++编程(39,814)
+
+标签云
+
+Emacs org screenshot 配色 windows 光标 IDE emacser ahei emacser.com C/C++ ede 插件 lisp face 颜色补全 mode 鼠标配
+置 buffer CEDET se lambda 截图 Elisp highlight vi semantic cursor python ann lightbox text theme autoload 定制 irc
+安装 yasnippet DEA snippet term control
+
+功能
+
+  • 登录
+  • 文章 RSS
+  • RSS 评论
+  • WordPress.org
+
+回到顶部 WordPress
+版权所有 © 2009-2015 Emacs中文网
+主题由 NeoEase 提供, 通过 XHTML 1.1 和 CSS 3 验证.
+
+                                             Copyright (C) 2009 ahei
+                                      msn/gtalk/qq/email: ahei0802@gmail.com
+                                                 Google analytics

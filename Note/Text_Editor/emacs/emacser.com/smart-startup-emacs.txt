@@ -1,0 +1,594 @@
+Emacs中文网
+
+没有我做不到的，只有你想不到的
+
+  • 首页
+  • 关于
+  • DEA
+  • 征集logo
+  • 版权声明
+  • 加盟/投稿
+  • Emacs截图
+  • Emacs资源
+  • 站点地图
+  •  
+
+[                        ] []
+首页 > 初级, 快速启动 > 智能的启动Emacs
+
+智能的启动Emacs
+
+2010年5月4日 ahei 发表评论阅读评论
+
+作者: jay
+
+Emacs的启动速度是一直为非E众诟病的。虽然说现在机器是越来越快了，用我常用的配置，直接启动emacs也就等个2-3秒，但是和
+gvim比起来还是太慢了。不过Emacs提供了一个CS模式，在Emacs23以前，可以在一个已打开的Emacs上启动server，之后就可以用
+emacsclient通过连接到server的方式打开文件。在这种模式下，除了第一次打开Server Emacs耗时比较长外，之后每次起client
+的速度那都是唰唰的。这是我现在在Win下主要的打开Emacs的方式。这样有一个问题，如果关闭开启Server的那个Emacs，
+emacsclient就无法连接了，解决办法是给emacsclient加上”–alternative-editor=<path-to-emacs>”这样的参数，在失败时启动
+一个新的Emacs，当然这样就感受不到直连server的高速爽快感觉了：P
+
+那Emacs 23之后呢？由于POSIX系统的特殊性，这回Emacs给其加上了一个daemon模式。这和传统的CS模型的区别是，启动Emacs
+Server的是那个daemon进程，这样即便将所有的Emacs窗口关闭，daemon仍然在运行。这样就解决了上面说的必须保持着那个
+server窗口的问题。
+
+Daemon模式的启动很是方便，直接运行emacs --daemon就行了。当然使用daemon可能会碰到字体设置的问题，这个不在本文范畴，
+碰到该类问题的童鞋请移步这儿。我们可以把其写成一个init脚本放到系统启动项里面去。不过我并不喜欢这样，因为这不是按需
+启动的，如果在没注意的情况下把daemon给杀了，之后用emacsclient启动就全部出错了。不过由于有Windows下使用的经历，知道
+emacsclient可以为启动指定一个fallback，所以很自然就把这个参数指定为一个自定义脚本，这个自定义脚本负责启动daemon和
+client，脚本如下：
+
+^?View Code BASH
+
+1 #! /bin/bash
+2 emacs --daemon && emacsclient $*
+
+不过在某天我闲来无事看了看emacsclient的help之后才发现，这并不是一个很好的办法，为啥呢？看一下-a的参数就可以知道：
+
+^?View Code TEXT
+
+-a, --alternate-editor=EDITOR
+       if  the  Emacs server is not running, run the specified editor instead.  This can also be specified via the
+       `ALTERNATE_EDITOR' environment variable.  If the value of EDITOR is the empty string, then Emacs is started
+       in daemon mode and emacsclient will try to connect to it.
+
+发现没，其实只要给这个参数指定一个空字符，就能让emacsclient在连接不到server时自动启动daemon了。当然，这个参数支持
+从环境变量ALTERNATE_EDITOR读取，我当然也就选择这个方式了。
+
+这样用下来一阵子，又有问题了。因为启动的daemon是没有frame的，所以假如当前没有可见的frame，在启动emacsclient时又没
+有加”-c”参数，那么emacsclient只会在daemon上创建一个没有frame的client，而我们将得不到任何提示。如果这时运行
+”emacsclient -c”创建一个新的frame，你会发现这个文件其实已经打开了，只是我们看不到而已。这是相当令人困扰的。
+
+那就给emacsclient加上参数”-c”呗。但是因为每次打开都会启动一个新的frame，这样用下来也是不爽快。
+
+我需要能够一种智能启动emacs的方式，如果当前没有可见的frame，则新建一个，否则，复用当前frame。由于对elisp还是不怎么
+熟，不知道是否有emacsic的方式，最终我是通过写了一个脚本的方式来实现的：
+
+^?View Code BASH
+
+1 #! /bin/bash
+2 (wmctrl -a @jay && emacsclient -n $*) || emacsclient -n -c $*
+
+其中用到了wmctrl这个软件包，ArchLinux的用户可以直接用”pacman -S wmctrl”来安装。其中的”@jay”是我的emacs标题上的内容
+，用来帮助wmctrl找到具有这样属性的窗口。
+
+把Nautilus的文件默认打开方式设成这个脚本，这下emacs终于能够按照我的想法启动了，另外，我还在Nautilus里面加了一条
+”emacsclient -c”的打开方式，以便在需要的时候能够方便的新建窗口：）
+
+P.S. 不知各位Emacs大牛对启动方式上还有啥建议不？特别欢迎elisp的解决方案，呵呵。
+
+分享家:Addthis中国
+GD Star Rating
+loading...
+智能的启动Emacs, 8.7 out of 10 based on 7 ratings 标签：ctrl, daemon, Emacs, emacser, emacser.com, windows, 配色,
+配色
+
+相关日志
+
+  • GNU Emacs 23.2发布 (38)
+  • 用CEDET浏览和编辑C++代码(续) – 使用Emacs 23.2内置的CEDET (121)
+  • 关于 (20)
+  • 高亮C的所有变量和函数 (96)
+  • 自定义Emacs工具栏 (32)
+
+分类: 初级, 快速启动
+评论 (8) Trackbacks (1) 发表评论 Trackback
+
+ 1. [6d8]
+    leezii
+    2010年5月4日01:41 | #1
+    回复 | 引用
+   
+    大家都这么搞再加上xbinkeys 设置个全局快捷键直接呼出 frame
+
+    [回复]
+
+ 2. []
+    seagle0128
+    2010年5月5日05:25 | #2
+    回复 | 引用
+   
+    最近使用emacsw32，启动的时候用的”emacsclientw -n”，效果和你描述的理想状态一致，但目前我手上没有linux环境，不知
+    道linux下是否可行。所以只能给出一个建议或者思路，请参考。
+
+    [回复]
+
+    [a3b]
+
+    Jay 回复:
+    五月 6th, 2010 at 1:05 上午
+
+    @seagle0128, W32下没有daemon模式，如果关闭了窗口的话，下一次再使用emacsclientw -n应该会重新启动一次server，这
+    个速度和直接连上server是有差距的。当然这只是我的猜想啦，我也不知道现在w32下面的emacs是不是改进了这点：）
+
+    [回复]
+
+ 3. [60a]
+    York
+    2011年5月17日04:06 | #3
+    回复 | 引用
+   
+    遗憾的是Windows平台下的emacs不支持“–daemon”选项
+
+    [回复]
+
+ 4. [3d5]
+    weikent
+    2012年10月2日19:30 | #4
+    回复 | 引用
+   
+    emacs for mac 是不是也没有-daemon 选项？
+
+    [回复]
+
+ 5. [ab9]
+    cynnxccay
+    2016年4月6日10:06 | #5
+    回复 | 引用
+   
+    For more information on Funny Bones Improv or for tickets to”The Kids Table 2015,” visit Funnybonesimprov.com.
+    coach factory outlet INDIA. q http://www.coachfactorysoutlet.com
+    The survey respondents pointed to insecurity — attacks, violence, and terrorism — as the biggest problem
+    facing the country, followed closely by unemployment, a poor economy, and corruption. http://
+    www.michaelkorsbag.us.org The twin rallies could help against Chicago.
+    Nov. 13-15:Nov. 16-17: Nov. 18-19:Best Red/Brown/Amber vote, winner Nov. 20Nov. 20-22:Best Paler Ales vote,
+    winner Nov. 23Nov. 23-24:Best Sour/Fruit vote, winner Nov. 25Nov. 25-26:Best German Style vote, winner Nov.
+    27Nov. 27-29:Best Darker Beer vote, winner Nov. 30Nov. 30-Dec. 2:Best IPA, winner Dec. 3 michael kors outlet
+    online So let’s just add . y louis vuitton outlet
+    The proposal has gained the support of the Specialty Equipment Manufacturer’s Association (SEMA), which was an
+    early and outspoken critic when text targeting non-road vehicles like race cars was brought to light last
+    month. http://www.coachhandbags.com.co The Broncos won the Super Bowl last season with their quarterbacks
+    combining for a 74.
+    i “If an offensive player with the ball can draw his defender into their air towards him (for coach outlet
+    You’ll strike the perfect balance, seeing the humor but not always calling it out. coach outlet store
+    Invitations are now being sent out for the eagerly awaited debut of the Tesla Model 3 electric car at the end
+    of this month michael kors outlet Since the council’s instructions, the committee has met six times . http://
+    o.westboroughpolice.com
+    Jackson and Westbrook formed a dynamic backcourt at times they played together, and on Friday will match up
+    opposite one another. michael kors outlet Van Horn said he’s unsure whether Knight will be in the starting
+    rotation again next weekend. u michael kors outlet
+    By Sonam Vashi, CNN cheap louis vuitton bags Kirkpatrick, a Democrat from Flagstaff, was in a meeting in Casa
+    Grande Monday night and didn’t get back to me till today with this written response:p class p1″”We need
+    everything and everyone at the table if we are going to engage in an earnest, productive conversation about
+    taking action.
+    Korea fires missiles, liquidates South assetsAFPBanks Are Worried Homeowners Will Do This. michael kors outlet
+    store LAS VEGAS The Busch brothers grew up racing on the 3/8mile bullring that now sits in the shadow of the
+    Las Vegas Motor Speedway, many miles north of the glittering lights of the Strip.
+    This is exactly the reason why I strongly encourage networking and a Danish-Swedish regional life science
+    collaboration in order to pool resources and create critical mass in the knowledge-sharing dimension. michael
+    kors outlet online When you donate clothing to Dress for Success, you will be entered into a drawing for a
+    free lunch at the WIB luncheon the following month.
+    is a year-long membership that gets you free access to the best entertainment in the Valley. coach factory
+    outlet Most of the world’s smartphones and personal computers are assembled in China.
+    a “I believe the Affinity Sports Digital Cards are more secure than paper player cards,” said Turner. coach
+    factory outlet In 2015, he rushed for 1,402 yards, second in the NFL, and six touchdowns.
+    They get them to relax, which makes the whole team relax. louis vuitton handbags As we endure another summer
+    of triple-digit temps,excessive-heat warnings are making headlines. l oakley sunglasses
+    Goodyear said magnetic levitation would deliver a remarkably smooth and quiet ride for passengers http://
+    www.louisvuittonhandbagsrack.us.com You can turn this off, but it doesn’t appear to drain battery life much,
+    and I like it a lot.
+    g Sonjack Realty Limited Partner and William Foggle to Van Deusen Apts LLC, 40-42 Arnold St., $1,875,000.
+    coach outlet store Anderson leads FDU o
+    ” We designed this 100 percent from our conversations. http://www.coachhandbagsdeal.us.com AMP Aces: Shoemaker
+    4, Gonzales 3. coach bags
+    What does Flint stand to gain by embracing this new population? Besides the millions of dollars infused into
+    the local economy, these students bring a rich and diverse representation of the world right to our door step.
+    It’s like traveling the world without having to buy a plane ticket. Recently, the Flint Chamber of Commerce,
+    University of Michigan-Flint, Kettering and Mott Community College came together to support a series of focus
+    group sessions with the international students. The purpose was to gain insight on their experiences in Flint
+    and to determine if they are interested in engaging and participating in the community. What we learned is
+    that there is an overwhelming strong desire to be more engaged and involved, but they are unsure of how to
+    make that connection. Some students expressed enthusiasm towards Flint, because they recognize the tremendous
+    potential and opportunities to make a difference. A few have a desire to remain in the city after graduation.
+    Because of this population trend, a collaborative effort has been formed to explore ways to be supportive and
+    provide opportunities for connections to be made. coach outlet store online Rising output from key industries,
+    including food and beverages and pharmaceuticals, will aid greater demand as membranes can be utilized to meet
+    more stringent purity requirements. u louis vuitton outlet online
+    In fairness to Lindblad, this is an industrywide practice. http://www.coachoutletstores.net.co But Greece has
+    a notoriously slow asylum process, and a crippling six-year financial crisis that has left unemployment at
+    about 25 percent.
+    Artur Lech and Magealena lech to Nicholas M. Mobrice, 24 Ridgeview Terrace, $187,500. michael kors outlet “My
+    mother didn’t really say much about him,” she says. i ray ban sunglasses
+    Since my wife is fearful of flying and takes medication to enable her to fly, sitting in an exit row is not
+    feasible, as she would be unable to assist in the case of an emergency. coach factory to 1 p.
+
+    [回复]
+
+ 6. [fe1]
+    hbuerdwsy
+    2016年4月6日22:18 | #6
+    回复 | 引用
+   
+    Brown’s spokeswoman, Kristen Grainger, declined to offer an opinion on that provision of the bill. Gelser said
+    Brown also has been pushing the issue and she expects the governor’s office will make any necessary personnel
+    changes. She applauded Brown’s appointment earlier this month of Clyde Saiki, a state government veteran, to
+    steady the agency in the interim. coach bags Priced from $35 to $66. n coach outlet online
+    Q: I recently booked a room at the Cassa Hotel 45th Street using Expedia. michael kors outlet This is an
+    all-ages event.
+    Website: new one under construction http://www.coachoutletonlinebuy.us.com Gareth Emery and Nicky Romero are
+    just the most recently announced guests on a list that includes Swanky Tunes, Helena, and Zeds Dead. s louis
+    vuitton bags
+    Wizards: The 64 points in the first half matched Washington’s season-high for the opening two periods. ray ban
+    sunglasses outlet Every time a specific population has increased flu shots THAT EXACT SPECIFIC POPULATION HAS
+    INCREASED FLU CASES.
+    x This year, she used her hand-made ghost cookie cutter to make three of the ghosts and she free-formed the
+    others using glow-in-the-dark polymer clay. She spray painted a wreath black, added a chalkboard ghost, orange
+    firefly lights and glowing ghosts. cheap louis vuitton bags New camp in France http://www.michaelkors.us.org
+    Alex McLaren, longtime clinician, educator and researcher,p class bwalignc”will oversee clinical reviewsemp
+    class bwalignc”PHOENIX–(BUSINESS WIRE)–SharedClarity has hired Dr. louis vuitton bags That loss to city rival
+    Atletico was followed by a pair of Spanish league victories and five goals from Ronaldo ahead of Tuesday’s
+    Champions League match against Roma. http://www.louisvuittonhandbagsbuy.co.uk
+    Ernest R. Scheyhing, Donald I. Christensen, representative, and Ruth E. Christensen, estate, to Amrose I.
+    Mwea, 655 North Main St., $185,000. michael kors online This material may not be published, broadcast,
+    rewritten or redistributed. v michael kors bags
+    Public housing and subsidized rentals are a way of life for many families in cities throughout much of the U.
+    coach outlet Manlio Fabio Beltrones, who is now an elder statesman in Mexico’s Congress, and was a key
+    proponent of the modified labor law that passed.
+    This weekend at Joe’s Grotto on 13825 N. coach outlet “If states want honesty, integrity and transparency in
+    government, they need to keep pace with this area of the law.
+    This county has a national park and three state parks. coach outlet What about the loss of Andrew Andrews, you
+    say? The Huskies have a better prospect at point guard, incoming freshman Markelle Fultz.
+    This year’s con celebrates the 40th anniversary of the 1975 Doc Savage movie, and you are hosting its star,
+    the pop culture icon, Ron Ely. michael kors handbags Sevenmile, 1 to 11/2hour tours with nine stops.
+    q Ebenhack)Phelan M. coach factory outlet store We locked the school down.
+    comIf you majored in the humanities, you really should apply to Harvard Business SchoolQuartzObama Is One Step
+    Closer To Officially Having A New Education SecretaryHuffington PostU. http://www.coachoutletsonlines.us.org
+    “It was pure delight to work with these incredible vocal artists, who embraced what may be considered
+    Rachmaninoff’s greatest work, truly giving their all to this piece, body and soul. x michael kors outlet
+    Geographical segmentation and analysis of the sports equipment market http://www.coachfactorysoutlet.com An
+    on-stage announcer will read vintage commercial copy with flair; old-fashion jingles will be played, and of
+    course, you’ll see the Bob Hope tribute skit as he interviews famous movie star guests.
+    z The rules will phase in over the next several years and give the FDA sweeping new oversight over how food is
+    grown on farms. http://www.raybanoutlet.name I truly just want everyone to be healthy & happy. p
+    Dieringer. michael kors outlet Mountain Ridge is a win away from its first berth in the state softball finals
+    after knocking off No. coach outlet
+    The redshirt sophomore didn’t play in last year’s game against UConn, which was also played at Yulman Stadium
+    as Tulane won 12-3, but he knows what to expect this weekend from a Huskies team that is tied for third in the
+    NCAA with 14 interceptions this season. louis vuitton outlet online government to press for his release. c
+    cheap ray ban sunglasses
+    President Barack Obama says he will nominate a successor to Scalia. michael kors outlet store Sister Dale
+    McDonald, policy director at the NationalCatholic Education Association, said 1,603 Catholic schoolsnationwide
+    have closed since 2000, shedding more than 500,000students.
+    On the other hand, the old-fashioned appeal of “Rudolph” has its own enduring magic. How can you not melt as
+    Rudolph’s nose flashes, Burl Ives (the voice of narrator Sam the Snowman) sings and the Misfit Toys find homes
+    at last? coach outlet “There’s not a single priority issue,” said No. y coach outlet store online
+    She hopes that she can be that last person they meet while on their healing journey louis vuitton outlet State
+    law already imposes some restrictions on development in “active management areas” where groundwater supplies
+    are at risk.
+
+    [回复]
+
+ 7. [570]
+    gjjrouvx
+    2016年4月7日05:16 | #7
+    回复 | 引用
+   
+    Drummond cashed in a terrific three-point play on a steal, coast-to-coast layup on which he was hammered by
+    Lopez and Wayne Ellington, then converted the free throw with 6:20 left in the third quarter to stretch the
+    Pistons’ lead to 55-46. coach outlet stores It’s one of numerous projects the dealership is paying for across
+    the school district. r http://www.coachonlineoutlet.us.com
+    “ith broth you’re getting so much nutrition and so much protein that even just a tiny mug will supply the body
+    with so many nutrients,” said Brown http://www.coachonlineoutlet.us.com He was activated from the 15-day DL
+    last Friday after being out more than a month with right ankle inflammation.
+    An estimated 400,000 employees would take advantage of the state-managed plan if it were created, according to
+    a study by the Northwest Economic Research Center ( at Portland State University. By doing so, three-fourths
+    of workers could boost their annual retirement income by anywhere from about $3,800 to $9,000, depending on
+    their income, the study estimated. 锘?a href=http://www.coachonlineoutlet.us.com/>coach outlet online Put more
+    real farms on that Class 1 Panoche soil, please, and not government subsidized solar projects. c coach outlet
+    stores
+    Just as her grandmother’s recipes are the foundation of many of Monroe’s own creations, the time they spent
+    cooking together is when her love for the craft grew. 锘?a href=http://www.coachonlineoutlet.us.com/>coach
+    outlet online When you see those new ads referring to an “editorial” and refuting prior editorials or
+    supporting Measure J be aware that the claim is false.
+    e “In Massachusetts, unlike most other states, a higher proportion of public college students graduate with
+    debt than their peers at private institutions. Moreover, the cost of attending public 4-year institutions more
+    than doubled between 1987 and 2010,” a press release stated. http://www.coachonlineoutlet.us.com Keith Ingram
+    of West Memphis and Linda Chesterfield of Little Rock, along with Rep. coach outlet
+    Time: 1 hour, 42 minutesRated: PG-13 (crude and sexual content, exaggerated violence, brief strong language)
+    Derek and Hansel are modeling again when an opposing company attempts to take them out from the business. 锘?a
+    href=http://www.coachonlineoutlet.us.com/>coach outlet online “He was my first friend I met in Tucson,” Holmes
+    said. http://www.coachonlineoutlet.us.com
+    Chad was , or DIPG, a rare and inoperable form of pediatric brain cancer, in September 2014, days before his
+    fourth birthday. Patients diagnosed with the disease are usually expected to live for another 6-18 months. 锘?
+    a href=http://www.coachonlineoutlet.us.com/>coach outlet online ” His teammates trust him and he trusts them.
+    c coach outlet
+    Eventually, Brooke was able to break free from heroin, because she had to. http://www.coachonlineoutlet.us.com
+    style video-ad-asset-container, video-ad-asset-container-played max-height: 0px; overflow: hidden;
+    -webkit-transition: max-height 1s; -moz-transition: max-height 1s; transition: max-height 1s;
+    video-ad-asset-container.
+    “That statement standing alone out of context is misleading and subject to misinterpretation by non-healthcare
+    professionals. http://www.coachonlineoutlet.us.com Tuesday at 10176 N.
+    The Hollister Urban Area Project is a multi-district endeavor headed up by local water agencies. http://
+    www.coachonlineoutlet.us.com Between my wife and I, we have one too many height phobias, so we weren’t going
+    to do this hike, but then someone told us we could walk the Grotto Trail right from the lodge and end up at
+    the Angels Landing trailhead.
+    Russia’s Athletics Federation (ARAF) have committed to an overhaul of their anti-doping programmes, though
+    they must convince IAAF inspectors they have met the standards imposed by the world governing body to have the
+    ban lifted ahead of Rio. coach outlet stores “When Boyd finally broke that code, everybody thought it took the
+    monkey off our backs and got us all thinking we can do it,”Evers said.
+    w GM’s number for this recall is 21510 coach outlet The assailant had a similar description as the man in the
+    other two robberies.
+    We are evaluating energy alternatives, from renewable options to the use of central station power plants, to
+    keep up with future growth. coach outlet It is simply another political folly used to stir emotions that will
+    again make Arizona look bad and cost the state money. g 锘?a href=http://www.coachonlineoutlet.us.com/>coach
+    outlet online
+    comthe Kwanzaa principal of Ujima, presented to Destry Mangus, para-professional, tennis and softball coach
+    with Harrisburg School District, youth program volunteer and a founding member of the former UJIMA Basketball
+    City League;Anthony Burnett, professional at Gannett Fleming and founder of Left Out Organization-LOOP Inc.
+    http://www.coachonlineoutlet.us.com All children 16 and younger must be accompanied by an adult.
+    x JB Camerlin Real Estate LLC to Evelyn M. Bellerose, Glen Bellerose and Glen R. Bellerose, 202-204 Oakland
+    St., $140,000. coach outlet store online Cody Davenport 20, who pitched a completegame victory, retired the
+    Redhawks in order in the ninth inning to preserve the victory. m
+    Place egg whites in a shallow bowl or dish. http://www.coachonlineoutlet.us.com But by 2050, Arizona is
+    predicted to experience one of the biggest increases nationally in summer drought, raising its overall threat
+    to above-average, the report said. http://www.coachonlineoutlet.us.com
+    LB: Jeff Ridge, Centennial, senior 锘?a href=http://www.coachonlineoutlet.us.com/>coach outlet online Add the
+    zucchini, green beans, garlic, thyme and the remaining salt and pepper. v coach outlet
+    Manning (13-4) broke a tie with Tom Brady, Brett Favre and Elway for most opening game wins in league history
+    http://www.coachonlineoutlet.us.com “In his first start since Fowler lost a two-shot lead with two holes in
+    Phoenix, he put himself right back in position to win.
+    You may not feel thirsty for anything but hot coffee as the temperature cools, but replacing water with warmer
+    beverages can lead to dehydration. Allowing your body to become dehydrated can lead to sickness. Water helps
+    the body carry nutrients to cells and wash out toxins. Without water you feel fatigued. 锘?a href=http://
+    www.coachonlineoutlet.us.com/>coach outlet online Cole Cooper, Rogers High^14^72^5. b http://
+    www.coachonlineoutlet.us.com
+    In places where the work can’t be seen, such as in the welding and painting areas, short videos are shown to
+    demonstrate the process that takes place. http://www.coachonlineoutlet.us.com Grijalva, the law professor,
+    says it remains to be seen if the arrest will lead to anything substantial.
+
+    [回复]
+
+ 8. [2dc]
+    zixolmjdu
+    2016年4月7日22:38 | #8
+    回复 | 引用
+   
+    Randall K. Wilburn and Karin A. Wilburn, trustees, and Wilburn Family Revocable Living Trust to Stella S.
+    Offner, 57 Berkshire Terrace, $425,000. http://www.coachfactorysoutlet.com For teen’s police killer, no
+    charges w coach outlet online
+    He had also been closing his door recently to have private phone conversations with somebody in Russian
+    wholesale nfl jerseys The proposed swap violates Arizona statutes, Kubitskey told supervisors in a recent
+    meeting.
+    Portland is even worse in “clutch situations,” defined by the NBA as when the score iswithin points with five
+    minutes or less remaining. The Blazers have had seven games that have entered “clutch” territory and are
+    shooting 30.4 percent in those situations, including 3-for-19 from three-point range. Part of the issue is
+    stagnant late game offense when teams try to deny Damian Lillard the ball the Blazers setscan get out of
+    sorts. In 24 minutes of “clutch” action this season the Blazers have just four assists on 14 made field goals
+    and have committed six turnovers. http://www.coachhandbagsdeal.us.com I am sure that there are more examples.
+    q louis vuitton handbags
+    Trump reversed that stance in a statement on Friday http://www.coachoutletssonline.us.org officials to the
+    Iraqi government and contemporary estimates by experts.
+    u Edward H. Letourneau, Edward herman Letourneau, Cheryl A. Katsoulis, Cheryl Ann Katsoulis, Carla A.
+    Letourneau, Carla Ann Letourneau, Charron A. Letourneau, Charron Ann Letourneau, Carla Ann Letourneau, Charron
+    A. Letourneau, Charron Ann Letourneau, Craig A. Letourneau, Craig Alan Letourneau, Leslie A. Zraunig, and
+    Leslie Ann Zraunig to James M. Adams and hannah E. B. Richards, 32 Shattuck St., $208,000. cheap jordan shoes
+    The Wyandotte Nation is in the midst of a multistage renovation of its its Wyandotte Nation Casino in
+    Wyandotte, in the northeast corner of Oklahoma. oakley glasses
+    Post does not pay a dividend. coach outlet online hr /Here’s the weekly notes from Arizona, ASU and the
+    Pac-12. http://www.coachoutletstores.net.co
+    Phone: 732-0338 ray ban sunglasses outlet The swimsuit edition is robust with ads. c louis vuitton outlet
+    online
+    Food thermometer is not scaled to measure to +- 2°F. louis vuitton handbags While the board declared
+    containment of the virus, officials still urged people working at the track to clean and disinfect anything
+    the horses had touched or could touch and to limit foot and vehicle traffic at the track.
+    There will also be many players who are suddenly unhappy with their current contracts, which are probably well
+    under the market value after Wednesday. http://www.coachstoresonline.com Alas, a rose by any other name.
+    Brings up an interesting questions / comments. ray ban outlet Trail BlazersJordan Hill, Pacers: 14 points, 11
+    rebounds and 1 assist in 23 minutes vs.
+    They have debated amongst themselves the county’s most serious issues and then – with a majority consensus –
+    provided honest and sometimes unpopular recommendations to stakeholders and others. ray ban sunglasses
+    airstrikes are pummeling the Islamic State group, currently are on that list and won’t be in the report, said
+    a senior administration official, who wasn’t authorized to comment publicly and requested anonymity.
+    a And, frankly, I have nothing positive to say about it louis vuitton handbags But from this point forward, I
+    care and we’re almost at a point where our guys have to protect themselves and as they protect themselves it’s
+    going to be a really tough situation that’s coming.
+    With less and less consideration to a person’s win-ability in relations to how many people can afford to give
+    disposable money and wealth to their campaign. ray ban sunglasses outlet The second, The Seduction of Mary
+    Wells, was published this past summer (2015) and chronicles the life of the 1960s My Guy rhythm and blues soul
+    singer. y coach online store
+    Dodgeball http://www.michaelkorsbag.us.org Start registering now.
+    y As the founder and executive director of Oregon’s only nonprofit partnering with special education teachers
+    to close the achievement gap for students with disabilities — that is, the kids who get suspended the most — I
+    can tell you that exclusionary discipline is a shortsighted fix. When a child throws punches to mask the shame
+    of being unable to spell her name, kicking her out is the last move she needs. http://
+    www.cheapjordanshoes.us.org Chinese Internet giant Tencent also said it has canceled plans to broadcast the
+    ceremony live online despite an existing contractual agreement to show the awards on its QQ streaming video
+    service. j
+    Nutritional Info(1 buckeye): 112 calories, 1 g protein, 10 g carbohydrates, 7 g fat (2 g saturated), 8 mg
+    cholesterol, 1 g fiber, 32 mg sodium coach outlet online ” Sam Dykstra of MiLB. coach factory
+    The Fair Tax, essentially abolishing the income tax in favor of a national sales tax, is a politically
+    ambitious plan championed by also-ran candidate Mike Huckabee. Like a flat-rate income tax with virtually no
+    deductions, this would simplify the taxes Americans pay. http://www.coachstoresonline.com So excited to help
+    other women bring this into their lives. b michael kors bags
+    Theorchestra performed the familiar overture — many of us grew up withit as a soundtrack to “Bugs Bunny”
+    cartoons — with a sheen thatmade it dance anew. ray ban sunglasses And you never let us quit.
+    Read . http://www.cheapjordanshoes.us.org McGehee School in New Orleans. b louis vuitton outlet online
+    CPSC scientists in Rockville are testing the boards in their labs, searching for the cause of the fires and
+    the falls http://www.louisvuitton-outlet.us.org “This gentleman was disturbed at way things had turned out at
+    some point in his life.
+
+    [回复]
+
+ 1. 2010年5月4日01:38 | #1
+    Tweets that mention Emacs中文网: 智能的启动Emacs — Topsy.com
+
+[                        ] 昵称
+[                        ] 电子邮箱 (我们会为您保密)
+[                        ] 网址
+[                                                  ]
+[                                                  ]
+[                                                  ]
+[                                                  ]
+[                                                  ]
+[                                                  ]
+[                                                  ]
+[                                                  ]
+订阅评论
+[提交评论]
+[预览评论]
+:wink: :-| :-x :twisted: :) 8-O :( :roll: :-P :oops: :-o :mrgreen: :lol: :idea: :-D :evil: :cry: 8) :arrow: :-?
+:?: :!:
+
+点击取消回复
+
+[*]有人回复时邮件通知我
+
+Emacs下的计算器－ calc Emacs中快速访问远程主机的文件
+订阅
+
+  • Google
+  • 有道
+  • 鲜果
+  • 抓虾
+  • My Yahoo!
+  • newsgator
+  • Bloglines
+  • 哪吒
+
+Twitter
+
+Emacs资源
+
+  • EmacsWiki
+  • Emacsist
+  • 水木Emacs
+  • DEA
+  • pluskid的Emacs
+  • 王垠的Emacs
+  • 王纯业的Emacs
+  • Emacs官网
+  • dotemacs
+  • Emacsen's planet
+
+友情链接
+
+  • LinuxTOY
+  • 善用佳软
+  • 小众软件
+  • 开源视窗
+
+最新评论
+
+  • [7a2]
+    nba jersey uniform design 2016 发表于用weblogger写WordPress博客
+    What i do not realize is actually how you're not a... »
+  • []
+    匿名发表于钗黛双收：若你也同Vim难割舍，却又看Emacs情切切
+    :roll: »
+  • [14b]
+    06kv.com低价网游私服一条龙t2i8 发表于站点地图
+    天龙私服架设|奇迹Mu私服架设|魔兽私服架设|魔域私服架设|墨香私服架设天堂2私服架设|传奇3私服架... »
+  • []
+    BrettBlice 发表于 Emacs中的Evernote: evernote-mode
+    wh0cd501379 accutane accutane 40 mg http://accutan... »
+  • [f48]
+    adidas stan smith 发表于站点地图
+    I simply desired to appreciate you once again. I a... »
+  • 下一页 »
+
+最多评论
+
+  • 我的Emacs配置文件－ DEA (398)
+  • 用CEDET浏览和编辑C++代码 (278)
+  • 致Emacs初学者 (150)
+  • Emacs才是世界上最强大的IDE －用auto-complete实现自动补全 (143)
+  • 折腾Emacs (138)
+  • 钗黛双收：若你也同Vim难割舍，却又看Emacs情切切 (127)
+  • 用CEDET浏览和编辑C++代码(续) – 使用Emacs 23.2内置的CEDET (121)
+  • Emacs才是世界上最强的IDE – 用w3m浏览网页 (116)
+  • 用weblogger写WordPress博客 (110)
+  • Emacs －普通人的编辑利器 (109)
+
+最高评分
+
+  • 用CEDET浏览和编辑C++代码 (9.7 62次投票)
+  • 用pulse实现Emacs的淡入淡出效果 (9.7 9次投票)
+  • 致Emacs初学者 (9.6 112次投票)
+  • Emacs中鼠标的运用 (9.5 15次投票)
+  • Emacs才是世界上最强大的IDE －用Emaci阅读文件 (9.5 13次投票)
+  • Emacs下的多媒体系统 - EMMS (9.5 10次投票)
+  • 折腾Emacs (9.3 55次投票)
+  • 我的Emacs配置文件－ DEA (9.3 24次投票)
+  • ERC使用简介 (9.3 9次投票)
+  • 在Emacs中使用vi的*和#命令 (9.3 6次投票)
+
+分类目录
+
+  • 初级 (37)
+  • 中级 (42)
+  • 高级 (1)
+  • C/C++ (4)
+  • Elisp (10)
+  • Email (1)
+  • IDE (18)
+      □ CEDET (3)
+      □ 自动补全 (6)
+  • Org Mode (4)
+  • mode-line (2)
+  • w3m (3)
+  • windows (1)
+  • 其他 (22)
+  • 好玩的 (12)
+  • 学习Emacs (5)
+  • 宏 (1)
+  • 小技巧 (3)
+  • 快速启动 (2)
+  • 资讯 (2)
+  • 配置 (10)
+      □ DEA (2)
+  • 配色 (2)
+
+最热文章
+
+  • 我的Emacs配置文件－ DEA(75,534)
+  • 致Emacs初学者(72,098)
+  • 用CEDET浏览和编辑C++代码(65,618)
+  • 钗黛双收：若你也同Vim难割舍，却又看Emacs情切切(56,353)
+  • Emacs长啥样(55,358)
+  • Emacs才是世界上最强大的IDE －用auto-complete实现自动补全(54,829)
+  • Emacs org mode学习笔记(48,414)
+  • Emacs初学者必知必会(47,368)
+  • 折腾Emacs(46,283)
+  • 在Emacs下用C/C++编程(39,814)
+
+标签云
+
+Emacs org screenshot 配色 windows 光标 IDE emacser ahei emacser.com C/C++ ede 插件 lisp face 颜色补全 mode 鼠标配
+置 buffer CEDET se lambda 截图 Elisp highlight vi semantic cursor python ann lightbox text theme autoload 定制 irc
+安装 yasnippet DEA snippet term control
+
+功能
+
+  • 登录
+  • 文章 RSS
+  • RSS 评论
+  • WordPress.org
+
+回到顶部 WordPress
+版权所有 © 2009-2015 Emacs中文网
+主题由 NeoEase 提供, 通过 XHTML 1.1 和 CSS 3 验证.
+
+                                             Copyright (C) 2009 ahei
+                                      msn/gtalk/qq/email: ahei0802@gmail.com
+                                                 Google analytics

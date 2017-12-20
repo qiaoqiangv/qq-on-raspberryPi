@@ -1,0 +1,413 @@
+Emacs中文网
+
+没有我做不到的，只有你想不到的
+
+  • 首页
+  • 关于
+  • DEA
+  • 征集logo
+  • 版权声明
+  • 加盟/投稿
+  • Emacs截图
+  • Emacs资源
+  • 站点地图
+  •  
+
+[                        ] []
+首页 > 初级, 快速启动 > 使用Emacs daemon
+
+使用Emacs daemon
+
+2010年4月20日 ahei 发表评论阅读评论
+
+作者: Tiger Soldier
+
+什么是 Emacs daemon
+
+关于Emacs有一个很著名的笑话，就是Emacs = Emacs Makes A Computer Slow。Emacs启用慢是一个人尽皆知的事实。由于启动时
+要加载大量的脚本和插件，使得Emacs在启动时往往需要数秒之久。因此我在进行一些快速简单的任务，如svn commit时，都是使
+用nano或者vim来进行的。
+Emacs daemon就是为了这个而诞生的。它将Emacs变成了一个C/S模型——只需要启动一个服务器在后台作为守护进程（daemon）跑着
+，之后启动的每个emacs都是一个客户端，它连接上服务器进行工作。这样一来，只要在启动服务器时运行初始化脚本，客户端启
+动无需运行脚本，实现启动时间从Firefox到Chrome的转变。
+
+使用 Emacs daemon
+
+要使用Emacs daemon，至少需要Emacs 23。它提供了一个emacsclient程序，用于启动客户端。
+有客户端就必然要有服务端。要启动一个daemon，需要在运行emacs时加入一个–daemon参数。幸运的是，我们不用手动启动服务端
+，而是可以利用emacsclient的-a参数。emacsclient的-a参数用于指定连接不上服务器时使用的别的编辑器（alternate editor）
+，当把这项留空时，它会自动启动服务端。如果不想指定-a，也可以将ALTERNATE_EDITOR环境变量设为""。
+除了-a参数，emacsclient还要手工指定使用终端还是X来启动。要从终端启动，需要使用-t参数：
+
+^?View Code BASH
+
+emacsclient -t -a ""
+
+从X启动则是-c：
+
+^?View Code BASH
+
+emacsclient -c -a ""
+
+方便些，再方便些
+
+每次都要输入上面那些命令太烦了，不符合*nix的终极目标——偷懒
+首先把终端版本设一个alias。编辑~/.bashrc，在最后加入
+
+^?View Code BASH
+
+1 #用ec来快速启动emacs client
+2 alias ec='emacsclient -t -a ""'
+3 #现在可以将emacs设为默认编辑器啦:P
+4 export EDITOR="ec"
+
+以后在终端下输入ec就可以启动emacs的终端客户端了:)
+在X下，我习惯用gnome-do来启动程序。因此最方便的方法就是建立一个菜单项，名叫Fastmacs，内容自然就是X模式启动
+emacsclient的命令啦
+
+配置，还是配置
+
+如果在.emacs里对X相关的选项（字体什么的）直接进行设置，那么会发现用emacsclient启动时，这些设置都失效了。这是因为这
+些设置是在X下的frame创建时才有效的，而启动服务器的时候是没有创建frame的。
+解决方法有两种，一种是使用after-make-frame-functions这个hook，在创建一个frame之后才进行设置。代码如下
+
+^?View Code LISP
+
+1  (defun frame-setting ()
+2      (set-frame-font "文泉驿等宽微米黑 8")
+3      (set-fontset-font "fontset-default"
+4                        'gb18030 '("文泉驿等宽微米黑" . "unicode-bmp")))
+5   
+6  (if (and (fboundp 'daemonp) (daemonp))
+7      (add-hook 'after-make-frame-functions
+8                (lambda (frame)
+9                  (with-selected-frame frame
+10                   (frame-setting))))
+11   (frame-setting))
+
+需要判断是否以daemon模式启动，分别进行处理
+另一种方法是设置window-system-default-frame-alist，直接设置参数的默认值
+
+^?View Code LISP
+
+1  (setq window-system-default-frame-alist
+2        '(
+3          ;; if frame created on x display
+4          (x
+5           (menu-bar-lines . 1)
+6           (tool-bar-lines . nil)
+7           ;; mouse
+8           (mouse-wheel-mode . 1)
+9           (mouse-wheel-follow-mouse . t)
+10          (mouse-avoidance-mode . 'exile)
+11          ;; face
+12          (font . "文泉驿等宽微米黑 8")
+13          )
+14         ;; if on term
+15         (nil
+16          (menu-bar-lines . 0) (tool-bar-lines . 0)
+17          ;; (background-color . "black")
+18          ;; (foreground-color . "white")
+19          )
+20         )
+21       )
+
+可以设置的参数见Emacs Lisp Reference > Frames > Frame Parameters
+推荐使用第二种方法，启动客户端时直接就使用所设置的字体了
+
+参考文章
+
+http://www.wanglianghome.org/blog/2009/01/customization-tips-for-emacs-daemon.html
+http://jackycxh.blog.35.cn/2009/07/22/emacs-daemon-and-font/
+
+分享家:Addthis中国
+GD Star Rating
+loading...
+使用Emacs daemon, 9.2 out of 10 based on 10 ratings 标签：daemon, Emacs, face, lambda, org, term, 插件, 配色, 配色
+
+相关日志
+
+  • “色向胆边生” －记Emacs配色的超级武器：Icicles，Color Palette和DoReMi (58)
+  • 用CEDET浏览和编辑C++代码(续) – 使用Emacs 23.2内置的CEDET (121)
+  • 我的Emacs配置文件－ DEA (398)
+  • 介绍一些Emacs功能强大的函数 (51)
+  • Emacs才是世界上最强的IDE – 用w3m浏览网页 (116)
+
+分类: 初级, 快速启动
+评论 (14) Trackbacks (2) 发表评论 Trackback
+
+ 1. [2de]
+    zv
+    2012年6月14日13:31 | #1
+    回复 | 引用
+   
+    有沒有辦法永久駐留後台？
+
+    [回复]
+
+ 2. [3d5]
+    weikent
+    2012年10月21日21:29 | #2
+    回复 | 引用
+   
+    在终端输入emacs –daemon 。得到emacs daemon: exec failed:13 server did not start correctly.
+
+    这是什么原因？？
+
+    [回复]
+
+ 3. [e39]
+    gjcchggo
+    2016年4月7日22:34 | #3
+    回复 | 引用
+   
+    Cathleen C. Grady to Richard L. Truehart Jr. and Cathy D. Truehart, trustees, and Richard L. Truehart Jr.
+    Living Trust, Glendale Road, $6,000. cheap air jordans For years, one of the key weaknesses of the economic
+    recovery has been tepid pay growth. n michael kors outlet store
+    Could the earnings differences be because of depression or a lack of confidence among shorter or heavier
+    people, as some earlier studies have theorized? Economists will want to know as they try to understand the
+    obesity epidemic and its potential impact on productivity. coach outlet online He prefers to be the only cat
+    in a household and will need time to adjust to his new environment.
+    It was constructed in 1926 by the Boston & Albany Railroad to replace a smaller rail a facility and it was
+    utilized by theNew York, New Haven & Hartford, Central New England Railway and Boston & Maine railroads. http:
+    //www.michaelkorsbags.me stalk or otherwise harass another; and/or n. o ray ban sunglasses
+    that wrestler Blake Flovin, 17, is trying to get the word out about ‘herpes gladiatorum,’ which can be spread
+    by skin-to-skin contact and the exchange of saliva among wrestlers http://www.cheapmichaelkorsbags.us.com
+    Don’t miss your chance to see Noche Flamenca live.
+    f Mathew Allen Biron and Jessica Jill Biron to Michael B. Samek, 21 Robinson Road, $60,000. michael kors
+    outlet online The genetic doubles one in space, one on the ground took part in medical studies throughout the
+    flight. coach outlet online
+    but he did talk about his love for Baylor and being “home” in Texas michael kors outlet store 49. http://
+    www.coachoutletstoreonline.me
+    “I’m grateful for the opportunity that Oregon State presented me to further my education,” Hollingsworth said
+    in a release. “I wish my coaches and teammates the best of luck.” michael kors outlet online It concerns an
+    inviting investment that goes wrong for four friends when they discover that part of their funding is courtesy
+    of a rather unforgiving criminal kingpin, who makes them an offer they can’t refuse: kidnap a family member of
+    a rival crime boss. k coach factory outlet store
+    These comments are not necessarily representative of the opinions and views of other Provasi Capital Partners
+    professionals. ray ban sunglasses Earlier, people watched from freeway overpasses as a motorcade carried the
+    casket from a funeral home in the Los Angeles suburb of Santa Monica to the Ronald Reagan Presidential.
+    Some mainstream media websites will post cosplay slideshows, with a smattering of scantily clad nerd girls and
+    booth babes to keep viewers clicking. coach factory outlet store The proposed $500,000 for marketing would
+    increase the commission’s marketing budget to $1.
+    And sharing is caring. http://www.louisvuitton-outlet.us.org Romero said about half the Tucson workforce does
+    not have access to earned sick leave.
+    economy after a rocky beginning to the year. michael kors outlet online PHOENIX Mike Napoli hit his first home
+    run of the spring but the Cleveland Indians remained winless after six games following a 65 loss to the
+    Milwaukee Brewers on Sunday.
+    n And all of his Republican rivals opponents would defeat Trump in one-on-one hypothetical match-ups michael
+    kors outlet online Supreme Court struck down the heart of the Voting Rights Act in 2013, the path was cleared
+    for Texas to enforce the new restrictions.
+    He is a person without integrity who refused to sign his personal opinion with his own name and instead
+    claimed it was the work of others. louis vuitton handbags The only way to stop the musical chair rotation of
+    one failure of business downtown after another, is to have zero negative impact on those businesses, and leave
+    that offset criteria up to the people that take the risk of being in business 365 days a year, the business
+    owner, not the City. b louis vuitton handbags
+    She specializes in investment properties, move-up buyers, listing marketing and is a member of the Institute
+    of Luxury Home Marketing. michael kors outlet online He is survived by his mother, Grace Iwanaga and his
+    children, Lauren Mantani (Matthew), Jackie, and Damon Iwanaga, with whom he shared his passion for
+    motorcycles.
+    g Hector L. Rivera-Delbusto and Maria Ruth Mabel Bonilla-Rivera to Tory G. McCloud, 162 Pinevale St.,
+    $156,000. http://www.coachhandbags.me In the novel and the popular film that followed Pi and his family,
+    sailing on a cargo ship along with their collection of zoo animals, encounter a storm that sinks the ship and
+    leaves Pi stranded on a lifeboat with an orangutan, a spotted hyena, a zebra with a broken leg and a Bengal
+    tiger. c
+    A longshot push to score a majority of delegates himself may be his best chance to become the nominee coach
+    online store He has managed Tres Rios del Norte for most of the project’s lifespan. michael kors online
+    But the frustrations that came from having a small living space, such as showering on the boat when it’s
+    frigidly cold or forgetting to take out a bottle of ketchup before packing up layers of storage, eventually
+    faded away. michael kors outlet online Tina Brooks Green, a Michigan district judge, allowed Appeals Court
+    Judge Henry Saad to plead guilty in private to a misdemeanor gun charge related to a handgun found in his
+    carryon bag at a Detroit airport, after his attorney told her about “death threats” that Saad had received in
+    an unrelated case. b http://www.coachoutletssonline.us.org
+    Hey, we re just reporting this stuff. http://www.louisvuittonhandbagsbuy.us.com Messages saved to ProMed, a
+    mailing list for outbreak watchers, are upbeat, describing Metabiota’s tests and how it was teaching Sierra
+    Leoneans how to set up Ebola isolation wards.
+    1:24 p.m.:Clark College RHP Nick Duron, a Tigard HS grad, was selected in the 31st round (pick No. 921) by the
+    Boston Red Sox. coach factory outlet Afraid of risking their jobs, patients instead risk complications of
+    their illnesses, which can come with an even heavier financial cost. f http://www.coachhandbags.com.co
+    In-person interviews were conducted with a multi-stage random sample of 6,406 Afghan citizens 18 years of age
+    and older, both women and men, from different social, economic, and ethnic communities in rural and urban
+    areas http://www.coachhandbags.com.co “Kiko has the kind of personality and sophistication to continue getting
+    results, and I plan to help him on our side of the border whenever I can.
+
+    [回复]
+
+ 4. [782]
+    https://rosywalstrom.wordpress.com/2015/06/22/hammertoe-treatment
+    2017年8月21日10:51 | #4
+    回复 | 引用
+   
+    Thank you for another excellent article. The place else may just anyone get that kind of
+    info in such an ideal way of writing? I’ve a presentation next
+    week, and I am at the look for such info.
+
+    [回复]
+
+评论分页
+« 上一页 1 2 41175
+
+ 1. 2014年6月3日06:06 | #1
+    智能的启动Emacs – 马开东博客
+ 2. 2014年6月27日08:56 | #2
+    智能的启动Emacs – IT牛人博客聚合
+
+[                        ] 昵称
+[                        ] 电子邮箱 (我们会为您保密)
+[                        ] 网址
+[                                                  ]
+[                                                  ]
+[                                                  ]
+[                                                  ]
+[                                                  ]
+[                                                  ]
+[                                                  ]
+[                                                  ]
+订阅评论
+[提交评论]
+[预览评论]
+:wink: :-| :-x :twisted: :) 8-O :( :roll: :-P :oops: :-o :mrgreen: :lol: :idea: :-D :evil: :cry: 8) :arrow: :-?
+:?: :!:
+
+点击取消回复
+
+[*]有人回复时邮件通知我
+
+Windows下设置Emacs的HOME目录 Emacs才是世界上最强大的IDE －用Emaci阅读文件
+订阅
+
+  • Google
+  • 有道
+  • 鲜果
+  • 抓虾
+  • My Yahoo!
+  • newsgator
+  • Bloglines
+  • 哪吒
+
+Twitter
+
+Emacs资源
+
+  • EmacsWiki
+  • Emacsist
+  • 水木Emacs
+  • DEA
+  • pluskid的Emacs
+  • 王垠的Emacs
+  • 王纯业的Emacs
+  • Emacs官网
+  • dotemacs
+  • Emacsen's planet
+
+友情链接
+
+  • LinuxTOY
+  • 善用佳软
+  • 小众软件
+  • 开源视窗
+
+最新评论
+
+  • [7a2]
+    nba jersey uniform design 2016 发表于用weblogger写WordPress博客
+    What i do not realize is actually how you're not a... »
+  • []
+    匿名发表于钗黛双收：若你也同Vim难割舍，却又看Emacs情切切
+    :roll: »
+  • [14b]
+    06kv.com低价网游私服一条龙t2i8 发表于站点地图
+    天龙私服架设|奇迹Mu私服架设|魔兽私服架设|魔域私服架设|墨香私服架设天堂2私服架设|传奇3私服架... »
+  • []
+    BrettBlice 发表于 Emacs中的Evernote: evernote-mode
+    wh0cd501379 accutane accutane 40 mg http://accutan... »
+  • [f48]
+    adidas stan smith 发表于站点地图
+    I simply desired to appreciate you once again. I a... »
+  • 下一页 »
+
+最多评论
+
+  • 我的Emacs配置文件－ DEA (398)
+  • 用CEDET浏览和编辑C++代码 (278)
+  • 致Emacs初学者 (150)
+  • Emacs才是世界上最强大的IDE －用auto-complete实现自动补全 (143)
+  • 折腾Emacs (138)
+  • 钗黛双收：若你也同Vim难割舍，却又看Emacs情切切 (127)
+  • 用CEDET浏览和编辑C++代码(续) – 使用Emacs 23.2内置的CEDET (121)
+  • Emacs才是世界上最强的IDE – 用w3m浏览网页 (116)
+  • 用weblogger写WordPress博客 (110)
+  • Emacs －普通人的编辑利器 (109)
+
+最高评分
+
+  • 用CEDET浏览和编辑C++代码 (9.7 62次投票)
+  • 用pulse实现Emacs的淡入淡出效果 (9.7 9次投票)
+  • 致Emacs初学者 (9.6 112次投票)
+  • Emacs中鼠标的运用 (9.5 15次投票)
+  • Emacs才是世界上最强大的IDE －用Emaci阅读文件 (9.5 13次投票)
+  • Emacs下的多媒体系统 - EMMS (9.5 10次投票)
+  • 折腾Emacs (9.3 55次投票)
+  • 我的Emacs配置文件－ DEA (9.3 24次投票)
+  • ERC使用简介 (9.3 9次投票)
+  • 在Emacs中使用vi的*和#命令 (9.3 6次投票)
+
+分类目录
+
+  • 初级 (37)
+  • 中级 (42)
+  • 高级 (1)
+  • C/C++ (4)
+  • Elisp (10)
+  • Email (1)
+  • IDE (18)
+      □ CEDET (3)
+      □ 自动补全 (6)
+  • Org Mode (4)
+  • mode-line (2)
+  • w3m (3)
+  • windows (1)
+  • 其他 (22)
+  • 好玩的 (12)
+  • 学习Emacs (5)
+  • 宏 (1)
+  • 小技巧 (3)
+  • 快速启动 (2)
+  • 资讯 (2)
+  • 配置 (10)
+      □ DEA (2)
+  • 配色 (2)
+
+最热文章
+
+  • 我的Emacs配置文件－ DEA(75,533)
+  • 致Emacs初学者(72,098)
+  • 用CEDET浏览和编辑C++代码(65,618)
+  • 钗黛双收：若你也同Vim难割舍，却又看Emacs情切切(56,353)
+  • Emacs长啥样(55,357)
+  • Emacs才是世界上最强大的IDE －用auto-complete实现自动补全(54,828)
+  • Emacs org mode学习笔记(48,413)
+  • Emacs初学者必知必会(47,368)
+  • 折腾Emacs(46,283)
+  • 在Emacs下用C/C++编程(39,814)
+
+标签云
+
+Emacs org screenshot 配色 windows 光标 IDE emacser ahei emacser.com C/C++ ede 插件 lisp face 颜色补全 mode 鼠标配
+置 buffer CEDET se lambda 截图 Elisp highlight vi semantic cursor python ann lightbox text theme autoload 定制 irc
+安装 yasnippet DEA snippet term control
+
+功能
+
+  • 登录
+  • 文章 RSS
+  • RSS 评论
+  • WordPress.org
+
+回到顶部 WordPress
+版权所有 © 2009-2015 Emacs中文网
+主题由 NeoEase 提供, 通过 XHTML 1.1 和 CSS 3 验证.
+
+                                             Copyright (C) 2009 ahei
+                                      msn/gtalk/qq/email: ahei0802@gmail.com
+                                                 Google analytics

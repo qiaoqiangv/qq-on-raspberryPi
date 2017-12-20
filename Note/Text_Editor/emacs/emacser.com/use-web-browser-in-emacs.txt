@@ -1,0 +1,655 @@
+Emacs中文网
+
+没有我做不到的，只有你想不到的
+
+  • 首页
+  • 关于
+  • DEA
+  • 征集logo
+  • 版权声明
+  • 加盟/投稿
+  • Emacs截图
+  • Emacs资源
+  • 站点地图
+  •  
+
+[                        ] []
+首页 > IDE, w3m, 中级, 好玩的 > Emacs才是世界上最强的IDE – 用w3m浏览网页
+
+Emacs才是世界上最强的IDE – 用w3m浏览网页
+
+2009年11月23日 ahei 发表评论阅读评论
+
+[chrome]
+
+也许当你看到我这个标题的时候, 你就会感到惊讶, 在Emacs里面能浏览网页? 对, 在Emacs里面确实能浏览网页. 你应该是第一次
+见到能浏览网页的IDE吧, 其他的IDE顶多是能浏览一些带超链接的帮助. 有必要在Emacs里面浏览网页吗? 有那么多的浏览器, 为
+什么要在Emacs里面浏览网页? 对啊, 为什么啊?
+
+当你在浏览网页的时候, 你是否想过只按几个字母就可以上下滚动网页, 上下翻屏, 前进后退? 现在的浏览器都是多标签页浏览,
+你是否想过能用更方便的方式来切换这些标签页, 而不是那么难按的Ctrl+Tab? 当你在网页文本框里面输入文字的时候, 你是否想
+过是否可以使用自己熟悉的编辑器方式来编辑这些文本呢?
+
+上述功能, w3m都可以完成.
+
+现在你很想见见w3m了吧? 下面就是它:
+
+在w3m里面浏览google 在w3m里面浏览百度         在w3m里面浏览EmacsWiki
+
+在w3m里面浏览google 在w3m里面浏览百度         在w3m里面浏览EmacsWiki
+
+在w3m浏览我的博客   用w3m在google里搜索刘德华 用w3m在google图片搜索中搜索陈好
+
+在w3m浏览我的博客   用w3m在google里搜索刘德华 用w3m在google图片搜索中搜索陈好
+
+下面我来讲讲w3m的使用.
+
+使用M-M打开w3m，它会提示你输入一个url，不输入的话默认为主页(这样设置(setq w3m-home-page “http://www.google.cn”))，
+或者用C-x M-B打开标签页，再或者使用w3m-browse-current-buffer命令直接调用w3m来浏览当前buffer，
+w3m-browse-current-buffer会单独开一个w3m的buffer来浏览当前buffer内容，而w3m-buffer直接在当前buffer浏览，下面是用
+w3m直接浏览这篇文章的html：
+使用w3m浏览当前buffer
+
+使用w3m浏览当前buffer
+
+注意：下面所说的按键如无特殊说明，均是在w3m中有效。
+
+浏览页面
+
+正如vim中那样, h, j, k, l上下左右移动光标, J, K快速上下移动光标, u向上滚半屏, 空格键向下翻一屏, n或tab移到光标到下
+一个链接, p或Shift+tab移动光标到上一个链接, w移动光标到下一个表单, b移动个光标到上一个表单. 按f，w3m会把它的每一个
+链接加一个编号，你输入编号就可以到达这个链接，非常之方便，效果如下：
+w3m的链接编号
+
+w3m的链接编号
+
+
+上图中灰色的数字编号就是链接的数字编号。默认的w3m链接编号有个小问题，就是不显示form的编号，不知道它为啥不显示，我
+改了一下，使得可以显示form的编号，因为显示编号实际上是用函数w3m-link-numbering来实现的，它的代码如下：
+
+^?View Code LISP
+
+1  (defun w3m-link-numbering (&rest args)
+2    "Make overlays that display link numbers."
+3    (when w3m-link-numbering-mode
+4      (save-excursion
+5        (goto-char (point-min))
+6        (let ((i 0)
+7              overlay num)
+8          (catch 'already-numbered
+9            (while (w3m-goto-next-anchor)
+10             ;; 这里判断是否是一个锚链接
+11             (when (w3m-anchor)
+12               (when (get-char-property (point) 'w3m-link-numbering-overlay)
+13                 (throw 'already-numbered nil))
+14               (setq overlay (make-overlay (point) (1+ (point)))
+15                     num (format "[%d]" (incf i)))
+16               (w3m-static-if (featurep 'xemacs)
+17                   (progn
+18                     (overlay-put overlay 'before-string num)
+19                     (set-glyph-face (extent-begin-glyph overlay)
+20                                     'w3m-link-numbering))
+21                 (w3m-add-face-property 0 (length num) 'w3m-link-numbering num)
+22                 (overlay-put overlay 'before-string num)
+23                 (overlay-put overlay 'evaporate t))
+24               (overlay-put overlay 'w3m-link-numbering-overlay i))))))))
+
+上面代码中用了“(when (w3m-anchor)”判断是否有锚链接，form显然没有，所以把这条语句去掉就可以了。
+接着前面，还可以使用goto-line直接定位光标到指定行(最好打开行号显示，方便你查看行号)。上述命令以及Emacs本身的光标移
+动命令使得可以快速移动光标和定位链接.
+
+图片显示
+
+^?View Code LISP
+
+(setq w3m-default-display-inline-images t)
+
+设置默认显示图片, t或者用鼠标单击图片或者图片url控制是否显示光标处的图片, T控制是否显示所有图片
+
+导航
+
+F或C-;前进, B或C-h后退; S列出历史页面, M-s显示曾经打开的会话和当前的会话; 回车或者单击鼠标在当前标签页中打开光标处
+的链接, m在新标签页中打开光标处的链接, g在新标签页中打开用户所输入的url, G在当前标签页中打开用户所输入的url, s启用
+自定义的搜索引擎来搜索, P显示当前标签页url, c拷贝当前标签页url, U拷贝并显示光标所在处的链接的url, d下载光标处的链
+接, M-d下载用户输入的url, r重新加载当前页, 相当于一般浏览器的强制刷新(Ctrl+F5).
+
+切换标签页
+
+M-n切换到下一个标签页, M-p切换到上一个标签页, C-k关闭当前标签页, C-c 1关闭其他的标签页, 只留下当前标签页, 1或C-x 1
+最大化当前标签页, 还可以使用Emacs自己的ido来方便的切换标签页. M-n可以复制当前标签页. C-x C-s可以保存当前标签页,
+C-x C-w可以在保存当前标签页的同时，直接改变当前mode为你所输入的文件名对应的mode，不再是w3m-mode了.
+
+书签
+
+a把当前页面加到书签里面去, M-a把光标处的url加入书签, v新开一个标签页来显示所有的书签, 打开书签后, M-e可以直接打开
+书签文件进行编辑, M-k可以删除一个书签, C-_可以undo刚才删掉的标签.
+下面这个是书签的截图:
+w3m的书签
+
+w3m的书签
+
+工具栏
+
+一般的浏览器都有个工具栏，w3m当然也有。w3m-use-toolbar这个选项控制是否显示工具栏，如果你不想要显示工具栏的话把它设
+为nil就可以了。但是如果你想要显示工具栏的话，并不需要手动去设置这个变量，为什么呢？因为emacs-w3m已经自动帮你设置好
+了，代码如下：
+
+^?View Code LISP
+
+1  (defcustom w3m-use-toolbar
+2    (and (featurep 'tool-bar)
+3         ;; Emacs 22 and greater return t for `(featurep 'tool-bar)'
+4         ;; even if being launched with the -nw option.
+5         (display-images-p)
+6         (or (featurep 'gtk)
+7             (image-type-available-p 'xpm)))
+8    "Non-nil activates toolbar of w3m."
+9    :group 'w3m
+10   :type 'boolean)
+
+如果你有tool-bar这个包，而且能显示图片，它就会自动帮你设为t的。
+那是不是现在你就能看到工具栏呢？抱歉，不能，因为工具栏显示的话会用到图片，而这个图片emacs-w3m从哪里找呢？这就需要
+你指定了，通过w3m-icon-directory指定，指定好它了以后，打开w3m的时候，就会看到一个工具栏了(当然，首先你的工具栏得打
+开，C-u 1 M-x tool-bar-mode)，效果如下：
+w3m的工具栏
+
+w3m的工具栏
+
+其他
+
+M-k显示cookie, 打开cookie页面, 你还可以编辑cookie.
+当要在form中输入数据的时候，把光标移到form上，按回车键或m，如果当前form框很小(比如搜索引擎的输入框)，w3m会让你在
+minibuffer中输入数据，如果很大的话(比如编辑wiki的时候很大的文本框)，w3m则会新开一个buffer让你输入，方便之极，在那
+个新开的buffer里面，按C-c C-q取消输入，C-c C-c则确认输入。
+switch-to-w3m命令可以切换到w3m的buffer。
+w3m-weather可以显示天气预报，不过显示的都是作者家(日本)的那天气预报，如果有人对天气预报感兴趣的话，可以使用
+cn-weather，这是水木上的wlamos写的一个elisp包。
+
+以上我所说的命令已经让你能够快速浏览网页了, w3m的功能特别强大, 等待你的挖掘, w3m的elisp代码有2万5千多行, elisp可不
+像c代码, 不需要多少行代码就可以实现非常强大的功能, w3m的代码就有那么多, 从此也可见它的功能之强大.
+
+w3m的不足
+
+任何软件都有不足, 包括Emacs, w3m更是如此, 其实它的缺点还挺大的, 它不能识别css, …, 也许你现在觉得它也太弱了吧, 连
+css都识别不了, 不要这样鄙视它, 它毕竟是一个文本浏览器, 但是它能看图片, 这个从上面的截图你也能看出来. 既然w3m有这么
+大的缺点, 我为什么还要向大家介绍w3m呢? 原因是它既然是个文本浏览器, 浏览速度当然就很快了, 看一些文字居多的网页还是
+比较不错的, 小说之类的网页啊, w3m都是个不错的选择, 我现在经常用它来浏览EmacsWiki.
+
+有什么改进的软件吗?
+
+conkeror起初是一个firefox的插件, 使得能在firefox下模拟Emacs的快捷键, 随着后来的发展, 它独立成为一个软件了, 它的操
+作方式完全类似Emacs, 而且它的命令也是自文档的, 不过它的配置文件是JavaScript写的, 对JavaScript比较熟悉的同志是件好
+事. 目前firefox的插件它也基本都能兼容, 不能兼容的稍微修改一下也能兼容. 那么它是完美的吗? 当然也不是, 由于它是独立
+于Emacs之外的, 好多对Emacs的定制就不能用于它了, 比如我写了一个非常好用的浏览buffer的包, conkeror便不能用了, 正因为
+它是独立于Emacs之外, 它的标签页浏览都不是很方便. 不过它有一个非常好用的功能, 就是可以显示每个链接的编号, 然后用户
+可以输入链接编号快速打开某个链接.
+
+我的w3m配置文件在这里，配置如下：
+
+^?View Code LISP
+
+1   ;; -*- Emacs-Lisp -*-
+2    
+3   ;; Time-stamp: <2010-02-23 13:52:32 Tuesday by ahei>
+4    
+5   (require 'w3m)
+6   (require 'w3m-lnum)
+7   (require 'util)
+8    
+9   (defvar w3m-buffer-name-prefix "*w3m" "Name prefix of w3m buffer")
+10  (defvar w3m-buffer-name (concat w3m-buffer-name-prefix "*") "Name of w3m buffer")
+11  (defvar w3m-bookmark-buffer-name (concat w3m-buffer-name-prefix "-bookmark*") "Name of w3m buffer")
+12  (defvar w3m-dir (concat my-emacs-lisps-path "emacs-w3m/") "Dir of w3m.")
+13   
+14  (setq w3m-command-arguments '("-cookie" "-F"))
+15  (setq w3m-use-cookies t)
+16  (setq w3m-icon-directory (concat w3m-dir "icons"))
+17  (setq w3m-use-mule-ucs t)
+18  (setq w3m-home-page "http://www.google.cn")
+19  (setq w3m-default-display-inline-images t)
+20   
+21  (defun w3m-settings ()
+22    (make-local-variable 'hl-line-face)
+23    (setq hl-line-face 'hl-line-nonunderline-face)
+24    (setq hl-line-overlay nil)
+25    (color-theme-adjust-hl-line-face))
+26   
+27  (add-hook 'w3m-mode-hook 'w3m-settings)
+28   
+29  (defun w3m-save-current-buffer ()
+30    "Save current w3m buffer."
+31    (interactive)
+32    (save-excursion
+33      (mark-whole-buffer)
+34      (call-interactively 'copy-region-as-kill-nomark))
+35    (with-temp-buffer
+36      (call-interactively 'yank)
+37      (call-interactively 'write-file)))
+38   
+39  (defun w3m-print-current-url ()
+40    "Display current url."
+41    (interactive)
+42    (w3m-message "%s" (w3m-url-readable-string w3m-current-url)))
+43   
+44  (defun w3m-copy-current-url ()
+45    "Display the current url in the echo area and put it into `kill-ring'."
+46    (interactive)
+47    (when w3m-current-url
+48      (let ((deactivate-mark nil))
+49        (kill-new w3m-current-url)
+50        (w3m-print-current-url))))
+51   
+52  (defun view-w3m-bookmark ()
+53    "View w3m bokmark."
+54    (interactive)
+55    (let ((buffer (get-buffer w3m-bookmark-buffer-name)))
+56      (if buffer
+57          (switch-to-buffer buffer)
+58        (with-current-buffer (get-buffer-create w3m-bookmark-buffer-name)
+59          (w3m-mode)
+60          (w3m-bookmark-view)))))
+61   
+62  (defun switch-to-w3m ()
+63    "Switch to *w3m* buffer."
+64    (interactive)
+65    (let ((buffer (get-buffer w3m-buffer-name)))
+66      (if buffer
+67          (switch-to-buffer buffer)
+68        (message "Could not found w3m buffer."))))
+69   
+70  (defun w3m-browse-current-buffer ()
+71    "Use w3m browser current buffer."
+72    (interactive)
+73    (w3m-browse-buffer))
+74   
+75  (defun w3m-browse-buffer (&optional buffer)
+76    "Use w3m browser buffer BUFFER."
+77    (interactive "bBuffer to browse use w3m: ")
+78    (unless buffer (setq buffer (current-buffer)))
+79    (let* ((file (buffer-file-name buffer))
+80           (name (buffer-name buffer)))
+81      (if file
+82          (w3m-goto-url-new-session file)
+83        (with-current-buffer buffer
+84          (save-excursion
+85            (mark-whole-buffer)
+86            (call-interactively 'copy-region-as-kill-nomark)))
+87        (let* ((new-name
+88                (concat
+89                 w3m-buffer-name-prefix
+90                 "-"
+91                 (if (string= "*" (substring name 0 1))
+92                     (substring name 1)
+93                   (concat name "*"))))
+94               (new-buffer (get-buffer-create new-name)))
+95          (switch-to-buffer new-buffer)
+96          (call-interactively 'yank)
+97          (w3m-buffer)
+98          (w3m-mode)
+99          (setq w3m-current-title (buffer-name))))))
+100  
+101 ;; fix small bug about of `w3m-auto-show'
+102 ;; see my-blog/emacs/w3m-auto-show-bug.htm
+103 (defun w3m-auto-show ()
+104   "Scroll horizontally so that the point is visible."
+105   (when (and truncate-lines
+106              w3m-auto-show
+107              (not w3m-horizontal-scroll-done)
+108              (not (and (eq last-command this-command)
+109                        (or (eq (point) (point-min))
+110                            (eq (point) (point-max)))))
+111              (or (memq this-command '(beginning-of-buffer end-of-buffer))
+112                  (string-match "\\`i?search-"
+113                                (if (symbolp this-command) (symbol-name this-command) ""))
+114                  (and (markerp (nth 1 w3m-current-position))
+115                       (markerp (nth 2 w3m-current-position))
+116                       (>= (point)
+117                           (marker-position (nth 1 w3m-current-position)))
+118                       (<= (point)
+119                           (marker-position (nth 2 w3m-current-position))))))
+120     (w3m-horizontal-on-screen))
+121   (setq w3m-horizontal-scroll-done nil))
+122  
+123 (defun w3m-link-numbering (&rest args)
+124   "Make overlays that display link numbers."
+125   (when w3m-link-numbering-mode
+126     (save-excursion
+127       (goto-char (point-min))
+128       (let ((i 0)
+129             overlay num)
+130         (catch 'already-numbered
+131           (while (w3m-goto-next-anchor)
+132             (when (get-char-property (point) 'w3m-link-numbering-overlay)
+133               (throw 'already-numbered nil))
+134             (setq overlay (make-overlay (point) (1+ (point)))
+135                   num (format "[%d]" (incf i)))
+136             (w3m-static-if (featurep 'xemacs)
+137                 (progn
+138                   (overlay-put overlay 'before-string num)
+139                   (set-glyph-face (extent-begin-glyph overlay)
+140                                   'w3m-link-numbering))
+141               (w3m-add-face-property 0 (length num) 'w3m-link-numbering num)
+142               (overlay-put overlay 'before-string num)
+143               (overlay-put overlay 'evaporate t))
+144             (overlay-put overlay 'w3m-link-numbering-overlay i)))))))
+145  
+146 (apply-define-key
+147  global-map
+148  `(("M-M"     w3m-goto-url-new-session)
+149    ("C-x M-B" view-w3m-bookmark)
+150    ("C-x M-m" switch-to-w3m)))
+151  
+152 (apply-define-key
+153  w3m-mode-map
+154   `(("<backtab>" w3m-previous-anchor)
+155     ("n"         w3m-next-anchor)
+156     ("p"         w3m-previous-anchor)
+157     ("w"         w3m-next-form)
+158     ("b"         w3m-previous-form)
+159     ("f"         w3m-go-to-linknum)
+160     ("M-n"       w3m-next-buffer)
+161     ("M-p"       w3m-previous-buffer)
+162     ("C-k"       kill-this-buffer)
+163     ("C-k"       w3m-delete-buffer)
+164     ("C-c 1"     w3m-delete-other-buffers)
+165     ("1"         delete-other-windows)
+166     ("C-x C-s"   w3m-save-current-buffer-sb)
+167     ("P"         w3m-print-current-url)
+168     ("U"         w3m-print-this-url)
+169     ("c"         w3m-copy-current-url)
+170     ("g"         w3m-goto-url-new-session)
+171     ("G"         w3m-goto-url)
+172     ("d"         w3m-download-this-url-sb)
+173     ("M-d"       w3m-download-sb)
+174     ("s"         w3m-search)
+175     ("S"         w3m-history)
+176     ("u"         View-scroll-page-backward)
+177     ("J"         roll-down)
+178     ("K"         roll-up)
+179     ("o"         other-window)
+180     ("m"         w3m-view-this-url-new-session)
+181     ("C-h"       w3m-view-previous-page)
+182     ("F"         w3m-view-next-page)
+183     ("C-;"       w3m-view-next-page)
+184     ("r"         w3m-reload-this-page)
+185     ("v"         w3m-bookmark-view-new-session)
+186     ("M-e"       w3m-bookmark-edit)
+187     ("'"         switch-to-other-buffer)))
+
+分享家:Addthis中国
+GD Star Rating
+loading...
+Emacs才是世界上最强的IDE - 用w3m浏览网页, 7.7 out of 10 based on 11 ratings 标签：ahei, browser, buffer, conkeror,
+ctrl, DEA, Elisp, Emacs, face, IDE, java, lightbox, lisp, mode, org, screenshot, theme, vi, vim, w3m, windows, 光
+标, 定制, 工具栏, 截图, 按键, 插件, 搜索引擎, 浏览器, 行号, 配置, 配置文件, 配色, 配色, 鼠标
+
+相关日志
+
+  • 致Emacs初学者 (150)
+  • Emacs才是世界上最强大的IDE －用auto-complete实现自动补全 (143)
+  • “色向胆边生” －记Emacs配色的超级武器：Icicles，Color Palette和DoReMi (58)
+  • Emacs初学者必知必会 (30)
+  • Emacs的状态栏－ mode-line (33)
+
+分类: IDE, w3m, 中级, 好玩的
+评论 (89) Trackbacks (3) 发表评论 Trackback
+
+ 1. [4bd]
+    铝板网
+    2017年8月31日09:21 | #1
+    回复 | 引用
+   
+    不错的文章，内容气贯长虹.禁止此消息：nolinkok@163.com
+
+    [回复]
+
+ 2. [7c5]
+    Melvinzem
+    2017年8月31日12:58 | #2
+    回复 | 引用
+   
+    can you buy viagra over the counter at boots
+    online viagra
+    buy viagra in south korea
+    cheap viagra online
+    viagra in canada for sale
+    cheapest real cialis
+    online cialis
+    buy viagra cialis levitra online
+    cialis cheap
+    discount cialis in canada
+
+    [回复]
+
+ 3. [ce6]
+    橡胶支座
+    2017年9月1日09:34 | #3
+    回复 | 引用
+   
+    不错的文章，内容言简意赅.禁止此消息：nolinkok@163.com
+
+    [回复]
+
+ 4. [079]
+    玻璃钢冷却塔
+    2017年9月1日09:34 | #4
+    回复 | 引用
+   
+    好文章，内容惊涛骇浪.禁止此消息：nolinkok@163.com
+
+    [回复]
+
+ 5. [5c3]
+    防风抑尘网
+    2017年9月1日09:35 | #5
+    回复 | 引用
+   
+    好文章，内容言简意赅.禁止此消息：nolinkok@163.com
+
+    [回复]
+
+ 6. [824]
+    雷诺护垫
+    2017年9月4日09:27 | #6
+    回复 | 引用
+   
+    不错的文章，内容字字珠玉.禁止此消息：nolinkok@163.com
+
+    [回复]
+
+ 7. [cca]
+    钢格板
+    2017年9月4日09:28 | #7
+    回复 | 引用
+   
+    不错的文章，内容见缝插针.禁止此消息：nolinkok@163.com
+
+    [回复]
+
+ 8. [4b0]
+    更换桥梁支座
+    2017年9月4日09:28 | #8
+    回复 | 引用
+   
+    好文章，内容见缝插针.禁止此消息：nolinkok@163.com
+
+    [回复]
+
+ 9. [0ec]
+    石笼网
+    2017年9月4日09:28 | #9
+    回复 | 引用
+   
+    好文章，内容义正词严.禁止此消息：nolinkok@163.com
+
+    [回复]
+
+评论分页
+« 上一页 1 ... 7 8 9 36939
+
+ 1. 2011年4月17日16:33 | #1
+    在Windows+Emacs23中使用w3m | Thinkbird
+ 2. 2014年6月2日08:23 | #2
+    Emacs的Jabber客户端 – 马开东博客
+ 3. 2014年6月3日05:08 | #3
+    Emacs中鼠标的运用 – 马开东博客
+
+[                        ] 昵称
+[                        ] 电子邮箱 (我们会为您保密)
+[                        ] 网址
+[                                                  ]
+[                                                  ]
+[                                                  ]
+[                                                  ]
+[                                                  ]
+[                                                  ]
+[                                                  ]
+[                                                  ]
+订阅评论
+[提交评论]
+[预览评论]
+:wink: :-| :-x :twisted: :) 8-O :( :roll: :-P :oops: :-o :mrgreen: :lol: :idea: :-D :evil: :cry: 8) :arrow: :-?
+:?: :!:
+
+点击取消回复
+
+[*]有人回复时邮件通知我
+
+Emacs才是世界上最强的IDE － CEDET的安装 Emacs才是世界上最强的IDE －智能的改变光标形状
+订阅
+
+  • Google
+  • 有道
+  • 鲜果
+  • 抓虾
+  • My Yahoo!
+  • newsgator
+  • Bloglines
+  • 哪吒
+
+Twitter
+
+Emacs资源
+
+  • EmacsWiki
+  • Emacsist
+  • 水木Emacs
+  • DEA
+  • pluskid的Emacs
+  • 王垠的Emacs
+  • 王纯业的Emacs
+  • Emacs官网
+  • dotemacs
+  • Emacsen's planet
+
+友情链接
+
+  • LinuxTOY
+  • 善用佳软
+  • 小众软件
+  • 开源视窗
+
+最新评论
+
+  • [7a2]
+    nba jersey uniform design 2016 发表于用weblogger写WordPress博客
+    What i do not realize is actually how you're not a... »
+  • []
+    匿名发表于钗黛双收：若你也同Vim难割舍，却又看Emacs情切切
+    :roll: »
+  • [14b]
+    06kv.com低价网游私服一条龙t2i8 发表于站点地图
+    天龙私服架设|奇迹Mu私服架设|魔兽私服架设|魔域私服架设|墨香私服架设天堂2私服架设|传奇3私服架... »
+  • []
+    BrettBlice 发表于 Emacs中的Evernote: evernote-mode
+    wh0cd501379 accutane accutane 40 mg http://accutan... »
+  • [f48]
+    adidas stan smith 发表于站点地图
+    I simply desired to appreciate you once again. I a... »
+  • 下一页 »
+
+最多评论
+
+  • 我的Emacs配置文件－ DEA (398)
+  • 用CEDET浏览和编辑C++代码 (278)
+  • 致Emacs初学者 (150)
+  • Emacs才是世界上最强大的IDE －用auto-complete实现自动补全 (143)
+  • 折腾Emacs (138)
+  • 钗黛双收：若你也同Vim难割舍，却又看Emacs情切切 (127)
+  • 用CEDET浏览和编辑C++代码(续) – 使用Emacs 23.2内置的CEDET (121)
+  • Emacs才是世界上最强的IDE – 用w3m浏览网页 (116)
+  • 用weblogger写WordPress博客 (110)
+  • Emacs －普通人的编辑利器 (109)
+
+最高评分
+
+  • 用CEDET浏览和编辑C++代码 (9.7 62次投票)
+  • 用pulse实现Emacs的淡入淡出效果 (9.7 9次投票)
+  • 致Emacs初学者 (9.6 112次投票)
+  • Emacs中鼠标的运用 (9.5 15次投票)
+  • Emacs才是世界上最强大的IDE －用Emaci阅读文件 (9.5 13次投票)
+  • Emacs下的多媒体系统 - EMMS (9.5 10次投票)
+  • 折腾Emacs (9.3 55次投票)
+  • 我的Emacs配置文件－ DEA (9.3 24次投票)
+  • ERC使用简介 (9.3 9次投票)
+  • 在Emacs中使用vi的*和#命令 (9.3 6次投票)
+
+分类目录
+
+  • 初级 (37)
+  • 中级 (42)
+  • 高级 (1)
+  • C/C++ (4)
+  • Elisp (10)
+  • Email (1)
+  • IDE (18)
+      □ CEDET (3)
+      □ 自动补全 (6)
+  • Org Mode (4)
+  • mode-line (2)
+  • w3m (3)
+  • windows (1)
+  • 其他 (22)
+  • 好玩的 (12)
+  • 学习Emacs (5)
+  • 宏 (1)
+  • 小技巧 (3)
+  • 快速启动 (2)
+  • 资讯 (2)
+  • 配置 (10)
+      □ DEA (2)
+  • 配色 (2)
+
+最热文章
+
+  • 我的Emacs配置文件－ DEA(75,533)
+  • 致Emacs初学者(72,098)
+  • 用CEDET浏览和编辑C++代码(65,618)
+  • 钗黛双收：若你也同Vim难割舍，却又看Emacs情切切(56,353)
+  • Emacs长啥样(55,357)
+  • Emacs才是世界上最强大的IDE －用auto-complete实现自动补全(54,828)
+  • Emacs org mode学习笔记(48,413)
+  • Emacs初学者必知必会(47,368)
+  • 折腾Emacs(46,283)
+  • 在Emacs下用C/C++编程(39,814)
+
+标签云
+
+Emacs org screenshot 配色 windows 光标 IDE emacser ahei emacser.com C/C++ ede 插件 lisp face 颜色补全 mode 鼠标配
+置 buffer CEDET se lambda 截图 Elisp highlight vi semantic cursor python ann lightbox text theme autoload 定制 irc
+安装 yasnippet DEA snippet term control
+
+功能
+
+  • 登录
+  • 文章 RSS
+  • RSS 评论
+  • WordPress.org
+
+回到顶部 WordPress
+版权所有 © 2009-2015 Emacs中文网
+主题由 NeoEase 提供, 通过 XHTML 1.1 和 CSS 3 验证.
+
+                                             Copyright (C) 2009 ahei
+                                      msn/gtalk/qq/email: ahei0802@gmail.com
+                                                 Google analytics

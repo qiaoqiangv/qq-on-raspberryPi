@@ -1,0 +1,437 @@
+Emacs中文网
+
+没有我做不到的，只有你想不到的
+
+  • 首页
+  • 关于
+  • DEA
+  • 征集logo
+  • 版权声明
+  • 加盟/投稿
+  • Emacs截图
+  • Emacs资源
+  • 站点地图
+  •  
+
+[                        ] []
+首页 > 其他, 初级 > Emacs下的计算器－ calc
+
+Emacs下的计算器－ calc
+
+2010年5月5日 ahei 发表评论阅读评论
+
+作者: yupeng
+
+  • 1 概述
+  • 2 打开计算器
+  • 3 基本运算
+      □ 3.1 逆波兰表达式
+      □ 3.2 基本运算符号
+      □ 3.3 代数运算
+  • 4 数制转换
+  • 5 三角运算
+      □ 5.1 逆波兰表达式下的运算符
+      □ 5.2 在代数模式下的运算符
+      □ 5.3 弧度制和角度制的转换
+  • 6 向量运算与矩阵运算
+  • 7 复制，删除，撤销
+  • 8 定义函数
+
+1 概述
+
+“Calc” 是 emacs 自带的一个计算器，提供了许多方便的数值计算功能，可以让你在不离开 emacs 的情况下进行计算。但 calc
+与 gnome 环境下的 gcalctool 或者 windows 自带的计算器不同，它不是一个掌上计算器的模拟程序，操作不像上述两个计算器
+那样直观，需要记忆一些指令，相应的，提供的功能也更加强大了一些。
+
+2 打开计算器
+
+‘C-x * c’：打开计算器。
+‘C-x * t’：打开计算器，同时也打开 calc 的在线帮助。
+
+3 基本运算
+
+3.1 逆波兰表达式
+
+calc 按照逆波兰表达式的方式进行计算。比如，你要计算2+3的结果，要按照如下顺序在 calc 的 buffer 中输入：
+2 <RET> 3 <RET> + (<RET> 表示回车)
+假设，你当前输入了：
+1 <RET> 2 <RET> 3 <RET>
+然后，输入加号 ‘+’，那么 calc 将会计算 2+3 的结果，并保持数字1不变，calc 的 buffer 中会剩下 1,5两个数字。此时，再
+次输入’+'， calc 会计算 1+5 的结果，此时 calc 的 buffer 中只剩下一个数字 ‘6’。
+很多时候，可以省略一个<RET>，比如计算2+3时，你可以省略第二个<RET>，只输入：
+2 <RET> 3 +
+
+3.2 基本运算符号
+
+‘+’：加号
+‘-’：减号
+‘*’：乘号
+‘/’：除号
+‘%’：取余，比如6%5=1, 30%4=2
+‘&’：取倒数
+‘^’：幂运算，当然也可以用做开方运算，比如4^0.5=2
+
+3.3 代数运算
+
+当我们只是想简单的对一系列数字进行代数运算时，使用逆波兰表达式不是很直观，因此， calc 提供了一个更加直接的指令：
+‘ （就是分号旁边的那个按键）
+比如，在 calc 中按“’”，然后输入算式：
+(3^2 + 4^2) ^ 0.5
+calc 会直接给出答案：5。
+
+4 数制转换
+
+在 calc 中使用指令d2,d8,d0,d6可以在2进制，8进制，10进制，16进制之间切换（d2 就是先按’d'，再按’2′，其他也以此类推）
+。calc 默认是使用10进制进行计算。当进入2进制，8进制，16进制模式时，mode line上会给出’Bin’，’Otc’，’Hex’字样的提示
+，默认的10进制模式是不会有任何提示的。当进入任何一种进制模式的时候，输入的数字都是以10进制模式输入的。比如在16进制
+模式下，输入：
+10 <RET>
+此时，calc中显示的数字是’A'，而不是16进制的10。
+如果你想按照当前的进制输入数字，需要在键入数字前按‘#’，比如，在16进制模式下输入：
+#10 <RET>
+此时，calc中显示的数字就是16进制的10,而不是A。
+
+5 三角运算
+
+5.1 逆波兰表达式下的运算符
+
+S：正弦
+C：余弦
+T：正切
+比如，想计算30度角的正弦值，输入：
+30 <RET> S（可以省略 <RET>）
+calc 会给出答案：0.5
+
+5.2 在代数模式下的运算符
+
+sin：正弦
+cos：余弦
+tan：正切
+比如，输入
+’sin(30)^2+cos(30)^2
+我这里的calc给出答案：
+0.999999999999
+
+5.3 弧度制和角度制的转换
+
+m r：进入弧度制（mode line 上显示 Rad）
+m d：进入角度制（mode line 上显示 Deg）
+
+6 向量运算与矩阵运算
+
+输入向量与矩阵的方法很简单。
+比如，输入一个三维向量：
+[ 1 <RET> 2 <RET> 3 <RET> ]
+此时，calc 中就会显示：
+[1, 2, 3]
+（实际上最后一个<RET>可以省略）
+输入矩阵的方法与向量类似，比如，我们输入一个2×2的矩阵：
+[ [ 1 <RET> 2 <RET> ] [ 3 <RET> 4 <RET> ] ]
+此时， calc 中会显示：
+[ [ 1, 2 ]
+[ 3, 4 ] ]
+calc中专门的矩阵运算法则我没有研究过，我自己平常会用到的，也就是矩阵求逆。只需输入一个矩阵，然后按“&”就可以了（还
+记得“&”么？如果对数字使用“&”运算，就是求倒数，对于矩阵，就是求逆）。
+
+7 复制，删除，撤销
+
+输入一个数字（或矩阵），然后按<RET>，可以复制该数字（或矩阵）到整个运算堆栈的最顶部。
+Backspace 或 Del 可以删除运算堆栈最顶部的数字（或矩阵）。
+用U或者C-_或者M-x calc-undo可以在计算器中执行撤销操作
+
+8 定义函数
+
+在 calc 中你可以定义自己的函数。定义函数的指令是：
+Z F
+比如，先输入一个公式：
+‘a + 2b
+然后键入：
+Z F m
+再回答几个 minibuffer 中提出的问题，就定义了一个以 ‘z m’为快捷键的函数了。
+此时，再输入两个数字：
+1 <RET> 2 <RET>
+然后按：
+z m
+就会按照公式计算出1+2*2的结果，也就是5。
+
+使用指令：
+Z P
+可以把函数保存到文件，这样在以后的 emacs 会话中都可以使用这个函数。
+比如，输入：
+Z P m
+可以把刚才定义的函数’z m’保存到由变量 calc-settings-file 指定的文件中。以后每次进入 calc 时，保存在这只文件中的函
+数也会被自动加载。calc-settings-file 的默认值是”~/.calc.el”，我通常喜欢把它挪到.emacs.d 里面：
+
+^?View Code LISP
+
+(setq calc-settings-file "~/.emacs.d/.calc.el")
+
+分享家:Addthis中国
+GD Star Rating
+loading...
+Emacs下的计算器－ calc, 8.6 out of 10 based on 9 ratings 标签：calc, Emacs, windows, 配色, 配色
+
+相关日志
+
+  • 用CEDET浏览和编辑C++代码(续) – 使用Emacs 23.2内置的CEDET (121)
+  • 用CEDET浏览和编辑C++代码 (278)
+  • 智能的启动Emacs (10)
+  • Windows下设置Emacs的HOME目录 (72)
+  • GNU Emacs 23.2发布 (38)
+
+分类: 其他, 初级
+评论 (18) Trackbacks (3) 发表评论 Trackback
+
+ 1. [7c7]
+    マイナチュレ無添加育毛剤
+    2017年6月8日15:20 | #1
+    回复 | 引用
+   
+    Please let me know if you’re looking for a writer for
+    your blog. You have some really good articles and I feel
+    I would be a good asset. If you ever want to take some of
+    the load off, I’d really like to write some articles
+    for your blog in exchange for a link back to mine.
+    Please shoot me an e-mail if interested. Kudos!
+
+    [回复]
+
+ 2. [ed2]
+    脱毛サロン受付
+    2017年6月19日16:35 | #2
+    回复 | 引用
+   
+    It’s truly very difficult in this busy life to listen news
+    on TV, so I just use internet for that reason, and get
+    the most recent information.
+
+    [回复]
+
+ 3. [8f5]
+    facebook help center number uk
+    2017年9月2日22:39 | #3
+    回复 | 引用
+   
+    Mapping Workplace Attributes to OneLogin Attributes.
+
+    [回复]
+
+ 4. [201]
+    Privilege codes
+    2017年9月4日09:17 | #4
+    回复 | 引用
+   
+    I read this piece of writing completely on the topic of the
+    difference of hottest and previous technologies, it’s awesome article.
+
+    [回复]
+
+ 5. [0aa]
+    Mobile telephone information
+    2017年9月5日02:30 | #5
+    回复 | 引用
+   
+    Hi there to every , as I am actually keen of reading this web site’s post to be updated regularly.
+    It includes nice stuff.
+
+    [回复]
+
+ 6. [f03]
+    فندق سانت جورج دبي
+    2017年9月29日06:42 | #6
+    回复 | 引用
+   
+    Thanks to Dr. Hawass’ talks and professional observations,
+    that he will share with us next to the world’s greatest monuments, you will experience Egypt
+    like no one else.
+
+    [回复]
+
+ 7. [a6d]
+    اجمل فنادق دبي
+    2017年10月5日14:13 | #7
+    回复 | 引用
+   
+    Breakfast is often served at inns between 07:00 to 10.00
+    every morning.
+
+    [回复]
+
+ 8. [b9a]
+    اسعار فنادق دبي
+    2017年10月14日01:04 | #8
+    回复 | 引用
+   
+    E book Now.
+
+    [回复]
+
+评论分页
+« 上一页 1 2 41266
+
+ 1. 2010年5月5日03:02 | #1
+    Tweets that mention Emacs下的计算器－ calc | Emacs中文网 — Topsy.com
+ 2. 2010年8月2日04:42 | #2
+    Emacser
+ 3. 2011年12月21日23:55 | #3
+    ECAE — Shopex电子商务云的梦想空间 » [Denny] Emacs misc features
+
+[                        ] 昵称
+[                        ] 电子邮箱 (我们会为您保密)
+[                        ] 网址
+[                                                  ]
+[                                                  ]
+[                                                  ]
+[                                                  ]
+[                                                  ]
+[                                                  ]
+[                                                  ]
+[                                                  ]
+订阅评论
+[提交评论]
+[预览评论]
+:wink: :-| :-x :twisted: :) 8-O :( :roll: :-P :oops: :-o :mrgreen: :lol: :idea: :-D :evil: :cry: 8) :arrow: :-?
+:?: :!:
+
+点击取消回复
+
+[*]有人回复时邮件通知我
+
+DEA的FAQs 智能的启动Emacs
+订阅
+
+  • Google
+  • 有道
+  • 鲜果
+  • 抓虾
+  • My Yahoo!
+  • newsgator
+  • Bloglines
+  • 哪吒
+
+Twitter
+
+Emacs资源
+
+  • EmacsWiki
+  • Emacsist
+  • 水木Emacs
+  • DEA
+  • pluskid的Emacs
+  • 王垠的Emacs
+  • 王纯业的Emacs
+  • Emacs官网
+  • dotemacs
+  • Emacsen's planet
+
+友情链接
+
+  • LinuxTOY
+  • 善用佳软
+  • 小众软件
+  • 开源视窗
+
+最新评论
+
+  • [7a2]
+    nba jersey uniform design 2016 发表于用weblogger写WordPress博客
+    What i do not realize is actually how you're not a... »
+  • []
+    匿名发表于钗黛双收：若你也同Vim难割舍，却又看Emacs情切切
+    :roll: »
+  • [14b]
+    06kv.com低价网游私服一条龙t2i8 发表于站点地图
+    天龙私服架设|奇迹Mu私服架设|魔兽私服架设|魔域私服架设|墨香私服架设天堂2私服架设|传奇3私服架... »
+  • []
+    BrettBlice 发表于 Emacs中的Evernote: evernote-mode
+    wh0cd501379 accutane accutane 40 mg http://accutan... »
+  • [f48]
+    adidas stan smith 发表于站点地图
+    I simply desired to appreciate you once again. I a... »
+  • 下一页 »
+
+最多评论
+
+  • 我的Emacs配置文件－ DEA (398)
+  • 用CEDET浏览和编辑C++代码 (278)
+  • 致Emacs初学者 (150)
+  • Emacs才是世界上最强大的IDE －用auto-complete实现自动补全 (143)
+  • 折腾Emacs (138)
+  • 钗黛双收：若你也同Vim难割舍，却又看Emacs情切切 (127)
+  • 用CEDET浏览和编辑C++代码(续) – 使用Emacs 23.2内置的CEDET (121)
+  • Emacs才是世界上最强的IDE – 用w3m浏览网页 (116)
+  • 用weblogger写WordPress博客 (110)
+  • Emacs －普通人的编辑利器 (109)
+
+最高评分
+
+  • 用CEDET浏览和编辑C++代码 (9.7 62次投票)
+  • 用pulse实现Emacs的淡入淡出效果 (9.7 9次投票)
+  • 致Emacs初学者 (9.6 112次投票)
+  • Emacs中鼠标的运用 (9.5 15次投票)
+  • Emacs才是世界上最强大的IDE －用Emaci阅读文件 (9.5 13次投票)
+  • Emacs下的多媒体系统 - EMMS (9.5 10次投票)
+  • 折腾Emacs (9.3 55次投票)
+  • 我的Emacs配置文件－ DEA (9.3 24次投票)
+  • ERC使用简介 (9.3 9次投票)
+  • 在Emacs中使用vi的*和#命令 (9.3 6次投票)
+
+分类目录
+
+  • 初级 (37)
+  • 中级 (42)
+  • 高级 (1)
+  • C/C++ (4)
+  • Elisp (10)
+  • Email (1)
+  • IDE (18)
+      □ CEDET (3)
+      □ 自动补全 (6)
+  • Org Mode (4)
+  • mode-line (2)
+  • w3m (3)
+  • windows (1)
+  • 其他 (22)
+  • 好玩的 (12)
+  • 学习Emacs (5)
+  • 宏 (1)
+  • 小技巧 (3)
+  • 快速启动 (2)
+  • 资讯 (2)
+  • 配置 (10)
+      □ DEA (2)
+  • 配色 (2)
+
+最热文章
+
+  • 我的Emacs配置文件－ DEA(75,534)
+  • 致Emacs初学者(72,098)
+  • 用CEDET浏览和编辑C++代码(65,618)
+  • 钗黛双收：若你也同Vim难割舍，却又看Emacs情切切(56,353)
+  • Emacs长啥样(55,358)
+  • Emacs才是世界上最强大的IDE －用auto-complete实现自动补全(54,829)
+  • Emacs org mode学习笔记(48,414)
+  • Emacs初学者必知必会(47,368)
+  • 折腾Emacs(46,283)
+  • 在Emacs下用C/C++编程(39,814)
+
+标签云
+
+Emacs org screenshot 配色 windows 光标 IDE emacser ahei emacser.com C/C++ ede 插件 lisp face 颜色补全 mode 鼠标配
+置 buffer CEDET se lambda 截图 Elisp highlight vi semantic cursor python ann lightbox text theme autoload 定制 irc
+安装 yasnippet DEA snippet term control
+
+功能
+
+  • 登录
+  • 文章 RSS
+  • RSS 评论
+  • WordPress.org
+
+回到顶部 WordPress
+版权所有 © 2009-2015 Emacs中文网
+主题由 NeoEase 提供, 通过 XHTML 1.1 和 CSS 3 验证.
+
+                                             Copyright (C) 2009 ahei
+                                      msn/gtalk/qq/email: ahei0802@gmail.com
+                                                 Google analytics

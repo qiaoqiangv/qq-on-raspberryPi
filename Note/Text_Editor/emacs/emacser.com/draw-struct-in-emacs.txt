@@ -1,0 +1,959 @@
+Emacs中文网
+
+没有我做不到的，只有你想不到的
+
+  • 首页
+  • 关于
+  • DEA
+  • 征集logo
+  • 版权声明
+  • 加盟/投稿
+  • Emacs截图
+  • Emacs资源
+  • 站点地图
+  •  
+
+[                        ] []
+首页 > 中级, 其他 > 使用graphviz画数据结构
+
+使用graphviz画数据结构
+
+2011年6月15日 ahei 发表评论阅读评论
+
+作者: tubo
+
+今天下午用了些时间写了个小的函数，该函数配合 autoinsert + graphviz-dot-mode ，可以很方便的将 C 语言中指定的 struct
+结构画出来。这样，画了多个数据结构之后，再手动添加几条线，数据结构之间的关系就一目了然了。
+
+  • 1 Graphviz & graphviz-dot-mode
+      □ 1.1 What is Graphviz?
+      □ 1.2 Graphviz 的安装
+      □ 1.3 Graphviz 的使用
+      □ 1.4 graphviz-dot-mode
+  • 2 小函数登场
+      □ 2.1 elisp 代码
+      □ 2.2 使用方法
+  • 3 autoinert 配置
+  • 4 用法示例
+  • 5 后记
+
+1 Graphviz & graphviz-dot-mode
+
+1.1 What is Graphviz?
+
+简单的说， graphviz 是一个开源的自动图形绘制工具, 可以很方便的可视化结构信息，把抽象的图和网络用几何的方式表现出来
+。
+
+Graphviz is open source graph visualization software. Graph visualization is a way of representing structural
+information as diagrams of abstract graphs and networks. It has important applications in networking,
+bioinformatics, software engineering, database and web design, machine learning, and in visual interfaces for
+other technical domains.
+
+更多信息请参考其主页：http://www.graphviz.org/
+
+1.2 Graphviz 的安装
+
+Linux 下几乎所有的发行版都有这个工具，如果没有默认安装的话，也可以通过发行版自带的软件管理工具来或者去其下载页面上
+下载相应的二进制包或者源码包。同时该软件也提供了 windows 下的安装文件，参见： http://www.graphviz.org/
+Download..php
+
+gentoo 下安装 graphviz ，一如既往的简单：
+
+^?View Code BASH
+
+emerge -av graphviz
+
+1.3 Graphviz 的使用
+
+这个话题比较大，离本文的目的有点偏，而且有网上也很多的教程，所以不多言了，可以参考这里：http://www.google.com/
+search?hl=en&source=hp&biw=1278&bih=898&q=graphviz+%E6%95%99%E7%A8%8B
+
+1.4 graphviz-dot-mode
+
+用过 Emacs 的人一看就知道：这肯定是为 emacs 写的、编写 dot 文件（graphviz 的输入文件）的模式，提供了文件的编译、预
+览、快速注释等等的相应功能。gentoo 下有现成的 ebuild ，只要 emerge 一下就可以了：
+
+^?View Code C
+
+emerge -av graphivz-dot-mode
+
+如果是其他发行版的话，从其主页上下载该文件，然后放到 emacs 的 load-path 下即可。下面是一个简单的设置：
+
+^?View Code LISP
+
+(load "graphviz-dot-mode.el" nil t t)
+ 
+(add-hook 'find-file-hook (lambda()
+                            (if (string= "dot" (file-name-extension
+                                                buffer-file-name))
+                                (progn
+                                  (message "Enabling Setings for dot-mode")
+                                  (setq fill-column 1000)
+                                  (base-auto-pair)
+                                  (local-set-key (kbd "<C-f6>") 'compile)
+                                  )
+                              )))
+
+graphviz-mode 为编辑 dot 文件提供了下面的快捷键：
+
+  • C-cc 快速编译
+  • C-cp 预览图像
+  • M-; 注释或者取消注释
+
+2 小函数登场
+
+2.1 elisp 代码
+
+主要思想是解析 buffer 中选中的文本，通过正则表达式来匹配，从中找到 struct name 以及其中的各个 fields，最后根据 dot
+语法将其组成一个 subgraph。其实应该有更好的方法（比如通过 CEDET 的 Semantic 解析结果来做），但对 CEDET 的代码实在
+不熟，所以现在就只能这样了。
+代码如下：
+
+^?View Code LISP
+
+;; Function used to add fields of struct into a dot file (for Graphviz).
+(defconst yyc/dot-head "subgraph cluster_%s {
+    node [shape=record fontsize=12 fontname=Courier style=filled];
+    color = lightgray;
+    style=filled;
+    label = \"Struct %s\";
+    edge[color=\"#2e3436\"];"
+  "Header part of dot file.")
+(defconst yyc/dot-tail "
+}"
+  "Tail part of dot")
+(defconst yyc/dot-node-head
+  "
+        node_%s[shape=record label=\"<f0>*** STRUCT %s ***|\\"
+  "Format of node.")
+(defconst yyc/dot-node-tail "
+\"];"
+  "Format of node.")
+ 
+(defconst r_attr_str "[ \t]+\\(.*+\\)[ \t]+\\(.*\\)?;"
+  "Regular expression for matching struct fields.")
+ 
+(defconst r_name "\\_<\\(typedef[ \t]+\\)?struct[ \t]+\\(.*\\)?[ \t]*{"
+  "Regular expression for mating struct name")
+ 
+(defconst attr_str "
+<f%d>%s %s\\l|\\" "nil")
+ 
+(defun yyc/datastruct-to-dot (start end)
+  "generate c++ function definition and insert it into `buffer'"
+  (interactive "rp")
+  (setq var-defination (buffer-substring-no-properties start end))
+  (let* ((tmp_str "")
+         (var-name "")
+         (var-type "")
+         (counter 0)
+         (struct-name "")
+         (header-str "")
+         )
+    (defun iter (pos)
+      (setq counter (+ counter 1))
+      (message (format "Counter: %d, pos: %d"
+                       counter pos))
+      (if (string-match r_name var-defination pos)
+          (progn
+            (message "A")
+            (setq struct-name
+                  (match-string 2 var-defination))
+            (setq header-str
+                  (format yyc/dot-head struct-name struct-name))
+            (setq tmp_str
+                  (format yyc/dot-node-head struct-name struct-name))
+            (iter (match-end 0)))
+        (if (string-match r_attr_str var-defination pos)
+            (progn
+              (message "B")
+              (setq var-type
+                    (match-string 1 var-defination))
+              (setq var-name
+                    (match-string 2 var-defination))
+              (setq tmp_str
+                    (concat tmp_str
+                            (format attr_str counter var-type var-name)))
+              (iter (match-end 0)))
+          nil)))
+    (save-excursion
+      (iter 0)
+      (set-buffer (get-buffer-create "tmp.dot"))
+      (graphviz-dot-mode)
+      (setq pos (point-max))
+      (insert  header-str tmp_str )
+      (goto-char (point-max))
+      (delete-char -1)
+      (insert "<f999>\\"yyc/dot-node-tail yyc/dot-tail)
+      )
+    (if (one-window-p)
+        (split-window-vertically))
+    (switch-to-buffer-other-window "tmp.dot")
+    (goto-char (point-min))
+    )
+  (message "Finished, please see *tmp.dot* buffer.")
+  )
+
+2.2 使用方法
+
+用起来很简单：找到一个 C 代码，标记整个 struct 定义，然后M-x 输入： yyc/datastruct-to-dot 即可。命令执行完毕后，会
+打开一个新的 tmp.dot buffer，其中包含了用于绘制该 struct 的代码。前面也提到了，这生成的仅仅是个 subgraph，需要将这
+个 subgraph 添加到真正的 graph 下，才能生成图像。我通过 autoinsert 来自动创建用于放置 subgraph 的 graph 。
+
+3 autoinert 配置
+
+auto-insert 是 Emacs 自带的功能，稍加配置即可使用：
+
+^?View Code LISP
+
+ ;; ************** Autoinsert templates *****************
+(require 'autoinsert)
+(setq auto-insert-mode t)  ;;; Adds hook to find-files-hook
+(setq auto-insert-directory "~/.emacs.d/templates/auto-insert/")
+(setq auto-insert 'other)
+(setq auto-insert-query nil)
+ 
+;; auto-insert stuff
+(add-hook 'find-file-hooks 'auto-insert)
+(setq auto-insert-alist
+      '(
+        ("\\.cpp$" . ["insert.cpp" auto-update-c-source-file])
+        ("\\.h$"   . ["header.h" auto-update-header-file])
+        ("\\.c$" . ["insert.c" auto-update-c-source-file])
+        ("\\.org$" . ["insert.org" auto-update-defaults])
+        ("\\.sh$" . ["insert.sh" auto-update-defaults])
+        ("\\.lisp$" . ["insert.lisp" auto-update-defaults])
+        ("\\.el$" . ["insert.el" auto-update-defaults])
+        ("\\.dot$" . ["insert.dot" auto-update-defaults])
+        ("\\.erl$" . ["insert.err" auto-update-defaults])
+        ("\\.py$" . ["insert.py" auto-update-defaults])
+        ("\\.tex$" . ["insert.tex" auto-update-defaults])
+        ("\\.html$" . ["insert.html" auto-update-defaults])
+        ("\\.devhelp2$" . ["insert.devhelp2" auto-update-defaults])
+        ("\\.ebuild$" . ["insert.ebuild" auto-update-defaults])
+        ("\\.sh$" . ["insert.sh" auto-update-defaults])
+        ("Doxyfile$" . ["insert.doxyfile" auto-update-defaults])
+        ))
+ 
+;; function replaces the string '@@@' by the current file
+;; name. You could use a similar approach to insert name and date into
+;; your file.
+(defun auto-update-header-file ()
+  (save-excursion
+    (while (search-forward "@@@" nil t)
+      (save-restriction
+        (narrow-to-region (match-beginning 0) (match-end 0))
+        (replace-match (upcase (file-name-nondirectory buffer-file-name)))
+        (subst-char-in-region (point-min) (point-max) ?. ?_)
+        ))
+    )
+  )
+ 
+(defun insert-today ()
+  "Insert today's date into buffer"
+  (interactive)
+  (insert (format-time-string "%m-%e-%Y" (current-time))))
+ 
+(defun auto-update-c-source-file ()
+  (save-excursion
+    ;; Replace HHHH with file name sans suffix
+    (while (search-forward "HHHH" nil t)
+      (save-restriction
+        (narrow-to-region (match-beginning 0) (match-end 0))
+        (replace-match (concat (file-name-sans-extension (file-name-nondirectory buffer-file-name)) ".h") t
+                       )
+        ))
+    )
+  (save-excursion
+    ;; Replace @@@ with file name
+    (while (search-forward "@@@" nil t)
+      (save-restriction
+        (narrow-to-region (match-beginning 0) (match-end 0))
+        (replace-match (file-name-nondirectory buffer-file-name))
+        ))
+    )
+  (save-excursion
+    ;; replace DDDD with today's date
+    (while (search-forward "DDDD" nil t)
+      (save-restriction
+        (narrow-to-region (match-beginning 0) (match-end 0))
+        (replace-match "")
+        (insert-today)
+        ))
+    )
+  )
+ 
+(defun auto-replace-file-name ()
+  (save-excursion
+    ;; Replace @@@ with file name
+    (while (search-forward "(>>FILE<<)" nil t)
+      (save-restriction
+        (narrow-to-region (match-beginning 0) (match-end 0))
+        (replace-match (file-name-nondirectory buffer-file-name) t)
+        ))
+    )
+  )
+ 
+(defun auto-update-defaults ()
+  (auto-replace-file-name)
+  (auto-replace-file-name-no-ext)
+  (auto-replace-date-time)
+  )
+ 
+(defun auto-replace-file-name-no-ext ()
+  (save-excursion
+    ;; Replace @@@ with file name
+    (while (search-forward "(>>FILE_NO_EXT<<)" nil t)
+      (save-restriction
+        (narrow-to-region (match-beginning 0) (match-end 0))
+        (replace-match (file-name-sans-extension (file-name-nondirectory buffer-file-name)) t)
+        ))
+    )
+  )
+ 
+(defun auto-replace-date-time ()
+  (save-excursion
+    (while (search-forward "(>>DATE<<)" nil t)
+      (save-restriction
+        (narrow-to-region (match-beginning 0) (match-end 0))
+        (replace-match "" t)
+        (insert-today)
+        ))))
+
+模板文件存放于 “~/.emacs.d/templates/auto-insert/” 中，其中， insert.dot 的内容如下：
+
+// $Id: (>>FILE<<), (>>DATE<<)
+digraph Name {
+    node [shape=record fontsize=12 fontname=Courier style=filled];
+    edge[color=blue];
+    rankdir=LR;
+
+// XXX: place to put subgraph
+
+}
+
+4 用法示例
+
+一个简单的使用示例，有如下步骤：
+
+  • 1: 打开一个 C 文件
+
+    如内核代码中的 drivers/usb/storage/usb.h
+
+  • 2: 打开一个 dot 文件(/tmp/usb.dot)
+
+    auto-insert 会自动插入一些文件内容.
+
+  • 3: 选中 struct us_data 的定义，并执行 yyc/datastruct-to-dot。
+
+    执行完成后， us_data 的数据填写到了 tmp.dot 中，将该 buffer 中的所有内容 kill 掉，并 yank 到 usb.dot 中 XXX 这
+    一行的下面。此时，保存 sub.dot ，并按下快捷键 : C-cc ，然后按下 Enter ，就会自动编译。然后再按下 C-cp 就可以在
+    另外一个 buffer 中预览它了。
+
+    其实到这里，一个 C 语言的 struct 数据结构就已经被画出来了，后面的两个步骤，是为了介绍怎样将多个数据结构联系起
+    来。
+
+  • 4: 添加其他的 subgraph
+
+    我们可以继续添加其他的 subgraph ，例如 struct usb_ctrlrequest *cr ，以及 struct usb_sg_request，并全部做为
+    subgraph 添加到 usb.dot 中。
+
+  • 5: 为 subgraph 建立关联
+
+    很简单，通过 “->” 画两条线就可以了。
+
+    最后生成的文件如下：
+
+    digraph USB {
+        node [shape=record fontsize=12 fontname=Courier style=filled];
+        edge[color=blue];
+        rankdir=LR;
+
+    subgraph cluster_us_data  {
+        node [shape=record fontsize=12 fontname=Courier style=filled];
+        color = lightgray;
+        style=filled;
+        label = "Struct us_data ";
+        edge[color="#2e3436"];
+            node_us_data [shape=record label="<f0>*** STRUCT us_data  ***|\
+    <f2>struct mutex     dev_mutex\l|\
+    <f3>struct usb_device *pusb_dev\l|\
+    <f4>struct usb_interface *pusb_intf\l|\
+    <f5>struct us_unusual_dev   *unusual_dev\l|\
+    <f6>unsigned long    fflags\l|\
+    <f7>unsigned long    dflags\l|\
+    <f8>unsigned int     send_bulk_pipe\l|\
+    <f9>unsigned int     recv_bulk_pipe\l|\
+    <f10>unsigned int    send_ctrl_pipe\l|\
+    <f11>unsigned int    recv_ctrl_pipe\l|\
+    <f12>unsigned int    recv_intr_pipe\l|\
+    <f13>char        *transport_name\l|\
+    <f14>char        *protocol_name\l|\
+    <f15>__le32      bcs_signature\l|\
+    <f16>u8      subclass\l|\
+    <f17>u8      protocol\l|\
+    <f18>u8      max_lun\l|\
+    <f19>u8      ifnum\l|\
+    <f20>u8      ep_bInterval\l|\
+    <f21>trans_cmnd  transport\l|\
+    <f22>trans_reset     transport_reset\l|\
+    <f23>proto_cmnd  proto_handler\l|\
+    <f24>struct scsi_cmnd *srb\l|\
+    <f25>unsigned int    tag\l|\
+    <f26>char        scsi_name[32]\l|\
+    <f27>struct urb  *current_urb\l|\
+    <f28>struct usb_ctrlrequest *cr\l|\
+    <f29>struct usb_sg_request current_sg\l|\
+    <f30>unsigned char   *iobuf\l|\
+    <f31>dma_addr_t  iobuf_dma\l|\
+    <f32>struct task_struct *ctl_thread\l|\
+    <f33>struct completion cmnd_ready\l|\
+    <f34>struct completion notify\l|\
+    <f35>wait_queue_head_t delay_wait\l|\
+    <f36>struct completion scanning_done\l|\
+    <f37>void        *extra\l|\
+    <f38>extra_data_destructor extra_destructor\l|\
+    <f39>pm_hook         suspend_resume_hook\l|\
+    <f40>int         use_last_sector_hacks\l|\
+    <f41>int         last_sector_retries\l|<f999>\
+    "];
+    }
+
+    subgraph cluster_usb_ctrlrequest  {
+        node [shape=record fontsize=12 fontname=Courier style=filled];
+        color = lightgray;
+        style=filled;
+        label = "Struct usb_ctrlrequest ";
+        edge[color="#2e3436"];
+            node_usb_ctrlrequest [shape=record label="<f0>*** STRUCT usb_ctrlrequest  ***|\
+    <f2>__u8 bRequestType\l|\
+    <f3>__u8 bRequest\l|\
+    <f4>__le16 wValue\l|\
+    <f5>__le16 wIndex\l|\
+    <f6>__le16 wLength\l|<f999>\
+    "];
+    }
+
+    subgraph cluster_usb_sg_request  {
+        node [shape=record fontsize=12 fontname=Courier style=filled];
+        color = lightgray;
+        style=filled;
+        label = "Struct usb_sg_request ";
+        edge[color="#2e3436"];
+            node_usb_sg_request [shape=record label="<f0>*** STRUCT usb_sg_request  ***|\
+    <f2>int      status\l|\
+    <f3>size_t       bytes\l|\
+    <f4>spinlock_t   lock\l|\
+    <f5>struct usb_device *dev\l|\
+    <f6>int      pipe\l|\
+    <f7>int      entries\l|\
+    <f8>struct urb   **urbs\l|\
+    <f9>int      count\l|\
+    <f10>struct completion complete\l|<f999>\
+    "];
+    }
+
+    node_us_data:f28 -> node_usb_ctrlrequest:f0;
+    node_us_data:f29 -> node_usb_sg_request:f0[color=brown];
+    node_us_data:f29 -> node_usb_sg_request:f999[color=brown];
+
+    }
+
+    生成的图下如下：
+    [thumbs_gra]
+
+    graphviz ds
+
+5 后记
+
+功能上还有很多地方可以改进，比如通过 CEDET 的 Semantic 进行语义分析，参考 corge 代码，支持 C++ 中的 class 等等。以
+后有时间在改改。PS: 貌似写这个 blog 用的时间比写那个 elisp 代码更费时间 ……
+
+分享家:Addthis中国
+GD Star Rating
+loading...
+使用graphviz画数据结构, 7.8 out of 10 based on 58 ratings 标签：ann, c++, CEDET, ctrl, ede, Emacs, face, lambda,
+org, screenshot, semantic, windows, 配色
+
+相关日志
+
+  • 用CEDET浏览和编辑C++代码(续) – 使用Emacs 23.2内置的CEDET (121)
+  • 我的Emacs配置文件－ DEA (398)
+  • 在Emacs中使用gdb调试程序 (55)
+  • 高亮C的所有变量和函数 (96)
+  • 用CEDET浏览和编辑C++代码 (278)
+
+分类: 中级, 其他
+评论 (27) Trackbacks (0) 发表评论 Trackback
+
+ 1. [f11]
+    bokkmxxuk
+    2016年4月7日04:17 | #1
+    回复 | 引用
+   
+    After a season-opening loss to Northwestern, Stanford has reeled off eight consecutive victories. This is
+    shaping up as an epic season for coach David Shaw’s team. louis vuitton outlet Petersburg, Fla. h http://
+    www.louisvuittonbagsbuy.us.com
+    ETF platform as a further example of how industry leaders are embedding the ETF technology at the heart of
+    their innovation and growth agendas. louis vuitton bags Might the Arizona earthquake be a time when you allow
+    yourself to be unbound or set free.
+    “Our initial goals are to: coach outlet store online harm minors in any way; c. m michael kors outlet
+    The mural depicts a rambling garden path with seniors relaxing — sunbathing, golfing, biking and gardening —
+    around a stanza of a poem by Dorothy Frances Gurney about life in a garden. coach outlet This rendition
+    features Dyana Carroll as Kate, Tom Koelbel as Greg, and Emily Mohney as the titular Sylvia.
+    o “I don’t plan on being a part of partisan politics,” Shadoin said Sunday. “Sometimes he and I are going to
+    disagree on what the best ideas are, but I think his heart is in the right place.” http://
+    www.coachhandbags.com.co The state’s $40 million match required for the privateoption program for the final
+    six months of fiscal 2017 will be covered by increased insurance premiums, resulting largely from the
+    privateoption insurance policies, he said. nfl jerseys
+    CEO Müller told reporters in December he expected an agreement “in days or weeks” with CARB and the U. oakley
+    outlet A year earlier, almost to the day, Feb. http://www.raybanoutlet.name
+    “And what’s so new about now,” he asked rhetorically. cheap ray bans James Clyburn, as questioning the
+    legitimacy of the black presidential contender. c http://www.coachfactorysoutlet.com
+    “With all the great events we have coming up, now is an ideal time to come to Denver,” says Richard Scharf,
+    president and CEO of VISIT DENVER, The Convention Visitors Bureau. louis vuitton handbags “But throughout the
+    training we learned all the horrible things these chemicals can do.
+    Granted, I was only 14 years old and had no idea what a paradigm shift even was, but I still felt, in the core
+    of my naive, young soul, that a new age was upon us and the world would never be the same. michael kors outlet
+    online Ford sold 763,402 Fseries pickups in 2013 and another 753,851 in 2014, according to Autodata Corp.
+    You understand that through your use of the Yahoo Services you consent to the collection and use (as set forth
+    in the applicable privacy policy) of this information, including the transfer of this information to the
+    United States and/or other countries for storage, processing and use by Yahoo and its affiliates. michael kors
+    outlet Working quickly, use the back of a large spoon or a rolling pin to flatten and squash the mixture into
+    a thin sheet about 1/4 inch thick.
+    If the normal person didn’t have to work 2 jobs, maybe the gossip that ran from police to school wouldn’t
+    create a way for 1 family to capitalize. michael kors outlet Arkansas has won bowl games in backtoback seasons
+    for the first time ever at the school and has won three consecutive bowl games for the first time.
+    p compBCjvx-WmhQV%22%20style=%22%20color:000;%20font-family:Arial,sans-serif;%20font-size:14px;
+    %20font-style:normal;%20font-weight:normal;%20line-height:17px;%20text-decoration:none;
+    %20word-wrap:break-word;%22%20target=
+    %22_blank%22%3ERepost%20@donaldjtrumpjr%20%E3%83%BB%E3%83%BB%E3%83%BB%20Definitely%20the%20coolest%20kid%20at%20the%20@realdonaldtrump%20rally%20in%20Louisiana%20Vote%20Trump%20tomorrow%20LA%20NOLA%20Trump2016%20MakeAmericaGreatAgain%20He%20too%20is%20sick%20of%20the%20establishment%20telling%20him%20what%20he%20should%20think.
+    michael kors handbags New construction, such as the building of a movie theater and Dave & Buster’s restaurant
+    in Tucson Marketplace at The Bridges, near South Park Avenue and Interstate 10, will be complemented with
+    demolitions and repurposing of vacant buildings.
+    Some — such as housing them on giant artificial floating islands with skyscrapers and resort complexes — were
+    attention-grabbing notions designed to stir debate on a difficult topic. coach outlet com/uploads/chorus_asset
+    /file/6166651/intelmain1_2040. g coach factory outlet
+    And it’s not just Spain. coach outlet com/2015/3/17/8231381/
+    sxsw-creative-control-benjamin-dickinson-interview-vr-movie”>Creative Control, a paranoid tech parable set in
+    near-future Brooklyn after augmented reality hits the mainstream.
+    t “They just made us look young. It was unfortunate, because I didn’t see that coming.” oakley sunglasses I
+    didn’t expect Christopher Abbot to be nominated for James White, but he’s as deserving as any of these guys. v
+    for bowfishing tournaments, works with a network of BAA state representatives and members on conservation and
+    regulation issues michael kors outlet 5%indicating they had no confidence in the ability of Jenkins tocontinue
+    to lead the college. louis vuitton handbags
+    Cortland State (9-2) at Linfield (10-0), noon Saturday at Maxwell Field michael kors outlet online A woman
+    died in Northern California after being trapped in a car that became submerged in floodwater on a section of
+    highway that was closed amid heavy rain, authorities said Sunday. l coach outlet
+    expand max-height: 800px;video id video-ad-asset” class video-responsive video-js vjs-default-skin”video
+    That’s quite a change from the “white tablecloth” environment to more of a pub menu. michael kors outlet
+    online Arizona’s Gabe York won the Pac-12’s Player of the Week award today against some pretty stiff
+    competition.
+    Heidi Lynn Hobby and Tara Lynn Hobby to Lyman Maynard Stowe and Elizabeth Stowe, 304 South Deerfield Road,
+    $468,500. michael kors bags Contact: Terry Sutherland 202 2056919???Internet Address: Follow us on r michael
+    kors outlet online
+    The NWL? OptionLife Series includes ratings from Standard to Table 16 and written exclusively on an electronic
+    application platform. louis vuitton outlet online Their manager, ex-Wildcat Chip Hale, was building toward the
+    2006 Pacific Coast League championship.
+
+    [回复]
+
+ 2. [94f]
+    gjbyblgb
+    2016年4月7日10:49 | #2
+    回复 | 引用
+   
+    Long-awaited rules issued by the Food and Drug Administration Friday are designed to help prevent large-scale,
+    deadly outbreaks of foodborne illness like those linked to fresh spinach, cantaloupes, cucumbers and other
+    foods over the last decade. That means ensuring workers are trained to wash their hands, irrigation water is
+    monitored for harmful bacteria and animals do not leave droppings in fields. coach outlet online Brown’s
+    request is simple. c michael kors outlet
+    Why? Because Jerry Sandusky himself volunteered to Second Mile officials that he was under investigation more
+    than two years earlier, in November 2008 http://www.michaelkorshandbagsoutletup.us.com L – Murrilo.
+    James T. Murphy and Johanne F. Murphy to Bryan C. Crowther and Stephanie M. Crowther, 38 Edward St., $210,000.
+    ray ban sunglasses My job was to educate clients to make their own investment choices. i coach outlet
+    The predawn southeastern sky continues to be splendid with Jupiter, Mars, ever-brilliant Venus and Saturn, in
+    that order, from highest to lowest. o.storeonlinecc.com Three Anzar players earned all-Mission Trail League
+    Coastal First-Team honors, including Charlene Tomasini, Ronnee Davis and Montserrat Valenzuela.
+    z “It’s very disappointing when you play one of your best games of the year and you still come away with a
+    loss,” Monroe said. “We only had one turnover today. That was on a Hail Mary. We have to create more turnovers
+    we always say that. We have to flip the field position. I feel like we played on one side of the field the
+    whole game. We have to flip the field position for the offense.” michael kors bags Jones, a 28year veteran of
+    law enforcement, currently works as a behavioral specialist for Macon Charter Academy in Georgia, according to
+    a news release Friday from the city of Ferguson. louis vuitton handbags
+    sd-embed class sd-embedded-media” data-embed-file https:www. coach factory outlet Rhode Island came on
+    thescene, as did UTEP and Oregon. http://www.louisvuittonbagsbuy.us.com
+    Carol S. Dryzgula to Walter K. Feldman, 168 Pantry Road, $170,000. michael kors outlet “We’re just mad as hell
+    and won’t take it anymore,” Romney said of the national electorate. i http://www.michaelkorsbags.me
+    By mile two, I was feeling prettylight headed. coach handbags “I know I did wrong,” said Vazquez, in December.
+    GAAP represents an attempt to promote uniformity in how companies report their financial performance. louis
+    vuitton handbags This report presents historical demand data 2004, 2009 and 2014 plus forecasts 2019 and 2024
+    by product, market and source in 6 world regions and 19 major countries.
+    The internationally touring comedian has performed for thousands in Australia, London and Amsterdam to name a
+    few. michael kors outlet “Too bad we cannot see when the total solar eclipse occurred, but the dark atmosphere
+    when it happened made us feel happy,” said Palembang resident Martha Sembiring.
+    Courses are offered on campus and online. cheap louis vuitton bags Other than it being considered one of the
+    great dramatic roles in theater, the play as a whole is so tightly structured.
+    t He boarded a flight at the Boise Airport sometime Monday, White said ray ban sunglasses Third, vote in the
+    primaries.
+    Together these customers are helping to accelerate the growth of solar energy in the Valley. coach handbags
+    They are using science, not greed or paranoid rhetoric, to make their decisions. l http://
+    www.michaelkorsbags.me
+    Did McConnell feel that way when GOP icon former President Ronald Reagan nominated Supreme Court Justice
+    Anthony Kennedy late in his term? No, and he actually he voted for Kennedy. oakley sunglasses That’s no small
+    feat for this little guy who also had to overcome some neurological issues.
+    r EURO QUALIFYING coach outlet online The influx of federal funds would also increase other state tax
+    collections that year by $72 million, bringing the overall benefit to the state budget that year to $103
+    million. a
+    The addition of HMS creates more capacity for luxury travel needs, while Food Wine Trails responds to the
+    rapidly growing demand for international wine and culinary experiences. http://www.coachhandbags.me The Sea
+    Perch Program provides students with the opportunity to learn about robotics, engineering, science, and
+    mathematics while building a Remotely Operated Vehicle as part of a science and technology curriculum,
+    according to program organizers. louis vuitton outlet
+    The Ducks’ saving grace was Brooks scoring 13 of his 21 points in the second half and keying in on some hustle
+    plays. His driving layup with 1:20 remaining gave Oregon a 74-68 lead and his following dive for a loose ball
+    led to two Cook free throws to give the Ducks a 77-70 edge with 27 seconds left. http://
+    www.louisvuittonbagsbuy.us.com m. c cheap louis vuitton bags
+    Johnson is wanted for attempted murder. oakley outlet on Jan.
+    It is appealing the Muskegon ruling. coach online store A Kansas man who admitted to pimping a 17yearold girl
+    after being arrested in an undercover sting in Alma was sentenced to 10 years in prison by a U. z michael kors
+    bags
+    What’d you think of it? coach handbags That’s what happens when you get old you lose all your girlfriends.
+
+    [回复]
+
+ 3. [5d1]
+    gjrypobm
+    2016年4月7日18:43 | #3
+    回复 | 引用
+   
+    Ryan J. Loring and Kelly B. Loring to Rachel M. Farley, 35 Dresser Ave., $162,500. http://
+    www.michaelkors.us.org Her husband was a Presbyterian minister and she moved with him, first to Pine Bluff
+    from 1924 to 1928 and later to Stuttgart. n http://www.coachstoresonline.com
+    The league was founded more than 40 years ago to increase sporting opportunities for children in Prince
+    George’s County coach factory Passage would be required to earn a high school or GED diploma starting in the
+    2016-2017 school year.
+    Susan M. Werenski, personal representative, and Raymond A. Marion, estate, to JoelA. Prough and Kimberly S.
+    Prough, 8 Silverwood Terrace, $325,000. michael kors outlet The dean’s list requires that a student hold a 3.
+    t michael kors outlet
+    “What does it really matter?” he said 锘?a href=http://www.michaelkors.us.org>michael kors outlet The
+    announcement was made at a Valley Hotel and Resort Association gathering.
+    r While shoppers are expected to spend slightly more this holiday season overall, nearly half of their
+    average, estimated $805 budget will be for online purchases, according to the trade group’s annual survey.
+    coach outlet store online Two Arkansans have claimed a combined $315,000 in prizes from the Arkansas
+    Scholarship Lottery in recent days, according to lottery officials. http://www.coachoutlet.cc
+    I personally enjoyed the opportunity to sit on a motorcycle during my visit. coach outlet Assists: Losik 46,
+    Crook 3. http://www.michaelkorsbag.us.org
+    Daniel J. Harris and Iluka C. Harris to Jason L. Hoffman and Nicole Y. Hoffman, 15 Hunters Slope, $376,000.
+    coach outlet online agencies as required. y louis vuitton outlet
+    If, on the other hand, it matters at all michael kors outlet “In the movie, that possibility is teased out as
+    the realization sets in with actor Michael Keaton’s character, Spotlight editor Walter “Robby” Robinson.
+    As for me, I appreciate both Kollin and Adam and I’m happy to have a professional (although not monetary)
+    relationship with both. michael kors outlet online Trump sounded evasive and uncertain.
+    The problem with raising the tobacco tax is that eventually a black market will be created. michael kors
+    handbags Republican Angela Wozniak will receive a formal letter of admonition stating she violated Assembly
+    rules on sexual harassment.
+    Nonetheless, she has been , effective March 12, and Nike said it was suspending its endorsement deal with her
+    late on Monday evening. michael kors outlet Martin Espinoza, who works at Excel, was in the plant during the
+    shooting.
+    p Then add yeast mixture and olive oil and mix for 1 minute. louis vuitton handbags Team 18 7-10 47.
+    com/thumbor/2snAe256IILerGixgBuhaRMxUpU=/cdn0. http://www.coachhandbags.com.co There will also be a large free
+    play area full of retro arcade machines, an Xbox One experience, and a Retro Game Living Room where attendees
+    can play classic consoles like the Atari 2600. q coach handbags
+    A chicken finger, a hot dog, some of the ice cream pellets (how can it still be the ice cream of the future
+    when it’s been around so long?!) and cookie dough. cheap air jordans None of that has happened.
+    t Can’t wait until Wednesday for the fun to begin? Whet your Edgefest appetite with this informal,
+    improvisational Fringe performance by Taylor Ho Bynum and Tomas Fujiwara at one of our favorite places in
+    town, Encore Records! ray ban sunglasses Merkel in the Bild interview blamed the humanitarian crisis on other
+    European states that tightened their borders against the influx, blocking passage north, where most asylum
+    seekers have sought shelter in more accommodating countries such as Germany. z
+    One is nutrition. http://www.raybansunglassesebay.us.com On Twitter: @EmilyBregel!–p:Tagline– http://
+    www.cheapmichaelkorsbags.us.com
+    If the Ducks are going to win this thing, I think they have to do the following three things: louis vuitton
+    outlet online ARKANSAS CHILDREN’S HOSPITAL HEALTH FAIR 10 a. o http://www.coachfactorysoutlet.com
+    Downtown Mobile will be flooded with revelers today as Mardi Gras 2015 comes to an end. http://
+    www.coachoutletssonline.us.org Hamilton defeated Corona del Sol on Friday to rejoin the rankings, and Westview
+    jumps back in after an impressive win over Millennium, which falls out from No.
+    David R. Baker to Center at 35 State Street LLC, 18 Laurel Park, $115,000. michael kors outlet store Clinton,
+    who had not previously made that call, added emphatically: “Amen to that,” and then said that Snyder should
+    “resign or be recalled. r michael kors outlet store
+    John McCain, R-Ariz michael kors outlet He knows what sells to the lowest common denominator and he provides
+    it.
+
+    [回复]
+
+ 4. [8d7]
+    sobgbwcwd
+    2016年4月7日19:45 | #4
+    回复 | 引用
+   
+    “A small threat is there and drivers will need to be aware and cautious,” the National Weather Service coach
+    outlet online Following Puma Energy s recently announced expansion into the South African market, the Group is
+    now present in 19 countries from Senegal to South Africa and continues to expand its footprint from West to
+    East. w cheap jordan shoes
+    The sales center is located at 10630 North Bank Drive, Ventura, CA 93004 coach outlet online It merely
+    responds to the wave that travels out the whip to the tip.
+    The investigating deputy determined the address where the marriage supposedly occurred does not exist, and
+    that the pastor listed in the license appeared made up as well. The deputy determined that on Jan. 14, the
+    woman changed her surname on her driver’s license to “Inskeep,” court records show. http://
+    www.coachoutletonlinebuy.us.com Having beheld their 2015, we just didn’t prioritize hoverboards and flying
+    cars. y coach outlet online
+    Innovations range from improving current technologies now being deployed to developing future technologies
+    that are being refined in the lab. michael kors outlet “I kind of just don’t go home anymore so it’ll be
+    really nice to be in Tempe for six weeks.
+    u It extends to education across the state, which will likely suffer to help offset DPS’s issues. coach
+    factory outlet Evans leads projects using Relocal, the firm’s databased tool, and a community priority survey
+    to develop recommendations for incorporating vacant buildings and lots into revitalization strategies. cheap
+    louis vuitton bags
+    These are just some of the statistics generated by a recent survey of 1,043 Americans conducted by polling
+    firm StrategyOne, including 613 who work either full-or part-time. ray ban sunglasses outlet He went on to
+    study at the Eastman School of Music and Yale and Columbia universities. http://
+    www.michaelkorsoutletbuy.us.com
+    mgraves@oregonian.com ray ban glasses So, then, is sending it across borders and Amercanex is an exchange for
+    spot trades of physical purchases, not paperonly futures or options contracts. o coach outlet store online
+    “You have issued recalls for products with far less damage. http://www.louisvuittonhandbagsbuy.co.uk The
+    University of Maryland was the first school in the country to use the CoolPlay turf when it installed it last
+    year.
+    To get to Devil’s Bridge Trail, take I-17 north to Exit 298. michael kors outlet online The ordinary Arkansan
+    may or may not have heard of Hot Springs native Adam Brown, subject of the book Fearless by Eric Blehm.
+    Those cuts, combined with declining enrollment mean MPS has dropped $85. coach factory outlet Gerardo, CIBO
+    9-3.
+    Snapchat didn t respond to requests for comment Tuesday. cheap louis vuitton bags Voters have not so far
+    responded to such warnings.
+    q expand max-height: 800px;video id video-ad-asset” class video-responsive video-js vjs-default-skin”video The
+    barrels have saved countless of lives, said Pima County Supervisor Richard Elías during the news conference in
+    El Tiradito Shrine, “and if we want to be crass about it, we can also start counting how much money we’ve
+    saved. http://www.coachoutletstoreonline.me Except it wasn’t NASCAR that made the endorsement.
+    Add up what you will get from any traditional pensions and Social Security. http://
+    www.louisvuitton-outlet.us.org The plan is to eventually start posting them on the web and hopefully generate
+    a little revenue to help with the printing costs (and maybe add some color to the paper. r michael kors outlet
+    But it’s more than a typical sex-ed class cheap louis vuitton bags There are separate detailed agreements with
+    each school, but these agreements should be at the district level, it can’t cost a lot different to play a
+    softball game at one school than another.
+    t The tribes have been trying to cut and replant their way out of past management of their lands — where the
+    big, valuable ponderosas were selectively logged, and the woods allowed to grow back, to Douglas fir and other
+    species far more vulnerable to fire. coach factory outlet Chastain will donate her brain to the VABUCLF Brain
+    Bank, a joint project with the Department of Veterans Affairs and Boston University School of Medicine, the
+    research team that announced last month that it had found signs of CTE in the brain of former Oakland Raiders
+    quarterback Ken Stabler. d
+    “I feel I have some experience under my belt where I can really provide some assistance, so I’m looking
+    forward to that. ray ban sunglasses “This is, I believe, a pressing need. http://www.michaelkors.us.org
+    Harry E. Smith and Sharon L. Smith to Amy Gelinas, 80 Memorial Drive, $208,000. michael kors outlet TAKE
+    THREE! The Duggar family has recently been spotted filming with a camera crew near their home in Springdale,
+    reports ET Online. k coach outlet online
+    This unique appendicitis test has projected high sensitivity and negative predictive value and was being
+    developed to aid in the identification of patients at low probability for acute appendicitis, allowing for
+    more conservative patient management. coach handbags “Hey, Rog, you gonna win?” Tyers asked.
+    EUGENE — coach said there was no panic when Oregon State took the lead in the Civil War on the Beavers’ first
+    drive, nor when they drew within three points twice in the second half. Would the Ducks let the game slip
+    away? wholesale nfl jerseys For grade school players, flag football should replace tackling as youngsters
+    build skills and learn techniques. c michael kors outlet
+    expand max-height: 800px;video id video-ad-asset” class video-responsive video-js vjs-default-skin”video I
+    have a feeling that in 15 years, when Brad and Angie haveabout 13 kids and Jen is still soaking up the sun in
+    Mexico withher latest co-star, we are still going to suffer through theseBradAngieJen love triangle stories.
+    michael kors outlet online They found Cosillos after they reviewed his medical files from the local hospital.
+
+    [回复]
+
+ 5. [abe]
+    http://www.testtest.cm
+    2017年3月8日06:24 | #5
+    回复 | 引用
+   
+    test
+
+    [回复]
+
+ 6. [ad5]
+    michael kors
+    2017年6月17日22:02 | #6
+    回复 | 引用
+   
+    I needed to compose you a bit of word to be able to say thank you as before just for the awesome guidelines
+    you’ve documented on this page. This has been certainly tremendously generous with people like you to convey
+    unhampered all a few individuals could have offered for sale as an ebook to make some bucks for their own end,
+    and in particular considering that you could possibly have tried it if you considered necessary. These
+    techniques in addition worked like the fantastic way to understand that some people have the identical
+    keenness just as mine to realize many more regarding this issue. I’m certain there are numerous more fun
+    periods in the future for those who look over your site.
+
+    [回复]
+
+ 7. [c97]
+    business development templates
+    2017年7月25日08:12 | #7
+    回复 | 引用
+   
+    I was wondering if you ever thought of changing the layout of
+    your site? Its very well written; I love what youve got to say.
+
+    But maybe you could a little more in the way of content so people could
+    connect with it better. Youve got an awful lot of text for
+    only having 1 or 2 pictures. Maybe you could space it out better?
+
+    [回复]
+
+评论分页
+« 上一页 1 2 3 41868
+
+ 1. 本文目前尚无任何 trackbacks 和 pingbacks.
+
+[                        ] 昵称
+[                        ] 电子邮箱 (我们会为您保密)
+[                        ] 网址
+[                                                  ]
+[                                                  ]
+[                                                  ]
+[                                                  ]
+[                                                  ]
+[                                                  ]
+[                                                  ]
+[                                                  ]
+订阅评论
+[提交评论]
+[预览评论]
+:wink: :-| :-x :twisted: :) 8-O :( :roll: :-P :oops: :-o :mrgreen: :lol: :idea: :-D :evil: :cry: 8) :arrow: :-?
+:?: :!:
+
+点击取消回复
+
+[*]有人回复时邮件通知我
+
+用 Emacs Org 撰写博客在Emacs中使用twitter/新浪微博
+订阅
+
+  • Google
+  • 有道
+  • 鲜果
+  • 抓虾
+  • My Yahoo!
+  • newsgator
+  • Bloglines
+  • 哪吒
+
+Twitter
+
+Emacs资源
+
+  • EmacsWiki
+  • Emacsist
+  • 水木Emacs
+  • DEA
+  • pluskid的Emacs
+  • 王垠的Emacs
+  • 王纯业的Emacs
+  • Emacs官网
+  • dotemacs
+  • Emacsen's planet
+
+友情链接
+
+  • LinuxTOY
+  • 善用佳软
+  • 小众软件
+  • 开源视窗
+
+最新评论
+
+  • [7a2]
+    nba jersey uniform design 2016 发表于用weblogger写WordPress博客
+    What i do not realize is actually how you're not a... »
+  • []
+    匿名发表于钗黛双收：若你也同Vim难割舍，却又看Emacs情切切
+    :roll: »
+  • [14b]
+    06kv.com低价网游私服一条龙t2i8 发表于站点地图
+    天龙私服架设|奇迹Mu私服架设|魔兽私服架设|魔域私服架设|墨香私服架设天堂2私服架设|传奇3私服架... »
+  • []
+    BrettBlice 发表于 Emacs中的Evernote: evernote-mode
+    wh0cd501379 accutane accutane 40 mg http://accutan... »
+  • [f48]
+    adidas stan smith 发表于站点地图
+    I simply desired to appreciate you once again. I a... »
+  • 下一页 »
+
+最多评论
+
+  • 我的Emacs配置文件－ DEA (398)
+  • 用CEDET浏览和编辑C++代码 (278)
+  • 致Emacs初学者 (150)
+  • Emacs才是世界上最强大的IDE －用auto-complete实现自动补全 (143)
+  • 折腾Emacs (138)
+  • 钗黛双收：若你也同Vim难割舍，却又看Emacs情切切 (127)
+  • 用CEDET浏览和编辑C++代码(续) – 使用Emacs 23.2内置的CEDET (121)
+  • Emacs才是世界上最强的IDE – 用w3m浏览网页 (116)
+  • 用weblogger写WordPress博客 (110)
+  • Emacs －普通人的编辑利器 (109)
+
+最高评分
+
+  • 用CEDET浏览和编辑C++代码 (9.7 62次投票)
+  • 用pulse实现Emacs的淡入淡出效果 (9.7 9次投票)
+  • 致Emacs初学者 (9.6 112次投票)
+  • Emacs中鼠标的运用 (9.5 15次投票)
+  • Emacs才是世界上最强大的IDE －用Emaci阅读文件 (9.5 13次投票)
+  • Emacs下的多媒体系统 - EMMS (9.5 10次投票)
+  • 折腾Emacs (9.3 55次投票)
+  • 我的Emacs配置文件－ DEA (9.3 24次投票)
+  • ERC使用简介 (9.3 9次投票)
+  • 在Emacs中使用vi的*和#命令 (9.3 6次投票)
+
+分类目录
+
+  • 初级 (37)
+  • 中级 (42)
+  • 高级 (1)
+  • C/C++ (4)
+  • Elisp (10)
+  • Email (1)
+  • IDE (18)
+      □ CEDET (3)
+      □ 自动补全 (6)
+  • Org Mode (4)
+  • mode-line (2)
+  • w3m (3)
+  • windows (1)
+  • 其他 (22)
+  • 好玩的 (12)
+  • 学习Emacs (5)
+  • 宏 (1)
+  • 小技巧 (3)
+  • 快速启动 (2)
+  • 资讯 (2)
+  • 配置 (10)
+      □ DEA (2)
+  • 配色 (2)
+
+最热文章
+
+  • 我的Emacs配置文件－ DEA(75,533)
+  • 致Emacs初学者(72,098)
+  • 用CEDET浏览和编辑C++代码(65,618)
+  • 钗黛双收：若你也同Vim难割舍，却又看Emacs情切切(56,353)
+  • Emacs长啥样(55,357)
+  • Emacs才是世界上最强大的IDE －用auto-complete实现自动补全(54,828)
+  • Emacs org mode学习笔记(48,413)
+  • Emacs初学者必知必会(47,368)
+  • 折腾Emacs(46,283)
+  • 在Emacs下用C/C++编程(39,814)
+
+标签云
+
+Emacs org screenshot 配色 windows 光标 IDE emacser ahei emacser.com C/C++ ede 插件 lisp face 颜色补全 mode 鼠标配
+置 buffer CEDET se lambda 截图 Elisp highlight vi semantic cursor python ann lightbox text theme autoload 定制 irc
+安装 yasnippet DEA snippet term control
+
+功能
+
+  • 登录
+  • 文章 RSS
+  • RSS 评论
+  • WordPress.org
+
+回到顶部 WordPress
+版权所有 © 2009-2015 Emacs中文网
+主题由 NeoEase 提供, 通过 XHTML 1.1 和 CSS 3 验证.
+
+                                             Copyright (C) 2009 ahei
+                                      msn/gtalk/qq/email: ahei0802@gmail.com
+                                                 Google analytics
