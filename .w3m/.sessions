@@ -1,0 +1,11 @@
+;;; .sessions  -*- mode: emacs-lisp; coding: iso-2022-7bit -*-
+;; This file is generated automatically by emacs-w3m v1.4.538.
+
+(("Automatic saved sessions-1"
+  (23102 4361 815965 674000)
+  (("about:" nil nil "About emacs-w3m"))
+  0)
+ ("Crash recovery sessions"
+  (23102 2442 251320 289000)
+  (("about:" nil nil "About emacs-w3m") ("http://emacs-w3m.namazu.org/" (1) (("about:" (:title "About emacs-w3m") (0) :window-start 1 :position (1 . 0) :window-hscroll 0) ("about:" (:title "About emacs-w3m") (1) :window-start 1 :position (1 . 61) :window-hscroll 0)) "Text browser works on Emacs"))
+  nil))

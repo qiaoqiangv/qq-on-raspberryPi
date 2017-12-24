@@ -1,0 +1,9 @@
+;;; .arrived  -*- mode: emacs-lisp; coding: iso-2022-7bit -*-
+;; This file is generated automatically by emacs-w3m v1.4.538.
+
+(("http://emacs-w3m.namazu.org"
+  "Text browser works on Emacs"
+  (22910 56791)
+  (23102 2440 777931 914000)
+  nil
+  nil))
