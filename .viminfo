@@ -11,7 +11,7 @@
 # hlsearch on (H) or off (h):
 ~h
 # Last Search Pattern:
-~MSle0~/init-sdcv-mode
+~MSle0~/google
 
 # Last Substitute Search Pattern:
 ~MSle0&^
@@ -21,17 +21,25 @@ $
 
 # 命令列 歷史記錄 (新到舊):
 :x
-|2,0,1514084750,,"x"
+|2,0,1514102981,,"x"
+:q!
+|2,0,1514102776,,"q!"
 :q
-|2,0,1514084715,,"q"
+|2,0,1514102022,,"q"
 :w
-|2,0,1514084644,,"w"
+|2,0,1514096596,,"w"
+:tabnext 
+|2,0,1514096257,,"tabnext "
+:tabedit /home/pi/.emacs.d/my_config/w3m-search-engine.txt
+|2,0,1514096250,,"tabedit /home/pi/.emacs.d/my_config/w3m-search-engine.txt"
+:tabedit /home/pi/.emacs.d/my_config/http://cn.bing.com/http://cn.bing.com/http://cn.bing.com/http://cn.bing.com/
+|2,0,1514096246,,"tabedit /home/pi/.emacs.d/my_config/http://cn.bing.com/http://cn.bing.com/http://cn.bing.com/http://cn.bing.com/"
+:wq
+|2,0,1514096219,,"wq"
+:tabedit /home/pi/.emacs.d/my_config/w3m-mode.el
+|2,0,1514095967,,"tabedit /home/pi/.emacs.d/my_config/w3m-mode.el"
 :tabedit /home/pi/.emacs.d/my_config/cflow-elisp.el
 |2,0,1514019475,,"tabedit /home/pi/.emacs.d/my_config/cflow-elisp.el"
-:tabnext 
-|2,0,1514019447,,"tabnext "
-:q!
-|2,0,1514019311,,"q!"
 :tabedit /home/pi/.emacs.d/my_config/
 |2,0,1514017150,,"tabedit /home/pi/.emacs.d/my_config/"
 :tabedit /home/pi/.emacs.d/my_config/init-my-config.el
@@ -90,8 +98,6 @@ $
 |2,0,1512976146,,"tabedit /home/pi/.emacs.d/"
 :'<,'>q
 |2,0,1511081949,,"'<,'>q"
-:wq
-|2,0,1510966566,,"wq"
 :kk
 |2,0,1510966086,,"kk"
 :! ls ~/ShellScripts/login-auto-start/install
@@ -1014,14 +1020,24 @@ $
 |2,0,0,,"help tabpagebuflist("
 :echo "num is : " . winnr()
 |2,0,0,,"echo \"num is : \" . winnr()"
-:0
-|2,0,0,,"0"
-:au * <buffer>
-|2,0,0,,"au * <buffer>"
-:au BufAdd
-|2,0,0,,"au BufAdd"
 
 # 搜尋字串 歷史記錄 (新到舊):
+?/google
+|2,1,1514102767,47,"google"
+?/search-engine
+|2,1,1514102722,47,"search-engine"
+?/w3m-search-engine-alist
+|2,1,1514102678,47,"w3m-search-engine-alist"
+?/w3m/emacs-w3m-1.4.4.tar.gz
+|2,1,1514102661,47,"w3m/emacs-w3m-1.4.4.tar.gz"
+?/install
+|2,1,1514101200,47,"install"
+?/search:
+|2,1,1514096668,47,"search:"
+?/search :
+|2,1,1514096662,47,"search :"
+?/google search
+|2,1,1514096652,47,"google search"
 ?/init-sdcv-mode
 |2,1,1514084697,47,"init-sdcv-mode"
 ?/sdcv-mode
@@ -1064,8 +1080,6 @@ $
 |2,1,0,47,"WenQuanYi Micro Hei Mono"
 ?/font
 |2,1,0,47,"font"
-?/install
-|2,1,0,47,"install"
 ?/runlevel
 |2,1,0,47,"runlevel"
 ?/video
@@ -2008,20 +2022,6 @@ $
 |2,1,0,47,"27"
 ? \<Matching\>
 |2,1,0,,"\\<Matching\\>"
-? \<Examples\>
-|2,1,0,,"\\<Examples\\>"
-?/cursor-po
-|2,1,0,47,"cursor-po"
-?/pattern
-|2,1,0,47,"pattern"
-?/
-|2,1,0,47,""
-? [0-9A-Za-z_]\{0,}
-|2,1,0,,"[0-9A-Za-z_]\\{0,}"
-? [0-9A-Za-z_]\{1,}
-|2,1,0,,"[0-9A-Za-z_]\\{1,}"
-? \{1,}[0-9A-Za-z_]
-|2,1,0,,"\\{1,}[0-9A-Za-z_]"
 
 # 運算式 歷史記錄 (新到舊):
 
@@ -2044,292 +2044,335 @@ $
 # Debug Line 歷史記錄 (新到舊):
 
 # 暫存器:
-"0	CHAR	0
-	-
-|3,0,0,0,1,0,1514017155,"-"
-"1	CHAR	0
-	;; add some elisp function
-	(require 'cflow-mode)
-	(defvar cmd nil nil)
-	(defvar cflow-buf nil nil)
-	(defvar cflow-buf-name nil nil)
-	 
-	(defun yyc/cflow-function (function-name)
-	  "Get call graph of inputed function. "
-	  ;(interactive "sFunction name:\n")
-	  (interactive (list (car (senator-jump-interactive "Function name: "
-	                                                    nil nil nil))))
-	  (setq cmd (format "cflow  -b --main=%s %s" function-name buffer-file-name))
-	  (setq cflow-buf-name (format "**cflow-%s:%s**"
-	                               (file-name-nondirectory buffer-file-name)
-	                               function-name))
-	  (setq cflow-buf (get-buffer-create cflow-buf-name))
-	  (set-buffer cflow-buf)
-	  (setq buffer-read-only nil)
-	  (erase-buffer)
-	  (insert (shell-command-to-string cmd))
-	  (pop-to-buffer cflow-buf)
-	  (goto-char (point-min))
-	  (cflow-mode)
-	  )
+""0	LINE	0
+	(defcustom w3m-search-default-engine "google"
+|3,1,0,1,1,0,1514102771,"(defcustom w3m-search-default-engine \"google\""
+"1	LINE	0
 	
-	
-|3,0,1,0,26,0,1514019445,";; add some elisp function","(require 'cflow-mode)","(defvar cmd nil nil)","(defvar cflow-buf nil nil)","(defvar cflow-buf-name nil nil)"," ","(defun yyc/cflow-function (function-name)","  \"Get call graph of inputed function. \"","  ;(interactive \"sFunction name:\\n\")","  (interactive (list (car (senator-jump-interactive \"Function name: \"","                                                    nil nil nil))))",>81
-|<"  (setq cmd (format \"cflow  -b --main=%s %s\" function-name buffer-file-name))","  (setq cflow-buf-name (format \"**cflow-%s:%s**\"","                               (file-name-nondirectory buffer-file-name)","                               function-name))","  (setq cflow-buf (get-buffer-create cflow-buf-name))","  (set-buffer cflow-buf)","  (setq buffer-read-only nil)","  (erase-buffer)","  (insert (shell-command-to-string cmd))","  (pop-to-buffer cflow-buf)",>27
-|<"  (goto-char (point-min))","  (cflow-mode)","  )","",""
+|3,0,1,1,1,0,1514096269,""
 "2	LINE	0
-	
-|3,0,2,1,1,0,1514019371,""
+	    '("Bing Search" "http://bing.com"))
+|3,0,2,1,1,0,1514096264,"    '(\"Bing Search\" \"http://bing.com\"))"
 "3	LINE	0
-	
-|3,0,3,1,1,0,1514019361,""
+	(add-to-list 'w3m-search-engine-alist
+|3,0,3,1,1,0,1514096263,"(add-to-list 'w3m-search-engine-alist"
 "4	LINE	0
 	
-|3,0,4,1,1,0,1514019360,""
+|3,0,4,1,1,0,1514096179,""
 "5	LINE	0
 	
-|3,0,5,1,1,0,1514019360,""
+|3,0,5,1,1,0,1514096027,""
 "6	LINE	0
 	
-|3,0,6,1,1,0,1514019359,""
+|3,0,6,1,1,0,1514096025,""
 "7	LINE	0
-	(provide 'graphviz-utility-func)
-|3,0,7,1,1,0,1514017111,"(provide 'graphviz-utility-func)"
-"8	LINE	0
 	
-|3,0,8,1,1,0,1514017027,""
+|3,0,7,1,1,0,1514096023,""
+"8	LINE	0
+	如,修改Emacs-W3M的默认Search为DuckDuck Go ==> http://www.duckduckgo.com/?q=%s
+|3,0,8,1,1,0,1514095881,"如,修改Emacs-W3M的默认Search为DuckDuck Go ==> http://www.duckduckgo.com/?q=%s"
 "9	LINE	0
-	(require 'graphviz-utility-func)
-|3,0,9,1,1,0,1514016991,"(require 'graphviz-utility-func)"
-""-	CHAR	0
-	-
-|3,1,36,0,1,0,1514084750,"-"
+	顶部
+|3,0,9,1,1,0,1514095866,"顶部"
+"-	CHAR	0
+	"
+|3,0,36,0,1,0,1514096586,"\""
 
 # 檔案標記:
-'0  13  10  ~/.emacs.d/my_config/init-my-config.el
-|4,48,13,10,1514084750,"~/.emacs.d/my_config/init-my-config.el"
-'1  374  10  ~/.emacs.d/my_config/sdcv-mode.el
-|4,49,374,10,1514084735,"~/.emacs.d/my_config/sdcv-mode.el"
-'2  36  11  ~/.emacs.d/my_config/sdcv-mode.el
-|4,50,36,11,1514084715,"~/.emacs.d/my_config/sdcv-mode.el"
-'3  36  11  ~/.emacs.d/my_config/sdcv-mode.el
-|4,51,36,11,1514084715,"~/.emacs.d/my_config/sdcv-mode.el"
-'4  30  0  ~/.emacs.d/my_config/sdcv-mode.el
-|4,52,30,0,1514084709,"~/.emacs.d/my_config/sdcv-mode.el"
-'5  30  0  ~/.emacs.d/my_config/sdcv-mode.el
-|4,53,30,0,1514084709,"~/.emacs.d/my_config/sdcv-mode.el"
-'6  30  0  ~/.emacs.d/my_config/sdcv-mode.el
-|4,54,30,0,1514084709,"~/.emacs.d/my_config/sdcv-mode.el"
-'7  30  0  ~/.emacs.d/my_config/sdcv-mode.el
-|4,55,30,0,1514084709,"~/.emacs.d/my_config/sdcv-mode.el"
-'8  13  14  ~/.emacs.d/my_config/init-my-config.el
-|4,56,13,14,1514084688,"~/.emacs.d/my_config/init-my-config.el"
-'9  374  14  ~/.emacs.d/my_config/sdcv-mode.el
-|4,57,374,14,1514084664,"~/.emacs.d/my_config/sdcv-mode.el"
+'0  18  105  ~/TODO
+|4,48,18,105,1514102981,"~/TODO"
+'1  252  0  /usr/share/emacs/site-lisp/w3m/w3m-search.el
+|4,49,252,0,1514102776,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
+'2  47  0  ~/Downloads/w3m-el/usr/lib/emacsen-common/packages/install/w3m-el
+|4,50,47,0,1514102022,"~/Downloads/w3m-el/usr/lib/emacsen-common/packages/install/w3m-el"
+'3  239  0  ~/Note/Linux/ubuntu/apt/apt-usage.txt
+|4,51,239,0,1514101752,"~/Note/Linux/ubuntu/apt/apt-usage.txt"
+'4  96  0  ~/Note/Linux/ubuntu/apt/apt-optional.txt
+|4,52,96,0,1514101561,"~/Note/Linux/ubuntu/apt/apt-optional.txt"
+'5  29  0  ~/Note/Linux/ubuntu/apt/apt-optional.txt
+|4,53,29,0,1514101456,"~/Note/Linux/ubuntu/apt/apt-optional.txt"
+'6  29  0  ~/Note/Linux/ubuntu/apt/apt-optional.txt
+|4,54,29,0,1514101456,"~/Note/Linux/ubuntu/apt/apt-optional.txt"
+'7  114  0  ~/emacs-w3m-1.4.4/w3m-util.el
+|4,55,114,0,1514101267,"~/emacs-w3m-1.4.4/w3m-util.el"
+'8  37  12  ~/emacs-w3m-1.4.4/install-sh
+|4,56,37,12,1514101216,"~/emacs-w3m-1.4.4/install-sh"
+'9  1  0  ~/w3m-content.txt
+|4,57,1,0,1514100392,"~/w3m-content.txt"
 
 # Jumplist (由新到舊):
--'  13  10  ~/.emacs.d/my_config/init-my-config.el
-|4,39,13,10,1514084750,"~/.emacs.d/my_config/init-my-config.el"
--'  374  10  ~/.emacs.d/my_config/sdcv-mode.el
-|4,39,374,10,1514084735,"~/.emacs.d/my_config/sdcv-mode.el"
--'  374  10  ~/.emacs.d/my_config/sdcv-mode.el
-|4,39,374,10,1514084735,"~/.emacs.d/my_config/sdcv-mode.el"
--'  36  10  ~/.emacs.d/my_config/sdcv-mode.el
-|4,39,36,10,1514084731,"~/.emacs.d/my_config/sdcv-mode.el"
--'  36  10  ~/.emacs.d/my_config/sdcv-mode.el
-|4,39,36,10,1514084731,"~/.emacs.d/my_config/sdcv-mode.el"
--'  36  11  ~/.emacs.d/my_config/sdcv-mode.el
-|4,39,36,11,1514084715,"~/.emacs.d/my_config/sdcv-mode.el"
--'  36  11  ~/.emacs.d/my_config/sdcv-mode.el
-|4,39,36,11,1514084715,"~/.emacs.d/my_config/sdcv-mode.el"
--'  30  0  ~/.emacs.d/my_config/sdcv-mode.el
-|4,39,30,0,1514084710,"~/.emacs.d/my_config/sdcv-mode.el"
--'  30  0  ~/.emacs.d/my_config/sdcv-mode.el
-|4,39,30,0,1514084710,"~/.emacs.d/my_config/sdcv-mode.el"
--'  30  0  ~/.emacs.d/my_config/sdcv-mode.el
-|4,39,30,0,1514084710,"~/.emacs.d/my_config/sdcv-mode.el"
--'  30  0  ~/.emacs.d/my_config/sdcv-mode.el
-|4,39,30,0,1514084710,"~/.emacs.d/my_config/sdcv-mode.el"
--'  30  0  ~/.emacs.d/my_config/sdcv-mode.el
-|4,39,30,0,1514084709,"~/.emacs.d/my_config/sdcv-mode.el"
--'  30  0  ~/.emacs.d/my_config/sdcv-mode.el
-|4,39,30,0,1514084709,"~/.emacs.d/my_config/sdcv-mode.el"
--'  374  10  ~/.emacs.d/my_config/sdcv-mode.el
-|4,39,374,10,1514084698,"~/.emacs.d/my_config/sdcv-mode.el"
--'  374  10  ~/.emacs.d/my_config/sdcv-mode.el
-|4,39,374,10,1514084698,"~/.emacs.d/my_config/sdcv-mode.el"
--'  374  10  ~/.emacs.d/my_config/sdcv-mode.el
-|4,39,374,10,1514084698,"~/.emacs.d/my_config/sdcv-mode.el"
--'  374  10  ~/.emacs.d/my_config/sdcv-mode.el
-|4,39,374,10,1514084698,"~/.emacs.d/my_config/sdcv-mode.el"
--'  1  4  ~/.emacs.d/my_config/sdcv-mode.el
-|4,39,1,4,1514084697,"~/.emacs.d/my_config/sdcv-mode.el"
--'  1  4  ~/.emacs.d/my_config/sdcv-mode.el
-|4,39,1,4,1514084697,"~/.emacs.d/my_config/sdcv-mode.el"
--'  36  10  ~/.emacs.d/my_config/sdcv-mode.el
-|4,39,36,10,1514084697,"~/.emacs.d/my_config/sdcv-mode.el"
--'  1  4  ~/.emacs.d/my_config/sdcv-mode.el
-|4,39,1,4,1514084697,"~/.emacs.d/my_config/sdcv-mode.el"
--'  1  4  ~/.emacs.d/my_config/sdcv-mode.el
-|4,39,1,4,1514084697,"~/.emacs.d/my_config/sdcv-mode.el"
--'  1  4  ~/.emacs.d/my_config/sdcv-mode.el
-|4,39,1,4,1514084697,"~/.emacs.d/my_config/sdcv-mode.el"
--'  36  10  ~/.emacs.d/my_config/sdcv-mode.el
-|4,39,36,10,1514084697,"~/.emacs.d/my_config/sdcv-mode.el"
--'  1  4  ~/.emacs.d/my_config/sdcv-mode.el
-|4,39,1,4,1514084697,"~/.emacs.d/my_config/sdcv-mode.el"
--'  13  14  ~/.emacs.d/my_config/init-my-config.el
-|4,39,13,14,1514084688,"~/.emacs.d/my_config/init-my-config.el"
--'  13  14  ~/.emacs.d/my_config/init-my-config.el
-|4,39,13,14,1514084688,"~/.emacs.d/my_config/init-my-config.el"
--'  13  14  ~/.emacs.d/my_config/init-my-config.el
-|4,39,13,14,1514084688,"~/.emacs.d/my_config/init-my-config.el"
--'  13  14  ~/.emacs.d/my_config/init-my-config.el
-|4,39,13,14,1514084688,"~/.emacs.d/my_config/init-my-config.el"
--'  13  14  ~/.emacs.d/my_config/init-my-config.el
-|4,39,13,14,1514084688,"~/.emacs.d/my_config/init-my-config.el"
--'  13  14  ~/.emacs.d/my_config/init-my-config.el
-|4,39,13,14,1514084688,"~/.emacs.d/my_config/init-my-config.el"
--'  13  14  ~/.emacs.d/my_config/init-my-config.el
-|4,39,13,14,1514084688,"~/.emacs.d/my_config/init-my-config.el"
--'  13  14  ~/.emacs.d/my_config/init-my-config.el
-|4,39,13,14,1514084688,"~/.emacs.d/my_config/init-my-config.el"
--'  39  0  ~/.emacs.d/my_config/init-my-config.el
-|4,39,39,0,1514084669,"~/.emacs.d/my_config/init-my-config.el"
--'  39  0  ~/.emacs.d/my_config/init-my-config.el
-|4,39,39,0,1514084669,"~/.emacs.d/my_config/init-my-config.el"
--'  39  0  ~/.emacs.d/my_config/init-my-config.el
-|4,39,39,0,1514084669,"~/.emacs.d/my_config/init-my-config.el"
--'  39  0  ~/.emacs.d/my_config/init-my-config.el
-|4,39,39,0,1514084669,"~/.emacs.d/my_config/init-my-config.el"
--'  39  0  ~/.emacs.d/my_config/init-my-config.el
-|4,39,39,0,1514084669,"~/.emacs.d/my_config/init-my-config.el"
--'  39  0  ~/.emacs.d/my_config/init-my-config.el
-|4,39,39,0,1514084669,"~/.emacs.d/my_config/init-my-config.el"
--'  39  0  ~/.emacs.d/my_config/init-my-config.el
-|4,39,39,0,1514084669,"~/.emacs.d/my_config/init-my-config.el"
--'  39  0  ~/.emacs.d/my_config/init-my-config.el
-|4,39,39,0,1514084669,"~/.emacs.d/my_config/init-my-config.el"
--'  39  0  ~/.emacs.d/my_config/init-my-config.el
-|4,39,39,0,1514084669,"~/.emacs.d/my_config/init-my-config.el"
--'  374  14  ~/.emacs.d/my_config/sdcv-mode.el
-|4,39,374,14,1514084664,"~/.emacs.d/my_config/sdcv-mode.el"
--'  374  14  ~/.emacs.d/my_config/sdcv-mode.el
-|4,39,374,14,1514084664,"~/.emacs.d/my_config/sdcv-mode.el"
--'  374  14  ~/.emacs.d/my_config/sdcv-mode.el
-|4,39,374,14,1514084664,"~/.emacs.d/my_config/sdcv-mode.el"
--'  374  14  ~/.emacs.d/my_config/sdcv-mode.el
-|4,39,374,14,1514084664,"~/.emacs.d/my_config/sdcv-mode.el"
--'  281  37  ~/.emacs.d/my_config/sdcv-mode.el
-|4,39,281,37,1514084660,"~/.emacs.d/my_config/sdcv-mode.el"
--'  280  30  ~/.emacs.d/my_config/sdcv-mode.el
-|4,39,280,30,1514084660,"~/.emacs.d/my_config/sdcv-mode.el"
--'  245  11  ~/.emacs.d/my_config/sdcv-mode.el
-|4,39,245,11,1514084660,"~/.emacs.d/my_config/sdcv-mode.el"
--'  281  37  ~/.emacs.d/my_config/sdcv-mode.el
-|4,39,281,37,1514084660,"~/.emacs.d/my_config/sdcv-mode.el"
--'  280  30  ~/.emacs.d/my_config/sdcv-mode.el
-|4,39,280,30,1514084660,"~/.emacs.d/my_config/sdcv-mode.el"
--'  245  11  ~/.emacs.d/my_config/sdcv-mode.el
-|4,39,245,11,1514084660,"~/.emacs.d/my_config/sdcv-mode.el"
--'  281  37  ~/.emacs.d/my_config/sdcv-mode.el
-|4,39,281,37,1514084660,"~/.emacs.d/my_config/sdcv-mode.el"
--'  280  30  ~/.emacs.d/my_config/sdcv-mode.el
-|4,39,280,30,1514084660,"~/.emacs.d/my_config/sdcv-mode.el"
--'  245  11  ~/.emacs.d/my_config/sdcv-mode.el
-|4,39,245,11,1514084660,"~/.emacs.d/my_config/sdcv-mode.el"
--'  281  37  ~/.emacs.d/my_config/sdcv-mode.el
-|4,39,281,37,1514084660,"~/.emacs.d/my_config/sdcv-mode.el"
--'  280  30  ~/.emacs.d/my_config/sdcv-mode.el
-|4,39,280,30,1514084660,"~/.emacs.d/my_config/sdcv-mode.el"
--'  245  11  ~/.emacs.d/my_config/sdcv-mode.el
-|4,39,245,11,1514084660,"~/.emacs.d/my_config/sdcv-mode.el"
--'  281  37  ~/.emacs.d/my_config/sdcv-mode.el
-|4,39,281,37,1514084660,"~/.emacs.d/my_config/sdcv-mode.el"
--'  280  30  ~/.emacs.d/my_config/sdcv-mode.el
-|4,39,280,30,1514084660,"~/.emacs.d/my_config/sdcv-mode.el"
--'  245  11  ~/.emacs.d/my_config/sdcv-mode.el
-|4,39,245,11,1514084660,"~/.emacs.d/my_config/sdcv-mode.el"
--'  281  37  ~/.emacs.d/my_config/sdcv-mode.el
-|4,39,281,37,1514084660,"~/.emacs.d/my_config/sdcv-mode.el"
--'  280  30  ~/.emacs.d/my_config/sdcv-mode.el
-|4,39,280,30,1514084660,"~/.emacs.d/my_config/sdcv-mode.el"
--'  245  11  ~/.emacs.d/my_config/sdcv-mode.el
-|4,39,245,11,1514084660,"~/.emacs.d/my_config/sdcv-mode.el"
--'  281  37  ~/.emacs.d/my_config/sdcv-mode.el
-|4,39,281,37,1514084660,"~/.emacs.d/my_config/sdcv-mode.el"
--'  280  30  ~/.emacs.d/my_config/sdcv-mode.el
-|4,39,280,30,1514084660,"~/.emacs.d/my_config/sdcv-mode.el"
--'  245  11  ~/.emacs.d/my_config/sdcv-mode.el
-|4,39,245,11,1514084660,"~/.emacs.d/my_config/sdcv-mode.el"
--'  281  37  ~/.emacs.d/my_config/sdcv-mode.el
-|4,39,281,37,1514084660,"~/.emacs.d/my_config/sdcv-mode.el"
--'  280  30  ~/.emacs.d/my_config/sdcv-mode.el
-|4,39,280,30,1514084660,"~/.emacs.d/my_config/sdcv-mode.el"
--'  245  11  ~/.emacs.d/my_config/sdcv-mode.el
-|4,39,245,11,1514084660,"~/.emacs.d/my_config/sdcv-mode.el"
--'  281  37  ~/.emacs.d/my_config/sdcv-mode.el
-|4,39,281,37,1514084660,"~/.emacs.d/my_config/sdcv-mode.el"
--'  280  30  ~/.emacs.d/my_config/sdcv-mode.el
-|4,39,280,30,1514084660,"~/.emacs.d/my_config/sdcv-mode.el"
--'  245  11  ~/.emacs.d/my_config/sdcv-mode.el
-|4,39,245,11,1514084660,"~/.emacs.d/my_config/sdcv-mode.el"
--'  281  37  ~/.emacs.d/my_config/sdcv-mode.el
-|4,39,281,37,1514084660,"~/.emacs.d/my_config/sdcv-mode.el"
--'  280  30  ~/.emacs.d/my_config/sdcv-mode.el
-|4,39,280,30,1514084660,"~/.emacs.d/my_config/sdcv-mode.el"
--'  245  11  ~/.emacs.d/my_config/sdcv-mode.el
-|4,39,245,11,1514084660,"~/.emacs.d/my_config/sdcv-mode.el"
--'  377  4  ~/.emacs.d/my_config/sdcv-mode.el
-|4,39,377,4,1514084657,"~/.emacs.d/my_config/sdcv-mode.el"
--'  377  4  ~/.emacs.d/my_config/sdcv-mode.el
-|4,39,377,4,1514084657,"~/.emacs.d/my_config/sdcv-mode.el"
--'  377  4  ~/.emacs.d/my_config/sdcv-mode.el
-|4,39,377,4,1514084657,"~/.emacs.d/my_config/sdcv-mode.el"
--'  377  4  ~/.emacs.d/my_config/sdcv-mode.el
-|4,39,377,4,1514084657,"~/.emacs.d/my_config/sdcv-mode.el"
--'  377  4  ~/.emacs.d/my_config/sdcv-mode.el
-|4,39,377,4,1514084657,"~/.emacs.d/my_config/sdcv-mode.el"
--'  377  4  ~/.emacs.d/my_config/sdcv-mode.el
-|4,39,377,4,1514084657,"~/.emacs.d/my_config/sdcv-mode.el"
--'  377  4  ~/.emacs.d/my_config/sdcv-mode.el
-|4,39,377,4,1514084657,"~/.emacs.d/my_config/sdcv-mode.el"
--'  377  4  ~/.emacs.d/my_config/sdcv-mode.el
-|4,39,377,4,1514084657,"~/.emacs.d/my_config/sdcv-mode.el"
--'  377  4  ~/.emacs.d/my_config/sdcv-mode.el
-|4,39,377,4,1514084657,"~/.emacs.d/my_config/sdcv-mode.el"
--'  377  4  ~/.emacs.d/my_config/sdcv-mode.el
-|4,39,377,4,1514084657,"~/.emacs.d/my_config/sdcv-mode.el"
--'  1  4  ~/.emacs.d/my_config/sdcv-mode.el
-|4,39,1,4,1514084656,"~/.emacs.d/my_config/sdcv-mode.el"
--'  1  4  ~/.emacs.d/my_config/sdcv-mode.el
-|4,39,1,4,1514084656,"~/.emacs.d/my_config/sdcv-mode.el"
--'  1  4  ~/.emacs.d/my_config/sdcv-mode.el
-|4,39,1,4,1514084656,"~/.emacs.d/my_config/sdcv-mode.el"
--'  1  4  ~/.emacs.d/my_config/sdcv-mode.el
-|4,39,1,4,1514084656,"~/.emacs.d/my_config/sdcv-mode.el"
--'  166  8  ~/.emacs.d/my_config/sdcv-mode.el
-|4,39,166,8,1514084653,"~/.emacs.d/my_config/sdcv-mode.el"
--'  166  8  ~/.emacs.d/my_config/sdcv-mode.el
-|4,39,166,8,1514084653,"~/.emacs.d/my_config/sdcv-mode.el"
--'  166  8  ~/.emacs.d/my_config/sdcv-mode.el
-|4,39,166,8,1514084653,"~/.emacs.d/my_config/sdcv-mode.el"
--'  166  8  ~/.emacs.d/my_config/sdcv-mode.el
-|4,39,166,8,1514084653,"~/.emacs.d/my_config/sdcv-mode.el"
--'  166  8  ~/.emacs.d/my_config/sdcv-mode.el
-|4,39,166,8,1514084653,"~/.emacs.d/my_config/sdcv-mode.el"
--'  166  8  ~/.emacs.d/my_config/sdcv-mode.el
-|4,39,166,8,1514084653,"~/.emacs.d/my_config/sdcv-mode.el"
--'  166  8  ~/.emacs.d/my_config/sdcv-mode.el
-|4,39,166,8,1514084653,"~/.emacs.d/my_config/sdcv-mode.el"
--'  166  8  ~/.emacs.d/my_config/sdcv-mode.el
-|4,39,166,8,1514084653,"~/.emacs.d/my_config/sdcv-mode.el"
--'  166  8  ~/.emacs.d/my_config/sdcv-mode.el
-|4,39,166,8,1514084653,"~/.emacs.d/my_config/sdcv-mode.el"
--'  166  8  ~/.emacs.d/my_config/sdcv-mode.el
-|4,39,166,8,1514084653,"~/.emacs.d/my_config/sdcv-mode.el"
+-'  18  105  ~/TODO
+|4,39,18,105,1514102981,"~/TODO"
+-'  2  0  ~/TODO
+|4,39,2,0,1514102940,"~/TODO"
+-'  1  0  ~/TODO
+|4,39,1,0,1514102939,"~/TODO"
+-'  252  0  /usr/share/emacs/site-lisp/w3m/w3m-search.el
+|4,39,252,0,1514102776,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
+-'  252  0  /usr/share/emacs/site-lisp/w3m/w3m-search.el
+|4,39,252,0,1514102776,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
+-'  64  25  /usr/share/emacs/site-lisp/w3m/w3m-search.el
+|4,39,64,25,1514102768,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
+-'  64  25  /usr/share/emacs/site-lisp/w3m/w3m-search.el
+|4,39,64,25,1514102768,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
+-'  368  0  /usr/share/emacs/site-lisp/w3m/w3m-search.el
+|4,39,368,0,1514102767,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
+-'  368  0  /usr/share/emacs/site-lisp/w3m/w3m-search.el
+|4,39,368,0,1514102767,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
+-'  310  35  /usr/share/emacs/site-lisp/w3m/w3m-search.el
+|4,39,310,35,1514102763,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
+-'  310  35  /usr/share/emacs/site-lisp/w3m/w3m-search.el
+|4,39,310,35,1514102763,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
+-'  308  10  /usr/share/emacs/site-lisp/w3m/w3m-search.el
+|4,39,308,10,1514102761,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
+-'  265  12  /usr/share/emacs/site-lisp/w3m/w3m-search.el
+|4,39,265,12,1514102761,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
+-'  308  10  /usr/share/emacs/site-lisp/w3m/w3m-search.el
+|4,39,308,10,1514102761,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
+-'  265  12  /usr/share/emacs/site-lisp/w3m/w3m-search.el
+|4,39,265,12,1514102761,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
+-'  254  14  /usr/share/emacs/site-lisp/w3m/w3m-search.el
+|4,39,254,14,1514102760,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
+-'  254  14  /usr/share/emacs/site-lisp/w3m/w3m-search.el
+|4,39,254,14,1514102760,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
+-'  42  15  /usr/share/emacs/site-lisp/w3m/w3m-search.el
+|4,39,42,15,1514102759,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
+-'  42  15  /usr/share/emacs/site-lisp/w3m/w3m-search.el
+|4,39,42,15,1514102759,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
+-'  361  25  /usr/share/emacs/site-lisp/w3m/w3m-search.el
+|4,39,361,25,1514102754,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
+-'  361  25  /usr/share/emacs/site-lisp/w3m/w3m-search.el
+|4,39,361,25,1514102754,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
+-'  355  50  /usr/share/emacs/site-lisp/w3m/w3m-search.el
+|4,39,355,50,1514102753,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
+-'  355  50  /usr/share/emacs/site-lisp/w3m/w3m-search.el
+|4,39,355,50,1514102753,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
+-'  352  31  /usr/share/emacs/site-lisp/w3m/w3m-search.el
+|4,39,352,31,1514102752,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
+-'  352  31  /usr/share/emacs/site-lisp/w3m/w3m-search.el
+|4,39,352,31,1514102752,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
+-'  349  38  /usr/share/emacs/site-lisp/w3m/w3m-search.el
+|4,39,349,38,1514102751,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
+-'  344  35  /usr/share/emacs/site-lisp/w3m/w3m-search.el
+|4,39,344,35,1514102751,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
+-'  349  38  /usr/share/emacs/site-lisp/w3m/w3m-search.el
+|4,39,349,38,1514102751,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
+-'  344  35  /usr/share/emacs/site-lisp/w3m/w3m-search.el
+|4,39,344,35,1514102751,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
+-'  342  22  /usr/share/emacs/site-lisp/w3m/w3m-search.el
+|4,39,342,22,1514102750,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
+-'  342  22  /usr/share/emacs/site-lisp/w3m/w3m-search.el
+|4,39,342,22,1514102750,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
+-'  341  19  /usr/share/emacs/site-lisp/w3m/w3m-search.el
+|4,39,341,19,1514102749,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
+-'  341  19  /usr/share/emacs/site-lisp/w3m/w3m-search.el
+|4,39,341,19,1514102749,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
+-'  338  36  /usr/share/emacs/site-lisp/w3m/w3m-search.el
+|4,39,338,36,1514102748,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
+-'  338  36  /usr/share/emacs/site-lisp/w3m/w3m-search.el
+|4,39,338,36,1514102748,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
+-'  327  41  /usr/share/emacs/site-lisp/w3m/w3m-search.el
+|4,39,327,41,1514102746,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
+-'  327  41  /usr/share/emacs/site-lisp/w3m/w3m-search.el
+|4,39,327,41,1514102746,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
+-'  324  47  /usr/share/emacs/site-lisp/w3m/w3m-search.el
+|4,39,324,47,1514102744,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
+-'  324  47  /usr/share/emacs/site-lisp/w3m/w3m-search.el
+|4,39,324,47,1514102744,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
+-'  322  10  /usr/share/emacs/site-lisp/w3m/w3m-search.el
+|4,39,322,10,1514102742,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
+-'  321  40  /usr/share/emacs/site-lisp/w3m/w3m-search.el
+|4,39,321,40,1514102742,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
+-'  322  10  /usr/share/emacs/site-lisp/w3m/w3m-search.el
+|4,39,322,10,1514102742,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
+-'  321  40  /usr/share/emacs/site-lisp/w3m/w3m-search.el
+|4,39,321,40,1514102742,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
+-'  320  26  /usr/share/emacs/site-lisp/w3m/w3m-search.el
+|4,39,320,26,1514102741,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
+-'  320  26  /usr/share/emacs/site-lisp/w3m/w3m-search.el
+|4,39,320,26,1514102741,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
+-'  316  10  /usr/share/emacs/site-lisp/w3m/w3m-search.el
+|4,39,316,10,1514102732,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
+-'  315  9  /usr/share/emacs/site-lisp/w3m/w3m-search.el
+|4,39,315,9,1514102732,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
+-'  316  10  /usr/share/emacs/site-lisp/w3m/w3m-search.el
+|4,39,316,10,1514102732,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
+-'  315  9  /usr/share/emacs/site-lisp/w3m/w3m-search.el
+|4,39,315,9,1514102732,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
+-'  1  0  /usr/share/emacs/site-lisp/w3m/w3m-search.el
+|4,39,1,0,1514102724,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
+-'  1  0  /usr/share/emacs/site-lisp/w3m/w3m-search.el
+|4,39,1,0,1514102724,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
+-'  354  0  /usr/share/emacs/site-lisp/w3m/w3m-search.el
+|4,39,354,0,1514102722,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
+-'  354  0  /usr/share/emacs/site-lisp/w3m/w3m-search.el
+|4,39,354,0,1514102722,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
+-'  123  8  /usr/share/emacs/site-lisp/w3m/w3m-search.el
+|4,39,123,8,1514102704,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
+-'  123  8  /usr/share/emacs/site-lisp/w3m/w3m-search.el
+|4,39,123,8,1514102704,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
+-'  67  25  /usr/share/emacs/site-lisp/w3m/w3m-search.el
+|4,39,67,25,1514102636,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
+-'  67  25  /usr/share/emacs/site-lisp/w3m/w3m-search.el
+|4,39,67,25,1514102636,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
+-'  251  38  /usr/share/emacs/site-lisp/w3m/w3m-search.el
+|4,39,251,38,1514102634,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
+-'  251  38  /usr/share/emacs/site-lisp/w3m/w3m-search.el
+|4,39,251,38,1514102634,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
+-'  141  22  /usr/share/emacs/site-lisp/w3m/w3m-search.el
+|4,39,141,22,1514102632,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
+-'  140  8  /usr/share/emacs/site-lisp/w3m/w3m-search.el
+|4,39,140,8,1514102632,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
+-'  141  22  /usr/share/emacs/site-lisp/w3m/w3m-search.el
+|4,39,141,22,1514102632,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
+-'  140  8  /usr/share/emacs/site-lisp/w3m/w3m-search.el
+|4,39,140,8,1514102632,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
+-'  138  19  /usr/share/emacs/site-lisp/w3m/w3m-search.el
+|4,39,138,19,1514102631,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
+-'  137  7  /usr/share/emacs/site-lisp/w3m/w3m-search.el
+|4,39,137,7,1514102631,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
+-'  136  19  /usr/share/emacs/site-lisp/w3m/w3m-search.el
+|4,39,136,19,1514102631,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
+-'  135  7  /usr/share/emacs/site-lisp/w3m/w3m-search.el
+|4,39,135,7,1514102631,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
+-'  138  19  /usr/share/emacs/site-lisp/w3m/w3m-search.el
+|4,39,138,19,1514102631,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
+-'  137  7  /usr/share/emacs/site-lisp/w3m/w3m-search.el
+|4,39,137,7,1514102631,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
+-'  136  19  /usr/share/emacs/site-lisp/w3m/w3m-search.el
+|4,39,136,19,1514102631,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
+-'  135  7  /usr/share/emacs/site-lisp/w3m/w3m-search.el
+|4,39,135,7,1514102631,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
+-'  133  19  /usr/share/emacs/site-lisp/w3m/w3m-search.el
+|4,39,133,19,1514102630,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
+-'  132  7  /usr/share/emacs/site-lisp/w3m/w3m-search.el
+|4,39,132,7,1514102630,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
+-'  130  19  /usr/share/emacs/site-lisp/w3m/w3m-search.el
+|4,39,130,19,1514102630,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
+-'  129  7  /usr/share/emacs/site-lisp/w3m/w3m-search.el
+|4,39,129,7,1514102630,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
+-'  127  19  /usr/share/emacs/site-lisp/w3m/w3m-search.el
+|4,39,127,19,1514102630,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
+-'  133  19  /usr/share/emacs/site-lisp/w3m/w3m-search.el
+|4,39,133,19,1514102630,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
+-'  132  7  /usr/share/emacs/site-lisp/w3m/w3m-search.el
+|4,39,132,7,1514102630,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
+-'  130  19  /usr/share/emacs/site-lisp/w3m/w3m-search.el
+|4,39,130,19,1514102630,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
+-'  129  7  /usr/share/emacs/site-lisp/w3m/w3m-search.el
+|4,39,129,7,1514102630,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
+-'  127  19  /usr/share/emacs/site-lisp/w3m/w3m-search.el
+|4,39,127,19,1514102630,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
+-'  126  7  /usr/share/emacs/site-lisp/w3m/w3m-search.el
+|4,39,126,7,1514102629,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
+-'  124  19  /usr/share/emacs/site-lisp/w3m/w3m-search.el
+|4,39,124,19,1514102629,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
+-'  126  7  /usr/share/emacs/site-lisp/w3m/w3m-search.el
+|4,39,126,7,1514102629,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
+-'  124  19  /usr/share/emacs/site-lisp/w3m/w3m-search.el
+|4,39,124,19,1514102629,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
+-'  121  19  /usr/share/emacs/site-lisp/w3m/w3m-search.el
+|4,39,121,19,1514102628,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
+-'  120  7  /usr/share/emacs/site-lisp/w3m/w3m-search.el
+|4,39,120,7,1514102628,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
+-'  118  19  /usr/share/emacs/site-lisp/w3m/w3m-search.el
+|4,39,118,19,1514102628,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
+-'  121  19  /usr/share/emacs/site-lisp/w3m/w3m-search.el
+|4,39,121,19,1514102628,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
+-'  120  7  /usr/share/emacs/site-lisp/w3m/w3m-search.el
+|4,39,120,7,1514102628,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
+-'  118  19  /usr/share/emacs/site-lisp/w3m/w3m-search.el
+|4,39,118,19,1514102628,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
+-'  117  7  /usr/share/emacs/site-lisp/w3m/w3m-search.el
+|4,39,117,7,1514102627,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
+-'  117  7  /usr/share/emacs/site-lisp/w3m/w3m-search.el
+|4,39,117,7,1514102627,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
+-'  113  18  /usr/share/emacs/site-lisp/w3m/w3m-search.el
+|4,39,113,18,1514102626,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
+-'  112  7  /usr/share/emacs/site-lisp/w3m/w3m-search.el
+|4,39,112,7,1514102626,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
+-'  113  18  /usr/share/emacs/site-lisp/w3m/w3m-search.el
+|4,39,113,18,1514102626,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
+-'  112  7  /usr/share/emacs/site-lisp/w3m/w3m-search.el
+|4,39,112,7,1514102626,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
+-'  111  18  /usr/share/emacs/site-lisp/w3m/w3m-search.el
+|4,39,111,18,1514102624,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
+-'  111  18  /usr/share/emacs/site-lisp/w3m/w3m-search.el
+|4,39,111,18,1514102624,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
+-'  110  7  /usr/share/emacs/site-lisp/w3m/w3m-search.el
+|4,39,110,7,1514102622,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
 
 # 檔案內 Mark 記錄 (由新到舊):
+
+> ~/TODO
+	*	1514102980	0
+	"	18	105
+	^	18	106
+	.	18	105
+	+	31	0
+	+	18	105
+
+> /usr/share/emacs/site-lisp/w3m/w3m-search.el
+	*	1514102774	0
+	"	252	0
+	.	252	0
+	+	252	0
+
+> ~/Downloads/w3m-el/usr/lib/emacsen-common/packages/install/w3m-el
+	*	1514102021	0
+	"	47	0
+
+> ~/Note/Linux/ubuntu/apt/apt-usage.txt
+	*	1514101653	0
+	"	239	0
+
+> ~/Note/Linux/ubuntu/apt/apt-optional.txt
+	*	1514101560	0
+	"	96	0
+
+> ~/emacs-w3m-1.4.4/w3m-util.el
+	*	1514101265	0
+	"	114	0
+
+> ~/emacs-w3m-1.4.4/install-sh
+	*	1514101215	0
+	"	37	12
+
+> ~/w3m-content.txt
+	*	1514100392	0
+	"	1	0
+
+> ~/.emacs.d/my_config/w3m-search-engine.txt
+	*	1514096694	0
+	"	4	0
+	^	5	41
+	.	6	0
+	+	1	0
+	+	12	0
+	+	1	0
+	+	2	38
+	+	5	21
+	+	6	0
+	+	5	41
+	+	6	0
+
+> ~/.emacs.d/my_config/w3m-mode.el
+	*	1514096693	0
+	"	2	21
+	^	20	23
+	.	20	41
+	+	194	31
+	+	195	0
+	+	197	0
+	+	200	0
+	+	197	21
+	+	197	0
+	+	199	0
+	+	196	0
+	+	170	0
+	+	20	43
+	+	21	0
+	+	20	41
 
 > ~/.emacs.d/my_config/init-my-config.el
 	*	1514084750	0
@@ -2951,12 +2994,6 @@ $
 	.	312	0
 	+	312	0
 
-> ~/TODO
-	*	1510800922	0
-	"	30	0
-	.	31	0
-	+	31	0
-
 > ~/diff-the-Home-and-repo.txt
 	*	1510798478	0
 	"	14	0
@@ -3077,68 +3114,3 @@ $
 	^	7	23
 	.	7	22
 	+	7	22
-
-> ~/Note/Linux/ubuntu/window_manager/DWM/x11_xlib_h-error.txt
-	"	2	0
-	^	1	21
-	.	6	0
-	+	6	42
-	+	6	0
-	+	6	0
-	+	2	0
-	+	1	18
-	+	6	0
-
-> ~/Note/Linux/ubuntu/window_manager/DWM/dmenu-usage.txt
-	"	1	0
-
-> ~/Note/Linux/ubuntu/window_manager/DWM/dwm-usage.txt
-	"	333	0
-
-> ~/Github/spacemacs/README.md
-	"	47	3
-
-> ~/Note/Linux/ubuntu/server/system-Upgrade.txt
-	"	72	0
-	.	95	0
-	+	8	0
-	+	12	0
-	+	16	0
-	+	20	0
-	+	26	0
-	+	30	0
-	+	33	0
-	+	36	0
-	+	33	0
-	+	30	0
-	+	45	0
-	+	49	3
-	+	49	0
-	+	74	0
-	+	78	0
-	+	82	0
-	+	86	0
-	+	90	0
-	+	94	0
-	+	95	0
-
-> ~/Note/Linux/ubuntu/server/WIFI-configure.txt
-	"	129	188
-	^	129	189
-	.	129	188
-	+	129	188
-
-> ~/Note/Linux/ubuntu/character_terminal/terminal-pic-viwer.txt
-	"	54	94
-	^	55	121
-	.	55	118
-	+	55	118
-
-> ~/Note/Linux/ubuntu/window_manager/DWM/x11/xlib_h-error.txt
-	"	6	0
-	^	6	0
-	.	5	42
-	+	5	42
-
-> ~/Github/dwm/README
-	"	1	0

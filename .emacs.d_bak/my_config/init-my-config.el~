@@ -10,10 +10,15 @@
 ; add cscope plugin
 (require 'xcscope)
 ; use sdcv to query word
-(require 'init-sdcv-mode)
+(require 'sdcv-mode)
   (global-set-key (kbd "C-c d") 'sdcv-search)
 ; set power line
 (setq powerline-default-separator 'nil)
+; regoin mark and edit
+(require 'rect-mark)
+; use w3m web browser
+(require 'w3m)
+
 
 ;; some setting for edit files
 ; run xmodmap command to remap Super_R key to Menu key
@@ -27,12 +32,9 @@
 ; 以 y/n代表 yes/no
 (fset 'yes-or-no-p 'y-or-n-p) 
 
-;; ibus input method
-;(require 'ibus)
-;(add-hook 'after-init-hook 'ibus-mode-on)
-
-;; set emacs origin input method
-(setq default-input-method 'chinese-py-punct)
+;; emacs use system input method
+;(setq default-input-method 'chinese-py-punct)
+(global-set-key (kbd "C-SPC") nil)
 
 
 (provide 'init-my-config)

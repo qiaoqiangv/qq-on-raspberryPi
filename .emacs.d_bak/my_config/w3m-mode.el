@@ -17,7 +17,7 @@
  (setq w3m-use-cookies t)
  (setq w3m-icon-directory (concat w3m-dir "icons"))
  (setq w3m-use-mule-ucs t)
- (setq w3m-home-page "http://www.bing.com")
+ (setq w3m-home-page "http://cn.bing.com/")
  (setq w3m-default-display-inline-images t)
   
  (defun w3m-settings ()
@@ -167,6 +167,7 @@
      ("1"         delete-other-windows)
      ("C-x C-s"   w3m-save-current-buffer-sb)
      ("P"         w3m-print-current-url)
+
      ("U"         w3m-print-this-url)
      ("c"         w3m-copy-current-url)
      ("g"         w3m-goto-url-new-session)
@@ -187,3 +188,17 @@
      ("v"         w3m-bookmark-view-new-session)
      ("M-e"       w3m-bookmark-edit)
      ("'"         switch-to-other-buffer)))
+
+
+;; add some my prosenal setting
+; use bing search engine for w3m
+(setq w3m-search-default-engine "Bing")
+
+(add-to-list 'w3m-search-engine-alist
+    '("Bing" " http://cn.bing.com/"))
+
+(defadvice w3m-search (after change-default activate)
+      (let ((engine (nth 1 minibuffer-history)))
+  (when (assoc engine w3m-search-engine-alist)
+    (setq w3m-search-default-engine engine))))
+

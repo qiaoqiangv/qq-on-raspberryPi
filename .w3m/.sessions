@@ -2,10 +2,22 @@
 ;; This file is generated automatically by emacs-w3m v1.4.538.
 
 (("Automatic saved sessions-1"
-  (23102 4361 815965 674000)
-  (("about:" nil nil "About emacs-w3m"))
+  (23103 23266 707898 469000)
+  (("about:" nil (("http://emacs-w3m.namazu.org/" (:title "Text browser works on Emacs") (0 0 0) :referer "about:" :window-start 1318 :position (40 . 8) :window-hscroll 0)) "About emacs-w3m"))
   0)
- ("Crash recovery sessions"
-  (23102 2442 251320 289000)
-  (("about:" nil nil "About emacs-w3m") ("http://emacs-w3m.namazu.org/" (1) (("about:" (:title "About emacs-w3m") (0) :window-start 1 :position (1 . 0) :window-hscroll 0) ("about:" (:title "About emacs-w3m") (1) :window-start 1 :position (1 . 61) :window-hscroll 0)) "Text browser works on Emacs"))
+ ("Automatic saved sessions-2"
+  (23103 22257 294179 908000)
+  (("about:" nil nil "About emacs-w3m"))
+  nil)
+ ("Automatic saved sessions-3"
+  (23103 18392 526199 965000)
+  (("about://history/" (0) (("about:" (:title "About emacs-w3m") (0) :window-start 1 :position (1 . 0) :window-hscroll 0)) "URL history"))
+  nil)
+ ("Automatic saved sessions-4"
+  (23103 18066 765706 904000)
+  (("about:" nil nil "About emacs-w3m"))
+  nil)
+ ("Automatic saved sessions-5"
+  (23103 17829 220942 121000)
+  (("about:" nil nil "About emacs-w3m"))
   nil))

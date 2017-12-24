@@ -1,10 +1,7 @@
-cflow-1.5
-cflow-1.5.tar
 deep-understand-computer.pdf
 Firefox-latest-x86_64.tar.bz2
-ibus-el-0.3.2
-ibus-el-0.3.2.tar.gz
 src.2e.tar.gz
 The C Programming language(双语版).zip
 unpv22e.tar.gz
 v4
+w3m-el
