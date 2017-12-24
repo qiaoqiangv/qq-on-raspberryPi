@@ -1,8 +1,0 @@
-二進位格式檔案 /run/log/journal/4065eb09f4bb4c9ba822fbbb2253eb8a/system.journal 符合
-二進位格式檔案 /proc/1796/task/1796/cmdline 符合
-二進位格式檔案 /proc/1796/cmdline 符合
-二進位格式檔案 /proc/1800/task/1800/environ 符合
-二進位格式檔案 /proc/1800/task/1800/cmdline 符合
-二進位格式檔案 /proc/1800/environ 符合
-二進位格式檔案 /proc/1800/cmdline 符合
-二進位格式檔案 /var/log/auth.log 符合

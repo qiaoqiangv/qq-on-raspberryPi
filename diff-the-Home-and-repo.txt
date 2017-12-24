@@ -19,8 +19,6 @@ Documents
 Downloads
 .emacs.d
 .emacs.d_bak
-emacs-w3m-1.4.4
-emacs-w3m-1.4.4.tar.gz
 .fbtermrc
 .gconf
 .git
@@ -59,7 +57,6 @@ Videos
 .vimperatorrc
 .vimrc
 .w3m
-w3m-content.txt
 Wallpapers
 Workspace
 .Xauthority
