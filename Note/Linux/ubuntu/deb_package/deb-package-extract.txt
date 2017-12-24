@@ -1,0 +1,85 @@
+返回主页
+
+）^程序猿^（
+
+  • 博客园
+  • 首页
+  • 新闻
+  • 新随笔
+  • 联系
+  • 管理
+  • 订阅订阅
+
+随笔- 32  文章- 0  评论- 4 
+
+Ubuntu下deb包的解压、打包、安装、卸载及常用命令参数
+
+1.首先下载deb包，比如：将其放在 /home/tools/ 根目录下：
+
+2.进入到tools根目录下的终端，输入下面命令创建文件夹extract，并在extract文件夹下创建DEBIAN文件夹
+
+mkdir -p extract/DEBIAN
+
+3.将deb包解压到extract文件夹下
+
+dpkg -X ./xxx.deb extract
+
+4.解压deb包中的control信息(包的依赖在这里面的control文件中)
+
+dpkg -e ./xxx.deb extract/DEBIAN
+
+5.创建build文件夹
+
+mkdir build
+
+6.将解压到extract文件夹中所有的内容重新打包为deb包
+
+dpkg-deb -b extract build/
+
+7.安装deb包
+
+dpkg -i xxx.deb　　(如果出现权限拒绝，在 dpkg 前加上 sudo 即可)
+
+8.卸载deb包
+
+dpkg -r xxx.deb　　( -r 参数只是删除了软件包，不能完全删除其配置文件，如果想要连同配置文件一起删除，可以使用 -P 参数)
+
+ 
+
+常用命令参数实例
+
+dpkg -i package.deb #安装包
+dpkg -r package #删除包
+dpkg -P package #删除包（包括配置文件）
+dpkg -L package #列出与该包关联的文件
+dpkg -l package #显示该包的版本
+dpkg --unpack package.deb #解开deb包的内容
+dpkg -S keyword #搜索所属的包内容
+dpkg -l #列出当前已安装的包
+dpkg -c package.deb #列出deb包的内容
+dpkg --configure package #配置包
+
+ 
+
+dpkg -i package.deb #安装包
+
+来自: http://man.linuxde.net/dpkg
+dpkg -i package.deb #安装包
+
+来自: http://man.linuxde.net/dpkg
+dpkg -i package.deb #安装包 dpkg -r package #删除包 dpkg -P package #删除包（包括配置文件） dpkg -L package #列出
+与该包关联的文件 dpkg -l package #显示该包的版本 dpkg --unpack package.deb #解开deb包的内容 dpkg -S keyword #搜索
+所属的包内容 dpkg -l #列出当前已安装的包 dpkg -c package.deb #列出deb包的内容 dpkg --configure package #配置包
+
+来自: http://man.linuxde.net/dpkg
+dpkg -i package.deb #安装包 dpkg -r package #删除包 dpkg -P package #删除包（包括配置文件） dpkg -L package #列出
+与该包关联的文件 dpkg -l package #显示该包的版本 dpkg --unpack package.deb #解开deb包的内容 dpkg -S keyword #搜索
+所属的包内容 dpkg -l #列出当前已安装的包 dpkg -c package.deb #列出deb包的内容 dpkg --configure package #配置包
+
+来自: http://man.linuxde.net/dpkg
+posted @ 2017-12-23 17:06 ）^程序猿^（阅读(...) 评论(...) 编辑收藏
+刷新评论刷新页面返回顶部
+
+公告
+
+Copyright ©2017 ）^程序猿^（
