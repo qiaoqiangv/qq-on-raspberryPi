@@ -1,11 +1,9 @@
 
-1. 2017年 05月 23日 星期二 18:16:30 CST - CONTENT : 将 emacs --daemon 命令加入到 .xsessionrc 中，使得开机启动一个 emacs 守护进程，同时运行 init-my-config.el 中的 xmodmap 命令
-
 2. 2017年 05月 23日 星期二 21:03:55 CST - CONTENT : 使用 sort 命令读取 .gitignore 文件的内容，并按照字母顺序排序后重新写入 .gitignore 文件中去
 
 3. 2017年 05月 24日 星期三 22:55:08 CST - CONTENT : 1. 参考 emacs info 文档的格式组织 ~/Note 目录，同时修改 ~/.emacs.d/init.el 使得 emacs 启动时即加载该帮助文档； 2. 将 firefox 书签文件改写成 index.html 格式的文件，同时配置 vimperator 配置文件，使得 firefox 浏览器启动时即加载 修改后的 index.html 文件。
 
-4. 2017年 05月 25日 星期四 16:45:10 CST - CONTENT : 写一个 elisp 插件，目标是：在 emacs 编辑文本文件时，可以使用 \!\@\#$\%\^ 等特殊字符，将其添加在某一行行首，或是使用特殊字符包括住某几个字时，可以使的该行或是被包括的文字的字号、字体粗细正斜、字体颜色 ‘实时的’ 产生自定义的变化。
+4. 2017年 05月 25日 星期四 16:45:10 CST - CONTENT : 写一个 elisp 插件，模拟 MS word 。目标是：在 emacs 编辑文本文件时，可以使用 \!\@\#$\%\^ 等特殊字符，将其添加在某一行行首，或是使用特殊字符包括住某几个字时，可以使的该行或是被包括的文字的字号、字体粗细正斜、字体颜色 ‘实时的’ 产生自定义的变化。
 
 5. 2017年 05月 26日 星期五 17:56:53 CST - CONTENT : complete the '~/ShellScripts/basic_scripts/format-error' file
 

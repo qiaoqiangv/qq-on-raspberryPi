@@ -6,9 +6,9 @@
 ##  add some useful function
 # add find spicified process function
 function find-process(){
+    PS_INFO="USER\tPID\t%CPU\t%MEM\tVSZ\tRSS\tTTY\tSTAT\tSTART\tTIME\tCOMMAND"
     echo -e $PS_INFO
     ps -aux | grep "$1"
-
 }
 
 # find some text on current directory recursively

@@ -11,7 +11,7 @@
 # hlsearch on (H) or off (h):
 ~h
 # Last Search Pattern:
-~MSle0~/google
+~Msle0~/\<emacs\>
 
 # Last Substitute Search Pattern:
 ~MSle0&^
@@ -20,16 +20,28 @@
 $
 
 # 命令列 歷史記錄 (新到舊):
-:x
-|2,0,1514102981,,"x"
-:q!
-|2,0,1514102776,,"q!"
 :q
-|2,0,1514102022,,"q"
-:w
-|2,0,1514096596,,"w"
+|2,0,1523775288,,"q"
+:x
+|2,0,1514794751,,"x"
 :tabnext 
-|2,0,1514096257,,"tabnext "
+|2,0,1514195263,,"tabnext "
+:tabedit /home/pi/ShellScripts/bashrc-add-find-func
+|2,0,1514195259,,"tabedit /home/pi/ShellScripts/bashrc-add-find-func"
+:q!
+|2,0,1514195208,,"q!"
+:Q
+|2,0,1514195206,,"Q"
+:w
+|2,0,1514194987,,"w"
+:! ls 
+|2,0,1514194553,,"! ls "
+:tabedit /home/pi/.config/openbox/lxde-pi-rc.xml
+|2,0,1514193330,,"tabedit /home/pi/.config/openbox/lxde-pi-rc.xml"
+:tabedit /home/pi/Github/qq-on-ubuntu/.xsessionrc
+|2,0,1514191312,,"tabedit /home/pi/Github/qq-on-ubuntu/.xsessionrc"
+:'<,'>q
+|2,0,1514190938,,"'<,'>q"
 :tabedit /home/pi/.emacs.d/my_config/w3m-search-engine.txt
 |2,0,1514096250,,"tabedit /home/pi/.emacs.d/my_config/w3m-search-engine.txt"
 :tabedit /home/pi/.emacs.d/my_config/http://cn.bing.com/http://cn.bing.com/http://cn.bing.com/http://cn.bing.com/
@@ -58,8 +70,6 @@ $
 |2,0,1513837330,,"tabedit /home/pi/ShellScripts/profile-add-ibus-setting"
 :tabedit /home/pi/
 |2,0,1513837245,,"tabedit /home/pi/"
-:Q
-|2,0,1513766944,,"Q"
 :x!
 |2,0,1513686949,,"x!"
 :x1
@@ -96,8 +106,6 @@ $
 |2,0,1512976209,,"tabedit /home/pi/.emacs.d/my_config/ibus-el-agent"
 :tabedit /home/pi/.emacs.d/
 |2,0,1512976146,,"tabedit /home/pi/.emacs.d/"
-:'<,'>q
-|2,0,1511081949,,"'<,'>q"
 :kk
 |2,0,1510966086,,"kk"
 :! ls ~/ShellScripts/login-auto-start/install
@@ -1012,16 +1020,20 @@ $
 |2,0,0,,"echo \"number is \" . bufwinnr(winbufnr(winnr()))"
 :echo "buffer number is " . bufwinnr(winbufnr(winnr()))
 |2,0,0,,"echo \"buffer number is \" . bufwinnr(winbufnr(winnr()))"
-:echo "file name is " . bufname(winbufnr(winnr()))
-|2,0,0,,"echo \"file name is \" . bufname(winbufnr(winnr()))"
-:echo "num is " . winbufnr(winnr())
-|2,0,0,,"echo \"num is \" . winbufnr(winnr())"
-:help tabpagebuflist(
-|2,0,0,,"help tabpagebuflist("
-:echo "num is : " . winnr()
-|2,0,0,,"echo \"num is : \" . winnr()"
 
 # 搜尋字串 歷史記錄 (新到舊):
+? \<emacs\>
+|2,1,1514794749,,"\\<emacs\\>"
+?/emacs
+|2,1,1514193228,47,"emacs"
+? \<USRMODMAP\>
+|2,1,1514191981,,"\\<USRMODMAP\\>"
+?/.xmodmap
+|2,1,1514191546,47,".xmodmap"
+?/.bash
+|2,1,1514191533,47,".bash"
+?/visual
+|2,1,1514190956,47,"visual"
 ?/google
 |2,1,1514102767,47,"google"
 ?/search-engine
@@ -1060,8 +1072,6 @@ $
 |2,1,1510788938,,"\\<keybindings\\>"
 ? \<Keybindings\>
 |2,1,1510788937,,"\\<Keybindings\\>"
-?/emacs
-|2,1,0,47,"emacs"
 ?/term
 |2,1,0,47,"term"
 ?/xterm
@@ -1398,8 +1408,6 @@ $
 |2,1,0,47,"alias emc=\\'emacsclient -c -a"
 ?/alias emt=\'emacsclient -t -a
 |2,1,0,47,"alias emt=\\'emacsclient -t -a"
-? \<emacs\>
-|2,1,0,,"\\<emacs\\>"
 ?/    emacs --daemon 2> \${HOME}\/crush_message\/emacs-daemon-startup-message\.txt &
 |2,1,0,47,"    emacs --daemon 2> \\${HOME}\\/crush_message\\/emacs-daemon-startup-message\\.txt &"
 ?/        kill -9 "\${emacs_pid}"
@@ -2014,14 +2022,6 @@ $
 |2,1,0,,"\\<text\\>"
 ? \<Text\>
 |2,1,0,,"\\<Text\\>"
-?/hight
-|2,1,0,47,"hight"
-?/27.4
-|2,1,0,47,"27.4"
-?/27
-|2,1,0,47,"27"
-? \<Matching\>
-|2,1,0,,"\\<Matching\\>"
 
 # 運算式 歷史記錄 (新到舊):
 
@@ -2044,273 +2044,429 @@ $
 # Debug Line 歷史記錄 (新到舊):
 
 # 暫存器:
-""0	LINE	0
-	(defcustom w3m-search-default-engine "google"
-|3,1,0,1,1,0,1514102771,"(defcustom w3m-search-default-engine \"google\""
+"0	LINE	0
+	PS_INFO="USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND"
+|3,0,0,1,1,0,1514195262,"PS_INFO=\"USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND\""
 "1	LINE	0
-	
-|3,0,1,1,1,0,1514096269,""
+	    #echo -e $PS_INFO
+|3,0,1,1,1,0,1514195266,"    #echo -e $PS_INFO"
 "2	LINE	0
-	    '("Bing Search" "http://bing.com"))
-|3,0,2,1,1,0,1514096264,"    '(\"Bing Search\" \"http://bing.com\"))"
+	
+|3,0,2,1,1,0,1514195054,""
 "3	LINE	0
-	(add-to-list 'w3m-search-engine-alist
-|3,0,3,1,1,0,1514096263,"(add-to-list 'w3m-search-engine-alist"
+	
+|3,0,3,1,1,0,1514194906,""
 "4	LINE	0
-	
-|3,0,4,1,1,0,1514096179,""
+	1. 2017年 05月 23日 星期二 18:16:30 CST - CONTENT : 将 emacs --daemon 命令加入到 .xsessionrc 中，使得开机启动一个 emacs 守护进程，同时运行 init-my-config.el 中的 xmodmap 命令
+|3,0,4,1,1,0,1514194905,"1. 2017年 05月 23日 星期二 18:16:30 CST - CONTENT : 将 emacs --daemon 命令加入到 .xsessionrc 中，使得开机启动一个 emacs 守护进程，同时运行 init-my-config.el 中的 xmodmap 命令"
 "5	LINE	0
-	
-|3,0,5,1,1,0,1514096027,""
+	1. 2017年 05月 23日 星期二 18:16:30 CST - CONTENT : 将 emacs --daemon 命令加入到 .xsessionrc 中，使得开机启动一个 emacs 守护进程，同时运行 init-my-config.el 中的 xmodmap 命令
+|3,0,5,1,1,0,1514194890,"1. 2017年 05月 23日 星期二 18:16:30 CST - CONTENT : 将 emacs --daemon 命令加入到 .xsessionrc 中，使得开机启动一个 emacs 守护进程，同时运行 init-my-config.el 中的 xmodmap 命令"
 "6	LINE	0
-	
-|3,0,6,1,1,0,1514096025,""
+	        xmodmap ${USRMODMAP}
+|3,0,6,1,1,0,1514192963,"        xmodmap ${USRMODMAP}"
 "7	LINE	0
 	
-|3,0,7,1,1,0,1514096023,""
+|3,0,7,1,1,0,1514191322,""
 "8	LINE	0
-	如,修改Emacs-W3M的默认Search为DuckDuck Go ==> http://www.duckduckgo.com/?q=%s
-|3,0,8,1,1,0,1514095881,"如,修改Emacs-W3M的默认Search为DuckDuck Go ==> http://www.duckduckgo.com/?q=%s"
+	
+|3,0,8,1,1,0,1514096269,""
 "9	LINE	0
-	顶部
-|3,0,9,1,1,0,1514095866,"顶部"
-"-	CHAR	0
+	    '("Bing Search" "http://bing.com"))
+|3,0,9,1,1,0,1514096264,"    '(\"Bing Search\" \"http://bing.com\"))"
+""-	CHAR	0
 	"
-|3,0,36,0,1,0,1514096586,"\""
+|3,1,36,0,1,0,1514794746,"\""
 
 # 檔案標記:
-'0  18  105  ~/TODO
-|4,48,18,105,1514102981,"~/TODO"
-'1  252  0  /usr/share/emacs/site-lisp/w3m/w3m-search.el
-|4,49,252,0,1514102776,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
-'2  47  0  ~/Downloads/w3m-el/usr/lib/emacsen-common/packages/install/w3m-el
-|4,50,47,0,1514102022,"~/Downloads/w3m-el/usr/lib/emacsen-common/packages/install/w3m-el"
-'3  239  0  ~/Note/Linux/ubuntu/apt/apt-usage.txt
-|4,51,239,0,1514101752,"~/Note/Linux/ubuntu/apt/apt-usage.txt"
-'4  96  0  ~/Note/Linux/ubuntu/apt/apt-optional.txt
-|4,52,96,0,1514101561,"~/Note/Linux/ubuntu/apt/apt-optional.txt"
-'5  29  0  ~/Note/Linux/ubuntu/apt/apt-optional.txt
-|4,53,29,0,1514101456,"~/Note/Linux/ubuntu/apt/apt-optional.txt"
-'6  29  0  ~/Note/Linux/ubuntu/apt/apt-optional.txt
-|4,54,29,0,1514101456,"~/Note/Linux/ubuntu/apt/apt-optional.txt"
-'7  114  0  ~/emacs-w3m-1.4.4/w3m-util.el
-|4,55,114,0,1514101267,"~/emacs-w3m-1.4.4/w3m-util.el"
-'8  37  12  ~/emacs-w3m-1.4.4/install-sh
-|4,56,37,12,1514101216,"~/emacs-w3m-1.4.4/install-sh"
-'9  1  0  ~/w3m-content.txt
-|4,57,1,0,1514100392,"~/w3m-content.txt"
+'0  326  3  ~/Note/Linux/ubuntu/apt/apt-fix-depend-on-problem.txt
+|4,48,326,3,1523775288,"~/Note/Linux/ubuntu/apt/apt-fix-depend-on-problem.txt"
+'1  3  20  ~/Note/Linux/debian/apt-get/apt-get-f-install.txt
+|4,49,3,20,1523775187,"~/Note/Linux/debian/apt-get/apt-get-f-install.txt"
+'2  294  18  ~/.config/openbox/lxde-pi-rc.xml
+|4,50,294,18,1514794751,"~/.config/openbox/lxde-pi-rc.xml"
+'3  10  9  ~/.xsessionrc
+|4,51,10,9,1514793262,"~/.xsessionrc"
+'4  9  69  ~/ShellScripts/bashrc-add-find-func
+|4,52,9,69,1514195444,"~/ShellScripts/bashrc-add-find-func"
+'5  6  0  ~/ShellScripts/bashrc-add-alias-name
+|4,53,6,0,1514195273,"~/ShellScripts/bashrc-add-alias-name"
+'6  10  0  ~/TODO
+|4,54,10,0,1514195208,"~/TODO"
+'7  16  0  ~/TODO
+|4,55,16,0,1514195118,"~/TODO"
+'8  16  0  ~/TODO
+|4,56,16,0,1514195118,"~/TODO"
+'9  9  4  ~/ShellScripts/bashrc-add-find-func
+|4,57,9,4,1514195113,"~/ShellScripts/bashrc-add-find-func"
 
 # Jumplist (由新到舊):
--'  18  105  ~/TODO
-|4,39,18,105,1514102981,"~/TODO"
--'  2  0  ~/TODO
-|4,39,2,0,1514102940,"~/TODO"
--'  1  0  ~/TODO
-|4,39,1,0,1514102939,"~/TODO"
--'  252  0  /usr/share/emacs/site-lisp/w3m/w3m-search.el
-|4,39,252,0,1514102776,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
--'  252  0  /usr/share/emacs/site-lisp/w3m/w3m-search.el
-|4,39,252,0,1514102776,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
--'  64  25  /usr/share/emacs/site-lisp/w3m/w3m-search.el
-|4,39,64,25,1514102768,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
--'  64  25  /usr/share/emacs/site-lisp/w3m/w3m-search.el
-|4,39,64,25,1514102768,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
--'  368  0  /usr/share/emacs/site-lisp/w3m/w3m-search.el
-|4,39,368,0,1514102767,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
--'  368  0  /usr/share/emacs/site-lisp/w3m/w3m-search.el
-|4,39,368,0,1514102767,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
--'  310  35  /usr/share/emacs/site-lisp/w3m/w3m-search.el
-|4,39,310,35,1514102763,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
--'  310  35  /usr/share/emacs/site-lisp/w3m/w3m-search.el
-|4,39,310,35,1514102763,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
--'  308  10  /usr/share/emacs/site-lisp/w3m/w3m-search.el
-|4,39,308,10,1514102761,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
--'  265  12  /usr/share/emacs/site-lisp/w3m/w3m-search.el
-|4,39,265,12,1514102761,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
--'  308  10  /usr/share/emacs/site-lisp/w3m/w3m-search.el
-|4,39,308,10,1514102761,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
--'  265  12  /usr/share/emacs/site-lisp/w3m/w3m-search.el
-|4,39,265,12,1514102761,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
--'  254  14  /usr/share/emacs/site-lisp/w3m/w3m-search.el
-|4,39,254,14,1514102760,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
--'  254  14  /usr/share/emacs/site-lisp/w3m/w3m-search.el
-|4,39,254,14,1514102760,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
--'  42  15  /usr/share/emacs/site-lisp/w3m/w3m-search.el
-|4,39,42,15,1514102759,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
--'  42  15  /usr/share/emacs/site-lisp/w3m/w3m-search.el
-|4,39,42,15,1514102759,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
--'  361  25  /usr/share/emacs/site-lisp/w3m/w3m-search.el
-|4,39,361,25,1514102754,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
--'  361  25  /usr/share/emacs/site-lisp/w3m/w3m-search.el
-|4,39,361,25,1514102754,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
--'  355  50  /usr/share/emacs/site-lisp/w3m/w3m-search.el
-|4,39,355,50,1514102753,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
--'  355  50  /usr/share/emacs/site-lisp/w3m/w3m-search.el
-|4,39,355,50,1514102753,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
--'  352  31  /usr/share/emacs/site-lisp/w3m/w3m-search.el
-|4,39,352,31,1514102752,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
--'  352  31  /usr/share/emacs/site-lisp/w3m/w3m-search.el
-|4,39,352,31,1514102752,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
--'  349  38  /usr/share/emacs/site-lisp/w3m/w3m-search.el
-|4,39,349,38,1514102751,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
--'  344  35  /usr/share/emacs/site-lisp/w3m/w3m-search.el
-|4,39,344,35,1514102751,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
--'  349  38  /usr/share/emacs/site-lisp/w3m/w3m-search.el
-|4,39,349,38,1514102751,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
--'  344  35  /usr/share/emacs/site-lisp/w3m/w3m-search.el
-|4,39,344,35,1514102751,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
--'  342  22  /usr/share/emacs/site-lisp/w3m/w3m-search.el
-|4,39,342,22,1514102750,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
--'  342  22  /usr/share/emacs/site-lisp/w3m/w3m-search.el
-|4,39,342,22,1514102750,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
--'  341  19  /usr/share/emacs/site-lisp/w3m/w3m-search.el
-|4,39,341,19,1514102749,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
--'  341  19  /usr/share/emacs/site-lisp/w3m/w3m-search.el
-|4,39,341,19,1514102749,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
--'  338  36  /usr/share/emacs/site-lisp/w3m/w3m-search.el
-|4,39,338,36,1514102748,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
--'  338  36  /usr/share/emacs/site-lisp/w3m/w3m-search.el
-|4,39,338,36,1514102748,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
--'  327  41  /usr/share/emacs/site-lisp/w3m/w3m-search.el
-|4,39,327,41,1514102746,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
--'  327  41  /usr/share/emacs/site-lisp/w3m/w3m-search.el
-|4,39,327,41,1514102746,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
--'  324  47  /usr/share/emacs/site-lisp/w3m/w3m-search.el
-|4,39,324,47,1514102744,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
--'  324  47  /usr/share/emacs/site-lisp/w3m/w3m-search.el
-|4,39,324,47,1514102744,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
--'  322  10  /usr/share/emacs/site-lisp/w3m/w3m-search.el
-|4,39,322,10,1514102742,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
--'  321  40  /usr/share/emacs/site-lisp/w3m/w3m-search.el
-|4,39,321,40,1514102742,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
--'  322  10  /usr/share/emacs/site-lisp/w3m/w3m-search.el
-|4,39,322,10,1514102742,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
--'  321  40  /usr/share/emacs/site-lisp/w3m/w3m-search.el
-|4,39,321,40,1514102742,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
--'  320  26  /usr/share/emacs/site-lisp/w3m/w3m-search.el
-|4,39,320,26,1514102741,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
--'  320  26  /usr/share/emacs/site-lisp/w3m/w3m-search.el
-|4,39,320,26,1514102741,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
--'  316  10  /usr/share/emacs/site-lisp/w3m/w3m-search.el
-|4,39,316,10,1514102732,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
--'  315  9  /usr/share/emacs/site-lisp/w3m/w3m-search.el
-|4,39,315,9,1514102732,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
--'  316  10  /usr/share/emacs/site-lisp/w3m/w3m-search.el
-|4,39,316,10,1514102732,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
--'  315  9  /usr/share/emacs/site-lisp/w3m/w3m-search.el
-|4,39,315,9,1514102732,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
--'  1  0  /usr/share/emacs/site-lisp/w3m/w3m-search.el
-|4,39,1,0,1514102724,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
--'  1  0  /usr/share/emacs/site-lisp/w3m/w3m-search.el
-|4,39,1,0,1514102724,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
--'  354  0  /usr/share/emacs/site-lisp/w3m/w3m-search.el
-|4,39,354,0,1514102722,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
--'  354  0  /usr/share/emacs/site-lisp/w3m/w3m-search.el
-|4,39,354,0,1514102722,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
--'  123  8  /usr/share/emacs/site-lisp/w3m/w3m-search.el
-|4,39,123,8,1514102704,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
--'  123  8  /usr/share/emacs/site-lisp/w3m/w3m-search.el
-|4,39,123,8,1514102704,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
--'  67  25  /usr/share/emacs/site-lisp/w3m/w3m-search.el
-|4,39,67,25,1514102636,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
--'  67  25  /usr/share/emacs/site-lisp/w3m/w3m-search.el
-|4,39,67,25,1514102636,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
--'  251  38  /usr/share/emacs/site-lisp/w3m/w3m-search.el
-|4,39,251,38,1514102634,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
--'  251  38  /usr/share/emacs/site-lisp/w3m/w3m-search.el
-|4,39,251,38,1514102634,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
--'  141  22  /usr/share/emacs/site-lisp/w3m/w3m-search.el
-|4,39,141,22,1514102632,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
--'  140  8  /usr/share/emacs/site-lisp/w3m/w3m-search.el
-|4,39,140,8,1514102632,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
--'  141  22  /usr/share/emacs/site-lisp/w3m/w3m-search.el
-|4,39,141,22,1514102632,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
--'  140  8  /usr/share/emacs/site-lisp/w3m/w3m-search.el
-|4,39,140,8,1514102632,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
--'  138  19  /usr/share/emacs/site-lisp/w3m/w3m-search.el
-|4,39,138,19,1514102631,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
--'  137  7  /usr/share/emacs/site-lisp/w3m/w3m-search.el
-|4,39,137,7,1514102631,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
--'  136  19  /usr/share/emacs/site-lisp/w3m/w3m-search.el
-|4,39,136,19,1514102631,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
--'  135  7  /usr/share/emacs/site-lisp/w3m/w3m-search.el
-|4,39,135,7,1514102631,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
--'  138  19  /usr/share/emacs/site-lisp/w3m/w3m-search.el
-|4,39,138,19,1514102631,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
--'  137  7  /usr/share/emacs/site-lisp/w3m/w3m-search.el
-|4,39,137,7,1514102631,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
--'  136  19  /usr/share/emacs/site-lisp/w3m/w3m-search.el
-|4,39,136,19,1514102631,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
--'  135  7  /usr/share/emacs/site-lisp/w3m/w3m-search.el
-|4,39,135,7,1514102631,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
--'  133  19  /usr/share/emacs/site-lisp/w3m/w3m-search.el
-|4,39,133,19,1514102630,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
--'  132  7  /usr/share/emacs/site-lisp/w3m/w3m-search.el
-|4,39,132,7,1514102630,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
--'  130  19  /usr/share/emacs/site-lisp/w3m/w3m-search.el
-|4,39,130,19,1514102630,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
--'  129  7  /usr/share/emacs/site-lisp/w3m/w3m-search.el
-|4,39,129,7,1514102630,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
--'  127  19  /usr/share/emacs/site-lisp/w3m/w3m-search.el
-|4,39,127,19,1514102630,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
--'  133  19  /usr/share/emacs/site-lisp/w3m/w3m-search.el
-|4,39,133,19,1514102630,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
--'  132  7  /usr/share/emacs/site-lisp/w3m/w3m-search.el
-|4,39,132,7,1514102630,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
--'  130  19  /usr/share/emacs/site-lisp/w3m/w3m-search.el
-|4,39,130,19,1514102630,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
--'  129  7  /usr/share/emacs/site-lisp/w3m/w3m-search.el
-|4,39,129,7,1514102630,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
--'  127  19  /usr/share/emacs/site-lisp/w3m/w3m-search.el
-|4,39,127,19,1514102630,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
--'  126  7  /usr/share/emacs/site-lisp/w3m/w3m-search.el
-|4,39,126,7,1514102629,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
--'  124  19  /usr/share/emacs/site-lisp/w3m/w3m-search.el
-|4,39,124,19,1514102629,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
--'  126  7  /usr/share/emacs/site-lisp/w3m/w3m-search.el
-|4,39,126,7,1514102629,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
--'  124  19  /usr/share/emacs/site-lisp/w3m/w3m-search.el
-|4,39,124,19,1514102629,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
--'  121  19  /usr/share/emacs/site-lisp/w3m/w3m-search.el
-|4,39,121,19,1514102628,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
--'  120  7  /usr/share/emacs/site-lisp/w3m/w3m-search.el
-|4,39,120,7,1514102628,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
--'  118  19  /usr/share/emacs/site-lisp/w3m/w3m-search.el
-|4,39,118,19,1514102628,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
--'  121  19  /usr/share/emacs/site-lisp/w3m/w3m-search.el
-|4,39,121,19,1514102628,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
--'  120  7  /usr/share/emacs/site-lisp/w3m/w3m-search.el
-|4,39,120,7,1514102628,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
--'  118  19  /usr/share/emacs/site-lisp/w3m/w3m-search.el
-|4,39,118,19,1514102628,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
--'  117  7  /usr/share/emacs/site-lisp/w3m/w3m-search.el
-|4,39,117,7,1514102627,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
--'  117  7  /usr/share/emacs/site-lisp/w3m/w3m-search.el
-|4,39,117,7,1514102627,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
--'  113  18  /usr/share/emacs/site-lisp/w3m/w3m-search.el
-|4,39,113,18,1514102626,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
--'  112  7  /usr/share/emacs/site-lisp/w3m/w3m-search.el
-|4,39,112,7,1514102626,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
--'  113  18  /usr/share/emacs/site-lisp/w3m/w3m-search.el
-|4,39,113,18,1514102626,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
--'  112  7  /usr/share/emacs/site-lisp/w3m/w3m-search.el
-|4,39,112,7,1514102626,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
--'  111  18  /usr/share/emacs/site-lisp/w3m/w3m-search.el
-|4,39,111,18,1514102624,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
--'  111  18  /usr/share/emacs/site-lisp/w3m/w3m-search.el
-|4,39,111,18,1514102624,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
--'  110  7  /usr/share/emacs/site-lisp/w3m/w3m-search.el
-|4,39,110,7,1514102622,"/usr/share/emacs/site-lisp/w3m/w3m-search.el"
+-'  326  3  ~/Note/Linux/ubuntu/apt/apt-fix-depend-on-problem.txt
+|4,39,326,3,1523775288,"~/Note/Linux/ubuntu/apt/apt-fix-depend-on-problem.txt"
+-'  1  0  ~/Note/Linux/ubuntu/apt/apt-fix-depend-on-problem.txt
+|4,39,1,0,1523775231,"~/Note/Linux/ubuntu/apt/apt-fix-depend-on-problem.txt"
+-'  3  20  ~/Note/Linux/debian/apt-get/apt-get-f-install.txt
+|4,39,3,20,1523775187,"~/Note/Linux/debian/apt-get/apt-get-f-install.txt"
+-'  3  20  ~/Note/Linux/debian/apt-get/apt-get-f-install.txt
+|4,39,3,20,1523775187,"~/Note/Linux/debian/apt-get/apt-get-f-install.txt"
+-'  1  0  ~/Note/Linux/debian/apt-get/apt-get-f-install.txt
+|4,39,1,0,1523775156,"~/Note/Linux/debian/apt-get/apt-get-f-install.txt"
+-'  1  0  ~/Note/Linux/debian/apt-get/apt-get-f-install.txt
+|4,39,1,0,1523775156,"~/Note/Linux/debian/apt-get/apt-get-f-install.txt"
+-'  294  18  ~/.config/openbox/lxde-pi-rc.xml
+|4,39,294,18,1514794751,"~/.config/openbox/lxde-pi-rc.xml"
+-'  294  18  ~/.config/openbox/lxde-pi-rc.xml
+|4,39,294,18,1514794751,"~/.config/openbox/lxde-pi-rc.xml"
+-'  294  18  ~/.config/openbox/lxde-pi-rc.xml
+|4,39,294,18,1514794751,"~/.config/openbox/lxde-pi-rc.xml"
+-'  294  18  ~/.config/openbox/lxde-pi-rc.xml
+|4,39,294,18,1514794751,"~/.config/openbox/lxde-pi-rc.xml"
+-'  10  9  ~/.xsessionrc
+|4,39,10,9,1514793262,"~/.xsessionrc"
+-'  10  9  ~/.xsessionrc
+|4,39,10,9,1514793262,"~/.xsessionrc"
+-'  10  9  ~/.xsessionrc
+|4,39,10,9,1514793262,"~/.xsessionrc"
+-'  10  9  ~/.xsessionrc
+|4,39,10,9,1514793262,"~/.xsessionrc"
+-'  10  9  ~/.xsessionrc
+|4,39,10,9,1514793262,"~/.xsessionrc"
+-'  10  9  ~/.xsessionrc
+|4,39,10,9,1514793262,"~/.xsessionrc"
+-'  10  9  ~/.xsessionrc
+|4,39,10,9,1514793262,"~/.xsessionrc"
+-'  10  9  ~/.xsessionrc
+|4,39,10,9,1514793262,"~/.xsessionrc"
+-'  11  8  ~/.xsessionrc
+|4,39,11,8,1514793257,"~/.xsessionrc"
+-'  11  8  ~/.xsessionrc
+|4,39,11,8,1514793257,"~/.xsessionrc"
+-'  11  8  ~/.xsessionrc
+|4,39,11,8,1514793257,"~/.xsessionrc"
+-'  11  8  ~/.xsessionrc
+|4,39,11,8,1514793257,"~/.xsessionrc"
+-'  11  8  ~/.xsessionrc
+|4,39,11,8,1514793257,"~/.xsessionrc"
+-'  11  8  ~/.xsessionrc
+|4,39,11,8,1514793257,"~/.xsessionrc"
+-'  11  8  ~/.xsessionrc
+|4,39,11,8,1514793257,"~/.xsessionrc"
+-'  11  8  ~/.xsessionrc
+|4,39,11,8,1514793257,"~/.xsessionrc"
+-'  9  69  ~/ShellScripts/bashrc-add-find-func
+|4,39,9,69,1514195444,"~/ShellScripts/bashrc-add-find-func"
+-'  9  69  ~/ShellScripts/bashrc-add-find-func
+|4,39,9,69,1514195444,"~/ShellScripts/bashrc-add-find-func"
+-'  9  69  ~/ShellScripts/bashrc-add-find-func
+|4,39,9,69,1514195444,"~/ShellScripts/bashrc-add-find-func"
+-'  9  69  ~/ShellScripts/bashrc-add-find-func
+|4,39,9,69,1514195444,"~/ShellScripts/bashrc-add-find-func"
+-'  9  69  ~/ShellScripts/bashrc-add-find-func
+|4,39,9,69,1514195444,"~/ShellScripts/bashrc-add-find-func"
+-'  9  69  ~/ShellScripts/bashrc-add-find-func
+|4,39,9,69,1514195444,"~/ShellScripts/bashrc-add-find-func"
+-'  9  69  ~/ShellScripts/bashrc-add-find-func
+|4,39,9,69,1514195444,"~/ShellScripts/bashrc-add-find-func"
+-'  9  69  ~/ShellScripts/bashrc-add-find-func
+|4,39,9,69,1514195444,"~/ShellScripts/bashrc-add-find-func"
+-'  9  69  ~/ShellScripts/bashrc-add-find-func
+|4,39,9,69,1514195444,"~/ShellScripts/bashrc-add-find-func"
+-'  9  69  ~/ShellScripts/bashrc-add-find-func
+|4,39,9,69,1514195444,"~/ShellScripts/bashrc-add-find-func"
+-'  9  69  ~/ShellScripts/bashrc-add-find-func
+|4,39,9,69,1514195444,"~/ShellScripts/bashrc-add-find-func"
+-'  9  69  ~/ShellScripts/bashrc-add-find-func
+|4,39,9,69,1514195444,"~/ShellScripts/bashrc-add-find-func"
+-'  9  69  ~/ShellScripts/bashrc-add-find-func
+|4,39,9,69,1514195444,"~/ShellScripts/bashrc-add-find-func"
+-'  9  69  ~/ShellScripts/bashrc-add-find-func
+|4,39,9,69,1514195444,"~/ShellScripts/bashrc-add-find-func"
+-'  9  69  ~/ShellScripts/bashrc-add-find-func
+|4,39,9,69,1514195444,"~/ShellScripts/bashrc-add-find-func"
+-'  9  69  ~/ShellScripts/bashrc-add-find-func
+|4,39,9,69,1514195444,"~/ShellScripts/bashrc-add-find-func"
+-'  10  4  ~/ShellScripts/bashrc-add-find-func
+|4,39,10,4,1514195387,"~/ShellScripts/bashrc-add-find-func"
+-'  10  4  ~/ShellScripts/bashrc-add-find-func
+|4,39,10,4,1514195387,"~/ShellScripts/bashrc-add-find-func"
+-'  10  4  ~/ShellScripts/bashrc-add-find-func
+|4,39,10,4,1514195387,"~/ShellScripts/bashrc-add-find-func"
+-'  10  4  ~/ShellScripts/bashrc-add-find-func
+|4,39,10,4,1514195387,"~/ShellScripts/bashrc-add-find-func"
+-'  10  4  ~/ShellScripts/bashrc-add-find-func
+|4,39,10,4,1514195387,"~/ShellScripts/bashrc-add-find-func"
+-'  10  4  ~/ShellScripts/bashrc-add-find-func
+|4,39,10,4,1514195387,"~/ShellScripts/bashrc-add-find-func"
+-'  10  4  ~/ShellScripts/bashrc-add-find-func
+|4,39,10,4,1514195387,"~/ShellScripts/bashrc-add-find-func"
+-'  10  4  ~/ShellScripts/bashrc-add-find-func
+|4,39,10,4,1514195387,"~/ShellScripts/bashrc-add-find-func"
+-'  10  4  ~/ShellScripts/bashrc-add-find-func
+|4,39,10,4,1514195387,"~/ShellScripts/bashrc-add-find-func"
+-'  10  4  ~/ShellScripts/bashrc-add-find-func
+|4,39,10,4,1514195387,"~/ShellScripts/bashrc-add-find-func"
+-'  10  4  ~/ShellScripts/bashrc-add-find-func
+|4,39,10,4,1514195387,"~/ShellScripts/bashrc-add-find-func"
+-'  10  4  ~/ShellScripts/bashrc-add-find-func
+|4,39,10,4,1514195387,"~/ShellScripts/bashrc-add-find-func"
+-'  10  4  ~/ShellScripts/bashrc-add-find-func
+|4,39,10,4,1514195387,"~/ShellScripts/bashrc-add-find-func"
+-'  10  4  ~/ShellScripts/bashrc-add-find-func
+|4,39,10,4,1514195387,"~/ShellScripts/bashrc-add-find-func"
+-'  10  4  ~/ShellScripts/bashrc-add-find-func
+|4,39,10,4,1514195387,"~/ShellScripts/bashrc-add-find-func"
+-'  10  4  ~/ShellScripts/bashrc-add-find-func
+|4,39,10,4,1514195387,"~/ShellScripts/bashrc-add-find-func"
+-'  6  0  ~/ShellScripts/bashrc-add-alias-name
+|4,39,6,0,1514195273,"~/ShellScripts/bashrc-add-alias-name"
+-'  6  0  ~/ShellScripts/bashrc-add-alias-name
+|4,39,6,0,1514195273,"~/ShellScripts/bashrc-add-alias-name"
+-'  6  0  ~/ShellScripts/bashrc-add-alias-name
+|4,39,6,0,1514195273,"~/ShellScripts/bashrc-add-alias-name"
+-'  6  0  ~/ShellScripts/bashrc-add-alias-name
+|4,39,6,0,1514195273,"~/ShellScripts/bashrc-add-alias-name"
+-'  6  0  ~/ShellScripts/bashrc-add-alias-name
+|4,39,6,0,1514195273,"~/ShellScripts/bashrc-add-alias-name"
+-'  6  0  ~/ShellScripts/bashrc-add-alias-name
+|4,39,6,0,1514195273,"~/ShellScripts/bashrc-add-alias-name"
+-'  6  0  ~/ShellScripts/bashrc-add-alias-name
+|4,39,6,0,1514195273,"~/ShellScripts/bashrc-add-alias-name"
+-'  6  0  ~/ShellScripts/bashrc-add-alias-name
+|4,39,6,0,1514195273,"~/ShellScripts/bashrc-add-alias-name"
+-'  6  0  ~/ShellScripts/bashrc-add-alias-name
+|4,39,6,0,1514195273,"~/ShellScripts/bashrc-add-alias-name"
+-'  6  0  ~/ShellScripts/bashrc-add-alias-name
+|4,39,6,0,1514195273,"~/ShellScripts/bashrc-add-alias-name"
+-'  6  0  ~/ShellScripts/bashrc-add-alias-name
+|4,39,6,0,1514195273,"~/ShellScripts/bashrc-add-alias-name"
+-'  6  0  ~/ShellScripts/bashrc-add-alias-name
+|4,39,6,0,1514195273,"~/ShellScripts/bashrc-add-alias-name"
+-'  6  0  ~/ShellScripts/bashrc-add-alias-name
+|4,39,6,0,1514195273,"~/ShellScripts/bashrc-add-alias-name"
+-'  6  0  ~/ShellScripts/bashrc-add-alias-name
+|4,39,6,0,1514195273,"~/ShellScripts/bashrc-add-alias-name"
+-'  6  0  ~/ShellScripts/bashrc-add-alias-name
+|4,39,6,0,1514195273,"~/ShellScripts/bashrc-add-alias-name"
+-'  6  0  ~/ShellScripts/bashrc-add-alias-name
+|4,39,6,0,1514195273,"~/ShellScripts/bashrc-add-alias-name"
+-'  6  0  ~/ShellScripts/bashrc-add-alias-name
+|4,39,6,0,1514195273,"~/ShellScripts/bashrc-add-alias-name"
+-'  6  0  ~/ShellScripts/bashrc-add-alias-name
+|4,39,6,0,1514195273,"~/ShellScripts/bashrc-add-alias-name"
+-'  6  0  ~/ShellScripts/bashrc-add-alias-name
+|4,39,6,0,1514195273,"~/ShellScripts/bashrc-add-alias-name"
+-'  6  0  ~/ShellScripts/bashrc-add-alias-name
+|4,39,6,0,1514195273,"~/ShellScripts/bashrc-add-alias-name"
+-'  6  0  ~/ShellScripts/bashrc-add-alias-name
+|4,39,6,0,1514195273,"~/ShellScripts/bashrc-add-alias-name"
+-'  6  0  ~/ShellScripts/bashrc-add-alias-name
+|4,39,6,0,1514195273,"~/ShellScripts/bashrc-add-alias-name"
+-'  6  0  ~/ShellScripts/bashrc-add-alias-name
+|4,39,6,0,1514195273,"~/ShellScripts/bashrc-add-alias-name"
+-'  6  0  ~/ShellScripts/bashrc-add-alias-name
+|4,39,6,0,1514195273,"~/ShellScripts/bashrc-add-alias-name"
+-'  6  0  ~/ShellScripts/bashrc-add-alias-name
+|4,39,6,0,1514195273,"~/ShellScripts/bashrc-add-alias-name"
+-'  6  0  ~/ShellScripts/bashrc-add-alias-name
+|4,39,6,0,1514195273,"~/ShellScripts/bashrc-add-alias-name"
+-'  6  0  ~/ShellScripts/bashrc-add-alias-name
+|4,39,6,0,1514195273,"~/ShellScripts/bashrc-add-alias-name"
+-'  6  0  ~/ShellScripts/bashrc-add-alias-name
+|4,39,6,0,1514195273,"~/ShellScripts/bashrc-add-alias-name"
+-'  6  0  ~/ShellScripts/bashrc-add-alias-name
+|4,39,6,0,1514195273,"~/ShellScripts/bashrc-add-alias-name"
+-'  6  0  ~/ShellScripts/bashrc-add-alias-name
+|4,39,6,0,1514195273,"~/ShellScripts/bashrc-add-alias-name"
+-'  6  0  ~/ShellScripts/bashrc-add-alias-name
+|4,39,6,0,1514195273,"~/ShellScripts/bashrc-add-alias-name"
+-'  6  0  ~/ShellScripts/bashrc-add-alias-name
+|4,39,6,0,1514195273,"~/ShellScripts/bashrc-add-alias-name"
+-'  1  0  ~/ShellScripts/bashrc-add-alias-name
+|4,39,1,0,1514195221,"~/ShellScripts/bashrc-add-alias-name"
+-'  1  0  ~/ShellScripts/bashrc-add-alias-name
+|4,39,1,0,1514195221,"~/ShellScripts/bashrc-add-alias-name"
+-'  1  0  ~/ShellScripts/bashrc-add-alias-name
+|4,39,1,0,1514195221,"~/ShellScripts/bashrc-add-alias-name"
+-'  1  0  ~/ShellScripts/bashrc-add-alias-name
+|4,39,1,0,1514195221,"~/ShellScripts/bashrc-add-alias-name"
+-'  1  0  ~/ShellScripts/bashrc-add-alias-name
+|4,39,1,0,1514195221,"~/ShellScripts/bashrc-add-alias-name"
+-'  1  0  ~/ShellScripts/bashrc-add-alias-name
+|4,39,1,0,1514195221,"~/ShellScripts/bashrc-add-alias-name"
+-'  1  0  ~/ShellScripts/bashrc-add-alias-name
+|4,39,1,0,1514195221,"~/ShellScripts/bashrc-add-alias-name"
+-'  1  0  ~/ShellScripts/bashrc-add-alias-name
+|4,39,1,0,1514195221,"~/ShellScripts/bashrc-add-alias-name"
+-'  1  0  ~/ShellScripts/bashrc-add-alias-name
+|4,39,1,0,1514195221,"~/ShellScripts/bashrc-add-alias-name"
+-'  1  0  ~/ShellScripts/bashrc-add-alias-name
+|4,39,1,0,1514195221,"~/ShellScripts/bashrc-add-alias-name"
 
 # 檔案內 Mark 記錄 (由新到舊):
 
+> ~/Note/Linux/ubuntu/apt/apt-fix-depend-on-problem.txt
+	*	1523775287	0
+	"	326	3
+
+> ~/Note/Linux/debian/apt-get/apt-get-f-install.txt
+	*	1523775178	0
+	"	3	20
+
+> ~/.config/openbox/lxde-pi-rc.xml
+	*	1514794749	0
+	"	294	18
+	^	294	40
+	.	294	23
+	+	292	22
+	+	294	22
+	+	297	0
+	+	302	0
+	+	297	0
+	+	302	0
+	+	297	22
+	+	299	0
+	+	308	22
+	+	309	26
+	+	308	18
+	+	294	23
+
+> ~/.xsessionrc
+	*	1514793261	0
+	"	10	9
+	^	10	10
+	.	10	9
+	+	10	0
+	+	11	8
+	+	10	9
+
+> ~/ShellScripts/bashrc-add-find-func
+	*	1514195444	0
+	"	9	69
+	^	9	70
+	.	9	69
+	+	12	0
+	+	9	4
+	+	9	0
+	+	10	0
+	+	9	0
+	+	10	4
+	+	9	69
+
+> ~/ShellScripts/bashrc-add-alias-name
+	*	1514195271	0
+	"	6	0
+
 > ~/TODO
-	*	1514102980	0
-	"	18	105
-	^	18	106
-	.	18	105
-	+	31	0
-	+	18	105
+	*	1514195206	0
+	"	10	0
+	^	6	101
+	.	6	98
+	+	28	0
+	+	15	105
+	+	2	0
+	+	1	0
+	+	6	98
+
+> ~/ShellScripts/profile-add-emacs-setting
+	*	1514193346	0
+	"	4	11
+
+> ~/ShellScripts/profile-init
+	*	1514193160	0
+	"	18	0
+
+> ~/.xsession
+	*	1514191952	0
+	"	1	0
+
+> ~/.xsession-errors
+	*	1514191937	0
+	"	1	0
+
+> ~/.bash_login
+	*	1514191653	0
+	"	1	0
+	^	11	15
+	.	11	14
+	+	1	1
+	+	1	0
+	+	2	20
+	+	7	0
+	+	2	20
+	+	11	7
+	+	10	0
+	+	11	14
+
+> ~/Github/qq-on-ubuntu/.xsessionrc
+	*	1514191635	0
+	"	1	0
+
+> ~/.xmodmaprc
+	*	1514191617	0
+	"	9	0
+	.	6	0
+	+	6	0
+
+> ~/.gitignore
+	*	1514191546	0
+	"	4	0
+	^	35	11
+	.	35	10
+	+	27	8
+	+	10	9
+	+	27	8
+	+	10	8
+	+	58	0
+	+	43	12
+	+	44	10
+	+	45	11
+	+	46	9
+	+	47	7
+	+	42	0
+	+	35	10
+
+> ~/Github/uemacs/main.c
+	*	1514191065	0
+	"	91	0
+
+> ~/.vimrc
+	*	1514190972	0
+	"	520	5
+	^	39	8
+	.	39	8
+	+	467	0
+	+	467	61
+	+	467	30
+	+	468	0
+	+	467	28
+	+	466	29
+	+	467	20
+	+	466	0
+	+	465	0
+	+	464	0
+	+	469	0
+	+	471	0
+	+	443	0
+	+	437	0
+	+	432	0
+	+	433	0
+	+	434	1
+	+	434	0
+	+	435	32
+	+	434	0
+	+	432	0
+	+	437	0
+	+	435	0
+	+	39	8
+
+> ~/.config/lxterminal/lxterminal.conf
+	*	1514190939	0
+	"	34	0
+	^	33	17
+	.	33	16
+	+	5	0
+	+	24	19
+	+	33	16
 
 > /usr/share/emacs/site-lisp/w3m/w3m-search.el
 	*	1514102774	0
@@ -2321,6 +2477,10 @@ $
 > ~/Downloads/w3m-el/usr/lib/emacsen-common/packages/install/w3m-el
 	*	1514102021	0
 	"	47	0
+
+> ~/Note/Linux/ubuntu/deb_package/deb-package-extract.txt
+	*	1514101950	0
+	"	30	0
 
 > ~/Note/Linux/ubuntu/apt/apt-usage.txt
 	*	1514101653	0
@@ -2553,14 +2713,6 @@ $
 	*	1513765137	0
 	"	1	0
 
-> ~/.bash_login
-	*	1513764191	0
-	"	2	5
-	^	2	6
-	.	2	5
-	+	1	1
-	+	2	5
-
 > ~/Note/Linux/ubuntu/character_terminal/fbterm-input-method.txt
 	*	1513754945	0
 	"	9	4
@@ -2736,10 +2888,6 @@ $
 	*	1513674640	0
 	"	2	0
 
-> ~/ShellScripts/profile-init
-	*	1513674631	0
-	"	18	0
-
 > ~/ShellScripts/profile-
 	*	1513674620	0
 	"	1	0
@@ -2790,10 +2938,6 @@ $
 	"	5	0
 	.	6	0
 	+	6	0
-
-> ~/ShellScripts/profile-add-emacs-setting
-	*	1512991932	0
-	"	1	0
 
 > ~/.emacs.d/init.el
 	*	1512977779	0
@@ -2878,12 +3022,6 @@ $
 	*	1510967038	0
 	"	42	0
 
-> ~/.xmodmaprc
-	*	1510966560	0
-	"	6	0
-	.	6	0
-	+	6	0
-
 > ~/ShellScripts/login-auto-start/xmodmap.sh
 	*	1510966142	0
 	"	2	22
@@ -2920,36 +3058,6 @@ $
 	+	4	0
 	+	3	22
 
-> ~/.vimrc
-	*	1510963418	0
-	"	250	0
-	^	39	8
-	.	39	8
-	+	467	0
-	+	467	61
-	+	467	30
-	+	468	0
-	+	467	28
-	+	466	29
-	+	467	20
-	+	466	0
-	+	465	0
-	+	464	0
-	+	469	0
-	+	471	0
-	+	443	0
-	+	437	0
-	+	432	0
-	+	433	0
-	+	434	1
-	+	434	0
-	+	435	32
-	+	434	0
-	+	432	0
-	+	437	0
-	+	435	0
-	+	39	8
-
 > ~/ShellScripts/profile-add-xset-setting
 	*	1510907523	0
 	"	9	5
@@ -2969,24 +3077,6 @@ $
 > ~/.emacs.d/my_config/xcscope.el
 	*	1510820574	0
 	"	1	0
-
-> ~/.config/openbox/lxde-pi-rc.xml
-	*	1510817836	0
-	"	294	23
-	^	294	40
-	.	294	23
-	+	292	22
-	+	294	22
-	+	297	0
-	+	302	0
-	+	297	0
-	+	302	0
-	+	297	22
-	+	299	0
-	+	308	22
-	+	309	26
-	+	308	18
-	+	294	23
 
 > ~/.spacemacs
 	*	1510817544	0
@@ -3023,94 +3113,3 @@ $
 > ~/Github/PyGithub/github.py
 	*	1510796850	0
 	"	35	0
-
-> ~/Github/PyGithub/setup.py
-	*	1510796821	0
-	"	54	4
-
-> ~/.gitignore
-	*	1510795167	0
-	"	35	10
-	^	35	11
-	.	35	10
-	+	27	8
-	+	10	9
-	+	27	8
-	+	10	8
-	+	58	0
-	+	43	12
-	+	44	10
-	+	45	11
-	+	46	9
-	+	47	7
-	+	42	0
-	+	35	10
-
-> ~/ShellScripts/bashrc-add-git-func
-	*	1510793598	0
-	"	11	0
-
-> ~/ShellScripts/bashrc-add-gui-poweroff-logout
-	*	1510793570	0
-	"	20	4
-	^	14	4
-	.	20	0
-	+	9	11
-	+	14	1
-	+	22	0
-	+	14	3
-	+	20	0
-
-> ~/.gitconfig
-	*	1510793309	0
-	"	3	1
-
-> ~/Note/Linux/raspberryPi/keybind.txt
-	*	1510789203	0
-	"	1	0
-	.	1	0
-	+	1	0
-
-> ~/.vimperatorrc
-	*	1510736699	0
-	"	3	55
-	^	3	57
-	.	3	55
-	+	4	0
-	+	3	56
-	+	4	61
-	+	3	57
-	+	4	60
-	+	3	55
-
-> ~/ShellScripts/basic_scripts/git-rm-list.sh
-	*	1510733641	0
-	"	7	0
-
-> ~/Note/Linux/ubuntu/window_manager/DWM/dwm-tutorial-on-linux.txt
-	"	256	0
-	^	258	5
-	.	256	0
-	+	46	0
-	+	258	4
-	+	256	0
-
-> ~/Github/dwm/config.def.h
-	"	105	74
-
-> ~/Github/dwm/config.h
-	"	75	1
-	^	22	55
-	.	9	63
-	+	8	57
-	+	9	55
-	+	8	64
-	+	9	63
-	+	22	0
-	+	9	63
-
-> ~/Note/Linux/ubuntu/fonts_setting/wenquanyi-microhei.txt
-	"	9	30
-	^	7	23
-	.	7	22
-	+	7	22

@@ -27,6 +27,7 @@ Github
 .gitignore
 .gnupg
 .java
+.lesshst
 .local
 .mozilla
 Music
@@ -63,6 +64,7 @@ Workspace
 .xchm
 .xinput.d
 .xinputrc
+.xmodmaprc
 .xsession-errors
 .xsession-errors.old
 
